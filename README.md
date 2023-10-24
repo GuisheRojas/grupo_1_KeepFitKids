@@ -6,6 +6,7 @@ Keep Fit es una empresa que vende ropa deportiva para niños, cuyo objetivo est�
 ## Integrantes del grupo
 Somos un grupo de estudiantes de programación web, que está desarrollando su primera página web.
 Soy Silvina, estoy a cargo del Diseño Del Producto, me gusta diseñar ropa deportiva atractiva, divertida y funcional para niños, teniendo en cuenta las tendencias de la moda y las necesidades de los niños en términos de comodidad y rendimiento.
+Soy Guillermo, estoy a cargo del Control de Calidad, me aseguraré de que todas las prendas lleguen al consumidor final en optimas condiciones(Buena calidad y seguridad), este trabajo es importante especialmente cuando se trata de ropa para niños.
 
 
 ## Sitios de referencia
