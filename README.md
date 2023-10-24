@@ -45,3 +45,6 @@ Soy Ana, y me encargo de la producción y abastecimiento. Mi función es coordin
 + Por las funcionalidades implementadas:
 	+ https://www.aerofit.com.ar/
 	+ https://www.simpakids.com/minoristas
+
+
+*Link al tablero de Trello:* https://trello.com/invite/b/nVu1sw0W/ATTI9ac44ea143849822fb34d3dbbc76d5658F69D5FD/grupo1-keep-fit
