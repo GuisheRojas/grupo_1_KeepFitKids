@@ -1,6 +1,6 @@
 #SPRNT 1:
 
-##Hacer más 
+##Hacer más
 
 ##Hacer menos
 
