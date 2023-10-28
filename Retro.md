@@ -1,11 +1,11 @@
 #SPRNT 1:
 
-##Hacer más
+##Hacer más 
 
 ##Hacer menos
 
 ##Continuar haciendo
 
-##Hacer menos
+##Comenzar a hacer
 
 ##Dejar de hacer
