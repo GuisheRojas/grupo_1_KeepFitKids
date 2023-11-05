@@ -12,4 +12,6 @@ app.listen(PORT, ()=>{
     console.log("Servidor iniciado en el puerto " + PORT);
 });
 
-app.get('/', (req, res)=>res.sendFile(__dirname + "/views/home.html"));
+app.get('/', (req, res)=>res.sendFile(__dirname + "/views/html/home.html"));
+
+app.get('/', (req, res)=>res.sendFile(__dirname + "/views/html/login.html"))

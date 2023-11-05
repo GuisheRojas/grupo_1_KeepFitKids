@@ -3,7 +3,6 @@
   "description": "Keep Fit es una empresa que vende ropa deportiva para niños, cuyo objetivo está enfocado en diseñar y producir productos de alta calidad para niños atletas, y promover un estilo de vida activo y saludable.",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
