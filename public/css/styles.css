@@ -40,7 +40,10 @@ header{
     padding: 5%;
 }
 
-.logo,
+.logo{
+    width: 45%;
+}
+
 header .form input{
     width: 50%;
 }
