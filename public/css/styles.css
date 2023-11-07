@@ -1,0 +1,85 @@
+/*VARIABLES*/
+:root{
+    --verde-claro: #e6ffef;
+    --gris-oscuro: #666;
+    --gris-claro: #ebebeb;
+    --blanco: #FFF;
+    --negro: #000;
+    --verde-keep: #51b59f;
+    --verde-fit: #6be63a;
+    --naranja: #ff6a2f;
+}
+
+/*CONFIG GENERAL*/
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
+/*TIPOGRAFIAS*/
+body{
+    font-size: 12px;
+    font-family: 'Comic Neue',  cursive;
+}
+
+.titulares{
+    font-family: 'Coming Soon', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*HEADER*/
+header{
+    background-color: var(--verde-claro);
+}
+
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+}
+
+.logo,
+header .form input{
+    width: 50%;
+}
+
+.logo{
+    padding: 10px;
+}
+
+header .form{
+    display: flex;
+    align-items: center;
+    padding: 15px 2px;
+    position: relative;
+}
+
+.form .icon, #search{
+    justify-content: center;
+    align-self: center;
+    border-radius: 5px;
+    border-color: var(--blanco);
+    height: 30px;
+}
+
+header .form input[type="search"]{
+    border: none;
+    background-color: var(--blanco);
+    outline: none;
+    color: var(--gris-oscuro);
+    padding-left: 10px;
+    width: 150px;
+}
+
+header .form .icon{
+    background-color: var(--blanco);
+    border: 1px solid var(--blanco);
+    color: var(--gris-oscuro);
+    width: 18px;
+    padding-top: 5px;
+    position: absolute;
+    left: 145px;
+    justify-self: flex-end;
+}
