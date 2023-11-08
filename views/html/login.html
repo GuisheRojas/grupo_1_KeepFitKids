@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresa a tu cuenta</title>
-    <link rel="stylesheet" href="/public/css/stylesform.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
+    <header>
+        <div class="header">
+            <a href="/" id="logo"><img class="logo" src="static/img/logo.png" alt="Logo de Keep Fit Kids"></a>
+            <form class="form" action="/" method="GET">
+                <input type="search" id="search" name="search" placeholder="Buscar productos"/>
+                <button type="submit" class="icon" name="lupa"><i class="fa fa-search"></i></button>
+            </form>
+            <a href="/productCart" id="product-cart"><p>Mis compras</p><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/login" id="circle-user"><p>Iniciar sesion</p><i class="fa-solid fa-circle-user"></i></a>      
+        </div>
+    </header>
     <form class="form">
         <h2 class="titulo">Ingresa a tu cuenta</h2>
         <div class="container">
