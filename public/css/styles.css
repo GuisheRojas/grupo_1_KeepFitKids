@@ -151,3 +151,258 @@ header .form .icon{
     color: var(--negro);
     font-size: 20px;
 }
+
+/* Estilizacion del detail product*/
+
+main div.productandprice {
+
+    display: flex;
+    position: relative;
+
+    flex-direction: row;
+
+}
+
+main div.productandprice section.productimg{
+    width: 35vw;
+    position: relative;
+    display: flex;
+   
+}
+
+
+
+main div.productandprice section.productimg img.prod{
+
+    position: relative;
+    display: flex;
+    width: 150%;
+    top: 10vw;
+    border: 1vw solid var(--verde-claro) ;
+
+    
+}
+
+main div.productandprice section.priceandinfo{
+
+    width: 40vw;
+    position: relative;
+    left: 17vw;
+    top: 9.5vw;
+}
+
+main div.productandprice section.priceandinfo h1.nameofproduct{
+    position: relative;
+    display: flex;
+    left: 2%;
+    font-size: 3vw;
+    
+
+   
+    
+}
+
+main div.productandprice section.priceandinfo h2.priceofproduct{
+
+    position: relative;
+    display: flex;
+    left: 5%;
+    font-size: 4vw;
+    color: darkgreen;
+    bottom: 2%;
+    
+
+
+}
+
+
+main div.productandprice section.priceandinfo div.logistic{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 2%;
+
+}
+
+main div.productandprice section.priceandinfo div.logistic i{
+    color: rgb(214, 115, 49);
+    font-size: 4vw;
+    position: relative;
+    left: 5%;
+    
+    
+}
+
+main div.productandprice section.priceandinfo div.logistic h4.freesend{
+    font-size: 2.4vw;
+    position: relative;
+    left: 8%;
+    color: rgb(214, 115, 49);
+    
+}
+
+main div.productandprice section.priceandinfo h2.mediodepago{
+ 
+    position: relative;
+    top: 5%;
+    left: 3%;
+    font-size: 2.6vw;
+}
+main div.productandprice section.priceandinfo div.logocards{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    top: 6%;
+    left: 5%;
+}
+
+main div.productandprice section.priceandinfo div.logocards img{
+    width: 6vw;
+    position: relative;
+  
+}
+
+div.opcionesdecompra{
+    position: relative;
+    top: 10%;
+}
+
+div.opcionesdecompra form label{
+    font-weight: bold;
+    font-size: 2.2vw;
+}
+
+div.opcionesdecompra form.formdecomprar div.divcolors select.colord{
+    width: 12vw;
+    font-size: 2vw;
+}
+
+div.opcionesdecompra form.formdecomprar div.divtalles select.tallesd{
+    width: 6vw;
+    font-size: 2.2vw;
+}
+
+div.opcionesdecompra form.formdecomprar div.seleccioncuant{
+    position: relative;
+    top: 15%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+div.opcionesdecompra form div.seleccioncuant input{
+    position: relative;
+    left: 4%;
+    width: 8vw;
+}
+
+div.opcionesdecompra form div.buttonagregar{
+    position: relative;
+    display: flex;
+    width: 50vw;
+    right: 51vw;
+    top: 6vw;
+    height: 10vw;
+    
+
+
+
+}
+
+div.opcionesdecompra form div.buttonagregar button{
+    width: 50vw;
+    background-color: #ff6a2f;
+    border-color: #ff6a2f;
+    box-shadow: 2vw 2vw 2vw black solid;
+}
+
+div.opcionesdecompra form div.buttonagregar button p{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4vw ;
+    
+}
+
+div.description{
+    position: relative;
+    display: flex;
+    top: 30vw;
+    left: 5vw;
+    flex-direction: column;
+}
+
+div.description h1{
+    font-size: 4vw;
+}
+
+div.description p{
+    font-size: 2vw;
+}
+
+div.commentbox{
+    position: relative;
+    top: 40vw;
+    display: flex;
+    
+}
+
+div.commentbox form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 9vw;
+
+}
+
+div.commentbox form label{
+    font-size: 4vw;
+    position: relative;
+    right: 4vw;
+}
+
+div.commentbox form textarea{
+    height: 7vw;
+    border-color: #000;
+    font-size: 2vw;
+}
+
+@media (min-width:769px){
+    div.opcionesdecompra form div.buttonagregar{
+        position: relative;
+        display: flex;
+        width: 50vw;
+        right: 4vw;
+        top: 1vw;
+        height: 6vw;
+        
+    
+    }
+
+    div.opcionesdecompra form div.buttonagregar button p{
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 3vw ;
+        
+    }
+
+    div.opcionesdecompra form div.buttonagregar button{
+        width: 45vw;
+        background-color: #ff6a2f;
+        border-color: #ff6a2f;
+        box-shadow: 2vw 2vw 2vw black solid;
+    }
+    
+    main div.productandprice section.productimg{
+        width: 40vw;
+        height: 50vw;
+        position: relative;
+        display: flex;
+       
+    
+    }
+    
+   
+
+
+
+}
