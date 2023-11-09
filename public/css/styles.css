@@ -388,6 +388,7 @@ div.description{
     top: 30vw;
     left: 5vw;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 div.description h1{
@@ -417,6 +418,8 @@ div.commentbox form label{
     font-size: 4vw;
     position: relative;
     right: 4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 div.commentbox form textarea{
