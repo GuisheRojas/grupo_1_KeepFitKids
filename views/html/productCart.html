@@ -22,8 +22,66 @@
             <a href="/login" id="circle-user"><p>Iniciar sesion</p><i class="fa-solid fa-circle-user"></i></a>      
         </div>
     </header>
-    <main>
+    <main class="productcart">
+        <div class="detalle-botones">
+            <h2> Mi Carrito</h2>
+                <div class="detalle-compra">
+                    <div class="item-prod"> 
+                        <div class="item">
+                            <img width="360px" src="/static/img/nenas/top_verde.jpg" alt="Top Verde">
+                            <div class="main-prod">
+                                <p class="detalle">Detalle: Top niña </p>
+                                <p class="codigo">Codigo de Art.: 00A45 </p>    
+                                <p class="talle">Talles: 1-3 </p>
+                                <p class="color">Color: verde - rojo- negro</p>
+                            </div>
+                            <div class="precio-unitario">
+                                <p class="precio-uni">Precio Unitario: $ 6.500,00</p>
+                            </div>
+                            <div class="cantidad">
+                                <p class="cant-art">Cantidad: </p>
+                            </div>
+                            <div class="total-prod">
+                                <p class="total">Precio Total: $ 6.500 </p>
+                            </div>
+                            <div class="eliminar-prod">
+                                <input type="reset" value="Eliminar">
+                            </div>                      
+                        </div>
+                    </div>
+                </div>
+            <div class="botones">
+                    <div>
+                    <!--<p class="mas-pedidos"> Ver mas productos </p> -->   
+                        <input type="submit" class="submit" value="MAS PRODUCTOS">
+                        <input type="submit" class="submit" value="VACIAR CARRITO">
+                    <!--<p class="vaciar-carrito">Vaciar Carrito de Compras</p> -->    
+                    </div>
+            </div>
+        </div>
+        <div class="resumen-carrito">
+            <h2> subtotal </h2>
+                <div class="res-subtotal">
+                    <h3 class="subtotal">Subtotal:</p>
+                    <p class="descuento"> Descuento: </p>
+                    <p class="costo-envio"> Costo de envio:</p>
+                </div>
+                <div class="costo-total">
+                    <p class="total"> Total:  </p>
+                    <p class="descuento"> Descuento </p>
+                <div class="codigo-desc">
+                <!-- <p class="cod-descuento">CODIGO DE DESCUENTO:?</p> -->    
+                    <input type="text" id="codigo-descuento" class="input" >
+                    <label for="codigo-descuento" class="label"> </label>
+                </div>
 
+                <input type="submit" class="submit" value="COMPRAR">
+                </article>
+            </div>
+
+
+        </div>
+        
     </main>
     <footer>
         <div class="cont-info">     

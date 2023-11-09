@@ -388,6 +388,7 @@ div.description{
     top: 30vw;
     left: 5vw;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 div.description h1{
@@ -417,6 +418,8 @@ div.commentbox form label{
     font-size: 4vw;
     position: relative;
     right: 4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 div.commentbox form textarea{
@@ -455,6 +458,11 @@ div.commentbox form textarea{
         position: relative;
         display: flex;
     }
+}
+
+footer.footerdetail{
+    position: relative;
+    top: 50vw;
 }
 
 
@@ -853,3 +861,102 @@ div.commentbox form textarea{
             margin: 3px;
         }
     }     
+
+    
+    /* silvina*/
+main.productcart{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start ;
+}
+main.productcart div.detalle-botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start ;
+}
+
+main.productcart div.detalle-compra{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start ;
+}
+div.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+}
+div.resumen-carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start ;
+}
+
+main.productcart h2{
+    display: flex;
+    align-items: flex-start;
+
+}
+div.item-prod{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+div.main-prod{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+div.detalle-compra{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+div.item-pro{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+article.item{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+article.item.img{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+/*    flex-direction: column;*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+div.botones{
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
