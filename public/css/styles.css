@@ -45,54 +45,23 @@ header{
 }
 
 a#logo{
-    width: 30%;
+    width: 50%;
 }
 
 .logo{
     width: 100%;
 }
 
-header .form input{
-    width: 25%;
+#search{
+    display: none;
 }
 
-header .form{
-    display: flex;
-    align-items: center;
-    padding: 15px 2px;
-    position: relative;
-}
-
-.form .icon, #search{
-    align-self: center;
-    border-radius: 5px;
-    border-color: var(--blanco);
-    height: 30px;
-}
-
-header .form input[type="search"]{
+header .icon{
     border: none;
-    background-color: var(--blanco);
-    outline: none;
-    color: var(--gris-oscuro);
-    padding-left: 10px;
-    width: 160px;
+    background-color: var(--verde-claro);
 }
 
-header .form .icon{
-    background-color: var(--blanco);
-    border: 1px solid var(--blanco);
-    color: var(--gris-oscuro);
-    width: 18px;
-    position: absolute;
-    left: 140px;
-}
-
-header .form .icon i{
-    font-size: 14px;
-}
-
-#product-cart, #circle-user{
+#product-cart, #circle-user, header .icon{
     color: var(--gris-oscuro);
     font-size: 21px;
     margin: 2px;
@@ -149,12 +118,12 @@ img{
 #titulares{
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin: 10px;
     width: 100%;
 }
 
 .nuevos-ingresos .titulares{
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .nuevos-ingresos .article{
@@ -164,6 +133,11 @@ img{
     padding: 15px;
     background-color: var(--gris-claro);
     margin: 5px;
+}
+
+.article a{
+    color: var(--negro);
+    text-decoration: none;
 }
 
 .produt_img{
@@ -188,13 +162,12 @@ footer{
     background-color: var(--verde-keep);
 }
 
-.cont-info{
+.cont-info1, .cont-info2{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
     width: 100%;
 }
 
@@ -211,16 +184,17 @@ footer .description{
 
 #truck, #credit-card{
     color: var(--blanco);
-    font-size: 2em;
-    margin: 10px;
+    font-size: 1.5em;
+    margin: 5px;
 }
 
-footer .cont-info, footer .conteiner{
-    margin: 10px;
+footer .cont-info1, footer .cont-info2,
+ footer .conteiner{
+    margin: 5px;
 }
 
 footer .conteiner .titulares{
-    margin: 10px;
+    margin: 5px;
     margin-top: 15px;
 }
 
@@ -234,20 +208,110 @@ footer .conteiner .titulares{
 
 #ig, #fb, #tw, #mail, #wpp{
     color: var(--blanco);
-    font-size: 2em;
-    padding: 2px;
+    font-size: 1.5em;
+    padding: 1px;
     margin-bottom: 10px;
 }
 
 
-/*CELULARES*/
+/*TABLETS*/
 @media (min-width: 361px) {
+    /*HEADER*/
+    a#logo{
+        width: 20%;
+    }
+
+    header .form input{
+        width: 25%;
+    }
     
+    header .form{
+        display: flex;
+        align-items: center;
+        padding: 15px 2px;
+        position: relative;
+    }
+    
+    .form .icon, #search{
+        display: block;
+        align-self: center;
+        border-radius: 5px;
+        border-color: var(--blanco);
+        height: 30px;
+    }
+    
+    header .form input[type="search"]{
+        border: none;
+        background-color: var(--blanco);
+        outline: none;
+        color: var(--gris-oscuro);
+        padding-left: 10px;
+        width: 160px;
+    }
+    
+    header .form .icon{
+        background-color: var(--blanco);
+        border: 1px solid var(--blanco);
+        color: var(--gris-oscuro);
+        width: 18px;
+        position: absolute;
+        left: 140px;
+    }
+    
+    header .form .icon i{
+        font-size: 14px;
+    }
+
+    /*MAIN*/
+    .eleccion{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        margin-top: 50px;
+        margin-bottom: 50px; 
+    }
+    
+    .niños, .niñas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 50%;
+    }
+    
+    .niños img{
+        width: 100%;
+    }
+    
+    .niñas img{
+        width: 100%;
+    }
+
+    /*Articles*/
+    .nuevos-ingresos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nuevos-ingresos .article{
+        width: 45%;
+    }
+
+    .article .price{
+        font-size: 16px;
+    }
+    
+    .description{
+        font-size: 14px;
+    }   
 }
 
 
-/*TABLETS*/
-@media (min-width: 769px) {
+/*COMPUTADORAS*/
+@media (min-width: 769px){
     /*HEADER*/
     header{
         max-height: 180px;
@@ -286,7 +350,7 @@ footer .conteiner .titulares{
     /*product-cart y circle-user*/
     #product-cart p, #circle-user p{
         display: block;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     #product-cart, #circle-user{
@@ -338,7 +402,7 @@ footer .conteiner .titulares{
     }
 
     .nuevos-ingresos .article{
-        width: 45%;
+        width: 25%;
     }
 
     .article .price{
@@ -347,115 +411,8 @@ footer .conteiner .titulares{
     
     .description{
         font-size: 14px;
-    }   
-    
-}
-
-
-    /*COMPUTADORAS*/
-    @media (min-width: 1023px){
-    /*HEADER*/
-    header{
-        max-height: 220px;
     }
 
-    /*logo*/
-    a#logo{
-        width: 25%;
-    }
-
-    .logo{
-        max-width: 225px;
-    }
-
-    /*form*/
-    .form .icon, #search{
-        height: 45px;
-    }
-    
-    header .form input[type="search"]{
-        font-size: 18px;
-        padding-left: 15px;
-        width: 300px;
-    }
-    
-    header .form .icon{
-        border-left: var(--gris-oscuro);
-        width: 25px;
-        left: 270px;
-    }
-
-    header .form .icon i{
-        font-size: 24px;
-    }
-
-    /*product-cart y circle-user*/
-    #product-cart p, #circle-user p{
-        display: block;
-        font-size: 20px;
-    }
-
-    #product-cart, #circle-user{
-        display: flex;
-        flex-wrap: wrap; 
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: baseline;
-        text-decoration: none;
-    }
-
-    #product-cart i, #circle-user i{
-        font-size: 20px;
-    }
-
-
-    /*MAIN*/
-    .eleccion{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-top: 100px;
-        margin-bottom: 100px; 
-    }
-    
-    .niños, .niñas{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 50%;
-    }
-    
-    .niños img{
-        width: 100%;
-    }
-    
-    .niñas img{
-        width: 100%;
-    }
-
-    /*Articles*/
-    .nuevos-ingresos{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .nuevos-ingresos .article{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        width: 25%;
-    }
-    .article .price{
-        font-size: 18px;
-    }
-    
-    .description{
-        font-size: 16px;
-    }
 
     /*FOOTER*/
     footer{
@@ -463,17 +420,25 @@ footer .conteiner .titulares{
         margin-top: 20px;
     }
 
-    footer .cont-info, footer .conteiner{
+    footer .cont-info1, footer .cont-info2,
+     footer .conteiner{
         margin: 0px;
     }
 
-    .cont-info{
+    .cont-info1{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        padding: 5px;
-        width: 33%;
+        width: 25%;
+    }
+
+    .cont-info2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 35%;
     }
 
     .info{
@@ -485,26 +450,162 @@ footer .conteiner .titulares{
     }
 
     .info .description{
-        font-size: 12px;
+        font-size: 10px;
     }
     
     #truck, #credit-card{
-        font-size: 2.5em;
-        margin: 3px;
+        font-size: 1.8em;
+        margin: 1px;
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+    
+    @media (min-width:1023px){
+        /*HEADER*/
+        header{
+            max-height: 220px;
+        }
+
+        /*logo*/
+        a#logo{
+            width: 25%;
+        }
+
+        .logo{
+            max-width: 225px;
+        }
+
+        /*form*/
+        .form .icon, #search{
+            height: 45px;
+        }
+        
+        header .form input[type="search"]{
+            font-size: 18px;
+            padding-left: 15px;
+            width: 300px;
+        }
+        
+        header .form .icon{
+            border-left: var(--gris-oscuro);
+            width: 25px;
+            left: 270px;
+        }
+
+        header .form .icon i{
+            font-size: 24px;
+        }
+
+        /*product-cart y circle-user*/
+        #product-cart p, #circle-user p{
+            display: block;
+            font-size: 20px;
+        }
+
+        #product-cart, #circle-user{
+            display: flex;
+            flex-wrap: wrap; 
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: baseline;
+            text-decoration: none;
+        }
+
+        #product-cart i, #circle-user i{
+            font-size: 20px;
+        }
+
+
+        /*MAIN*/
+        .eleccion{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 100px;
+            margin-bottom: 100px; 
+        }
+        
+        .niños, .niñas{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 50%;
+        }
+        
+        .niños img{
+            width: 100%;
+        }
+        
+        .niñas img{
+            width: 100%;
+        }
+
+        /*Articles*/
+        .nuevos-ingresos{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .nuevos-ingresos .article{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 25%;
+        }
+        .article .price{
+            font-size: 18px;
+        }
+        
+        .description{
+            font-size: 16px;
+        }
+
+        /*FOOTER*/
+        footer{
+            flex-direction: row;
+            margin-top: 20px;
+        }
+
+        footer .cont-info1, footer .cont-info2, footer .conteiner{
+            margin: 0px;
+        }
+
+        .cont-info1{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 5px;
+            width: 25%;
+        }
+
+        .cont-info2{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 5px;
+            width: 33%;
+        }
+
+        .info{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .info .description{
+            font-size: 12px;
+        }
+        
+        #truck, #credit-card{
+            font-size: 2.5em;
+            margin: 3px;
+        }
+    }     
