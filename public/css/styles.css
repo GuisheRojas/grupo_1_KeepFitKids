@@ -20,33 +20,39 @@
 /*TIPOGRAFIAS*/
 body{
     font-size: 12px;
-    font-family: 'Comic Neue',  cursive;
+    font-family: 'Comic Neue', cursive;
 }
 
 .titulares{
+    font-size: 18px;
     font-family: 'Coming Soon', cursive;
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
 }
 
 
 /*HEADER*/
 header{
     background-color: var(--verde-claro);
+    max-height: 120px;
 }
 
 .header{
     display: flex;
-    flex-wrap: wrap;
-    padding: 5%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.logo,
-header .form input{
-    width: 50%;
+a#logo{
+    width: 30%;
 }
 
 .logo{
-    padding: 10px;
+    width: 100%;
+}
+
+header .form input{
+    width: 25%;
 }
 
 header .form{
@@ -57,7 +63,6 @@ header .form{
 }
 
 .form .icon, #search{
-    justify-content: center;
     align-self: center;
     border-radius: 5px;
     border-color: var(--blanco);
@@ -70,7 +75,7 @@ header .form input[type="search"]{
     outline: none;
     color: var(--gris-oscuro);
     padding-left: 10px;
-    width: 150px;
+    width: 160px;
 }
 
 header .form .icon{
@@ -78,8 +83,8 @@ header .form .icon{
     border: 1px solid var(--blanco);
     color: var(--gris-oscuro);
     width: 18px;
-    padding-top: 5px;
     position: absolute;
+<<<<<<< HEAD
     left: 145px;
     justify-self: flex-end;
 }
@@ -146,4 +151,257 @@ header .form .icon{
 #product-cart, #circle-user{
     color: var(--negro);
     font-size: 20px;
+=======
+    left: 140px;
+}
+
+header .form .icon i{
+    font-size: 14px;
+}
+
+#product-cart, #circle-user{
+    color: var(--gris-oscuro);
+    font-size: 21px;
+    margin: 2px;
+}
+
+#product-cart p, #circle-user p{
+    display: none;
+}
+
+/*banner*/
+section{
+    display: flex;
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+
+/*MAIN*/
+.eleccion{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px; 
+}
+
+.niños, .niñas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    padding:20px;
+}
+
+.niñas .titulares, 
+.niños .titulares{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 350%;
+    color: var(--gris-oscuro);
+    justify-content: center;
+}
+
+#niños, #niñas{
+    text-decoration: none;
+}
+
+.niños img{
+    width: 100%
+}
+
+.niñas img{
+    width: 100%;
+}
+
+
+
+/*CELULARES*/
+@media (min-width: 361px) {
+    
+}
+
+
+/*TABLETS*/
+@media (min-width: 769px) {
+    /*HEADER*/
+    header{
+        max-height: 180px;
+    }
+
+    /*logo*/
+    a#logo{
+        width: 25%;
+    }
+
+    .logo{
+        max-width: 175px;
+    }
+
+    /*form*/
+    .form .icon, #search{
+        height: 40px;
+    }
+    
+    header .form input[type="search"]{
+        font-size: 14px;
+        padding-left: 15px;
+        width: 220px;
+    }
+    
+    header .form .icon{
+        border-left: var(--gris-oscuro);
+        width: 20px;
+        left: 200px;
+    }
+
+    header .form .icon i{
+        font-size: 20px;
+    }
+
+    /*product-cart y circle-user*/
+    #product-cart p, #circle-user p{
+        display: block;
+        font-size: 18px;
+    }
+
+    #product-cart, #circle-user{
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        text-decoration: none;
+    }
+
+    #product-cart i, #circle-user i{
+        font-size: 18px;
+    }
+
+
+    /*MAIN*/
+    .eleccion{
+        margin-top: 70px;
+        margin-bottom: 70px; 
+    }
+
+    .niños, .niñas{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 35%;
+    }
+
+    .niñas .titulares, 
+    .niños .titulares{
+        font-size: 22px;
+    }
+}
+
+
+    /*COMPUTADORAS*/
+    @media (min-width: 1023px){
+    /*HEADER*/
+    header{
+        max-height: 220px;
+    }
+
+        /*logo*/
+    a#logo{
+        width: 25%;
+    }
+
+    .logo{
+        max-width: 225px;
+    }
+
+    /*form*/
+    .form .icon, #search{
+        height: 45px;
+    }
+    
+    header .form input[type="search"]{
+        font-size: 18px;
+        padding-left: 15px;
+        width: 300px;
+    }
+    
+    header .form .icon{
+        border-left: var(--gris-oscuro);
+        width: 25px;
+        left: 270px;
+    }
+
+    header .form .icon i{
+        font-size: 24px;
+    }
+
+    /*product-cart y circle-user*/
+    #product-cart p, #circle-user p{
+        display: block;
+        font-size: 20px;
+    }
+
+    #product-cart, #circle-user{
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        text-decoration: none;
+    }
+
+    #product-cart i, #circle-user i{
+        font-size: 20px;
+    }
+
+
+    /*MAIN*/
+    .eleccion{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 100px;
+        margin-bottom: 150px; 
+    }
+    
+    .niños, .niñas{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        width: 35%;
+    }
+    
+    .niñas .titulares, 
+    .niños .titulares{
+        position: absolute;
+        color: var(--gris-oscuro);
+        left: 5px;
+        font-size: 40px;
+    }
+    
+    #niños, #niñas{
+        text-decoration: none;
+    }
+    
+    .niños img{
+        width: 100%
+    }
+    
+    .niñas img{
+        width: 100%;
+    }
+>>>>>>> 79220babe82fd6c6fe2c075725961b1c64fc2231
 }
