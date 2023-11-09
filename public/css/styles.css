@@ -5,7 +5,7 @@
     --gris-claro: #ebebeb;
     --blanco: #FFF;
     --negro: #000;
-    --verde-keep: #51b59f;
+    --verde-keep: #4fb59f;
     --verde-fit: #6be63a;
     --naranja: #ff6a2f;
 }
@@ -24,9 +24,10 @@ body{
 }
 
 .titulares{
-    font-size: 18px;
     font-family: 'Coming Soon', cursive;
-    /*font-family: 'Roboto', sans-serif;*/
+    color: var(--blanco);
+    background-color: var(--verde-keep);
+    font-size: 14px;
 }
 
 
@@ -44,40 +45,23 @@ header{
 }
 
 a#logo{
-    width: 30%;
+    width: 50%;
 }
 
 .logo{
     width: 100%;
 }
 
-header .form input{
-    width: 25%;
+#search{
+    display: none;
 }
 
-header .form{
-    display: flex;
-    align-items: center;
-    padding: 15px 2px;
-    position: relative;
-}
-
-.form .icon, #search{
-    align-self: center;
-    border-radius: 5px;
-    border-color: var(--blanco);
-    height: 30px;
-}
-
-header .form input[type="search"]{
+header .icon{
     border: none;
-    background-color: var(--blanco);
-    outline: none;
-    color: var(--gris-oscuro);
-    padding-left: 10px;
-    width: 160px;
+    background-color: var(--verde-claro);
 }
 
+<<<<<<< HEAD
 header .form .icon{
     background-color: var(--blanco);
     border: 1px solid var(--blanco);
@@ -150,6 +134,12 @@ header .form .icon{
 #product-cart, #circle-user{
     color: var(--negro);
     font-size: 20px;
+=======
+#product-cart, #circle-user, header .icon{
+    color: var(--gris-oscuro);
+    font-size: 21px;
+    margin: 2px;
+>>>>>>> 09aa8c7e3e782180dfc27c40f3adba3a063e73f7
 }
 
 /* Estilizacion del detail product*/
@@ -157,6 +147,7 @@ header .form .icon{
 main div.productandprice {
 
     display: flex;
+<<<<<<< HEAD
     position: relative;
 
     flex-direction: row;
@@ -168,10 +159,57 @@ main div.productandprice section.productimg{
     position: relative;
     display: flex;
    
+=======
+    width: 100%;
+}
+
+img{
+    width: 100%;
 }
 
 
+/*MAIN*/
+.eleccion{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-top: 50px;
+    margin-bottom: 50px; 
+}
 
+.niños, .niñas{
+    width: 100%;
+}
+
+.niños img{
+    width: 100%;
+}
+
+.niñas img{
+    width: 100%;
+>>>>>>> 09aa8c7e3e782180dfc27c40f3adba3a063e73f7
+}
+
+/*Nuevos Ingresos*/
+.nuevos-ingresos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    width: 100%;
+}
+
+#titulares{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    width: 100%;
+}
+
+<<<<<<< HEAD
 main div.productandprice section.productimg img.prod{
 
     position: relative;
@@ -181,15 +219,211 @@ main div.productandprice section.productimg img.prod{
     border: 1vw solid var(--verde-claro) ;
 
     
+=======
+.nuevos-ingresos .titulares{
+    font-size: 16px;
+}
+
+.nuevos-ingresos .article{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 15px;
+    background-color: var(--gris-claro);
+    margin: 5px;
+}
+
+.article a{
+    color: var(--negro);
+    text-decoration: none;
+}
+
+.produt_img{
+    width: 100%;
+}
+
+.article .price{
+    font-size: 14px;
+}
+
+.description{
+    font-size: 12px;
+}
+
+/*FOOTER*/
+footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--verde-keep);
+}
+
+.cont-info1, .cont-info2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+footer .description{
+    color:var(--blanco);
+}
+
+#truck, #credit-card{
+    color: var(--blanco);
+    font-size: 1.5em;
+    margin: 5px;
+}
+
+footer .cont-info1, footer .cont-info2,
+ footer .conteiner{
+    margin: 5px;
+}
+
+footer .conteiner .titulares{
+    margin: 5px;
+    margin-top: 15px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#ig, #fb, #tw, #mail, #wpp{
+    color: var(--blanco);
+    font-size: 1.5em;
+    padding: 1px;
+    margin-bottom: 10px;
+>>>>>>> 09aa8c7e3e782180dfc27c40f3adba3a063e73f7
 }
 
 main div.productandprice section.priceandinfo{
 
+<<<<<<< HEAD
     width: 40vw;
     position: relative;
     left: 17vw;
     top: 9.5vw;
 }
+=======
+/*TABLETS*/
+@media (min-width: 361px) {
+    /*HEADER*/
+    a#logo{
+        width: 20%;
+    }
+
+    header .form input{
+        width: 25%;
+    }
+    
+    header .form{
+        display: flex;
+        align-items: center;
+        padding: 15px 2px;
+        position: relative;
+    }
+    
+    .form .icon, #search{
+        display: block;
+        align-self: center;
+        border-radius: 5px;
+        border-color: var(--blanco);
+        height: 30px;
+    }
+    
+    header .form input[type="search"]{
+        border: none;
+        background-color: var(--blanco);
+        outline: none;
+        color: var(--gris-oscuro);
+        padding-left: 10px;
+        width: 160px;
+    }
+    
+    header .form .icon{
+        background-color: var(--blanco);
+        border: 1px solid var(--blanco);
+        color: var(--gris-oscuro);
+        width: 18px;
+        position: absolute;
+        left: 140px;
+    }
+    
+    header .form .icon i{
+        font-size: 14px;
+    }
+
+    /*MAIN*/
+    .eleccion{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        margin-top: 50px;
+        margin-bottom: 50px; 
+    }
+    
+    .niños, .niñas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 50%;
+    }
+    
+    .niños img{
+        width: 100%;
+    }
+    
+    .niñas img{
+        width: 100%;
+    }
+
+    /*Articles*/
+    .nuevos-ingresos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nuevos-ingresos .article{
+        width: 45%;
+    }
+
+    .article .price{
+        font-size: 16px;
+    }
+    
+    .description{
+        font-size: 14px;
+    }   
+}
+
+
+/*COMPUTADORAS*/
+@media (min-width: 769px){
+    /*HEADER*/
+    header{
+        max-height: 180px;
+    }
+>>>>>>> 09aa8c7e3e782180dfc27c40f3adba3a063e73f7
 
 main div.productandprice section.priceandinfo h1.nameofproduct{
     position: relative;
@@ -204,6 +438,7 @@ main div.productandprice section.priceandinfo h1.nameofproduct{
 
 main div.productandprice section.priceandinfo h2.priceofproduct{
 
+<<<<<<< HEAD
     position: relative;
     display: flex;
     left: 5%;
@@ -406,3 +641,366 @@ div.commentbox form textarea{
 
 
 }
+=======
+    /*product-cart y circle-user*/
+    #product-cart p, #circle-user p{
+        display: block;
+        font-size: 15px;
+    }
+
+    #product-cart, #circle-user{
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        text-decoration: none;
+    }
+
+    #product-cart i, #circle-user i{
+        font-size: 18px;
+    }
+
+
+    /*MAIN*/
+    .eleccion{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        margin-top: 50px;
+        margin-bottom: 50px; 
+    }
+    
+    .niños, .niñas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 50%;
+    }
+    
+    .niños img{
+        width: 100%;
+    }
+    
+    .niñas img{
+        width: 100%;
+    }
+
+    /*Articles*/
+    .nuevos-ingresos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nuevos-ingresos .article{
+        width: 25%;
+    }
+
+    .article .price{
+        font-size: 16px;
+    }
+    
+    .description{
+        font-size: 14px;
+    }
+
+
+    /*FOOTER*/
+    footer{
+        flex-direction: row;
+        margin-top: 20px;
+    }
+
+    footer .cont-info1, footer .cont-info2,
+     footer .conteiner{
+        margin: 0px;
+    }
+
+    .cont-info1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 25%;
+    }
+
+    .cont-info2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 35%;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .info .description{
+        font-size: 10px;
+    }
+    
+    #truck, #credit-card{
+        font-size: 1.8em;
+        margin: 1px;
+    }
+}
+
+    
+    @media (min-width:1023px){
+        /*HEADER*/
+        header{
+            max-height: 220px;
+        }
+
+        /*logo*/
+        a#logo{
+            width: 25%;
+        }
+
+        .logo{
+            max-width: 225px;
+        }
+
+        /*form*/
+        .form .icon, #search{
+            height: 45px;
+        }
+        
+        header .form input[type="search"]{
+            font-size: 18px;
+            padding-left: 15px;
+            width: 300px;
+        }
+        
+        header .form .icon{
+            border-left: var(--gris-oscuro);
+            width: 25px;
+            left: 270px;
+        }
+
+        header .form .icon i{
+            font-size: 24px;
+        }
+
+        /*product-cart y circle-user*/
+        #product-cart p, #circle-user p{
+            display: block;
+            font-size: 20px;
+        }
+
+        #product-cart, #circle-user{
+            display: flex;
+            flex-wrap: wrap; 
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: baseline;
+            text-decoration: none;
+        }
+
+        #product-cart i, #circle-user i{
+            font-size: 20px;
+        }
+
+
+        /*MAIN*/
+        .eleccion{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 100px;
+            margin-bottom: 100px; 
+        }
+        
+        .niños, .niñas{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 50%;
+        }
+        
+        .niños img{
+            width: 100%;
+        }
+        
+        .niñas img{
+            width: 100%;
+        }
+
+        /*Articles*/
+        .nuevos-ingresos{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .nuevos-ingresos .article{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 25%;
+        }
+        .article .price{
+            font-size: 18px;
+        }
+        
+        .description{
+            font-size: 16px;
+        }
+
+        /*FOOTER*/
+        footer{
+            flex-direction: row;
+            margin-top: 20px;
+        }
+
+        footer .cont-info1, footer .cont-info2, footer .conteiner{
+            margin: 0px;
+        }
+
+        .cont-info1{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 5px;
+            width: 25%;
+        }
+
+        .cont-info2{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 5px;
+            width: 33%;
+        }
+
+        .info{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .info .description{
+            font-size: 12px;
+        }
+        
+        #truck, #credit-card{
+            font-size: 2.5em;
+            margin: 3px;
+        }
+    }  
+    
+    /* silvina*/
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start ;
+}
+main div.detalle-botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start ;
+}
+
+main div.detalle-compra{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start ;
+}
+div.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+}
+div.resumen-carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start ;
+}
+
+main h2{
+    display: flex;
+    align-items: flex-start;
+
+}
+div.item-prod{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+div.main-prod{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+div.detalle-compra{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+div.item-pro{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+article.item{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+article.item.img{
+    display: flex;
+    width: 100%;
+    margin: 20px;
+/*    flex-direction: column;*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+div.botones{
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+>>>>>>> 09aa8c7e3e782180dfc27c40f3adba3a063e73f7
