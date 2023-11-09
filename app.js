@@ -20,3 +20,4 @@ app.get('/productCart', (req, res)=>res.sendFile(__dirname + "/views/html/produc
 
 app.get('/register', (req, res)=>res.sendFile(__dirname + "/views/html/register.html"))
 
+app.get('/detailproduct', (req, res)=>res.sendFile(__dirname + "/views/html/detailproduct.html"))
