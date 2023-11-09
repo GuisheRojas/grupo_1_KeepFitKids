@@ -10,21 +10,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
+
 <body>
     <header>
         <div class="header">
-            <img class="logo" src="static/img/logo_KEEP_FIT.png" alt="Logo de Keep Fit Kids">
+            <a href="/" id="logo"><img class="logo" src="static/img/logo.png" alt="Logo de Keep Fit Kids"></a>
             <form class="form" action="/" method="GET">
-                <input type="search" id="search" name="search" placeholder="Buscar productos y marcas"/>
+                <input type="search" id="search" name="search" placeholder="Buscar productos"/>
                 <button type="submit" class="icon" name="lupa"><i class="fa fa-search"></i></button>
             </form>
+            <a href="/productCart" id="product-cart"><p>Mis compras</p><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/login" id="circle-user"><p>Iniciar sesion</p><i class="fa-solid fa-circle-user"></i></a>      
         </div>
-
     </header>
+
+    <section class="banner">
+        <img src="static/img/banner.png" alt="Banner">
+    </section>
+
     <main>
+        <div class="eleccion">
+            <div class="niños">
+                <a href="/niños" id="niños"><p class="titulares">NIÑOS</p><img src="static/img/nenes/nenes.jpg" alt=""></a>
+            </div>
+            <div class="niñas">
+                <a href="/niñas" id="niñas"><p class="titulares">NIÑAS</p><img src="static/img/nenas/nenas.jpg" alt=""></a>
+            </div>
+        </div>
+        
         
     </main>
     <footer>
+
 
     </footer>
     
