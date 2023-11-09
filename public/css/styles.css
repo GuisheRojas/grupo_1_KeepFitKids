@@ -5,7 +5,7 @@
     --gris-claro: #ebebeb;
     --blanco: #FFF;
     --negro: #000;
-    --verde-keep: #51b59f;
+    --verde-keep: #4fb59f;
     --verde-fit: #6be63a;
     --naranja: #ff6a2f;
 }
@@ -24,9 +24,10 @@ body{
 }
 
 .titulares{
-    font-size: 18px;
     font-family: 'Coming Soon', cursive;
-    /*font-family: 'Roboto', sans-serif;*/
+    color: var(--blanco);
+    background-color: var(--verde-keep);
+    font-size: 14px;
 }
 
 
@@ -111,48 +112,132 @@ img{
     width: 100%;
 }
 
+
 /*MAIN*/
 .eleccion{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
+    align-items: baseline;
     margin-top: 50px;
     margin-bottom: 50px; 
 }
 
 .niños, .niñas{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: center;
     width: 100%;
-    padding:20px;
-}
-
-.niñas .titulares, 
-.niños .titulares{
-    display: flex;
-    align-items: center;
-    position: absolute;
-    font-size: 350%;
-    color: var(--gris-oscuro);
-    justify-content: center;
-}
-
-#niños, #niñas{
-    text-decoration: none;
 }
 
 .niños img{
-    width: 100%
+    width: 100%;
 }
 
 .niñas img{
     width: 100%;
 }
 
+/*Nuevos Ingresos*/
+.nuevos-ingresos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    width: 100%;
+}
+
+#titulares{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    width: 100%;
+}
+
+.nuevos-ingresos .titulares{
+    font-size: 24px;
+}
+
+.nuevos-ingresos .article{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 15px;
+    background-color: var(--gris-claro);
+    margin: 5px;
+}
+
+.produt_img{
+    width: 100%;
+}
+
+.article .price{
+    font-size: 14px;
+}
+
+.description{
+    font-size: 12px;
+}
+
+/*FOOTER*/
+footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--verde-keep);
+}
+
+.cont-info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+footer .description{
+    color:var(--blanco);
+}
+
+#truck, #credit-card{
+    color: var(--blanco);
+    font-size: 2em;
+    margin: 10px;
+}
+
+footer .cont-info, footer .conteiner{
+    margin: 10px;
+}
+
+footer .conteiner .titulares{
+    margin: 10px;
+    margin-top: 15px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#ig, #fb, #tw, #mail, #wpp{
+    color: var(--blanco);
+    font-size: 2em;
+    padding: 2px;
+    margin-bottom: 10px;
+}
 
 
 /*CELULARES*/
@@ -220,22 +305,50 @@ img{
 
     /*MAIN*/
     .eleccion{
-        margin-top: 70px;
-        margin-bottom: 70px; 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        margin-top: 50px;
+        margin-bottom: 50px; 
     }
-
+    
     .niños, .niñas{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        width: 35%;
+        width: 50%;
+    }
+    
+    .niños img{
+        width: 100%;
+    }
+    
+    .niñas img{
+        width: 100%;
     }
 
-    .niñas .titulares, 
-    .niños .titulares{
-        font-size: 22px;
+    /*Articles*/
+    .nuevos-ingresos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
+
+    .nuevos-ingresos .article{
+        width: 45%;
+    }
+
+    .article .price{
+        font-size: 16px;
+    }
+    
+    .description{
+        font-size: 14px;
+    }   
+    
 }
 
 
@@ -246,7 +359,7 @@ img{
         max-height: 220px;
     }
 
-        /*logo*/
+    /*logo*/
     a#logo{
         width: 25%;
     }
@@ -301,38 +414,97 @@ img{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
+        align-items: baseline;
         margin-top: 100px;
-        margin-bottom: 150px; 
+        margin-bottom: 100px; 
     }
     
     .niños, .niñas{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        position: relative;
-        width: 35%;
-    }
-    
-    .niñas .titulares, 
-    .niños .titulares{
-        position: absolute;
-        color: var(--gris-oscuro);
-        left: 5px;
-        font-size: 40px;
-    }
-    
-    #niños, #niñas{
-        text-decoration: none;
+        width: 50%;
     }
     
     .niños img{
-        width: 100%
+        width: 100%;
     }
     
     .niñas img{
         width: 100%;
     }
+
+    /*Articles*/
+    .nuevos-ingresos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nuevos-ingresos .article{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 25%;
+    }
+    .article .price{
+        font-size: 18px;
+    }
+    
+    .description{
+        font-size: 16px;
+    }
+
+    /*FOOTER*/
+    footer{
+        flex-direction: row;
+        margin-top: 20px;
+    }
+
+    footer .cont-info, footer .conteiner{
+        margin: 0px;
+    }
+
+    .cont-info{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 5px;
+        width: 33%;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .info .description{
+        font-size: 12px;
+    }
+    
+    #truck, #credit-card{
+        font-size: 2.5em;
+        margin: 3px;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
