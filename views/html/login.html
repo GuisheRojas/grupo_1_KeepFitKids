@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/login-register.css">
 </head>
 <body>
     <header>
@@ -29,15 +29,19 @@
                 <input type="email" id="email" class="input" placeholder=" ">
                 <label for="email" class="label">Email:</label>
                 <span class="line"></span>
-                <input type="checkbox" id="checkbox">
-                <label for="checkbox" class="label">Recordarme</label>
             </div>
             <div class="group">
                 <input type="text" id="password" class="input" placeholder=" ">
                 <label for="password" class="label">Contraseña: </label>
                 <span class="line"></span>
             </div>
-
+            <div class="group-remember">
+                <input type="checkbox" id="remember" class="remember">
+                <label for="remember" class="remember-text">Recordarme</label>
+            </div>
+            <div class="cuentaregister">
+                <a href="/register"><p>¿No tenés cuenta? ¡Regístrate!</p></a>
+            </div>
             <input type="submit" class="submit" value="Ingresar">
         </div>
     </form>
