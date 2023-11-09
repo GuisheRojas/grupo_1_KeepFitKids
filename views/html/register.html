@@ -8,52 +8,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/login-register.css">
 </head>
 <body>
-    <header>
-        <div class="header">
-            <a href="/" id="logo"><img class="logo" src="static/img/logo.png" alt="Logo de Keep Fit Kids"></a>
-            <form class="form" action="/" method="GET">
-                <input type="search" id="search" name="search" placeholder="Buscar productos"/>
-                <button type="submit" class="icon" name="lupa"><i class="fa fa-search"></i></button>
-            </form>
-            <a href="/productCart" id="product-cart"><p>Mis compras</p><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="/login" id="circle-user"><p>Iniciar sesion</p><i class="fa-solid fa-circle-user"></i></a>      
-        </div>
-    </header>
     
-    <footer>
-        <div class="cont-info">     
-            <div id="icon">
-                <i class="fa-solid fa-truck" id="truck"></i>            
-            </div>       
-            <div class="info">
-                <h4 class="titulares">ENVIO GRATIS</h4>
-                <P class="description">En compras superiores a $20.000</P>
+    <main>
+        <form class="form">
+            <h2 class="titulo">Registra una cuenta</h2>
+            <div class="container">
+                <div class="group">
+                    <input type="email" id="email" class="input" placeholder=" ">
+                    <label for="email" class="label">Email:</label>
+                    <span class="line"></span>
+                </div>
+                <div class="group">
+                    <input type="text" id="password" class="input" placeholder=" ">
+                    <label for="password" class="label">Contraseña: </label>
+                    <span class="line"></span>
+                </div>
+                <input type="submit" class="submit" value="Registrarse">
             </div>
-        </div>
-        <div class="cont-info">
-            <div id="icon">
-                <i class="fa-regular fa-credit-card" id="credit-card"></i>            
-            </div>
-            <div class="info">
-                <h4 class="titulares">PAGÁ EN 3 CUOTAS SIN INTERÉS</h4>
-                <p class="description">y hasta en 6 cuotas sin interés a partir de $40.000</p>
-            </div>
-        </div>
-        <div class="conteiner">
-            <h4 class="titulares">¡Seguinos en nuestras redes sociales!</h4>
-            <div class="icons">
-                <i class="fa-brands fa-instagram" id="ig"></i>
-                <i class="fa-brands fa-facebook" id="fb"></i>
-                <i class="fa-brands fa-twitter" id="tw"></i>
-                <i class="fa-regular fa-envelope" id="mail"></i>
-                <i class="fa-brands fa-whatsapp" id="wpp"></i>
-            </div>
-        </div>
-
-
-    </footer>
+        </form>
+    </main>
+    
 </body>
 </html>
