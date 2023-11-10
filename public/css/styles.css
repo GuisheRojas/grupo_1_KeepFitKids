@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Roboto:wght@300&display=swap');
+
 /*VARIABLES*/
 :root{
     --verde-claro: #e6ffef;
@@ -152,6 +154,107 @@ img{
     font-size: 12px;
 }
 
+
+/*FORM GUILLE*/
+.main-R{
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#29ff22 0.5px, transparent 0.5px), radial-gradient(#29ff22 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+    display: flex;
+    min-height: 100vh;
+}
+.form-Reg{
+    background-color: #e5e5f7;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0, 0, 0, 30%);
+    text-align: center;
+}
+.form-Reg .titulo{
+    font-size: 2rem;
+    margin-bottom: .5em;
+}
+.form-Reg .titulo .container{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+.group{
+    position: relative;
+    --color: #5757577e;
+}
+
+
+.group .input{
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    font-size: 1rem;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid (var--color);
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+.group .input:not(:placeholder-shown){
+    color: grey;
+}
+
+.group .input:focus + .label,
+.group .input:not(:placeholder-shown) + .label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: blue
+}
+
+.group .label{
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform 500ms, color 300ms;
+}
+.form-Reg .submit{
+    background: blue;
+    color: white;
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+}
+.line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: blue;
+    transform: scale(0);
+    transform: left bottom;
+    transition: transform 400ms;
+}
+
+.group .input:focus ~ .line,
+.group .input:not(:placeholder-shown) ~ .line{
+    transform: scale(1);
+}
+div.group-remember{
+    display: inline-block;
+}
+
+
 /*FOOTER*/
 footer{
     display: flex;
@@ -211,6 +314,208 @@ footer .conteiner .titulares{
     font-size: 1.5em;
     padding: 1px;
     margin-bottom: 10px;
+}
+
+/*SANTI*/
+/* Estilizacion del detail product*/
+
+main div.productandprice {
+
+    display: flex;
+    position: relative;
+
+    flex-direction: row;
+
+}
+
+main div.productandprice section.productimg{
+    width: 35vw;
+    position: relative;
+    display: flex;
+   
+}
+
+
+main div.productandprice section.productimg img.prod{
+
+    position: relative;
+    display: flex;
+    width: 150%;
+    top: 10vw;
+    border: 1vw solid var(--verde-claro) ;
+
+    
+}
+
+main div.productandprice section.priceandinfo{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    position: relative;
+    left: 17vw;
+    top: 9.5vw;
+}
+
+main div.productandprice section.priceandinfo h1.nameofproduct{
+    position: relative;
+    display: flex;
+    left: 2%;
+    font-size: 3vw;
+}
+
+main div.productandprice section.priceandinfo h2.priceofproduct{
+    position: relative;
+    display: flex;
+    left: 5%;
+    font-size: 4vw;
+    color: darkgreen;
+    bottom: 2%;
+}
+
+main div.productandprice section.priceandinfo div.logistic{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 2%;
+}
+
+main div.productandprice section.priceandinfo div.logistic i{
+    color: rgb(214, 115, 49);
+    font-size: 4vw;
+    position: relative;
+    left: 5%;
+}
+
+main div.productandprice section.priceandinfo div.logistic h4.freesend{
+    font-size: 2.4vw;
+    position: relative;
+    left: 8%;
+    color: rgb(214, 115, 49);
+}
+
+main div.productandprice section.priceandinfo h2.mediodepago{
+    position: relative;
+    top: 5%;
+    left: 3%;
+    font-size: 2.6vw;
+}
+main div.productandprice section.priceandinfo div.logocards{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    top: 6%;
+    left: 5%;
+}
+
+main div.productandprice section.priceandinfo div.logocards img{
+    width: 6vw;
+    position: relative;
+  
+}
+
+div.opcionesdecompra{
+    position: relative;
+    top: 10%;
+}
+
+div.opcionesdecompra form label{
+    font-weight: bold;
+    font-size: 2.2vw;
+}
+
+div.opcionesdecompra form.formdecomprar div.divcolors select.colord{
+    width: 12vw;
+    font-size: 2vw;
+}
+
+div.opcionesdecompra form.formdecomprar div.divtalles select.tallesd{
+    width: 6vw;
+    font-size: 2.2vw;
+}
+
+div.opcionesdecompra form.formdecomprar div.seleccioncuant{
+    position: relative;
+    top: 15%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+div.opcionesdecompra form div.seleccioncuant input{
+    position: relative;
+    left: 4%;
+    width: 8vw;
+}
+
+div.opcionesdecompra form div.buttonagregar{
+    position: relative;
+    display: flex;
+    width: 50vw;
+    right: 51vw;
+    top: 6vw;
+    height: 10vw;
+}
+
+div.opcionesdecompra form div.buttonagregar button{
+    width: 50vw;
+    background-color: #ff6a2f;
+    border-color: #ff6a2f;
+    box-shadow: 2vw 2vw 2vw black solid;
+}
+
+div.opcionesdecompra form div.buttonagregar button p{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4vw ;
+}
+
+div.description{
+    position: relative;
+    display: flex;
+    top: 30vw;
+    left: 5vw;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.description h1{
+    font-size: 4vw;
+}
+
+div.description p{
+    font-size: 2vw;
+}
+
+div.commentbox{
+    position: relative;
+    top: 40vw;
+    display: flex;
+}
+
+div.commentbox form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 9vw;
+}
+
+div.commentbox form label{
+    font-size: 4vw;
+    position: relative;
+    right: 4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+div.commentbox form textarea{
+    height: 7vw;
+    border-color: #000;
+    font-size: 2vw;
+}
+
+footer.footerdetail{
+    position: relative;
+    top: 50vw;
 }
 
 
@@ -413,6 +718,37 @@ footer .conteiner .titulares{
         font-size: 14px;
     }
 
+    /*PRODUCT-DETAIL*/
+    div.opcionesdecompra form div.buttonagregar{
+        position: relative;
+        display: flex;
+        width: 50vw;
+        right: 4vw;
+        top: 1vw;
+        height: 6vw;
+    }
+
+    div.opcionesdecompra form div.buttonagregar button p{
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 3vw ;
+        
+    }
+
+    div.opcionesdecompra form div.buttonagregar button{
+        width: 45vw;
+        background-color: #ff6a2f;
+        border-color: #ff6a2f;
+        box-shadow: 2vw 2vw 2vw black solid;
+    }
+    
+    main div.productandprice section.productimg{
+        width: 40vw;
+        height: 50vw;
+        position: relative;
+        display: flex;
+    }
+
 
     /*FOOTER*/
     footer{
@@ -608,23 +944,24 @@ footer .conteiner .titulares{
             font-size: 2.5em;
             margin: 3px;
         }
-    }  
+    }     
+
     
     /* silvina*/
-main{
+main.productcart{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start ;
 }
-main div.detalle-botones{
+main.productcart div.detalle-botones{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center ;
 }
 
-main div.detalle-compra{
+main.productcart div.detalle-compra{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -643,7 +980,7 @@ div.resumen-carrito{
     align-items:center ;
 }
 
-main h2{
+main.productcart h2{
     display: flex;
     align-items: flex-start;
 
@@ -706,5 +1043,4 @@ div.botones{
     justify-content: space-around;
     align-items: center;
 }
-
 

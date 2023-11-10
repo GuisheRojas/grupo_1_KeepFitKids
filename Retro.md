@@ -7,8 +7,12 @@
 - Participar y mantener activo el tablero Trello.
 
 ##Hacer menos
-
+- Relajarnos con el tiempo 
+-No pedir ayuda cuando estemos estancados con algo.
 ##Continuar haciendo
+
+- Debemos continuar con la predisposición a la hora de ayudar al compañero y con la comunicaion durante el proceso.
+- Tenemos que seguir con la dedicación grupal al trabajo y seguir esforzandonos.
 
 ##Comenzar a hacer.
 - Debemos organizarnos con mas tiempo, sabemos que tenemos otras ocupaciones pero debemos ser mas organizados y distribuir mejor nuestro tiempo para poder cumplir nuestros proyectos a tiempo y sin tanta presión.
