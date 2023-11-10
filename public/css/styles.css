@@ -620,8 +620,8 @@ main{
 main div.detalle-botones{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start ;
+    justify-content: center;
+    align-items: center ;
 }
 
 main div.detalle-compra{
@@ -633,14 +633,14 @@ main div.detalle-compra{
 div.botones{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: space-around;
+    justify-content: center;
+    align-items: center;
 }
 div.resumen-carrito{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start ;
+    justify-content: center;
+    align-items:center ;
 }
 
 main h2{
