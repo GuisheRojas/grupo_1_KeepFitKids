@@ -7,7 +7,8 @@
 - Participar y mantener activo el tablero Trello.
 
 ##Hacer menos
-
+- Relajarnos con el tiempo 
+-No pedir ayuda cuando estemos estancados con algo.
 ##Continuar haciendo
 
 - Debemos continuar con la predisposición a la hora de ayudar al compañero y con la comunicaion durante el proceso.
