@@ -19,64 +19,24 @@
             </div>
         </div>
         
-        
         <section class="nuevos-ingresos">
             <div id="titulares">
                 <h4 class="titulares">  NUEVOS INGRESOS  </h4>
             </div>
-            <article class="article">
-                <img src="/img/nenes/10.png" alt="Short de baño" class="product_img">
-                <p class="price">$12.500</p>     
-                <h4 class="description">Short de baño</h4>                
-            </article>
-
-            <article class="article">
-                <img src="/img/nenes/13.png" alt="Short de baño" class="product_img">
-                <p class="price">$13.000</p>                                             
-                <h4 class="description">Short de baño</h4>                
-            </article>
-
-            <article class="article">
-                <img src="/img/nenes/11.png" alt="Remera" class="product_img">
-                <p class="price">$14.080</p>     
-                <h4 class="description">Remera</h4>
-            </article>
-
-            <article class="article">
-                <img src="/img/nenes/14.png" alt="Conjunto remera y short" class="product_img">
-                <p class="price">$25.290</p>                                               
-                <h4 class="description">Conjunto remera y short</h4>                
-            </article>
-
-            <article class="article">
-                <a href="/detailproduct">
-                    <img src="/img/nenas/15.png" alt="Top" class="product_img">
-                    <p class="price">$6.500</p>                   
-                    <h4 class="description">Top</h4> 
-                </a>               
-            </article>
-
-            <article class="article">
-                <img src="/img/nenas/16.png" alt="Conjunto top y pollera" class="product_img">
-                <p class="price">$17.350</p>                                         
-                <h4 class="description">Conjunto top y pollera</h4>                
-            </article>
-
-            <article class="article">
-                <img src="/img/nenas/14.png" alt="Malla" class="product_img">
-                <p class="price">$14.780</p>                                                
-                <h4 class="description">Malla</h4>                
-            </article>
-
-            <article class="article">
-                <img src="/img/nenas/17.png" alt="Bikini" class="product_img">
-                <p class="price">$15.320</p>                                               
-                <h4 class="description">Bikini</h4>                
-            </article>
+            <% for(let i=0; i < nuevosIngresos.length; i++){ %>
+                <article class="article">
+                    <a href="/detailproduct">
+                        <img src=<%= nuevosIngresos[i].src %> alt=<%= nuevosIngresos[i].description %> class="product_img">
+                        <p class="price"><%= nuevosIngresos[i].price %></p>
+                        <h4 class="description"><%=nuevosIngresos[i].description%></h4>
+                    </a>
+                </article>
+            <% } %>
         </section>
+
     </main>
 
     <%- include('./partials/footer') %>
-    
+
 </body>
 </html>
