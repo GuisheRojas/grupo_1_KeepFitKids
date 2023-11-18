@@ -114,6 +114,7 @@ img{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: baseline;
+    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -263,6 +264,7 @@ footer{
     justify-content: space-around;
     align-items: center;
     background-color: var(--verde-keep);
+    padding: 20px;
 }
 
 .cont-info1, .cont-info2{
