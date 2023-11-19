@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Keep Fit Kids</title>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <div class="eleccion">
+            <div class="niños">
+                <a href="#" id="niños"><img src="/img/nenes/nenes.png" alt="Imagen niños"></a>
+            </div>
+            <br>
+            <br>
+            <div class="niñas">
+                <a href="#" id="niñas"><img src="/img/nenas/nenas.png" alt="Imagen niñas"></a>
+            </div>
+        </div>
+        
+        <section class="nuevos-ingresos">
+            <div id="titulares">
+                <h4 class="titulares">  NUEVOS INGRESOS  </h4>
+            </div>
+            <% for(let i=0; i < nuevosIngresos.length; i++){ %>
+                <article class="article">
+                    <a href="/detailproduct">
+                        <img src=<%= nuevosIngresos[i].src %> alt=<%= nuevosIngresos[i].description %> class="product_img">
+                        <p class="price"><%= nuevosIngresos[i].price %></p>
+                        <h4 class="description"><%=nuevosIngresos[i].description%></h4>
+                    </a>
+                </article>
+            <% } %>
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

@@ -114,6 +114,7 @@ img{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: baseline;
+    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -263,6 +264,7 @@ footer{
     justify-content: space-around;
     align-items: center;
     background-color: var(--verde-keep);
+    padding: 20px;
 }
 
 .cont-info1, .cont-info2{
@@ -319,22 +321,23 @@ footer .conteiner .titulares{
 /*SANTI*/
 /* Estilizacion del detail product*/
 
-main div.productandprice {
-
+.productandprice {
     display: flex;
     position: relative;
     flex-direction: row;
-
 }
 
-main div.productandprice section.productimg{
+.productimg{
     width: 35vw;
     position: relative;
     display: flex;
-   
 }
 
+<<<<<<< HEAD
 main div.productandprice section.productimg img.prod{
+=======
+.productimg img.prod{
+>>>>>>> 45870b686500e4fd40de5eddfdff5ebecf468967
     position: relative;
     display: flex;
     width: 150%;
@@ -342,7 +345,7 @@ main div.productandprice section.productimg img.prod{
     border: 1vw solid var(--verde-claro) ;
 }
 
-main div.productandprice section.priceandinfo{
+.priceandinfo{
     display: flex;
     flex-direction: column;
     width: 40vw;
@@ -351,14 +354,14 @@ main div.productandprice section.priceandinfo{
     top: 9.5vw;
 }
 
-main div.productandprice section.priceandinfo h1.nameofproduct{
+.nameofproduct{
     position: relative;
     display: flex;
     left: 2%;
     font-size: 3vw;
 }
 
-main div.productandprice section.priceandinfo h2.priceofproduct{
+.priceofproduct{
     position: relative;
     display: flex;
     left: 5%;
@@ -367,34 +370,35 @@ main div.productandprice section.priceandinfo h2.priceofproduct{
     bottom: 2%;
 }
 
-main div.productandprice section.priceandinfo div.logistic{
+.logistic{
     display: flex;
     flex-direction: row;
     position: relative;
     top: 2%;
 }
 
-main div.productandprice section.priceandinfo div.logistic i{
+.logistic i{
     color: rgb(214, 115, 49);
     font-size: 4vw;
     position: relative;
     left: 5%;
 }
 
-main div.productandprice section.priceandinfo div.logistic h4.freesend{
+.freesend{
     font-size: 2.4vw;
     position: relative;
     left: 8%;
     color: rgb(214, 115, 49);
 }
 
-main div.productandprice section.priceandinfo h2.mediodepago{
+.priceandinfo .mediodepago{
     position: relative;
     top: 5%;
     left: 3%;
     font-size: 2.6vw;
 }
-main div.productandprice section.priceandinfo div.logocards{
+
+.logocards{
     display: flex;
     position: relative;
     flex-direction: row;
@@ -402,7 +406,7 @@ main div.productandprice section.priceandinfo div.logocards{
     left: 5%;
 }
 
-main div.productandprice section.priceandinfo div.logocards img{
+.logocards img{
     width: 6vw;
     position: relative;
   
@@ -418,17 +422,17 @@ div.opcionesdecompra form label{
     font-size: 2.2vw;
 }
 
-div.opcionesdecompra form.formdecomprar div.divcolors select.colord{
+.divcolors .colord{
     width: 12vw;
     font-size: 2vw;
 }
 
-div.opcionesdecompra form.formdecomprar div.divtalles select.tallesd{
+.divtalles .tallesd{
     width: 6vw;
     font-size: 2.2vw;
 }
 
-div.opcionesdecompra form.formdecomprar div.seleccioncuant{
+.seleccioncuant{
     position: relative;
     top: 15%;
     display: flex;
@@ -436,13 +440,13 @@ div.opcionesdecompra form.formdecomprar div.seleccioncuant{
 
 }
 
-div.opcionesdecompra form div.seleccioncuant input{
+.seleccioncuant input{
     position: relative;
     left: 4%;
     width: 8vw;
 }
 
-div.opcionesdecompra form div.buttonagregar{
+.buttonagregar{
     position: relative;
     display: flex;
     width: 50vw;
@@ -451,20 +455,20 @@ div.opcionesdecompra form div.buttonagregar{
     height: 10vw;
 }
 
-div.opcionesdecompra form div.buttonagregar button{
+.buttonagregar button{
     width: 50vw;
     background-color: #ff6a2f;
     border-color: #ff6a2f;
     box-shadow: 2vw 2vw 2vw black solid;
 }
 
-div.opcionesdecompra form div.buttonagregar button p{
+.buttonagregar button p{
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 4vw ;
 }
 
-div.description{
+.productdescription{
     position: relative;
     display: flex;
     top: 30vw;
@@ -473,28 +477,28 @@ div.description{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-div.description h1{
+.productdescription h1{
     font-size: 4vw;
 }
 
-div.description p{
+.productdescription p{
     font-size: 2vw;
 }
 
-div.commentbox{
+.commentbox{
     position: relative;
     top: 40vw;
     display: flex;
 }
 
-div.commentbox form{
+.commentbox form{
     display: flex;
     flex-direction: column;
     position: relative;
     left: 9vw;
 }
 
-div.commentbox form label{
+.commentbox form label{
     font-size: 4vw;
     position: relative;
     right: 4vw;
@@ -502,16 +506,19 @@ div.commentbox form label{
     font-weight: bold;
 }
 
-div.commentbox form textarea{
+.commentarea{
     height: 7vw;
     border-color: #000;
     font-size: 2vw;
 }
 
+<<<<<<< HEAD
 footer.footerdetail{
     position: relative;
     top: 50vw;
 }
+=======
+>>>>>>> 45870b686500e4fd40de5eddfdff5ebecf468967
 
 /*TABLETS*/
 @media (min-width: 361px) {
@@ -942,7 +949,13 @@ footer.footerdetail{
    
 /* SILVINA - PRODUCTCART*/
 
+<<<<<<< HEAD
 section.carrito{
+=======
+    
+/* silvina*/
+main.productcart{
+>>>>>>> 45870b686500e4fd40de5eddfdff5ebecf468967
     display: flex;
     flex-direction: row;
 }
