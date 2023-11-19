@@ -22,66 +22,98 @@
             <a href="/login" id="circle-user"><p>Iniciar sesion</p><i class="fa-solid fa-circle-user"></i></a>      
         </div>
     </header>
+    
     <main class="productcart">
-        <div class="detalle-botones">
-            <h2> Mi Carrito</h2>
-                <div class="detalle-compra">
-                    <div class="item-prod"> 
-                        <div class="item">
-                            <img width="360px" src="/static/img/nenas/top_verde.jpg" alt="Top Verde">
-                            <div class="main-prod">
-                                <p class="detalle">Detalle: Top niña </p>
-                                <p class="codigo">Codigo de Art.: 00A45 </p>    
-                                <p class="talle">Talles: 1-3 </p>
-                                <p class="color">Color: verde - rojo- negro</p>
-                            </div>
-                            <div class="precio-unitario">
-                                <p class="precio-uni">Precio Unitario: $ 6.500,00</p>
-                            </div>
-                            <div class="cantidad">
-                                <p class="cant-art">Cantidad: </p>
-                            </div>
-                            <div class="total-prod">
-                                <p class="total">Precio Total: $ 6.500 </p>
-                            </div>
-                            <div class="eliminar-prod">
-                                <input type="reset" value="Eliminar">
-                            </div>                      
-                        </div>
-                    </div>
+        <h2 class="carrito">Mi Carrito</h2>
+        <section class="Carrito">
+            
+                <ul type="none" class="tabla">
+                    <li>Producto</li>
+                    <li>Detalle</li>
+                    <li>Color</li>
+                    <li>Talle</li>
+                    <li>Cantidad</li>
+                    <li>Precio</li>
+                </ul>
+             <article class="articulo">
+                <h3>Producto</h3>
+                <div class="imagen">
+                    <img src="/static/img/nenas/top_verde.jpg" alt="top_verde">
+                    <br>
                 </div>
-            <div class="botones">
-                    <div>
-                    <!--<p class="mas-pedidos"> Ver mas productos </p> -->   
-                        <input type="submit" class="submit" value="MAS PRODUCTOS">
-                        <input type="submit" class="submit" value="VACIAR CARRITO">
-                    <!--<p class="vaciar-carrito">Vaciar Carrito de Compras</p> -->    
-                    </div>
-            </div>
+                <div class="detalle">
+                    <p>Top deportivo infantil<br>
+                        para niñas Aerofit<br></p>
+                    <br>
+                </div>
+                <div class="color-prod">
+                    <label class="titulo">Color:</label>
+                    <select class="color" name="colortop">
+                        <option value="#51B59F">Verde</option>
+                        <option value="#FF0000">Rojo</option>
+                        <option value="#000000">Negro</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="talle">
+                    <label class="titulo">Talle:</label>
+                    <select name="select" id="talle">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="cantidad">
+                    <label class="titulo">Cantidad:</label>
+                    <select name="select" id="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="unitario">
+                    <p>$6.500,00</p>
+                    <br>
+                </div>
+                <div class="elim">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <br>
+                </div>
+            </article>
+        </section>
+
+        <div class="subtotal">
+            <h4>Subtotal</h4>
+            <h4>$ 6.500,00</h4>
         </div>
-        <div class="resumen-carrito">
-            <h2> subtotal </h2>
-                <div class="res-subtotal">
-                    <h3 class="subtotal">Subtotal:</p>
-                    <p class="descuento"> Descuento: </p>
-                    <p class="costo-envio"> Costo de envio:</p>
-                </div>
-                <div class="costo-total">
-                    <p class="total"> Total:  </p>
-                    <p class="descuento"> Descuento </p>
-                <div class="codigo-desc">
-                <!-- <p class="cod-descuento">CODIGO DE DESCUENTO:?</p> -->    
-                    <input type="text" id="codigo-descuento" class="input" >
-                    <label for="codigo-descuento" class="label"> </label>
-                </div>
 
-                <input type="submit" class="submit" value="COMPRAR">
-                </article>
+        <section class="Resumen"> 
+            <h3>RESUMEN</h3>
+            <div class="subtotal-art">
+                <h3>Subtotal</h3>
+                <p>$ 6.500,00</p><br>
             </div>
+            <div class="envio">
+                <h3>Envio</h3>
+                <p>$ 0,00</p><br>
+            </div>
+            <div class="codigo-descuento">
+                <H3>Cod.Descuento:</H3><br>
+                <input type="descuento" name="codigo-desc">
+            </div>
+            <div class="Total">
+                <h3><b></b>Total</h3>
+                <p><b></b>$ 6.500,00</p><br>
+            </div>    
+        </section>
 
-
+        <div class="botones">
+            <button type="submit" name="continuar" alt="#">CONTINUAR</button>
+            <button type="submit" name="finalizar" alt="#">FINALIZAR</button>
         </div>
-        
+
     </main>
     <footer>
         <div class="cont-info1">     
