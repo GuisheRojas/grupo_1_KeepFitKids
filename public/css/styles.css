@@ -333,16 +333,14 @@ footer .conteiner .titulares{
     display: flex;
 }
 
-<<<<<<< HEAD
-main div.productandprice section.productimg img.prod{
-=======
 .productimg img.prod{
->>>>>>> 45870b686500e4fd40de5eddfdff5ebecf468967
     position: relative;
     display: flex;
     width: 150%;
     top: 10vw;
     border: 1vw solid var(--verde-claro) ;
+
+    
 }
 
 .priceandinfo{
@@ -512,13 +510,124 @@ div.opcionesdecompra form label{
     font-size: 2vw;
 }
 
-<<<<<<< HEAD
-footer.footerdetail{
-    position: relative;
-    top: 50vw;
+/* SILVINA - PRODUCTCART*/
+
+main.productcart h2{
+    margin: 2%;
+    font-size: 25px;
+    text-align:start;
+    background-color:#ff6a2f;
+    color: #FFF;
 }
-=======
->>>>>>> 45870b686500e4fd40de5eddfdff5ebecf468967
+
+main.productcart h3{
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
+    color:#706c6c;
+}
+
+section.Carrito{
+    display: flex;
+    flex-direction:column ;
+}
+section.Resumen{
+    display: none;
+}
+ul.tabla{
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+    margin: 0% 2%;
+}
+
+ul.tabla{
+    display: none;
+}
+
+article.articulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imagen img{
+    width: 25vw;
+    position: relative;
+}
+
+select.color{
+    border-color: var(--gris-oscuro);
+    padding: 5px 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+select#talle{
+    border-color: var(--gris-oscuro);
+    padding: 5px 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+select#cantidad{
+    border-color: var(--gris-oscuro);
+    padding: 5px 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+div.subtotal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2% 30%;
+    padding: 15px;
+    align-items: center;
+    border-radius: 5px;
+    background-color:var(--naranja);
+    color: var(--verde-fit);
+    width: 55vw;
+}
+
+main.productcart p{
+    font-size: 20px;
+    margin-right: 10%;
+    text-align: center;
+    font-weight: normal;
+    color:#706c6c;
+}
+main.productcart h4{
+    font-size: 20px;
+    text-align: center;
+}
+
+label.titulo{
+    font-size: 16px;
+    text-align: center;
+    color: #706c6c;
+}
+
+div.elim{
+    border-left: var(--gris-claro);
+    font-size: 20px;
+}
+    
+div.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
+
+}
+button{
+    border-radius: 10px;
+    padding: 15px 5px;
+    margin: 5px;
+    flex-grow: 1;
+    color: var(--verde-fit);
+    background-color: var(--gris-claro);
+    box-shadow: 0px 0px 0px --gris-claro;
+}
+
 
 /*TABLETS*/
 @media (min-width: 361px) {
@@ -612,7 +721,10 @@ footer.footerdetail{
     
     .description{
         font-size: 14px;
-    }   
+    } 
+    
+    /* PRODUCTCART SILVI*/
+    
 }
 
 
@@ -794,6 +906,86 @@ footer.footerdetail{
         font-size: 1.8em;
         margin: 1px;
     }
+
+    /* CARRITO */
+    .todo-junto{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    section.Carrito{
+        padding: 20px;
+        flex-direction: column;
+        width: 75%; 
+    }
+    section.Resumen{
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center ;
+        color: #000;
+        margin: 10px;
+        width: 25%;
+        background-color: var(--verde-claro);
+    }
+    div.subtotal{
+        width: 35vw;
+    }
+    main.productcart section.Carrito h3{
+        display: none;
+    }
+    main.productcart section.Resumen h3,
+    main.productcart section.Carrito p{
+        font-size: 20px;
+        margin-right: 10%;
+        text-align: center;
+        font-weight: normal;
+        color:#706c6c;
+    }
+    div.codigo-descuento {
+        text-align: center;
+    }
+    ul.tabla{
+        display: flex;
+    }
+    ul.tabla li{
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: 20px;
+        margin: 0% 2%;
+        text-align: center;
+        font-weight: normal;
+        color: var(--negro);
+    }
+
+    article.articulo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-grow: 1;
+    }
+    .imagen img{
+        width: 10vw;
+    }
+
+    div.botones{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px;
+    }
+    button{
+        border-radius: 10px;
+        padding: 15px 5px;
+        margin: 5px;
+        flex-grow: 1;
+        color: var(--verde-fit);
+        background-color: var(--gris-claro);
+        box-shadow: 0px 0px 0px --gris-claro;
+    }
 }
 
     
@@ -946,202 +1138,8 @@ footer.footerdetail{
             margin: 3px;
         }
     }     
-   
-/* SILVINA - PRODUCTCART*/
-
-<<<<<<< HEAD
-section.carrito{
-=======
-    
-/* silvina*/
-main.productcart{
->>>>>>> 45870b686500e4fd40de5eddfdff5ebecf468967
-    display: flex;
-    flex-direction: row;
-}
-
-main.productcart h2{
-    margin: 2%;
-    font-size: 25px;
-    text-align:start;
-    background-color:#ff6a2f;
-    color: #FFF;
-}
-
-main.productcart h3{
-    font-size: 20px;
-    text-align: center;
-    font-weight: normal;
-    color:#706c6c;
-}
-
-section.Resumen{
-    display: none;
-}
-ul.tabla{
-    display: flex;
-    justify-content: space-around;
-    font-size: 24px;
-    margin: 0% 2%;
-}
-
-ul.tabla{
-    display: none;
-}
-
-article.articulo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-img{
-    width: 25vw;
-    position: relative;
-}
-
-select.color{
-    border-color: var(--gris-oscuro);
-    padding: 5px 20px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-select#talle{
-    border-color: var(--gris-oscuro);
-    padding: 5px 20px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-select#cantidad{
-    border-color: var(--gris-oscuro);
-    padding: 5px 20px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-div.subtotal{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 2% 30%;
-    padding: 15px;
-    align-items: center;
-    border-radius: 5px;
-    background-color:var(--naranja);
-    color: var(--verde-fit);
-    width: 55vw;
-}
-
-main.productcart p{
-    font-size: 20px;
-    margin-right: 10%;
-    text-align: center;
-    font-weight: normal;
-    color:#706c6c;
-}
-main.productcart h4{
-    font-size: 20px;
-    text-align: center;
-}
-
-label.titulo{
-    font-size: 16px;
-    text-align: center;
-    color: #706c6c;
-}
-
-div.elim{
-    border-left: var(--gris-claro);
-    font-size: 20px;
-}
-    
-div.botones{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 15px;
-
-}
-button{
-    border-radius: 10px;
-    padding: 15px 5px;
-    margin: 5px;
-    flex-grow: 1;
-    color: var(--verde-fit);
-    background-color: var(--gris-claro);
-    box-shadow: 0px 0px 0px --gris-claro;
-}
 
 
-@media (min-width: 361px){
-    section.Carrito{
-        padding: 10px;
-        flex-direction: column;
-    }
-    section.Resumen{
-        display: flex;
-        padding: 10px;
-        flex-direction: column;
-        justify-content: center ;
-        color: #000;
-        margin: 10px;
-    }
-    main.productcart section.Carrito h3{
-        display: none;
-    }
-    main.productcart section.Resumen h3,
-    main.productcart section.Carrito p{
-        font-size: 20px;
-        margin-right: 10%;
-        text-align: center;
-        font-weight: normal;
-        color:#706c6c;
-    }
-    div.codigo-descuento {
-        text-align: center;
-    }
-    ul.tabla{
-        display: flex;
-    }
-    ul.tabla li{
-        flex-direction: row-reverse;
-        justify-content: space-around;
-        align-items: flex-start;
-        font-size: 20px;
-        margin: 0% 2%;
-        text-align: center;
-        font-weight: normal;
-        color: var(--negro);
-    }
-
-    article.articulo{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-grow: 1;
-    }
-    img{
-        width: 10vw;
-    }
-
-    div.botones{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 15px;
-
-    }
-    button{
-        border-radius: 10px;
-        padding: 15px 5px;
-        margin: 5px;
-        flex-grow: 1;
-        color: var(--verde-fit);
-        background-color: var(--gris-claro);
-        box-shadow: 0px 0px 0px --gris-claro;
-    }
-}
 
 
    
