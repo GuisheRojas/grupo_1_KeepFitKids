@@ -29,7 +29,6 @@ body{
     font-family: 'Coming Soon', cursive;
     color: var(--blanco);
     background-color: var(--verde-keep);
-    font-size: 14px;
 }
 
 
@@ -74,7 +73,7 @@ header .icon{
 }
 
 /*banner*/
-section{
+.banner{
     display: flex;
     width: 100%;
 }
@@ -126,7 +125,8 @@ img{
 }
 
 .nuevos-ingresos .titulares{
-    font-size: 16px;
+    font-size: 6vw;
+    padding: 3px 5px;
 }
 
 .nuevos-ingresos .article{
@@ -141,6 +141,9 @@ img{
 .article a{
     color: var(--negro);
     text-decoration: none;
+}
+.nuevos-ingresos .article:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .produt_img{
@@ -267,7 +270,7 @@ footer{
     padding: 20px;
 }
 
-.cont-info1, .cont-info2{
+.cont-info1, .cont-info2 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -287,6 +290,12 @@ footer .description{
     color:var(--blanco);
 }
 
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 #truck, #credit-card{
     color: var(--blanco);
     font-size: 1.5em;
@@ -301,19 +310,20 @@ footer .cont-info1, footer .cont-info2,
 footer .conteiner .titulares{
     margin: 5px;
     margin-top: 15px;
+    justify-content: center;
 }
 
 .icons{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 #ig, #fb, #tw, #mail, #wpp{
     color: var(--blanco);
-    font-size: 1.5em;
+    font-size: 1.7em;
     padding: 1px;
     margin-bottom: 10px;
 }
@@ -646,7 +656,7 @@ button{
         padding: 15px 2px;
         position: relative;
     }
-    
+
     .form .icon, #search{
         display: block;
         align-self: center;
@@ -670,7 +680,9 @@ button{
         color: var(--gris-oscuro);
         width: 18px;
         position: absolute;
-        left: 140px;
+        padding: 2px;
+        left: 142px;
+        bottom: 13px;
     }
     
     header .form .icon i{
@@ -710,6 +722,11 @@ button{
         flex-direction: row;
         flex-wrap: wrap;
     }
+    .nuevos-ingresos .titulares{
+        font-size: 3.5vw;
+        padding: 3px 7px;
+        margin-bottom: 5px; 
+    }
 
     .nuevos-ingresos .article{
         width: 45%;
@@ -723,8 +740,6 @@ button{
         font-size: 14px;
     } 
     
-    /* PRODUCTCART SILVI*/
-    
 }
 
 
@@ -732,7 +747,7 @@ button{
 @media (min-width: 769px){
     /*HEADER*/
     header{
-        max-height: 180px;
+        max-height: 200px;
     }
 
     /*logo*/
@@ -758,7 +773,8 @@ button{
     header .form .icon{
         border-left: var(--gris-oscuro);
         width: 20px;
-        left: 200px;
+        left: 197px;
+        bottom: 13px;
     }
 
     header .form .icon i{
@@ -819,6 +835,12 @@ button{
         flex-wrap: wrap;
     }
 
+    .nuevos-ingresos .titulares{
+        font-size: 3vw;
+        padding: 0px 10px;
+        margin-bottom: 10px; 
+    }
+
     .nuevos-ingresos .article{
         width: 25%;
     }
@@ -867,6 +889,7 @@ button{
     footer{
         flex-direction: row;
         margin-top: 20px;
+        height: 150px;
     }
 
     footer .cont-info1, footer .cont-info2,
@@ -879,7 +902,7 @@ button{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        width: 25%;
+        width: 28%;
     }
 
     .cont-info2{
@@ -903,7 +926,7 @@ button{
     }
     
     #truck, #credit-card{
-        font-size: 1.8em;
+        font-size: 2em;
         margin: 1px;
     }
 
@@ -992,7 +1015,7 @@ button{
     @media (min-width:1023px){
         /*HEADER*/
         header{
-            max-height: 220px;
+            max-height: 240px;
         }
 
         /*logo*/
@@ -1018,7 +1041,9 @@ button{
         header .form .icon{
             border-left: var(--gris-oscuro);
             width: 25px;
-            left: 270px;
+            height: 20px;
+            left: 273px;
+            bottom: 29px;
         }
 
         header .form .icon i{
@@ -1079,6 +1104,12 @@ button{
             flex-wrap: wrap;
         }
 
+        .nuevos-ingresos .titulares{
+            font-size: 2.5vw;
+            padding: 0px 15px;
+            margin-bottom: 15px; 
+        }
+
         .nuevos-ingresos .article{
             display: flex;
             flex-direction: column;
@@ -1097,6 +1128,11 @@ button{
         footer{
             flex-direction: row;
             margin-top: 20px;
+            height: 200px;
+        }
+
+        footer .titulares {
+            font-size: 1.5vw;
         }
 
         footer .cont-info1, footer .cont-info2, footer .conteiner{
@@ -1109,7 +1145,7 @@ button{
             flex-wrap: wrap;
             justify-content: flex-start;
             padding: 5px;
-            width: 25%;
+            width: 28%;
         }
 
         .cont-info2{
@@ -1118,7 +1154,7 @@ button{
             flex-wrap: wrap;
             justify-content: flex-start;
             padding: 5px;
-            width: 33%;
+            width: 35%;
         }
 
         .info{
@@ -1130,7 +1166,7 @@ button{
         }
 
         .info .description{
-            font-size: 12px;
+            font-size: 1vw;
         }
         
         #truck, #credit-card{
