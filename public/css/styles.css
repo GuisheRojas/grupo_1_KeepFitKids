@@ -64,7 +64,7 @@ header .icon{
 
 #product-cart, #circle-user, header .icon{
     color: var(--gris-oscuro);
-    font-size: 21px;
+    font-size: 6vw;
     margin: 2px;
 }
 
@@ -283,6 +283,7 @@ footer{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
 }
 
@@ -329,145 +330,119 @@ footer .conteiner .titulares{
 }
 
 /*SANTI*/
-/* Estilizacion del detail product*/
+/*PRODUCT-DETAIL*/
 
 .productandprice {
     display: flex;
-    position: relative;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .productimg{
-    width: 35vw;
-    position: relative;
-    display: flex;
+    width: 60%;
+    margin: 5px;
 }
 
 .productimg img.prod{
-    position: relative;
-    display: flex;
-    width: 150%;
-    top: 10vw;
+    width: 100%;
     border: 1vw solid var(--verde-claro) ;
-
-    
 }
 
 .priceandinfo{
     display: flex;
     flex-direction: column;
-    width: 40vw;
-    position: relative;
-    left: 17vw;
-    top: 9.5vw;
+    padding: 3px;
 }
 
 .nameofproduct{
-    position: relative;
-    display: flex;
-    left: 2%;
-    font-size: 3vw;
+    font-size: 5vw;
+    margin: 1px;
 }
 
 .priceofproduct{
-    position: relative;
-    display: flex;
-    left: 5%;
-    font-size: 4vw;
+    font-size: 5vw;
     color: darkgreen;
-    bottom: 2%;
+    margin: 1px;
 }
 
 .logistic{
     display: flex;
     flex-direction: row;
-    position: relative;
-    top: 2%;
+    margin: 1px;
 }
 
 .logistic i{
     color: rgb(214, 115, 49);
     font-size: 4vw;
-    position: relative;
-    left: 5%;
 }
 
 .freesend{
-    font-size: 2.4vw;
-    position: relative;
-    left: 8%;
+    font-size: 4vw;
     color: rgb(214, 115, 49);
 }
 
 .priceandinfo .mediodepago{
-    position: relative;
-    top: 5%;
-    left: 3%;
-    font-size: 2.6vw;
+    font-size: 3.5vw;
 }
 
 .logocards{
     display: flex;
-    position: relative;
     flex-direction: row;
-    top: 6%;
-    left: 5%;
 }
 
 .logocards img{
-    width: 6vw;
-    position: relative;
-  
-}
-
-div.opcionesdecompra{
-    position: relative;
-    top: 10%;
+    width: 6vw;  
 }
 
 div.opcionesdecompra form label{
     font-weight: bold;
-    font-size: 2.2vw;
+    font-size: 3vw;
+}
+
+.divcolors, .divtalles, 
+.seleccioncuant, div.opcionesdecompra{
+    width: 100%;
+}
+
+.divcolors, .divtalles, .seleccioncuant{
+    margin: 5px;
 }
 
 .divcolors .colord{
-    width: 12vw;
-    font-size: 2vw;
+    width: 40%;
+    font-size: 3.5vw;
 }
 
 .divtalles .tallesd{
-    width: 6vw;
-    font-size: 2.2vw;
+    width: 30%;
+    font-size: 3.5vw;
 }
 
 .seleccioncuant{
-    position: relative;
-    top: 15%;
     display: flex;
     flex-direction: row;
-
 }
 
 .seleccioncuant input{
-    position: relative;
-    left: 4%;
-    width: 8vw;
+    width: 20%;
+    font-size: 3.5vw;
 }
 
 .buttonagregar{
-    position: relative;
     display: flex;
-    width: 50vw;
-    right: 51vw;
-    top: 6vw;
-    height: 10vw;
+    width: 100%;
+    max-height: 50%;
 }
 
 .buttonagregar button{
-    width: 50vw;
+    width: 70%;
     background-color: #ff6a2f;
     border-color: #ff6a2f;
-    box-shadow: 2vw 2vw 2vw black solid;
+    padding: 3px;
+}
+
+.buttonagregar button:hover{
+    box-shadow: 1vw 1vw 1vw var(--negro);
 }
 
 .buttonagregar button p{
@@ -477,12 +452,11 @@ div.opcionesdecompra form label{
 }
 
 .productdescription{
-    position: relative;
     display: flex;
-    top: 30vw;
-    left: 5vw;
     flex-direction: column;
+    width: 90%;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }
 
 .productdescription h1{
@@ -494,22 +468,16 @@ div.opcionesdecompra form label{
 }
 
 .commentbox{
-    position: relative;
-    top: 40vw;
-    display: flex;
+    margin: 20px;
 }
 
 .commentbox form{
     display: flex;
     flex-direction: column;
-    position: relative;
-    left: 9vw;
 }
 
 .commentbox form label{
     font-size: 4vw;
-    position: relative;
-    right: 4vw;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -683,10 +651,15 @@ button{
         padding: 2px;
         left: 142px;
         bottom: 13px;
+        font-size: 21px;
     }
     
     header .form .icon i{
         font-size: 14px;
+    }
+
+    #product-cart, #circle-user{
+        font-size: 21px;
     }
 
     /*MAIN*/
@@ -739,7 +712,95 @@ button{
     .description{
         font-size: 14px;
     } 
+
+    /*PRODUCT-DETAIL*/
+    .productimg{
+        width: 60%;
+        margin: 10px;
+    }
+
+    .nameofproduct{
+        font-size: 4vw;
+        margin: 5px;
+    }
     
+    .priceofproduct{
+        font-size: 4vw;
+        margin: 5px;
+    }
+    
+    .logistic{
+        margin: 5px;
+    }
+    
+    .logistic i{
+        font-size: 3vw;
+    }
+    
+    .freesend{
+        font-size: 3vw;
+    }
+    
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+    }
+    
+    .logocards img{
+        width: 6vw;  
+    }
+    
+    div.opcionesdecompra form label{
+        font-size: 2vw;
+    }
+
+    .divcolors, .divtalles, .seleccioncuant{
+        margin: 10px;
+    }
+    
+    .divcolors .colord{
+        width: 40%;
+        font-size: 2.5vw;
+    }
+    
+    .divtalles .tallesd{
+        width: 30%;
+        font-size: 2.5vw;
+    }
+    
+    .seleccioncuant input{
+        width: 20%;
+        font-size: 2.5vw;
+    }
+    
+    .buttonagregar button p{
+        font-size: 3vw ;
+    }
+    
+    .productdescription{
+        margin: 20px;
+    }
+    
+    .productdescription h1{
+        font-size: 3vw;
+    }
+    
+    .productdescription p{
+        font-size: 2vw;
+    }
+    
+    .commentbox{
+        margin: 20px;
+    }
+    
+    .commentbox form label{
+        font-size: 3vw;
+    }
+    
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
+    }
+
 }
 
 
@@ -854,34 +915,89 @@ button{
     }
 
     /*PRODUCT-DETAIL*/
-    div.opcionesdecompra form div.buttonagregar{
-        position: relative;
-        display: flex;
-        width: 50vw;
-        right: 4vw;
-        top: 1vw;
-        height: 6vw;
+    .productimg{
+        width: 60%;
+        margin: 15px;
     }
 
-    div.opcionesdecompra form div.buttonagregar button p{
-        color: white;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 3vw ;
-        
-    }
-
-    div.opcionesdecompra form div.buttonagregar button{
-        width: 45vw;
-        background-color: #ff6a2f;
-        border-color: #ff6a2f;
-        box-shadow: 2vw 2vw 2vw black solid;
+    .nameofproduct{
+        font-size: 4vw;
+        margin: 10px;
     }
     
-    main div.productandprice section.productimg{
-        width: 40vw;
-        height: 50vw;
-        position: relative;
-        display: flex;
+    .priceofproduct{
+        font-size: 4vw;
+        margin: 10px;
+    }
+    
+    .logistic{
+        margin: 10px;
+    }
+    
+    .logistic i{
+        font-size: 3vw;
+    }
+    
+    .freesend{
+        font-size: 3vw;
+    }
+    
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+    }
+    
+    .logocards img{
+        width: 6vw;  
+    }
+    
+    div.opcionesdecompra form label{
+        font-weight: bold;
+        font-size: 2vw;
+    }
+
+    .divcolors, .divtalles, .seleccioncuant{
+        margin: 15px;
+    }
+    
+    .divcolors .colord{
+        font-size: 2.5vw;
+    }
+    
+    .divtalles .tallesd{
+        font-size: 2.5vw;
+    }
+    
+    .seleccioncuant input{
+        font-size: 2.5vw;
+    }
+    
+    .buttonagregar button p{
+        font-size: 3vw ;
+    }
+    
+    .productdescription{
+        margin: 40px;
+    }
+    
+    .productdescription h1{
+        font-size: 3vw;
+    }
+    
+    .productdescription p{
+        font-size: 2vw;
+    }
+    
+    .commentbox{
+        margin: 40px;
+    }
+    
+    .commentbox form label{
+        font-size: 3vw;
+    }
+    
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
     }
 
 
@@ -1016,7 +1132,7 @@ button{
     @media (min-width:1023px){
         /*HEADER*/
         header{
-            max-height: 240px;
+            max-height: 280px;
         }
 
         /*logo*/
@@ -1025,7 +1141,7 @@ button{
         }
 
         .logo{
-            max-width: 225px;
+            max-width: 250px;
         }
 
         /*form*/
@@ -1173,6 +1289,93 @@ button{
         #truck, #credit-card{
             font-size: 2.5em;
             margin: 3px;
+        }
+
+
+        /*PRODUCT-DETAIL*/
+        .productimg{
+            width: 50%;
+            margin: 20px;
+        }
+
+        .nameofproduct{
+            font-size: 3vw;
+            margin: 10px;
+        }
+        
+        .priceofproduct{
+            font-size: 3vw;
+            margin: 10px;
+        }
+        
+        .logistic{
+            margin: 10px;
+        }
+        
+        .logistic i{
+            font-size: 2vw;
+        }
+        
+        .freesend{
+            font-size: 2vw;
+        }
+        
+        .priceandinfo .mediodepago{
+            font-size: 2.5vw;
+        }
+        
+        .logocards img{
+            width: 6vw;  
+        }
+        
+        div.opcionesdecompra form label{
+            font-weight: bold;
+            font-size: 2vw;
+        }
+    
+        .divcolors, .divtalles, .seleccioncuant{
+            margin: 15px;
+        }
+        
+        .divcolors .colord{
+            font-size: 2vw;
+        }
+        
+        .divtalles .tallesd{
+            font-size: 2vw;
+        }
+        
+        .seleccioncuant input{
+            font-size: 2vw;
+        }
+        
+        .buttonagregar button p{
+            font-size: 2vw ;
+        }
+        
+        .productdescription{
+            margin: 40px;
+        }
+        
+        .productdescription h1{
+            font-size: 3vw;
+        }
+        
+        .productdescription p{
+            font-size: 2vw;
+        }
+        
+        .commentbox{
+            margin: 40px;
+        }
+        
+        .commentbox form label{
+            font-size: 3vw;
+        }
+        
+        .commentarea{
+            height: 7vw;
+            font-size: 2vw;
         }
     }     
 
