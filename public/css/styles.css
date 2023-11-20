@@ -1300,16 +1300,16 @@ button{
 
         .nameofproduct{
             font-size: 3vw;
-            margin: 10px;
+            margin: 20px;
         }
         
         .priceofproduct{
             font-size: 3vw;
-            margin: 10px;
+            margin: 20px;
         }
         
         .logistic{
-            margin: 10px;
+            margin: 20px;
         }
         
         .logistic i{
@@ -1322,6 +1322,7 @@ button{
         
         .priceandinfo .mediodepago{
             font-size: 2.5vw;
+            margin: 20px;
         }
         
         .logocards img{
@@ -1334,7 +1335,8 @@ button{
         }
     
         .divcolors, .divtalles, .seleccioncuant{
-            margin: 15px;
+            width: 100%;
+            margin: 25px;
         }
         
         .divcolors .colord{
@@ -1348,13 +1350,19 @@ button{
         .seleccioncuant input{
             font-size: 2vw;
         }
+
+        .buttonagregar button{
+            width: 80%;
+            padding: 10px;
+            margin: 20px;
+        }
         
         .buttonagregar button p{
             font-size: 2vw ;
         }
         
         .productdescription{
-            margin: 40px;
+            margin: 65px;
         }
         
         .productdescription h1{
@@ -1366,7 +1374,7 @@ button{
         }
         
         .commentbox{
-            margin: 40px;
+            margin: 80px;
         }
         
         .commentbox form label{
