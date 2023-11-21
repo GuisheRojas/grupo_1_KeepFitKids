@@ -98,6 +98,10 @@ img{
     width: 100%;
 }
 
+#niños:hover, #niñas:hover{
+    box-shadow: 1px 1px 30px var(--naranja);
+}
+
 .niños img{
     width: 100%;
 }
@@ -107,7 +111,7 @@ img{
 }
 
 /*Nuevos Ingresos*/
-.nuevos-ingresos{
+.nuevos-ingresos, .nenas, .nenes{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -115,6 +119,10 @@ img{
     align-items: baseline;
     padding-bottom: 20px;
     width: 100%;
+}
+
+.nenas, .nenes{
+    padding: 20px;
 }
 
 #titulares{
@@ -129,7 +137,7 @@ img{
     padding: 3px 5px;
 }
 
-.nuevos-ingresos .article{
+.article{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -142,8 +150,9 @@ img{
     color: var(--negro);
     text-decoration: none;
 }
-.nuevos-ingresos .article:hover{
-    box-shadow: 0px 0px 10px var(--verde-fit);
+
+.article:hover{
+    box-shadow: 0px 0px 20px var(--verde-fit);
 }
 
 .produt_img{
@@ -701,7 +710,7 @@ button{
         margin-bottom: 5px; 
     }
 
-    .nuevos-ingresos .article{
+    .article{
         width: 45%;
     }
 
@@ -902,7 +911,7 @@ button{
         margin-bottom: 10px; 
     }
 
-    .nuevos-ingresos .article{
+    .article{
         width: 23%;
     }
 
@@ -1227,7 +1236,7 @@ button{
             margin-bottom: 15px; 
         }
 
-        .nuevos-ingresos .article{
+        .article{
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;

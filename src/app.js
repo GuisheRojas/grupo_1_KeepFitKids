@@ -24,3 +24,7 @@ app.get('/productCart', productRouter)
 app.get('/register', userRouter)
 
 app.get('/detailproduct', productRouter)
+
+app.get('/nenes', productRouter)
+
+app.get('/nenas', productRouter)

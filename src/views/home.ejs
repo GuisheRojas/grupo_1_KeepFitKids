@@ -7,18 +7,18 @@
 
 <body>
     <%- include('./partials/header') %>
+    <section class="banner">
+        <img src="/img/banner.png" alt="Banner">
+    </section>
     <main>
-        <section class="banner">
-            <img src="/img/banner.png" alt="Banner">
-        </section>
         <div class="eleccion">
             <div class="niños">
-                <a href="#" id="niños"><img src="/img/nenes/nenes.png" alt="Imagen niños"></a>
+                <a href="/nenes" id="niños"><img src="/img/nenes/nenes.png" alt="Imagen niños"></a>
             </div>
             <br>
             <br>
             <div class="niñas">
-                <a href="#" id="niñas"><img src="/img/nenas/nenas.png" alt="Imagen niñas"></a>
+                <a href="/nenas" id="niñas"><img src="/img/nenas/nenas.png" alt="Imagen niñas"></a>
             </div>
         </div>
         
@@ -29,9 +29,9 @@
             <% for(let i=0; i < nuevosIngresos.length; i++){ %>
                 <article class="article">
                     <a href="/detailproduct">
-                        <img src=<%= nuevosIngresos[i].src %> alt=<%= nuevosIngresos[i].description %> class="product_img">
+                        <img src=<%= nuevosIngresos[i].src %> alt=<%= nuevosIngresos[i].name %> class="product_img">
                         <p class="price"><%= nuevosIngresos[i].price %></p>
-                        <h4 class="description"><%=nuevosIngresos[i].description%></h4>
+                        <h4 class="description"><%=nuevosIngresos[i].name%></h4>
                     </a>
                 </article>
             <% } %>
