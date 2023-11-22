@@ -6,7 +6,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 1
 },
 {
     src: '/img/nenes/13.png',
@@ -16,7 +17,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 2
 },
 {
     src: '/img/nenes/11.png',
@@ -26,7 +28,8 @@ let productos = [{
     color: '',
     talle:'',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 3
 },
 {
     src: '/img/nenes/14.png',
@@ -36,7 +39,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 4
 },
 {
     src: '/img/nenas/15.png',
@@ -46,7 +50,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 5
 },
 {
     src: '/img/nenas/16.png',
@@ -56,7 +61,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 6
 },
 {
     src: '/img/nenas/14.png',
@@ -66,7 +72,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 7
 },
 {
     src: '/img/nenas/17.png',
@@ -76,7 +83,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 8
 },
 {
     src: '/img/nenas/18.png',
@@ -86,7 +94,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 9
 },
 {
     src: '/img/nenas/19.png',
@@ -96,7 +105,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 10
 },
 {
     src: '/img/nenas/22.png',
@@ -106,7 +116,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 11
 },
 {
     src: '/img/nenas/23.png',
@@ -116,7 +127,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 12
 },
 {
     src: '/img/nenas/24.png',
@@ -126,7 +138,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 13
 },
 {
     src: '/img/nenas/25.png',
@@ -136,7 +149,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 14
 },
 {
     src: '/img/nenas/26.png',
@@ -146,7 +160,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 15
     
 },
 {
@@ -157,7 +172,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 16
 },
 {
     src: '/img/nenas/20.png',
@@ -167,7 +183,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 17
 },
 {
     src: '/img/nenas/31.png',
@@ -177,7 +194,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 18
 },
 {
     src: '/img/nenas/32.png',
@@ -187,7 +205,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 19
 },
 {
     src: '/img/nenas/33.png',
@@ -197,7 +216,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 20
 },
 {
     src: '/img/nenas/34.png',
@@ -207,7 +227,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 21
 },
 {
     src: '/img/nenas/22.png',
@@ -217,7 +238,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 22
 },
 {
     src: '/img/nenas/35.png',
@@ -227,7 +249,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 23
 },
 {
     src: '/img/nenas/36.png',
@@ -237,7 +260,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 24
 },
 {
     src: '/img/nenas/40.png',
@@ -247,7 +271,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 25
 },
 {
     src: '/img/nenas/39.png',
@@ -257,7 +282,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 26
 },
 {
     src: '/img/nenas/41.png',
@@ -267,7 +293,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 27
 },
 {
     src: '/img/nenas/43.png',
@@ -277,7 +304,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 28
 },
 {
     src: '/img/nenas/24.png',
@@ -287,7 +315,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'F'
+    sexo: 'F',
+    id: 29
 },
 {
     src: '/img/nenes/12.png',
@@ -297,7 +326,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 30
 },
 {
     src: '/img/nenes/44.png',
@@ -307,7 +337,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 31
 },
 {
     src: '/img/nenes/45.png',
@@ -317,7 +348,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 32
 },
 {
     src: '/img/nenes/46.png',
@@ -327,7 +359,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 33
 },
 {
     src: '/img/nenes/47.png',
@@ -337,7 +370,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 34
 },
 {
     src: '/img/nenes/48.png',
@@ -347,7 +381,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 35
 },
 {
     src: '/img/nenes/63.png',
@@ -357,7 +392,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 36
 },
 {
     src: '/img/nenes/49.png',
@@ -367,7 +403,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 37
 },
 {
     src: '/img/nenes/50.png',
@@ -377,7 +414,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 38
 },
 {
     src: '/img/nenes/51.png',
@@ -387,7 +425,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 39
 },
 {
     src: '/img/nenes/52.png',
@@ -397,7 +436,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 40
 },
 {
     src: '/img/nenes/53.png',
@@ -407,7 +447,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 41
 },
 {
     src: '/img/nenes/54.png',
@@ -417,7 +458,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 42
 },
 {
     src: '/img/nenes/55.png',
@@ -427,7 +469,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 43
 },
 {
     src: '/img/nenes/57.png',
@@ -437,7 +480,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 44
 },
 {
     src: '/img/nenes/58.png',
@@ -447,7 +491,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 45
 },
 {
     src: '/img/nenes/59.png',
@@ -457,7 +502,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 46
 },
 {
     src: '/img/nenes/60.png',
@@ -467,7 +513,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 47
 },
 {
     src: '/img/nenes/61.png',
@@ -477,7 +524,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 48
 },
 {
     src: '/img/nenes/62.png',
@@ -487,7 +535,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 49
 },
 {
     src: '/img/nenes/63.png',
@@ -497,7 +546,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 50
 },
 {
     src: '/img/nenes/64.png',
@@ -507,7 +557,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 51
 },
 {
     src: '/img/nenes/66.png',
@@ -517,7 +568,8 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 52
 },
 {
     src: '/img/nenes/67.png',
@@ -527,16 +579,19 @@ let productos = [{
     color: '',
     talle: '',
     stock: '',
-    sexo: 'M'
+    sexo: 'M',
+    id: 53
 }
 ];
 
 const controller = {
-    productCart: (req, res)=> {
-        return res.render('./products/productCart')
+    productCart: (req, res) => {
+        const productId = productos.find(productos => productos.id == req.params.idDetail);
+        res.render('./products/productCart', {productId})
     },
-    detailProduct: (req, res)=>{
-        return res.render('./products/detailproduct')
+    detailproduct: (req, res) => {
+        const productId = productos.find(productos => productos.id == req.params.idDetail);
+        res.render('./products/detailproduct', {productId})
     },
     nenes: (req, res) => {
         return res.render('./products/nenes', {productos: productos})
@@ -547,6 +602,8 @@ const controller = {
     formProduct: (req,res) => {
         return res.render("./products/formproduct",{productos: productos})
     }
+
+
 }
 
 module.exports = controller;

@@ -19,11 +19,11 @@ app.get('/', mainRouter);
 
 app.get('/login', userRouter)
 
-app.get('/productCart', productRouter)
+app.get('/productCart/:idDetail', productRouter)
 
 app.get('/register', userRouter)
 
-app.get('/detailproduct', productRouter)
+app.get('/detailproduct/:idDetail', productRouter)
 
 app.get('/nenes', productRouter)
 

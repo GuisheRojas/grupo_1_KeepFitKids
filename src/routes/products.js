@@ -4,9 +4,9 @@ const router = express.Router();
 const productsController = require('../controllers/productsController.js');
 const { route } = require('./user.js');
 
-router.get('/detailProduct', productsController.detailProduct);
+router.get('/detailproduct/:idDetail', productsController.detailproduct);
 
-router.get('/productCart', productsController.productCart);
+router.get('/productCart/:idDetail', productsController.productCart);
 
 router.get('/nenes', productsController.nenes);
 
