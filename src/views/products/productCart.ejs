@@ -25,11 +25,11 @@
 
  
                 <div class="imagen">
-                    <img src="/img/nenas/15.png" alt="top_verde">
+                    <img src=<%= productId?.src%> alt="top_verde">
                     <br>
                 </div>
                 <div class="detalle">
-                    <p>Top Miley</p>
+                    <p><%= productId?.name%></p>
                     <br>
                 </div>
                 <div class="color-prod">
@@ -60,7 +60,7 @@
                     <br>
                 </div>
                 <div class="unitario">
-                    <p><%= nuevosIngresos[i].price %></p>
+                    <p><%= productId?.price%></p>
                     <br>
                 </div>
                 <div class="elim">
@@ -73,7 +73,7 @@
 
             <div class="subtotal">
                 <h4>Subtotal</h4>
-                <h4><%= nuevosIngresos[i].price %></h4>
+                <h4><%= productId?.price%></h4>
             </div>             
           
         </section>
@@ -83,7 +83,7 @@
            
             <div class="subtotal-art">
                 <h3>Subtotal</h3>
-                <p><%= nuevosIngresos[i].price %></p><br>
+                <p><%= productId?.price%>></p><br>
             </div>
             <div class="envio">
                 <h3>Envio</h3>
@@ -95,7 +95,7 @@
             </div>
             <div class="Total">
                 <h3><b></b>Total</h3>
-                <p><b></b><%= nuevosIngresos[i].price %></p><br>
+                <p><b></b><%= productId?.price%></p><br>
             </div>
      
         </section>
@@ -103,8 +103,8 @@
 
         <div class="botones">
             <form class="bot-continuar" action="/" method="GET">
-                <button type="submit" name="continuar" alt="#">CONTINUAR</button>
-                <button type="submit" name="finalizar" alt="#">FINALIZAR</button>
+                <button class="botonCarrrito" type="submit" name="continuar" alt="#">CONTINUAR</button>
+                <button class="botonCarrrito" type="submit" name="finalizar" alt="#">FINALIZAR</button>
             </form>
         </div>
 
