@@ -22,13 +22,14 @@
                 </ul>
              <article class="articulo">
                 <h3>Producto</h3>
+
+ 
                 <div class="imagen">
-                    <img src="/img/nenas/top_verde.jpg" alt="top_verde">
+                    <img src=<%= nuevosIngresos[i].src %> alt=<%= nuevosIngresos[i].description %>>
                     <br>
                 </div>
                 <div class="detalle">
-                    <p>Top deportivo infantil<br>
-                        para niñas Aerofit<br></p>
+                    <p><%= nuevosIngresos[i].description %><br></p>
                     <br>
                 </div>
                 <div class="color-prod">
@@ -59,28 +60,30 @@
                     <br>
                 </div>
                 <div class="unitario">
-                    <p>$6.500,00</p>
+                    <p><%= nuevosIngresos[i].price %></p>
                     <br>
                 </div>
                 <div class="elim">
                     <i class="fa-solid fa-trash-can"></i>
                     <br>
                 </div>
-               
+            
             </article>
+            
 
             <div class="subtotal">
                 <h4>Subtotal</h4>
-                <h4>$ 6.500,00</h4>
+                <h4><%= nuevosIngresos[i].price %></h4>
             </div>             
-    
+          
         </section>
         
         <section class="Resumen"> 
             <h3>RESUMEN</h3>
+           
             <div class="subtotal-art">
                 <h3>Subtotal</h3>
-                <p>$ 6.500,00</p><br>
+                <p><%= nuevosIngresos[i].price %></p><br>
             </div>
             <div class="envio">
                 <h3>Envio</h3>
@@ -92,8 +95,9 @@
             </div>
             <div class="Total">
                 <h3><b></b>Total</h3>
-                <p><b></b>$ 6.500,00</p><br>
-            </div>    
+                <p><b></b><%= nuevosIngresos[i].price %></p><br>
+            </div>
+     
         </section>
         </div>
 
