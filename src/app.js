@@ -17,14 +17,8 @@ app.listen(PORT, ()=>{
 
 app.get('/', mainRouter);
 
-app.get('/login', userRouter)
+app.get('/user', userRouter)
 
-app.get('/productCart', productRouter)
+app.get('/product', productRouter)
 
-app.get('/register', userRouter)
 
-app.get('/detailproduct', productRouter)
-
-app.get('/nenes', productRouter)
-
-app.get('/nenas', productRouter)
