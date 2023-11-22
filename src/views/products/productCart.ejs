@@ -22,12 +22,14 @@
                 </ul>
              <article class="articulo">
                 <h3>Producto</h3>
+
+ 
                 <div class="imagen">
-                    <img src="/img/nenas/15.png" alt="top_verde">
+                    <img src=<%= productId?.src%> alt="top_verde">
                     <br>
                 </div>
                 <div class="detalle">
-                    <p>Top Miley</p>
+                    <p><%= productId?.name%></p>
                     <br>
                 </div>
                 <div class="color-prod">
@@ -58,28 +60,30 @@
                     <br>
                 </div>
                 <div class="unitario">
-                    <p>$6.500,00</p>
+                    <p><%= productId?.price%></p>
                     <br>
                 </div>
                 <div class="elim">
                     <i class="fa-solid fa-trash-can"></i>
                     <br>
                 </div>
-               
+            
             </article>
+            
 
             <div class="subtotal">
                 <h4>Subtotal</h4>
-                <h4>$ 6.500,00</h4>
+                <h4><%= productId?.price%></h4>
             </div>             
-    
+          
         </section>
         
         <section class="Resumen"> 
             <h3>RESUMEN</h3>
+           
             <div class="subtotal-art">
                 <h3>Subtotal</h3>
-                <p>$ 6.500,00</p><br>
+                <p><%= productId?.price%>></p><br>
             </div>
             <div class="envio">
                 <h3>Envio</h3>
@@ -91,15 +95,16 @@
             </div>
             <div class="Total">
                 <h3><b></b>Total</h3>
-                <p><b></b>$ 6.500,00</p><br>
-            </div>    
+                <p><b></b><%= productId?.price%></p><br>
+            </div>
+     
         </section>
         </div>
 
         <div class="botones">
-            <form class="bot-continuar" action="../home.ejs" method="GET">
-                <button type="submit" name="continuar" alt="#">CONTINUAR</button>
-                <button type="submit" name="finalizar" alt="#">FINALIZAR</button>
+            <form class="bot-continuar" action="/" method="GET">
+                <button class="botonCarrrito" type="submit" name="continuar" alt="#">CONTINUAR</button>
+                <button class="botonCarrrito" type="submit" name="finalizar" alt="#">FINALIZAR</button>
             </form>
         </div>
 

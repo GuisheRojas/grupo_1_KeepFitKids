@@ -19,6 +19,12 @@ app.get('/', mainRouter);
 
 app.get('/user', userRouter)
 
-app.get('/product', productRouter)
+app.get('/productCart/:idDetail', productRouter)
 
+app.get('/detailproduct/:idDetail', productRouter)
 
+app.get('/nenes', productRouter)
+
+app.get('/nenas', productRouter)
+
+app.get("/formproduct", productRouter)

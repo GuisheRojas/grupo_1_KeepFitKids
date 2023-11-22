@@ -443,18 +443,18 @@ div.opcionesdecompra form label{
     max-height: 50%;
 }
 
-.buttonagregar button{
+button.agregarDetail{
     width: 70%;
     background-color: #ff6a2f;
     border-color: #ff6a2f;
     padding: 3px;
 }
 
-.buttonagregar button:hover{
+button.agregarDetail{
     box-shadow: 1vw 1vw 1vw var(--negro);
 }
 
-.buttonagregar button p{
+div.buttonagregar button.agregarDetail p{
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 4vw ;
@@ -605,7 +605,7 @@ div.botones{
     padding: 15px;
 
 }
-button{
+div.botones button{
     border-radius: 10px;
     padding: 15px 5px;
     margin: 5px;
@@ -1080,7 +1080,7 @@ button{
         justify-content: space-around;
         padding: 15px;
     }
-    button{
+    button.botonCarrito{
         border-radius: 10px;
         padding: 15px 5px;
         margin: 5px;

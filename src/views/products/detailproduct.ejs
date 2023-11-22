@@ -9,11 +9,11 @@
     <main class="detailmain">
         <div class="productandprice">
             <section class="productimg">
-                <img class="prod" src="/img/nenas/15.png">
+                <img class="prod" src=<%= productId?.src%>>
             </section>
             <section class="priceandinfo">
-                <h1 class="nameofproduct">Top Miley</h1>
-                <h2 class="priceofproduct">$6.500,00</h2>
+                <h1 class="nameofproduct"><%= productId?.name%></h1>
+                <h2 class="priceofproduct"><%= productId?.price%></h2>
                 <div class="logistic">
                     <i class="fas fa-truck"></i>
                     <h4 class="freesend">Envío Gratis</h4>
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="opcionesdecompra">
-                    <form class="formdecomprar" action="/productCart" method="GET">
+                    <form class="formdecomprar" action="/productCart/<%= productId?.id%>" method="GET">
                         <div class="divcolors">
                             <label>Seleccione un color</label>
                             <select class="colord" name="colorstock">
@@ -46,8 +46,8 @@
                             <label>Selecciona la cantidad</label>
                             <input class="cuantd" type="text" name="cantidad">
                         </div> 
-                        <div class="buttonagregar">
-                            <button type="submit" value="Agregar"><p>Agregar al carrito</p>                            </button>    
+                        <div class="buttonagregar" ></div>
+                            <button class="agregarDetail" type="submit" value="Agregar"><p>Agregar al carrito</p>                            </button>    
                         </div>  
                     </form>
                 </div>
@@ -55,10 +55,7 @@
         </div>
         <div class="productdescription">
             <h1>DESCRIPCIÓN</h1>
-            <p> TOP DEPORTIVO MICROFIBRA LYCRA 70 ELASTICO CON RELIEVE</p>
-            <p> EXCELENTE AGARRE </p>
-            <p> Garantía del vendedor: 30 días</p>
-            <p>Ideal para hacer ejercicio en gimnasio o al aire libre. La mejor calidad y los mejores precios.</p>
+            <p> <%= productId?.description%></p>
         </div>
         <div class="commentbox">
             <form action="/contact" method="POST">
