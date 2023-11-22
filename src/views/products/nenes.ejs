@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <title>Sección Niños</title>
+    </head>
+<body>   
+    <%- include('../partials/header') %> 
+    <section class="banner">
+        <img src="/img/banner.png" alt="Banner">
+    </section>
+    
+    <main>
+        <section class="nenes">
+            <% for(let i=0; i < productos.length; i++){ %>
+                <% if(productos[i].sexo == 'M') { %>
+                    <article class="article">
+                        <a href="/detailproduct">
+                            <img src=<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
+                            <p class="price"><%=productos[i].price %></p>
+                            <h4 class="description"><%=productos[i].name%></h4>
+                        </a>
+                    </article>
+                <% } %>
+            <% } %>
+        </section>  
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

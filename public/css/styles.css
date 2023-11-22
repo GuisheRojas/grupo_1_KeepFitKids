@@ -8,7 +8,7 @@
     --blanco: #FFF;
     --negro: #000;
     --verde-keep: #4fb59f;
-    --verde-fit: #6be63a;
+    --verde-fit: rgb(105, 230, 56);
     --naranja: #ff6a2f;
 }
 
@@ -29,7 +29,6 @@ body{
     font-family: 'Coming Soon', cursive;
     color: var(--blanco);
     background-color: var(--verde-keep);
-    font-size: 14px;
 }
 
 
@@ -65,7 +64,7 @@ header .icon{
 
 #product-cart, #circle-user, header .icon{
     color: var(--gris-oscuro);
-    font-size: 21px;
+    font-size: 6vw;
     margin: 2px;
 }
 
@@ -74,7 +73,7 @@ header .icon{
 }
 
 /*banner*/
-section{
+.banner{
     display: flex;
     width: 100%;
 }
@@ -99,6 +98,10 @@ img{
     width: 100%;
 }
 
+#niños:hover, #niñas:hover{
+    box-shadow: 1px 1px 30px var(--naranja);
+}
+
 .niños img{
     width: 100%;
 }
@@ -108,7 +111,7 @@ img{
 }
 
 /*Nuevos Ingresos*/
-.nuevos-ingresos{
+.nuevos-ingresos, .nenas, .nenes{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -116,6 +119,10 @@ img{
     align-items: baseline;
     padding-bottom: 20px;
     width: 100%;
+}
+
+.nenas, .nenes{
+    padding: 20px;
 }
 
 #titulares{
@@ -126,21 +133,26 @@ img{
 }
 
 .nuevos-ingresos .titulares{
-    font-size: 16px;
+    font-size: 6vw;
+    padding: 3px 5px;
 }
 
-.nuevos-ingresos .article{
+.article{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 15px;
-    background-color: var(--gris-claro);
+    background-color: var(--verde-claro);
     margin: 5px;
 }
 
 .article a{
     color: var(--negro);
     text-decoration: none;
+}
+
+.article:hover{
+    box-shadow: 0px 0px 20px var(--verde-fit);
 }
 
 .produt_img{
@@ -267,7 +279,7 @@ footer{
     padding: 20px;
 }
 
-.cont-info1, .cont-info2{
+.cont-info1, .cont-info2 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -280,11 +292,18 @@ footer{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
 }
 
 footer .description{
     color:var(--blanco);
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 #truck, #credit-card{
@@ -301,163 +320,138 @@ footer .cont-info1, footer .cont-info2,
 footer .conteiner .titulares{
     margin: 5px;
     margin-top: 15px;
+    justify-content: center;
 }
 
 .icons{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 #ig, #fb, #tw, #mail, #wpp{
     color: var(--blanco);
-    font-size: 1.5em;
+    font-size: 1.7em;
     padding: 1px;
     margin-bottom: 10px;
 }
 
 /*SANTI*/
-/* Estilizacion del detail product*/
+/*PRODUCT-DETAIL*/
 
 .productandprice {
     display: flex;
-    position: relative;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .productimg{
-    width: 35vw;
-    position: relative;
-    display: flex;
+    width: 60%;
+    margin: 5px;
 }
 
 .productimg img.prod{
-    position: relative;
-    display: flex;
-    width: 150%;
-    top: 10vw;
+    width: 100%;
     border: 1vw solid var(--verde-claro) ;
-
-    
 }
 
 .priceandinfo{
     display: flex;
     flex-direction: column;
-    width: 40vw;
-    position: relative;
-    left: 17vw;
-    top: 9.5vw;
+    padding: 3px;
 }
 
 .nameofproduct{
-    position: relative;
-    display: flex;
-    left: 2%;
-    font-size: 3vw;
+    font-size: 5vw;
+    margin: 1px;
 }
 
 .priceofproduct{
-    position: relative;
-    display: flex;
-    left: 5%;
-    font-size: 4vw;
+    font-size: 5vw;
     color: darkgreen;
-    bottom: 2%;
+    margin: 1px;
 }
 
 .logistic{
     display: flex;
     flex-direction: row;
-    position: relative;
-    top: 2%;
+    margin: 1px;
 }
 
 .logistic i{
     color: rgb(214, 115, 49);
     font-size: 4vw;
-    position: relative;
-    left: 5%;
 }
 
 .freesend{
-    font-size: 2.4vw;
-    position: relative;
-    left: 8%;
+    font-size: 4vw;
     color: rgb(214, 115, 49);
 }
 
 .priceandinfo .mediodepago{
-    position: relative;
-    top: 5%;
-    left: 3%;
-    font-size: 2.6vw;
+    font-size: 3.5vw;
 }
 
 .logocards{
     display: flex;
-    position: relative;
     flex-direction: row;
-    top: 6%;
-    left: 5%;
 }
 
 .logocards img{
-    width: 6vw;
-    position: relative;
-  
-}
-
-div.opcionesdecompra{
-    position: relative;
-    top: 10%;
+    width: 6vw;  
 }
 
 div.opcionesdecompra form label{
     font-weight: bold;
-    font-size: 2.2vw;
+    font-size: 3vw;
+}
+
+.divcolors, .divtalles, 
+.seleccioncuant, div.opcionesdecompra{
+    width: 100%;
+}
+
+.divcolors, .divtalles, .seleccioncuant{
+    margin: 5px;
 }
 
 .divcolors .colord{
-    width: 12vw;
-    font-size: 2vw;
+    width: 40%;
+    font-size: 3.5vw;
 }
 
 .divtalles .tallesd{
-    width: 6vw;
-    font-size: 2.2vw;
+    width: 30%;
+    font-size: 3.5vw;
 }
 
 .seleccioncuant{
-    position: relative;
-    top: 15%;
     display: flex;
     flex-direction: row;
-
 }
 
 .seleccioncuant input{
-    position: relative;
-    left: 4%;
-    width: 8vw;
+    width: 20%;
+    font-size: 3.5vw;
 }
 
 .buttonagregar{
-    position: relative;
     display: flex;
-    width: 50vw;
-    right: 51vw;
-    top: 6vw;
-    height: 10vw;
+    width: 100%;
+    max-height: 50%;
 }
 
 .buttonagregar button{
-    width: 50vw;
+    width: 70%;
     background-color: #ff6a2f;
     border-color: #ff6a2f;
-    box-shadow: 2vw 2vw 2vw black solid;
+    padding: 3px;
+}
+
+.buttonagregar button:hover{
+    box-shadow: 1vw 1vw 1vw var(--negro);
 }
 
 .buttonagregar button p{
@@ -467,12 +461,11 @@ div.opcionesdecompra form label{
 }
 
 .productdescription{
-    position: relative;
     display: flex;
-    top: 30vw;
-    left: 5vw;
     flex-direction: column;
+    width: 90%;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }
 
 .productdescription h1{
@@ -484,22 +477,16 @@ div.opcionesdecompra form label{
 }
 
 .commentbox{
-    position: relative;
-    top: 40vw;
-    display: flex;
+    margin: 20px;
 }
 
 .commentbox form{
     display: flex;
     flex-direction: column;
-    position: relative;
-    left: 9vw;
 }
 
 .commentbox form label{
     font-size: 4vw;
-    position: relative;
-    right: 4vw;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -646,7 +633,7 @@ button{
         padding: 15px 2px;
         position: relative;
     }
-    
+
     .form .icon, #search{
         display: block;
         align-self: center;
@@ -670,11 +657,18 @@ button{
         color: var(--gris-oscuro);
         width: 18px;
         position: absolute;
-        left: 140px;
+        padding: 2px;
+        left: 142px;
+        bottom: 13px;
+        font-size: 21px;
     }
     
     header .form .icon i{
         font-size: 14px;
+    }
+
+    #product-cart, #circle-user{
+        font-size: 21px;
     }
 
     /*MAIN*/
@@ -710,8 +704,13 @@ button{
         flex-direction: row;
         flex-wrap: wrap;
     }
+    .nuevos-ingresos .titulares{
+        font-size: 3.5vw;
+        padding: 3px 7px;
+        margin-bottom: 5px; 
+    }
 
-    .nuevos-ingresos .article{
+    .article{
         width: 45%;
     }
 
@@ -722,9 +721,95 @@ button{
     .description{
         font-size: 14px;
     } 
+
+    /*PRODUCT-DETAIL*/
+    .productimg{
+        width: 60%;
+        margin: 10px;
+    }
+
+    .nameofproduct{
+        font-size: 4vw;
+        margin: 5px;
+    }
     
-    /* PRODUCTCART SILVI*/
+    .priceofproduct{
+        font-size: 4vw;
+        margin: 5px;
+    }
     
+    .logistic{
+        margin: 5px;
+    }
+    
+    .logistic i{
+        font-size: 3vw;
+    }
+    
+    .freesend{
+        font-size: 3vw;
+    }
+    
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+    }
+    
+    .logocards img{
+        width: 6vw;  
+    }
+    
+    div.opcionesdecompra form label{
+        font-size: 2vw;
+    }
+
+    .divcolors, .divtalles, .seleccioncuant{
+        margin: 10px;
+    }
+    
+    .divcolors .colord{
+        width: 40%;
+        font-size: 2.5vw;
+    }
+    
+    .divtalles .tallesd{
+        width: 30%;
+        font-size: 2.5vw;
+    }
+    
+    .seleccioncuant input{
+        width: 20%;
+        font-size: 2.5vw;
+    }
+    
+    .buttonagregar button p{
+        font-size: 3vw ;
+    }
+    
+    .productdescription{
+        margin: 20px;
+    }
+    
+    .productdescription h1{
+        font-size: 3vw;
+    }
+    
+    .productdescription p{
+        font-size: 2vw;
+    }
+    
+    .commentbox{
+        margin: 20px;
+    }
+    
+    .commentbox form label{
+        font-size: 3vw;
+    }
+    
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
+    }
+
 }
 
 
@@ -732,7 +817,7 @@ button{
 @media (min-width: 769px){
     /*HEADER*/
     header{
-        max-height: 180px;
+        max-height: 200px;
     }
 
     /*logo*/
@@ -758,7 +843,8 @@ button{
     header .form .icon{
         border-left: var(--gris-oscuro);
         width: 20px;
-        left: 200px;
+        left: 197px;
+        bottom: 13px;
     }
 
     header .form .icon i{
@@ -819,95 +905,112 @@ button{
         flex-wrap: wrap;
     }
 
-    .nuevos-ingresos .article{
-        width: 25%;
+    .nuevos-ingresos .titulares{
+        font-size: 3vw;
+        padding: 0px 10px;
+        margin-bottom: 10px; 
+    }
+
+    .article{
+        width: 23%;
     }
 
     .article .price{
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .description{
-        font-size: 14px;
+        font-size: 16px;
     }
 
     /*PRODUCT-DETAIL*/
-    div.opcionesdecompra form div.buttonagregar{
-        position: relative;
-        display: flex;
-        width: 50vw;
-        right: 4vw;
-        top: 1vw;
-        height: 6vw;
+    .productimg{
+        width: 60%;
+        margin: 15px;
     }
 
-    div.opcionesdecompra form div.buttonagregar button p{
-        color: white;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    .nameofproduct{
+        font-size: 4vw;
+        margin: 10px;
+    }
+    
+    .priceofproduct{
+        font-size: 4vw;
+        margin: 10px;
+    }
+    
+    .logistic{
+        margin: 10px;
+    }
+    
+    .logistic i{
+        font-size: 3vw;
+    }
+    
+    .freesend{
+        font-size: 3vw;
+    }
+    
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+    }
+    
+    .logocards img{
+        width: 6vw;  
+    }
+    
+    div.opcionesdecompra form label{
+        font-weight: bold;
+        font-size: 2vw;
+    }
+
+    .divcolors, .divtalles, .seleccioncuant{
+        margin: 15px;
+    }
+    
+    .divcolors .colord{
+        font-size: 2.5vw;
+    }
+    
+    .divtalles .tallesd{
+        font-size: 2.5vw;
+    }
+    
+    .seleccioncuant input{
+        font-size: 2.5vw;
+    }
+    
+    .buttonagregar button p{
         font-size: 3vw ;
-        
-    }
-
-    div.opcionesdecompra form div.buttonagregar button{
-        width: 45vw;
-        background-color: #ff6a2f;
-        border-color: #ff6a2f;
-        box-shadow: 2vw 2vw 2vw black solid;
     }
     
-    main div.productandprice section.productimg{
-        width: 40vw;
-        height: 50vw;
-        position: relative;
-        display: flex;
-    }
-
-
-    /*FOOTER*/
-    footer{
-        flex-direction: row;
-        margin-top: 20px;
-    }
-
-    footer .cont-info1, footer .cont-info2,
-     footer .conteiner{
-        margin: 0px;
-    }
-
-    .cont-info1{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        width: 25%;
-    }
-
-    .cont-info2{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        width: 35%;
-    }
-
-    .info{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .info .description{
-        font-size: 10px;
+    .productdescription{
+        margin: 40px;
     }
     
-    #truck, #credit-card{
-        font-size: 1.8em;
-        margin: 1px;
+    .productdescription h1{
+        font-size: 3vw;
+    }
+    
+    .productdescription p{
+        font-size: 2vw;
+    }
+    
+    .commentbox{
+        margin: 40px;
+    }
+    
+    .commentbox form label{
+        font-size: 3vw;
+    }
+    
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
     }
 
-    /* CARRITO */
+
+    /* PRODUCT-CART*/
     .todo-junto{
         display: flex;
         flex-direction: row;
@@ -986,13 +1089,59 @@ button{
         background-color: var(--gris-claro);
         box-shadow: 0px 0px 0px --gris-claro;
     }
+
+
+    /*FOOTER*/
+    footer{
+        flex-direction: row;
+        margin-top: 20px;
+        height: 150px;
+    }
+
+    footer .cont-info1, footer .cont-info2,
+     footer .conteiner{
+        margin: 0px;
+    }
+
+    .cont-info1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 28%;
+    }
+
+    .cont-info2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 35%;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .info .description{
+        font-size: 10px;
+    }
+    
+    #truck, #credit-card{
+        font-size: 2em;
+        margin: 1px;
+    }
 }
 
     
     @media (min-width:1023px){
         /*HEADER*/
         header{
-            max-height: 220px;
+            max-height: 280px;
         }
 
         /*logo*/
@@ -1001,7 +1150,7 @@ button{
         }
 
         .logo{
-            max-width: 225px;
+            max-width: 250px;
         }
 
         /*form*/
@@ -1018,7 +1167,9 @@ button{
         header .form .icon{
             border-left: var(--gris-oscuro);
             width: 25px;
-            left: 270px;
+            height: 20px;
+            left: 273px;
+            bottom: 29px;
         }
 
         header .form .icon i{
@@ -1079,24 +1230,35 @@ button{
             flex-wrap: wrap;
         }
 
-        .nuevos-ingresos .article{
+        .nuevos-ingresos .titulares{
+            font-size: 2.5vw;
+            padding: 0px 15px;
+            margin-bottom: 15px; 
+        }
+
+        .article{
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
-            width: 25%;
+            width: 22%;
         }
         .article .price{
-            font-size: 18px;
+            font-size: 20px;
         }
         
         .description{
-            font-size: 16px;
+            font-size: 18px;
         }
 
         /*FOOTER*/
         footer{
             flex-direction: row;
             margin-top: 20px;
+            height: 200px;
+        }
+
+        footer .titulares {
+            font-size: 1.5vw;
         }
 
         footer .cont-info1, footer .cont-info2, footer .conteiner{
@@ -1109,7 +1271,7 @@ button{
             flex-wrap: wrap;
             justify-content: flex-start;
             padding: 5px;
-            width: 25%;
+            width: 28%;
         }
 
         .cont-info2{
@@ -1118,7 +1280,7 @@ button{
             flex-wrap: wrap;
             justify-content: flex-start;
             padding: 5px;
-            width: 33%;
+            width: 35%;
         }
 
         .info{
@@ -1130,12 +1292,107 @@ button{
         }
 
         .info .description{
-            font-size: 12px;
+            font-size: 1vw;
         }
         
         #truck, #credit-card{
             font-size: 2.5em;
             margin: 3px;
+        }
+
+
+        /*PRODUCT-DETAIL*/
+        .productimg{
+            width: 50%;
+            margin: 20px;
+        }
+
+        .nameofproduct{
+            font-size: 3vw;
+            margin: 20px;
+        }
+        
+        .priceofproduct{
+            font-size: 3vw;
+            margin: 20px;
+        }
+        
+        .logistic{
+            margin: 20px;
+        }
+        
+        .logistic i{
+            font-size: 2vw;
+        }
+        
+        .freesend{
+            font-size: 2vw;
+        }
+        
+        .priceandinfo .mediodepago{
+            font-size: 2.5vw;
+            margin: 20px;
+        }
+        
+        .logocards img{
+            width: 6vw;  
+        }
+        
+        div.opcionesdecompra form label{
+            font-weight: bold;
+            font-size: 2vw;
+        }
+    
+        .divcolors, .divtalles, .seleccioncuant{
+            width: 100%;
+            margin: 25px;
+        }
+        
+        .divcolors .colord{
+            font-size: 2vw;
+        }
+        
+        .divtalles .tallesd{
+            font-size: 2vw;
+        }
+        
+        .seleccioncuant input{
+            font-size: 2vw;
+        }
+
+        .buttonagregar button{
+            width: 80%;
+            padding: 10px;
+            margin: 20px;
+        }
+        
+        .buttonagregar button p{
+            font-size: 2vw ;
+        }
+        
+        .productdescription{
+            margin: 65px;
+        }
+        
+        .productdescription h1{
+            font-size: 3vw;
+        }
+        
+        .productdescription p{
+            font-size: 2vw;
+        }
+        
+        .commentbox{
+            margin: 80px;
+        }
+        
+        .commentbox form label{
+            font-size: 3vw;
+        }
+        
+        .commentarea{
+            height: 7vw;
+            font-size: 2vw;
         }
     }     
 

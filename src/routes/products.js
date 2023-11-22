@@ -6,6 +6,12 @@ const { route } = require('./user.js');
 
 router.get('/detailProduct', productsController.detailProduct);
 
-router.get('/productCart', productsController.productCart)
+router.get('/productCart', productsController.productCart);
+
+router.get('/nenes', productsController.nenes);
+
+router.get('/nenas', productsController.nenas);
+
+router.get("/formproduct", productsController.formProduct)
 
 module.exports = router;

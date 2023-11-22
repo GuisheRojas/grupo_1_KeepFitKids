@@ -9,90 +9,64 @@
     <main class="detailmain">
         <div class="productandprice">
             <section class="productimg">
-                <img class="prod" src="/img/nenas/top_verde.jpg">
+                <img class="prod" src="/img/nenas/15.png">
             </section>
             <section class="priceandinfo">
-                <h1 class="nameofproduct">Top deportivo infantil para niñas Aerofit</h1>
-                <br>
+                <h1 class="nameofproduct">Top Miley</h1>
                 <h2 class="priceofproduct">$6.500,00</h2>
                 <div class="logistic">
-                <i class="fas fa-truck"></i>
-                <h4 class="freesend">Envío Gratis</h4>
+                    <i class="fas fa-truck"></i>
+                    <h4 class="freesend">Envío Gratis</h4>
                 </div>
                 <h2 class="mediodepago">Medios de pago:</h3>
                 <div class="logocards">
                     <img class="visacard" src="/img/logomastercard.png">
                     <img class="visacard" src="/img/logovisa.png">
                 </div>
-                
+
                 <div class="opcionesdecompra">
-
-                <form class="formdecomprar" action="/productCart" method="GET">
-                    <div class="divcolors">
-                    <label>Seleccione un color</label>
-                    <select class="colord" name="colorstock">
-                    <option value="#51B59F">Verde</option>
-                    <option value="#FF0000">Rojo</option>
-                    <option value="#000000">Negro</option>
-                    </select>
-                    </div>
-                    <br>
-                    <div class="divtalles">
-                    <label>Seleccione un talle</label>
-                    <select class="tallesd" name="tallestock">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    </select>
-                    </div>
-                    <br>
-                    <div class="seleccioncuant">
-                    <label>Selecciona la cantidad</label>
-                    <input class="cuantd" type="text" name="cantidad">
-                    </div> 
-                    <div class="buttonagregar">
-                   <button type="submit" value="Agregar">
-                        <p>Agregar al carrito</p>
-                    </button>    
-                    </div>  
-                </form>
-
+                    <form class="formdecomprar" action="/productCart" method="GET">
+                        <div class="divcolors">
+                            <label>Seleccione un color</label>
+                            <select class="colord" name="colorstock">
+                                <option value="#51B59F">Verde</option>
+                                <option value="#FF0000">Rojo</option>
+                                <option value="#000000">Negro</option>
+                            </select>
+                        </div>
+                        <div class="divtalles">
+                            <label>Seleccione un talle</label>
+                            <select class="tallesd" name="tallestock">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="seleccioncuant">
+                            <label>Selecciona la cantidad</label>
+                            <input class="cuantd" type="text" name="cantidad">
+                        </div> 
+                        <div class="buttonagregar">
+                            <button type="submit" value="Agregar"><p>Agregar al carrito</p>                            </button>    
+                        </div>  
+                    </form>
                 </div>
-
-
             </section>
         </div>
         <div class="productdescription">
             <h1>DESCRIPCIÓN</h1>
-            <br>
-            <br>
             <p> TOP DEPORTIVO MICROFIBRA LYCRA 70 ELASTICO CON RELIEVE</p>
-            <br>
             <p> EXCELENTE AGARRE </p>
-            <br>
             <p> Garantía del vendedor: 30 días</p>
-            <br>
             <p>Ideal para hacer ejercicio en gimnasio o al aire libre. La mejor calidad y los mejores precios.</p>
-
         </div>
         <div class="commentbox">
             <form action="/contact" method="POST">
                 <label>Comentarios sobre el producto</label>
-                <br>
                 <textarea name="comment" class="commentarea">Deje su comentario...</textarea>
-
             </form>
-
         </div>
     </main>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <%- include('../partials/footer') %>
 </body>
 </html>
