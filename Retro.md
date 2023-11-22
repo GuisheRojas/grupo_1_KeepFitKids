@@ -28,8 +28,11 @@
 
 ###Hacer mas:
 
+- Participar y mantener activo el tablero Trello.
 
 ###Hacer menos:
+- Relajarnos con el tiempo 
+- No pedir ayuda cuando estemos estancados con algo.
 
 
 ###Continuar haciendo:
@@ -37,6 +40,9 @@
 - Apoyarnos y motivarnos en momentos donde la presión es muy alta.
 
 ###Comenzar a hacer:
+ Debemos organizarnos con mas tiempo, para poder cumplir nuestros proyectos a tiempo y sin tanta presión.
+- Empezar a reunirnos mas seguido con reuniones cortas para ver los avances del equipo.
+- Definir los alcances del proyecto para tener en claro las actividades del sprint.
 
 
 ###Dejar de hacer:
