@@ -544,6 +544,9 @@ const controller = {
     nenas: (req, res) => {
         return res.render('./products/nenas', {productos: productos})
     },
+    formProduct: (req,res) => {
+        return res.render("./products/formproduct",{productos: productos})
+    }
 }
 
 module.exports = controller;

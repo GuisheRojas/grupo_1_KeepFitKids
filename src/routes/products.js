@@ -12,4 +12,6 @@ router.get('/nenes', productsController.nenes);
 
 router.get('/nenas', productsController.nenas);
 
+router.get("/formproduct", productsController.formProduct)
+
 module.exports = router;
