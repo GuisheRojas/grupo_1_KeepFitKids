@@ -7,6 +7,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: true,
     id: 1
 },
 {
@@ -18,6 +19,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: true,
     id: 2
 },
 {
@@ -29,6 +31,7 @@ let productos = [{
     talle:'',
     stock: '',
     sexo: 'M',
+    new: true,
     id: 3
 },
 {
@@ -40,6 +43,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: true,
     id: 4
 },
 {
@@ -51,6 +55,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: true,
     id: 5
 },
 {
@@ -62,6 +67,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: true,
     id: 6
 },
 {
@@ -73,6 +79,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: true,
     id: 7
 },
 {
@@ -84,6 +91,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: true,
     id: 8
 },
 {
@@ -95,6 +103,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 9
 },
 {
@@ -106,6 +115,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 10
 },
 {
@@ -117,6 +127,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 11
 },
 {
@@ -128,6 +139,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 12
 },
 {
@@ -139,6 +151,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 13
 },
 {
@@ -150,6 +163,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 14
 },
 {
@@ -161,6 +175,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 15
     
 },
@@ -173,6 +188,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 16
 },
 {
@@ -184,6 +200,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 17
 },
 {
@@ -195,6 +212,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 18
 },
 {
@@ -206,6 +224,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 19
 },
 {
@@ -217,6 +236,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 20
 },
 {
@@ -228,6 +248,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 21
 },
 {
@@ -239,6 +260,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 22
 },
 {
@@ -250,6 +272,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 23
 },
 {
@@ -261,6 +284,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 24
 },
 {
@@ -272,6 +296,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 25
 },
 {
@@ -283,6 +308,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 26
 },
 {
@@ -294,6 +320,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 27
 },
 {
@@ -305,6 +332,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 28
 },
 {
@@ -316,6 +344,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'F',
+    new: false,
     id: 29
 },
 {
@@ -327,6 +356,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 30
 },
 {
@@ -338,6 +368,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 31
 },
 {
@@ -349,6 +380,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 32
 },
 {
@@ -360,6 +392,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 33
 },
 {
@@ -371,6 +404,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 34
 },
 {
@@ -382,6 +416,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 35
 },
 {
@@ -393,6 +428,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 36
 },
 {
@@ -404,6 +440,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 37
 },
 {
@@ -415,6 +452,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 38
 },
 {
@@ -426,6 +464,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 39
 },
 {
@@ -437,6 +476,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 40
 },
 {
@@ -448,6 +488,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 41
 },
 {
@@ -459,6 +500,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 42
 },
 {
@@ -470,6 +512,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 43
 },
 {
@@ -481,6 +524,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 44
 },
 {
@@ -492,6 +536,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 45
 },
 {
@@ -503,6 +548,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 46
 },
 {
@@ -514,6 +560,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 47
 },
 {
@@ -525,6 +572,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 48
 },
 {
@@ -536,6 +584,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 49
 },
 {
@@ -547,6 +596,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 50
 },
 {
@@ -558,6 +608,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 51
 },
 {
@@ -569,6 +620,7 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 52
 },
 {
@@ -580,17 +632,23 @@ let productos = [{
     talle: '',
     stock: '',
     sexo: 'M',
+    new: false,
     id: 53
+}
+];
+
+let carrito = [
+{
 }
 ];
 
 const controller = {
     productCart: (req, res) => {
-        const productId = productos.find(productos => productos.id == req.params.idDetail);
+        const productId = productos.find(productos => productos.id == req.params.id);
         res.render('./products/productCart', {productId})
     },
     detailproduct: (req, res) => {
-        const productId = productos.find(productos => productos.id == req.params.idDetail);
+        const productId = productos.find(productos => productos.id == req.params.id);
         res.render('./products/detailproduct', {productId})
     },
     nenes: (req, res) => {
@@ -606,4 +664,4 @@ const controller = {
 
 }
 
-module.exports = controller;
+module.exports = {productos, controller};

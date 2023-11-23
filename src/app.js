@@ -15,13 +15,19 @@ app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)
 });
 
-app.get('/', mainRouter);
+app.get('/', mainRouter)
 
-app.get('/user', userRouter)
+app.get('/login', userRouter)
 
-app.get('/productCart/:idDetail', productRouter)
+app.get('/register', userRouter)
 
-app.get('/detailproduct/:idDetail', productRouter)
+app.get('/productCart', productRouter)
+
+app.get('/detailproduct', productRouter)
+
+app.get('/productCart/:id', productRouter)
+
+app.get('/detailproduct/:id', productRouter)
 
 app.get('/nenes', productRouter)
 

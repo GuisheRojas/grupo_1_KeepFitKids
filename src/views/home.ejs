@@ -26,14 +26,16 @@
             <div id="titulares">
                 <h4 class="titulares">  NUEVOS INGRESOS  </h4>
             </div>
-            <% for(let i=0; i < nuevosIngresos.length; i++){ %>
-                <article class="article">
-                    <a href="/detailproduct">
-                        <img src=<%= nuevosIngresos[i].src %> alt=<%= nuevosIngresos[i].name %> class="product_img">
-                        <p class="price"><%= nuevosIngresos[i].price %></p>
-                        <h4 class="description"><%=nuevosIngresos[i].name%></h4>
-                    </a>
-                </article>
+            <% for(let i=0; i < productos.length; i++){ %>
+                <% if(productos[i].new) { %>
+                    <article class="article">
+                        <a href="/detailproduct/<%= productos[i].id %>">
+                            <img src=<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
+                            <p class="price"><%=productos[i].price %></p>
+                            <h4 class="description"><%=productos[i].name%></h4>
+                        </a>
+                    </article>
+                <% } %>
             <% } %>
         </section>
 
