@@ -14,10 +14,10 @@ router.get('/nenes', productsController.controller.nenes);
 
 router.get('/nenas', productsController.controller.nenas);
 
-router.get("/formproduct", productsController.controller.formProduct)
+router.get('/getProduct', productsController.controller.getProduct)
+router.post('/addProduct', productsController.controller.addProduct)
 
-router.post('/addProduct', productsController.addProduct)
-
-router.put('/editProduct', productsController.editProduct)
+router.get('/editProduct', productsController.controller.editProduct)
+router.post('/modifiedProduct', productsController.controller.modifiedProduct)
 
 module.exports = router;

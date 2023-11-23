@@ -1,19 +1,23 @@
 const express = require('express');
 const app = express();
-const PORT = 8000;
 const path = require('path');
+
+const PORT = 8000;
 const mainRouter = require('./routes/main');
 const productRouter = require('./routes/products');
 const userRouter = require('./routes/user');
+const bodyParser = require('body-parser');
 
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', path.join(__dirname, 'views'));
 
 app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)
 });
+
 
 app.get('/', mainRouter)
 
@@ -33,4 +37,10 @@ app.get('/nenes', productRouter)
 
 app.get('/nenas', productRouter)
 
-app.get("/formproduct", productRouter)
+app.get('/getProduct', productRouter)
+
+
+
+/*app.get("/addProduct", productRouter)*/
+
+app.get('/editProduct', productRouter)

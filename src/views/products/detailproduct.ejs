@@ -57,10 +57,15 @@
             <h1>DESCRIPCIÓN</h1>
             <p> <%= productId?.description%></p>
         </div>
-        <div class="commentbox">
+        <div class="container">
             <form action="/contact" method="POST">
                 <label>Comentarios sobre el producto</label>
-                <textarea name="comment" class="commentarea">Deje su comentario...</textarea>
+                <div class="commentbox">    
+                    <textarea name="comment" class="commentarea">Deje su comentario...</textarea>
+                    <div class="buttonenviar">
+                        <button class="enviar">Enviar</button>
+                    </div>            
+                </div>
             </form>
         </div>
     </main>

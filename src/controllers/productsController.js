@@ -1,4 +1,4 @@
-let productos = [{
+const productos = [{
     src: '/img/nenes/10.png',
     price: '$12.500',
     name: 'Short de baño Shark',
@@ -657,18 +657,45 @@ const controller = {
     nenas: (req, res) => {
         return res.render('./products/nenas', {productos: productos})
     },
-    formProduct: (req,res) => {
-        return res.render("./products/formproduct",{productos: productos})
+    getProduct: (req, res) => {
+        return res.render("./products/addproduct", {productos: productos})
     },
     addProduct: (req,res) => {
-        res.render("./products/addproduct");
-        productos.push({id: productos.length + 1})
+        const newProduct = {
+            src: req.body.src,
+            price: req.body.price,
+            name: req.body.name,
+            description: req.body.description,
+            color: req.body.color,
+            talle: req.body.talle,
+            stock: req.body.stock,
+            sexo: req.body.sexo,
+            new: true,
+            id: productos.length + 1
+        }
+        console.log('req.body',req.body);
+        productos.push({newProduct: newProduct})
+        res.redirect('/getProduct')
     },
     editProduct: (req, res)=>{
-        return res.render("./products/editproduct")
-    }
-
-
+        return res.render("./products/editproduct", {productos: productos})
+    },
+    modifiedProduct: (req, res) => {
+        const newProduct = {
+            src: req.body.src,
+            price: req.body.price,
+            name: req.body.name,
+            description: req.body.description,
+            color: req.body.color,
+            talle: req.body.talle,
+            stock: req.body.stock,
+            sexo: req.body.sexo,
+            new: true,
+            id: productos.length + 1
+        }
+        productos.push({newProduct: newProduct})
+        res.redirect('/editProduct')
+    },
 }
 
 module.exports = {productos, controller};

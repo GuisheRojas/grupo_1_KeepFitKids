@@ -6,23 +6,13 @@
  </head>
 <body>
     <%- include('../partials/header') %>
-    <main>
-        <form action="editproduct.ejs" method="post">
-            <label for="producto">Nombre del producto</label>
-            <input type="text" id="producto" name="name">
-            <label for="producto">Precio del producto</label>
-            <input type="text" id="producto" name="precio">
-            <label for="producto">Descripción del producto</label>
-            <input type="text" id="producto" name="description">
-            <label for="producto">Color del producto</label>
-            <input type="text" id="producto" name="color">
-            <label for="producto">Talle del producto</label>
-            <input type="text" id="producto" name="talle">
-            <label for="producto">Stock del producto</label>
-            <input type="text" id="producto" name="stock">
-            <label for="producto">Sexo del producto</label>
-            <input type="text" id="producto" name="sexo">
-            <button type="submit">Editar producto</button>
+    <main class="mainForm">
+        <form action="/modifiedProduct" method="post" class="forms">
+            <h1 class="titulares">Ingrese el producto</h1>
+            <div class="container">
+                <%- include('../partials/formProducts') %>
+                <button type="submit" class="submit">Editar producto</button>
+            </div>
         </form>
     </main>
     <%- include('../partials/footer') %>

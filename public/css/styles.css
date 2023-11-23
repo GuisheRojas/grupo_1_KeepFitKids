@@ -173,8 +173,8 @@ img{
 }
 
 
-/*FORM GUILLE*/
-.main-R{
+/*FORMS*/
+.mainForm{
     background-color: var(--blanco);
     background-image:  radial-gradient(#ff4800c0 1px, transparent 1px), radial-gradient(#ff4800c0 1px, #fff 1px);
     background-size: 20px 20px;
@@ -182,7 +182,7 @@ img{
     display: flex;
     min-height:80vh;
 }
-.form-Reg{
+.forms{
     background-color: var(--blanco);
     margin: auto;
     width: 90%;
@@ -192,12 +192,13 @@ img{
     box-shadow: 0 5px 10px -5px rgb(0, 0, 0, 30%);
     text-align: center;
 }
-.form-Reg .titulo{
-    font-size: 1.5rem;
+.forms .titulares{
+    font-size: 12px;
     margin-bottom: .5em;
     color: var(--naranja);
+    background: none;
 }
-.form-Reg .titulo .container{
+.forms .titulares .container{
     margin-top: 3em;
     display: grid;
     gap: 2.5em;
@@ -205,14 +206,16 @@ img{
 .group{
     position: relative;
     --color: #5757577e;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-bottom: 3px;
 }
-
 
 .group .input{
     width: 100%;
     background: none;
     color: #706c6c;
-    font-size: 1rem;
+    font-size: .5rem;
     margin-top: 1.5em;
     margin-bottom: .5em;
     border: none;
@@ -234,18 +237,19 @@ img{
     color: var(--color);
     cursor: pointer;
     position: absolute;
+    margin-top: 1.8em;
     top: 0;
     left: 5px;
     transform: translateY(10px);
     transition: transform 500ms, color 300ms;
 }
 
-.form-Reg .submit{
+.forms .submit{
     background: var(--verde-keep);
     color: white;
     font-weight: 300;
-    font-size: 1rem;
-    padding: .8em .3em;
+    font-size: .6rem;
+    padding: .5em .3em;
     margin-top: 1.5em;
     border: none;
     border-radius: .5em;
@@ -267,13 +271,10 @@ img{
 .group .input:not(:placeholder-shown) ~ .line{
     transform: scale(1);
 }
+
 div.group-remember{
     display: inline-block;
     margin: 1em;
-}
-
-.label{
-    margin-top: 1.8em;
 }
 
 .cuentaregister{
@@ -286,8 +287,9 @@ footer{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-content: center;
     align-items: center;
+    justify-content: center;
     background-color: var(--verde-keep);
     padding: 20px;
 }
@@ -307,6 +309,7 @@ footer{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 footer .description{
@@ -317,6 +320,7 @@ footer .description{
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    text-align: center;
 }
 
 #truck, #credit-card{
@@ -491,25 +495,49 @@ button.agregarDetail{
     font-size: 2vw;
 }
 
-.commentbox{
+.detailmain .container{
     margin: 20px;
 }
 
-.commentbox form{
+.detailmain .container form{
     display: flex;
     flex-direction: column;
 }
 
-.commentbox form label{
+.detailmain .container form label{
     font-size: 2vw;
     font-weight: bold;
 }
 
 .commentarea{
+    width: 80%;
     height: 7vw;
     border-color: #000;
     border-radius: 3px;
     font-size: 2vw;
+}
+
+.commentbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.buttonenviar{
+    display: flex;
+    width: 20%;
+}
+
+.enviar{
+    width: 80%;
+    min-height: 10px;
+    border-radius: 3px;
+    font-size: 3vw;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    border: none;
+    padding: 3px;
 }
 
 /* SILVINA - PRODUCTCART*/
@@ -813,17 +841,34 @@ div.botones button{
         font-size: 2vw;
     }
     
-    .commentbox{
+    .container{
         margin: 20px;
     }
     
-    .commentbox form label{
+    .container form label{
         font-size: 3vw;
     }
     
     .commentarea{
         height: 7vw;
         font-size: 2vw;
+    }
+
+    /*FORMS*/
+    .forms .titulares{
+        font-size: 1rem;
+    }
+    
+    .group .input{
+        font-size: .3rem;
+    }
+    
+    .forms .submit{
+        font-size: 1rem;
+    }
+    
+    .label{
+        font-size: .8rem;
     }
 
 }
@@ -1012,11 +1057,11 @@ div.botones button{
         font-size: 2vw;
     }
     
-    .commentbox{
+    .container{
         margin: 40px;
     }
     
-    .commentbox form label{
+    .container form label{
         font-size: 3vw;
     }
     
@@ -1107,6 +1152,27 @@ div.botones button{
     }
 
 
+    /*FORMS*/
+    .mainForm{
+        background-image:  radial-gradient(#ff4800c0 1.3px, transparent 1.3px), radial-gradient(#ff4800c0 1.3px, #fff 1.3px);
+    }
+    .forms .titulares{
+        font-size: 1.3;
+    }
+    
+    .group .input{
+        font-size: .8rem;
+    }
+    
+    .forms .submit{
+        font-size: 1.3rem;
+    }
+    
+    .label{
+        font-size: 1.1rem;
+    }
+
+
     /*FOOTER*/
     footer{
         flex-direction: row;
@@ -1153,262 +1219,285 @@ div.botones button{
 }
 
     
-    @media (min-width:1023px){
-        /*HEADER*/
-        header{
-            max-height: 280px;
-        }
+@media (min-width:1023px){
+    /*HEADER*/
+    header{
+        max-height: 280px;
+    }
 
-        /*logo*/
-        a#logo{
-            width: 25%;
-        }
+    /*logo*/
+    a#logo{
+        width: 25%;
+    }
 
-        .logo{
-            max-width: 250px;
-        }
+    .logo{
+        max-width: 250px;
+    }
 
-        /*form*/
-        .form .icon, #search{
-            height: 45px;
-        }
+    /*form*/
+    .form .icon, #search{
+        height: 45px;
+    }
         
-        header .form input[type="search"]{
-            font-size: 18px;
-            padding-left: 15px;
-            width: 300px;
-        }
+    header .form input[type="search"]{
+        font-size: 18px;
+        padding-left: 15px;
+        width: 300px;
+    }
         
-        header .form .icon{
-            border-left: var(--gris-oscuro);
-            width: 25px;
-            height: 20px;
-            left: 273px;
-            bottom: 29px;
-        }
+    header .form .icon{
+        border-left: var(--gris-oscuro);
+        width: 25px;
+        height: 20px;
+        left: 273px;
+        bottom: 29px;
+    }
 
-        header .form .icon i{
-            font-size: 24px;
-        }
+    header .form .icon i{
+        font-size: 24px;
+    }
 
-        /*product-cart y circle-user*/
-        #product-cart p, #circle-user p{
-            display: block;
-            font-size: 20px;
-        }
+    /*product-cart y circle-user*/
+    #product-cart p, #circle-user p{
+        display: block;
+        font-size: 20px;
+    }
 
-        #product-cart, #circle-user{
-            display: flex;
-            flex-wrap: wrap; 
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: baseline;
-            text-decoration: none;
-        }
+    #product-cart, #circle-user{
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        text-decoration: none;
+    }
 
-        #product-cart i, #circle-user i{
-            font-size: 20px;
-        }
+    #product-cart i, #circle-user i{
+        font-size: 20px;
+    }
 
 
-        /*MAIN*/
-        .eleccion{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-top: 100px;
-            margin-bottom: 100px; 
-        }
+    /*MAIN*/
+    .eleccion{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 100px;
+        margin-bottom: 100px; 
+    }
         
-        .niños, .niñas{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 50%;
-        }
+    .niños, .niñas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 50%;
+    }
         
-        .niños img{
-            width: 100%;
-        }
+    .niños img{
+        width: 100%;
+    }
         
-        .niñas img{
-            width: 100%;
-        }
+    .niñas img{
+        width: 100%;
+    }
 
-        /*Articles*/
-        .nuevos-ingresos{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
+    /*Articles*/
+    .nuevos-ingresos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
-        .nuevos-ingresos .titulares{
-            font-size: 2.5vw;
-            padding: 0px 15px;
-            margin-bottom: 15px; 
-        }
+    .nuevos-ingresos .titulares{
+        font-size: 2.5vw;
+        padding: 0px 15px;
+        margin-bottom: 15px; 
+    }
 
-        .article{
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            width: 22%;
-        }
-        .article .price{
-            font-size: 20px;
-        }
-        
-        .description{
-            font-size: 18px;
-        }
+    .article{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 22%;
+    }
 
-        /*FOOTER*/
-        footer{
-            flex-direction: row;
-            height: 200px;
-        }
-
-        footer .titulares {
-            font-size: 1.5vw;
-        }
-
-        footer .cont-info1, footer .cont-info2, footer .conteiner{
-            margin: 0px;
-        }
-
-        .cont-info1{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            padding: 5px;
-            width: 28%;
-        }
-
-        .cont-info2{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            padding: 5px;
-            width: 35%;
-        }
-
-        .info{
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-        }
-
-        .info .description{
-            font-size: 1vw;
-        }
-        
-        #truck, #credit-card{
-            font-size: 2.5em;
-            margin: 3px;
-        }
-
-
-        /*PRODUCT-DETAIL*/
-        .productimg{
-            width: 50%;
-            margin: 20px;
-        }
-
-        .nameofproduct{
-            font-size: 3vw;
-            margin: 20px;
-        }
-        
-        .priceofproduct{
-            font-size: 3vw;
-            margin: 20px;
-        }
-        
-        .logistic{
-            margin: 20px;
-        }
-        
-        .logistic i{
-            font-size: 2vw;
-        }
-        
-        .freesend{
-            font-size: 2vw;
-        }
-        
-        .priceandinfo .mediodepago{
-            font-size: 2.5vw;
-            margin: 20px;
-        }
-        
-        .logocards img{
-            width: 6vw;  
-        }
-        
-        div.opcionesdecompra form label{
-            font-weight: bold;
-            font-size: 2vw;
-        }
+    .article .price{
+        font-size: 20px;
+    }
     
-        .divcolors, .divtalles, .seleccioncuant{
-            width: 100%;
-            margin: 25px;
-        }
-        
-        .divcolors .colord{
-            font-size: 2vw;
-        }
-        
-        .divtalles .tallesd{
-            font-size: 2vw;
-        }
-        
-        .seleccioncuant input{
-            font-size: 2vw;
-        }
+    .description{
+        font-size: 18px;
+    }
 
-        .buttonagregar button{
-            width: 80%;
-            padding: 10px;
-            margin: 20px;
-        }
+
+    /*FORMS*/
+    .mainForm{
+        background-image:  radial-gradient(#ff4800c0 1.5px, transparent 1.5px), radial-gradient(#ff4800c0 1.5px, #fff 1.5px);
+    }
+
+    .forms .titulares{
+        font-size: 1.5rem;
+    }
+    
+    .group .input{
+        font-size: 1rem;
+    }
         
-        .buttonagregar button p{
-            font-size: 2vw ;
-        }
+    .forms .submit{
+        font-size: 1.5rem;
+    }
         
-        .productdescription{
-            margin: 65px;
-        }
+    .label{
+        font-size: 1.3rem;
+    }
+
+    /*FOOTER*/
+    footer{
+        flex-direction: row;
+        height: 200px;
+    }
+
+    footer .titulares {
+        font-size: 1.5vw;
+    }
+
+    footer .cont-info1, footer .cont-info2, footer .conteiner{
+        margin: 0px;
+    }
+
+    .cont-info1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 5px;
+        width: 28%;
+    }
+
+    .cont-info2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 5px;
+        width: 35%;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .info .description{
+        font-size: 1vw;
+    }
         
-        .productdescription h1{
-            font-size: 3vw;
-        }
+    #truck, #credit-card{
+        font-size: 2.5em;
+        margin: 3px;
+    }
+
+
+    /*PRODUCT-DETAIL*/
+    .productimg{
+        width: 50%;
+        margin: 20px;
+    }
+
+    .nameofproduct{
+        font-size: 3vw;
+        margin: 20px;
+    }
         
-        .productdescription p{
-            font-size: 2vw;
-        }
+    .priceofproduct{
+        font-size: 3vw;
+        margin: 20px;
+    }
         
-        .commentbox{
-            margin: 80px;
-        }
+    .logistic{
+        margin: 20px;
+    }
         
-        .commentbox form label{
-            font-size: 3vw;
-        }
+    .logistic i{
+        font-size: 2vw;
+    }
         
-        .commentarea{
-            height: 7vw;
-            font-size: 2vw;
-        }
-    }     
+    .freesend{
+        font-size: 2vw;
+    }
+        
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+        margin: 20px;
+    }
+        
+    .logocards img{
+        width: 6vw;  
+    }
+        
+    div.opcionesdecompra form label{
+        font-weight: bold;
+        font-size: 2vw;
+    }
+    
+    .divcolors, .divtalles, .seleccioncuant{
+        width: 100%;
+        margin: 25px;
+    }
+        
+    .divcolors .colord{
+        font-size: 2vw;
+    }
+        
+    .divtalles .tallesd{
+        font-size: 2vw;
+    }
+        
+    .seleccioncuant input{
+        font-size: 2vw;
+    }
+
+    .buttonagregar button{
+        width: 80%;
+        padding: 10px;
+        margin: 20px;
+    }
+        
+    .buttonagregar button p{
+        font-size: 2vw ;
+    }
+        
+    .productdescription{
+        margin: 65px;
+    }
+    
+    .productdescription h1{
+        font-size: 3vw;
+    }
+        
+    .productdescription p{
+        font-size: 2vw;
+    }
+        
+    .container{
+        margin: 80px;
+    }
+        
+    .container form label{
+        font-size: 3vw;
+    }
+        
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
+    }
+}     
 
 
 
