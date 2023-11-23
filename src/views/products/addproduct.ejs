@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <%- include('../partials/head') %>
+    <title>Añadir producto</title>
+ </head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <form action="addProduct" method="post">
+            <label for="producto">Nombre del producto</label>
+            <input type="text" id="producto" name="name">
+            <label for="producto">Precio del producto</label>
+            <input type="text" id="producto" name="precio">
+            <label for="producto">Descripción del producto</label>
+            <input type="text" id="producto" name="description">
+            <label for="producto">Color del producto</label>
+            <input type="text" id="producto" name="color">
+            <label for="producto">Talle del producto</label>
+            <input type="text" id="producto" name="talle">
+            <label for="producto">Stock del producto</label>
+            <input type="text" id="producto" name="stock">
+            <label for="producto">Sexo del producto</label>
+            <input type="text" id="producto" name="sexo">
+            <button type="submit">Añadir producto</button>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

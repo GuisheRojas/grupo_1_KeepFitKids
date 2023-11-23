@@ -601,6 +601,13 @@ const controller = {
     },
     formProduct: (req,res) => {
         return res.render("./products/formproduct",{productos: productos})
+    },
+    addProduct: (req,res) => {
+        res.render("./products/addproduct");
+        productos.push({id: productos.length + 1})
+    },
+    editProduct: (req, res)=>{
+        return res.render("./products/editproduct")
     }
 
 

@@ -14,4 +14,8 @@ router.get('/nenas', productsController.nenas);
 
 router.get("/formproduct", productsController.formProduct)
 
+router.post('/addProduct', productsController.addProduct)
+
+router.put('/editProduct', productsController.editProduct)
+
 module.exports = router;
