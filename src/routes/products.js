@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-const productsController = require('../controllers/productsController.js');
-const { route } = require('./user.js');
+const productsController = require('../controllers/productsController');
+const { route } = require('./user');
 
-router.get('/detailproduct/:idDetail', productsController.detailproduct);
+router.get('/detailproduct/:id', productsController.controller.detailproduct);
 
-router.get('/productCart/:idDetail', productsController.productCart);
+router.get('/productCart', productsController.controller.productCart);
 
-router.get('/nenes', productsController.nenes);
+router.get('/productCart/:id', productsController.controller.productCart);
 
-router.get('/nenas', productsController.nenas);
+router.get('/nenes', productsController.controller.nenes);
 
-router.get("/formproduct", productsController.formProduct)
+router.get('/nenas', productsController.controller.nenas);
+
+router.get("/formproduct", productsController.controller.formProduct)
 
 router.post('/addProduct', productsController.addProduct)
 
