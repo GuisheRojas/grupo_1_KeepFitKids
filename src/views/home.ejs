@@ -13,12 +13,12 @@
     <main>
         <div class="eleccion">
             <div class="niños">
-                <a href="/nenes" id="niños"><img src="/img/nenes/nenes.png" alt="Imagen niños"></a>
+                <a href="/products/nenes" id="niños"><img src="/img/nenes/nenes.png" alt="Imagen niños"></a>
             </div>
             <br>
             <br>
             <div class="niñas">
-                <a href="/nenas" id="niñas"><img src="/img/nenas/nenas.png" alt="Imagen niñas"></a>
+                <a href="/products/nenas" id="niñas"><img src="/img/nenas/nenas.png" alt="Imagen niñas"></a>
             </div>
         </div>
         
@@ -29,7 +29,7 @@
             <% for(let i=0; i < productos.length; i++){ %>
                 <% if(productos[i].new) { %>
                     <article class="article">
-                        <a href="/detailproduct/<%= productos[i].id %>">
+                        <a href="/products/detailproduct/<%= productos[i].id %>">
                             <img src=<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
                             <p class="price"><%=productos[i].price %></p>
                             <h4 class="description"><%=productos[i].name%></h4>

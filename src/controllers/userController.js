@@ -1,9 +1,15 @@
 const controller = {
     login: (req, res) => {
-        return res.render('./users/login')
+        res.render('./users/login')
+    },
+    singIn: (req, res) => {
+        res.redirect('/')
     },
     register: (req, res)=>{
-        return res.render('./users/register')
+        res.render('./users/register')
+    },
+    singUp: (req, res) => {
+        res.redirect('/users/login')
     }
 }
 

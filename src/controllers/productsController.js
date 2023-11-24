@@ -693,7 +693,7 @@ const controller = {
             id: productos.length + 1
         }
         productos.push(newProduct)
-        res.redirect('/editProduct')
+        res.redirect('/products/editProduct')
     },
 }
 

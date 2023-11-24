@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/header') %>
     <main class="mainForm">
-        <form class="forms">
+        <form action="/users/singIn" method="POST" class="forms">
             <h2 class="titulares">Ingresa a tu cuenta</h2>
             <div class="container">
                 <div class="group">
@@ -26,7 +26,7 @@
                     <label for="remember" class="remember-text">Recordarme</label>
                 </div>
                 <div class="cuentaregister">
-                    <a href="/register"><p>¿No tenés cuenta? ¡Regístrate!</p></a>
+                    <a href="/users/register"><p>¿No tenés cuenta? ¡Regístrate!</p></a>
                 </div>
                 <input type="submit" class="submit" value="Ingresar">
             </div>

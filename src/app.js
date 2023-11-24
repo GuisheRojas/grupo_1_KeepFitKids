@@ -19,28 +19,9 @@ app.listen(PORT, ()=>{
 });
 
 
-app.get('/', mainRouter)
+app.use('/', mainRouter)
 
-app.get('/login', userRouter)
+app.use('/users', userRouter)
 
-app.get('/register', userRouter)
+app.use('/products', productRouter)
 
-app.get('/productCart', productRouter)
-
-app.get('/detailproduct', productRouter)
-
-app.get('/productCart/:id', productRouter)
-
-app.get('/detailproduct/:id', productRouter)
-
-app.get('/nenes', productRouter)
-
-app.get('/nenas', productRouter)
-
-app.get('/getProduct', productRouter)
-
-app.get("/addProduct", productRouter)
-
-app.get('/editProduct', productRouter)
-
-app.get("/modifiedProduct", productRouter)
