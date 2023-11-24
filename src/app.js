@@ -39,8 +39,8 @@ app.get('/nenas', productRouter)
 
 app.get('/getProduct', productRouter)
 
-
-
-/*app.get("/addProduct", productRouter)*/
+app.get("/addProduct", productRouter)
 
 app.get('/editProduct', productRouter)
+
+app.get("/modifiedProduct", productRouter)

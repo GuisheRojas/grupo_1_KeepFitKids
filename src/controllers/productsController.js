@@ -673,8 +673,7 @@ const controller = {
             new: true,
             id: productos.length + 1
         }
-        console.log('req.body',req.body);
-        productos.push({newProduct: newProduct})
+        productos.push(newProduct)
         res.redirect('/getProduct')
     },
     editProduct: (req, res)=>{
@@ -693,7 +692,7 @@ const controller = {
             new: true,
             id: productos.length + 1
         }
-        productos.push({newProduct: newProduct})
+        productos.push(newProduct)
         res.redirect('/editProduct')
     },
 }
