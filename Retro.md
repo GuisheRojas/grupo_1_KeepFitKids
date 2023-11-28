@@ -40,11 +40,28 @@
 - Apoyarnos y motivarnos en momentos donde la presión es muy alta.
 
 ###Comenzar a hacer:
- Debemos organizarnos con mas tiempo, para poder cumplir nuestros proyectos a tiempo y sin tanta presión.
+- Organizarnos con mas tiempo, para poder cumplir nuestros proyectos a tiempo y sin tanta presión.
 - Empezar a reunirnos mas seguido con reuniones cortas para ver los avances del equipo.
 - Definir los alcances del proyecto para tener en claro las actividades del sprint.
-
 
 ###Dejar de hacer:
 - Dejar todo para último momento.
 - No reunirnos todos en las weekly.
+
+
+- ##SPRINT 3:
+
+###Hacer mas:
+- Comprometernos con el curso y el equipo de trabajo.
+
+###Hacer menos:
+
+
+###Continuar haciendo:
+
+
+###Comenzar a hacer:
+- Realizar completas las partes que nos corresponden.
+- Empezar a desarrollar las tareas de cada uno con tiempo.
+
+###Dejar de hacer:
