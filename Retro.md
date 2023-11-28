@@ -63,5 +63,6 @@
 ###Comenzar a hacer:
 - Realizar completas las partes que nos corresponden.
 - Empezar a desarrollar las tareas de cada uno con tiempo.
+- Participar en Trello y utilizarlo como herramienta chequear que es lo que hay que hacer.
 
 ###Dejar de hacer:
