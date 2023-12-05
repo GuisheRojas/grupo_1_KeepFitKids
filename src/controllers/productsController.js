@@ -673,7 +673,8 @@ const controller = {
             new: true,
             id: productos.length + 1
         }
-        productos.push(newProduct)
+        console.log('req.body',req.body);
+        productos.push({newProduct: newProduct})
         res.redirect('/getProduct')
     },
     editProduct: (req, res)=>{
@@ -692,9 +693,28 @@ const controller = {
             new: true,
             id: productos.length + 1
         }
-        productos.push(newProduct)
-        res.redirect('/products/editProduct')
+        productos.push({newProduct: newProduct})
+        res.redirect('/editProduct')
     },
+
+    agregarCarrito: (req, res) => {
+        const newBuy = {
+            src: req.body.src,
+            price: req.body.price,
+            name: req.body.name,
+            color: req.body.color,
+            talle: req.body.talle,
+            stock: req.body.stock,
+            id: req.body.id
+
+        }
+
+        carrito.push({newBuy: newBuy})
+       
+        
+
+
+    }
 }
 
 module.exports = {productos, controller};
