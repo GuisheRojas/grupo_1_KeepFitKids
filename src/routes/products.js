@@ -17,6 +17,7 @@ router.post('/detailproduct/:id', productsController.controller.agregarCarrito);
 router.get('/productCart', productsController.controller.productCart);
 
 router.get('/productCart/:id', productsController.controller.productCart);
+router.delete('/productCart/:id', productsController.controller.eliminarCarrito);
 
 router.get('/nenes', productsController.controller.nenes);
 

@@ -79,10 +79,18 @@ const controller = {
 
         carrito.push({newBuy: newBuy})
        
+    },
+
+    eliminarCarrito: (req, res) => {
         
-
-
+        for(const i=0; i<carrito.length; i++) {
+            if(req.params.id == carrito[i].id){
+                carrito.splice(i, 1)
+            
+        }
     }
+}
+
 }
 
 module.exports = {productos, controller};
