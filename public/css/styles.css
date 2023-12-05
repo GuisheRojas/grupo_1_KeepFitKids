@@ -550,6 +550,10 @@ main.productcart h2{
     color: #FFF;
 }
 
+main.productcart{
+    min-height: 100%;
+}
+
 main.productcart h3{
     font-size: 20px;
     text-align: center;
@@ -568,7 +572,7 @@ ul.tabla{
     display: flex;
     justify-content: space-around;
     font-size: 24px;
-    margin: 0% 2%;
+    /* margin: 0% 2%; */
 }
 
 ul.tabla{
@@ -609,7 +613,7 @@ div.subtotal{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 2% 30%;
+    /*margin: 2% 30%;*/
     padding: 15px;
     align-items: center;
     border-radius: 5px;
@@ -1077,7 +1081,13 @@ div.botones button{
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
+        align-items: center;
     }
+
+    .articuloContainer{
+        min-height: 340px;
+    }
+    
     section.Carrito{
         padding: 20px;
         flex-direction: column;
@@ -1354,6 +1364,8 @@ div.botones button{
         font-size: 1.3rem;
     }
 
+    .forms .container
+
     /*FOOTER*/
     footer{
         flex-direction: row;
@@ -1498,8 +1510,3 @@ div.botones button{
         font-size: 2vw;
     }
 }     
-
-
-
-
-   
