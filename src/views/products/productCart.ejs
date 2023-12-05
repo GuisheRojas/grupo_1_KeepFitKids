@@ -20,55 +20,55 @@
                     <li>Cantidad</li>
                     <li>Precio</li>
                 </ul>
-             <article class="articulo">
-                <h3>Producto</h3>
-
- 
-                <div class="imagen">
-                    <img src=<%= productId?.src%> alt="top_verde">
-                    <br>
+                <div class="articuloContainer">
+                    <article class="articulo">
+                        <h3>Producto</h3>        
+                        <div class="imagen">
+                            <img src=<%= productId?.src%> alt="top_verde">
+                            <br>
+                        </div>
+                        <div class="detalle">
+                            <p><%= productId?.name%></p>
+                            <br>
+                        </div>
+                        <div class="color-prod">
+                            <label class="titulo">Color:</label>
+                            <select class="color" name="colortop">
+                                <option value="#51B59F">Verde</option>
+                                <option value="#FF0000">Rojo</option>
+                                <option value="#000000">Negro</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="talle">
+                            <label class="titulo">Talle:</label>
+                            <select name="select" id="talle">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="cantidad">
+                            <label class="titulo">Cantidad:</label>
+                            <select name="select" id="cantidad">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="unitario">
+                            <p><%= productId?.price%></p>
+                            <br>
+                        </div>
+                        <div class="elim">
+                            <i class="fa-solid fa-trash-can"></i>
+                            <br>
+                        </div>
+                    
+                    </article>
                 </div>
-                <div class="detalle">
-                    <p><%= productId?.name%></p>
-                    <br>
-                </div>
-                <div class="color-prod">
-                    <label class="titulo">Color:</label>
-                    <select class="color" name="colortop">
-                        <option value="#51B59F">Verde</option>
-                        <option value="#FF0000">Rojo</option>
-                        <option value="#000000">Negro</option>
-                    </select>
-                    <br>
-                </div>
-                <div class="talle">
-                    <label class="titulo">Talle:</label>
-                    <select name="select" id="talle">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    <br>
-                </div>
-                <div class="cantidad">
-                    <label class="titulo">Cantidad:</label>
-                    <select name="select" id="cantidad">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    <br>
-                </div>
-                <div class="unitario">
-                    <p><%= productId?.price%></p>
-                    <br>
-                </div>
-                <div class="elim">
-                    <i class="fa-solid fa-trash-can"></i>
-                    <br>
-                </div>
-            
-            </article>
             
 
             <div class="subtotal">
