@@ -42,8 +42,7 @@ const controller = {
         }
 
         let newProductJSON = JSON.stringify(newProduct);
-
-        productos.push(newProduct)
+        productos.push(newProductJSON)
         res.redirect('./getProduct')
     },
     editProduct: (req, res)=>{
@@ -65,6 +64,25 @@ const controller = {
         productos.push(newProduct)
         res.redirect('./editProduct')
     },
+
+    agregarCarrito: (req, res) => {
+        const newBuy = {
+            src: req.body.src,
+            price: req.body.price,
+            name: req.body.name,
+            color: req.body.color,
+            talle: req.body.talle,
+            stock: req.body.stock,
+            id: req.body.id
+
+        }
+
+        carrito.push({newBuy: newBuy})
+       
+        
+
+
+    }
 }
 
 module.exports = {productos, controller};
