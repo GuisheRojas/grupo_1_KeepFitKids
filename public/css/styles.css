@@ -952,6 +952,9 @@ div.elim form.formbotelim button {
     #product-cart i, #circle-user i{
         font-size: 18px;
     }
+
+   
+    
     div.elim form.formbotelim button {
         background-color: white;
         border-color: white;
@@ -959,7 +962,6 @@ div.elim form.formbotelim button {
         font-size: 200%;
         display: flex;
         position: relative;
-        left: 0%;
         justify-content: center;
         align-items: center;
     }

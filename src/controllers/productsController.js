@@ -85,13 +85,16 @@ const controller = {
        
     },
 
-    eliminarCarrito: (req, res) => { 
-        for(let i=0; i<carrito.length; i++) {
+    eliminarCarrito: (req, res) => {
+        
+        for(i=0; i<carrito.length; i++) {
             if(req.params.id == carrito[i].id){
-                carrito.splice(i, 1)            
+                carrito.splice(i, 1)
+            
             }
         }
-        res.render('./products/productCart')
+        res.redirect("/");
+
     }
 
 }
