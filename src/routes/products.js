@@ -29,12 +29,14 @@ router.get('/nenas', productsController.controller.nenas);
 //muestra el listado de productos
 //router.get('/list', productsController.controller.listado)
 
+//eliminar un producto del listado de productos
+
 //carga de un nuevo producto
 router.get('/getProduct', productsController.controller.getProduct)
 router.post('/addProduct', upload.single('productImage'), productsController.controller.addProduct)
 
 //edición de un producto
-router.get('/editProduct', productsController.controller.editProduct)
-router.put('/modifiedProduct', upload.single('productImage'), productsController.controller.modifiedProduct)
+router.get('/editProduct/:id', productsController.controller.editProduct)
+router.put('/modifiedProduct/:id', upload.single('productImage'), productsController.controller.modifiedProduct)
 
 module.exports = router;

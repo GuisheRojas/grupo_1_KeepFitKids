@@ -41,9 +41,9 @@ const controller = {
             newProduct.new = true;
             newProduct.id = productos.length + 1;
             productos.push(newProduct);
-            //console.log(productos);
+            
             let newProductJSON = JSON.stringify(productos);
-            fs.writeFileSync(newProductJSON);
+            fs.writeFileSync(path.join(__dirname, '../database/productos.json'), newProductJSON);
             res.redirect('./getProduct');
         } else {
             res.render("./products/addproduct", {productos: productos});
@@ -53,22 +53,20 @@ const controller = {
         return res.render("./products/editproduct", {productos: productos})
     },
     modifiedProduct: (req, res) => {
-        const editedProduct = {
-            src: req.file.filename,
-            price: req.body.price,
-            name: req.body.name,
-            description: req.body.description,
-            color: req.body.color,
-            talle: req.body.talle,
-            stock: req.body.stock,
-            sexo: req.body.sexo,
-            new: false,
-            id: productos.length + 1
+        if(req.file){ 
+            let modifiedProduct = {};
+            modifiedProduct = req.body;
+            modifiedProduct.src = req.file.filename;
+            modifiedProduct.new = false;
+            productos.push(modifiedProduct);
+            
+            let newProductJSON = JSON.stringify(productos);
+            fs.writeFileSync(path.join(__dirname, '../database/productos.json'), newProductJSON);
+            res.redirect('./getProduct');
+        } else {
+            res.redirect('./editProduct')
         }
-        productos.push(editedProduct)
-        let newProductJSON = JSON.stringify(productos);
-        fs.writeFileSync(newProductJSON)
-        res.redirect('./editProduct')
+        
     },
 
     agregarCarrito: (req, res) => {
