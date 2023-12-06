@@ -16,12 +16,18 @@ router.post('/detailproduct/:id', productsController.controller.agregarCarrito);
 
 router.get('/productCart', productsController.controller.productCart);
 
+//
 router.get('/productCart/:id', productsController.controller.productCart);
 router.delete('/productCart/:id', productsController.controller.eliminarCarrito);
 
+//muestra los productos para nenes
 router.get('/nenes', productsController.controller.nenes);
 
+//muestra los productos para nenes
 router.get('/nenas', productsController.controller.nenas);
+
+//muestra el listado de productos
+//router.get('/list', productsController.controller.listado)
 
 //carga de un nuevo producto
 router.get('/getProduct', productsController.controller.getProduct)
