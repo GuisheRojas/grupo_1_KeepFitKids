@@ -62,20 +62,22 @@
                             <p><%= productId?.price%></p>
                             <br>
                         </div>
+
+                        <div class="elim">
+                            <form method="post" action="/products/productCart/<%= productId?.id%>?_method=delete" class="formbotelim">
+                        <div>
+                            <button class="botonelim" type="submit">        
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                         </div>
+                            </form>
+                            <br>
+                        </div>
                         
                     </article>
                 </div>
 
-                <div class="elim">
-                    <form method="post" action="/products/productCart/<%= productId?.id%>?_method=delete" class="formbotelim">
-                <div>
-                    <button class="botonelim" type="submit">        
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                 </div>
-                    </form>
-                    <br>
-                </div>
+                
             
             
 
