@@ -16,8 +16,8 @@
                 <% if(productos[i].sexo == 'M') { %>
                     <article class="article">
                         <a href="/products/detailproduct/<%= productos[i].id %>">
-                            <img src=<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
-                            <p class="price"><%=productos[i].price %></p>
+                            <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
+                            <p class="price">$<%=productos[i].price %></p>
                             <h4 class="description"><%=productos[i].name%></h4>
                         </a>
                     </article>
