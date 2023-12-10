@@ -1,40 +1,96 @@
 <div class="group">
-    <input type="text" id="name" name="name" class="input" placeholder=" ">
-    <label for="name" class="label">Nombre del producto</label>
+    <input type="text" id="name" name="nameProd" class="input" placeholder="" 
+    <%if(locals.old && old.nameProd){%> 
+        value="<%= old.nameProd%>
+    <% } else { null } %> ">
+    <label for="nameProd" class="label">Nombre del producto</label>
     <span class="line"></span>
 </div>
+<% if(locals.errors && errors.nameProd){ %>
+    <p class="fbFormsProd"> 
+        <%= errors.nameProd.msg %>
+    </p>    
+<% } %>
+
 <div class="group">
-    <input type="file" id="productImage" name="productImage" class="input" placeholder=" ">
+    <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
+    <%if(locals.old && old.productImage){%> 
+        value="<%= old.productImage%>
+    <%}%>" >
     <label for="productImage" class="label">Imagen del producto</label>
     <span class="line"></span>
 </div>
+
 <div class="group">
-    <input type="number" id="price" name="price" class="input" placeholder=" ">
+    <input type="number" id="price" name="price" class="input" placeholder=""
+    <%if(locals.old && old.price){%> 
+        value="<%= old.price%>
+    <%}%>" >
     <label for="price" class="label">Precio del producto</label>
     <span class="line"></span>
 </div>
+<% if(locals.errors && errors.price){ %>
+    <p class="fbFormsProd"> <%= errors.price.msg %></p>    
+<% } %>
+
 <div class="group">
-    <input type="text" id="description" name="description" class="input" placeholder=" ">
+    <input type="text" id="description" name="description" class="input" placeholder="" 
+    <%if(locals.old && old.description){%> 
+        value="<%= old.description%>
+    <%}%>" >
     <label for="description" class="label">Descripción del producto</label>
     <span class="line"></span>
 </div>
+<% if(locals.errors && errors.description){ %>
+    <p class="fbFormsProd"> <%= errors.description.msg %></p>    
+<% } %>
+
 <div class="group">
-    <input type="text" id="color" name="color" class="input" placeholder=" ">
+    <input type="text" id="color" name="color" class="input" placeholder="" 
+    <%if(locals.old && old.color){%> 
+        value="<%= old.color%>
+    <%}%>" >
     <label for="color" class="label">Color del producto</label>
     <span class="line"></span>
 </div>
+<% if(locals.errors && errors.color){ %>
+    <p class="fbFormsProd"> <%= errors.color.msg %></p>    
+<% } %>
+
 <div class="group">
-    <input type="number" id="talle" name="talle" class="input" placeholder=" ">
+    <input type="number" id="talle" name="talle" class="input" placeholder="" 
+    <%if(locals.old && old.talle){%> 
+        value="<%= old.talle%>
+    <%}%>" >
     <label for="talle" class="label">Talle del producto</label>
     <span class="line"></span>
 </div>
+<% if(locals.errors && errors.talle){ %>
+    <p class="fbFormsProd"> <%= errors.talle.msg %></p>    
+<% } %>
+
 <div class="group">
-    <input type="number" id="stock" name="stock" class="input" placeholder=" ">
+    <input type="number" id="stock" name="stock" class="input" placeholder="" 
+    <%if(locals.old && old.stock){%> 
+        value="<%= old.stock%>
+    <%}else{%> 
+        <%=" "%> 
+    <%}%>" >
     <label for="stock" class="label">Stock del producto</label>
     <span class="line"></span>
 </div>
+<% if(locals.errors && errors.stock){ %>
+    <p class="fbFormsProd"> <%= errors.stock.msg %></p>    
+<% } %>
+
 <div class="group">
-    <input type="carcter" id="sexo" name="sexo" class="input" placeholder=" ">
-    <label for="sexo" class="label">Sexo del producto</label>
+    <input type="carcter" id="genero" name="genero" class="input" placeholder="" 
+    <%if(locals.old && old.genero){%> 
+        value="<%= old.genero%>
+    <%}%>" >
+    <label for="genero" class="label">Género del producto (F o M)</label>
     <span class="line"></span>
 </div>
+<% if(locals.errors && errors.genero){ %>
+    <p class="fbFormsProd"> <%= errors.genero.msg %></p>    
+<% } %>

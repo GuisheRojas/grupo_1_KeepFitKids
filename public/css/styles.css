@@ -272,6 +272,10 @@ img{
     transform: scale(1);
 }
 
+.fbFormsProd{
+    color: red;
+}
+
 div.group-remember{
     display: inline-block;
     margin: 1em;
@@ -1544,11 +1548,11 @@ div.elim form.formbotelim button {
         font-size: 2vw;
     }
         
-    .container{
+    .detailmain .container{
         margin: 80px;
     }
         
-    .container form label{
+    .detailmain .container form label{
         font-size: 3vw;
     }
         
