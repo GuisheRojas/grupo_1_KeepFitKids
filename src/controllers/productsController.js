@@ -37,9 +37,6 @@ const controller = {
 
     addProduct: (req,res) => {
         let errors = validationResult(req);
-        console.log(errors);
-        console.log(errors.mapped());
-        console.log(req.body);
         if(errors.errors.length == 0){
             if(req.file){ 
                 let newProduct = {};
@@ -58,19 +55,13 @@ const controller = {
         } else{
             res.render("./products/getproduct", {errors: errors.mapped(), old: req.body});
         }
-        /* VA EN EL FORM PRODUCT
-        <select id="genero" name="genero" class="input" placeholder="" 
-        <%if(locals.old && old.genero){%> 
-            value="<%= old.genero%>
-        <%}%>" >
-        <option value="">Seleccione una opcion</option>
-        <option value="Femenino">Femenino</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Unisex">Unisex</option> */
     },
+
     editProduct: (req, res)=>{
-        return res.render("./products/editproduct", {productos: productos})
+        const product = productos.find(product => product.id == req.params.id);                
+        return res.render("./products/editproduct", {product})
     },
+
     modifiedProduct: (req, res) => {
         let errors = validationResult(req);
         if(errors.errors.length == 0){
@@ -81,14 +72,17 @@ const controller = {
                 modifiedProduct.new = false;
                 productos.push(modifiedProduct);
                 
-                let newProductJSON = JSON.stringify(productos);
-                fs.writeFileSync(path.join(__dirname, '../database/productos.json'), newProductJSON);
+                let modifiedProductJSON = JSON.stringify(productos);
+                fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
                 res.redirect('./editProduct');
             } else {
                 res.redirect('./editProduct')
             }
         } else{
-            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body});
+            let product = {}
+            product = req.body;
+            product.id = req.params.id;
+            res.render("./products/editproduct", {errors: errors.mapped(), product});
         }
     },
 

@@ -10,7 +10,112 @@
         <form action="/products/addProduct" method="POST" class="forms" enctype="multipart/form-data">
             <h1 class="titulares">Ingrese el nuevo producto</h1>
             <div class="container">
-                <%- include('../partials/formProducts') %>
+                <div class="group">
+                    <input type="text" id="name" name="nameProd" class="input" placeholder="" 
+                    <%if(locals.old && old.nameProd){%> 
+                        value="<%= old.nameProd%>"
+                    <% } %> >
+                    <label for="nameProd" class="label">Nombre del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.nameProd){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.nameProd.msg %>
+                    </p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
+                    <%if(locals.old && old.productImage){%> 
+                        value="<%= old.productImage%>"
+                    <%}%> >
+                    <label for="productImage" class="label">Imagen del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.productImage){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.productImage.msg %>
+                    </p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="price" name="price" class="input" placeholder=""
+                    <%if(locals.old && old.price){%> 
+                        value="<%= old.price%>"
+                    <%}%> >
+                    <label for="price" class="label">Precio del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.price){ %>
+                    <p class="fbFormsProd"> <%= errors.price.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="text" id="description" name="description" class="input" placeholder="" 
+                    <%if(locals.old && old.description){%> 
+                        value="<%= old.description%>"
+                    <%}%> >
+                    <label for="description" class="label">Descripción del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.description){ %>
+                    <p class="fbFormsProd"> <%= errors.description.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="text" id="color" name="color" class="input" placeholder="" 
+                    <%if(locals.old && old.color){%> 
+                        value="<%= old.color%>"
+                    <%}%> >
+                    <label for="color" class="label">Color del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.color){ %>
+                    <p class="fbFormsProd"> <%= errors.color.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="talle" name="talle" class="input" placeholder="" 
+                    <%if(locals.old && old.talle){%> 
+                        value="<%= old.talle%>"
+                    <%}%> >
+                    <label for="talle" class="label">Talle del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.talle){ %>
+                    <p class="fbFormsProd"> <%= errors.talle.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <select id="genero" name="genero" class="input" placeholder="" >
+                        <%if(locals.old && old.genero){%> 
+                            <option value="<%=old.genero%>"><%=old.genero%></option>
+                        <%} else {%> 
+                            <option value="">Seleccione el genero del producto</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Unisex">Unisex</option>
+                        <% } %>
+                    </select>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.genero){ %>
+                    <p class="fbFormsProd"> <%= errors.genero.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="stock" name="stock" class="input" placeholder="" 
+                    <%if(locals.old && old.stock){%> 
+                        value="<%= old.stock%>"
+                    <%}%> >
+                    <label for="stock" class="label">Stock del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.stock){ %>
+                    <p class="fbFormsProd"> <%= errors.stock.msg %></p>    
+                <% } %>
+                
+                
                 <button type="submit" class="submit">Añadir producto</button>
             </div>
         </form>

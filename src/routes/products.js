@@ -34,8 +34,22 @@ let validateFormProducts=[
         .notEmpty().withMessage("Debe completar el campo stock del producto")
         .trim(),
     body('genero')
-        .notEmpty().withMessage("Debe completar el campo género del producto").bail()
-        .trim()
+        .notEmpty().withMessage("Debe seleccionar el género del producto").bail()
+        .trim(),
+    body('productImage')
+        .custom((value, {req}) =>{
+            let file = req.file;
+            if(!file){
+                throw new Error ('Debes cargar una imagen del producto');
+            } else {
+                let fileExt = path.extname(file.originalname);
+                let acceptedExt = ['.png', 'jpg'];
+                if(!acceptedExt.includes(fileExt)){
+                    throw new Error ('Las extensiones permitidas son .png, .jpg');
+                }
+            }
+            return true;
+        })
 ]
 
 router.get('/detailproduct/:id', productsController.controller.detailproduct);
