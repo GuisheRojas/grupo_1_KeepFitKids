@@ -20,7 +20,6 @@ app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)
 });
 
-
 app.use('/', mainRouter)
 
 app.use('/users', userRouter)

@@ -70,7 +70,7 @@ router.get('/nenas', productsController.controller.nenas);
 router.get('/list', productsController.controller.listadoProductos)
 
 //eliminar un producto del listado de productos
-router.delete(router.delete, controller.delete);
+router.delete('/list/:id', productsController.controller.eliminarProd);
 
 //carga de un nuevo producto
 router.get('/getProduct', productsController.controller.getProduct)

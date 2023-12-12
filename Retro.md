@@ -55,9 +55,11 @@
 - Comprometernos con el curso y el equipo de trabajo.
 
 ###Hacer menos:
+- Dejar para ultimo momento
 
 
 ###Continuar haciendo:
+- Escuchar y ayudar al otro.
 
 
 ###Comenzar a hacer:
@@ -66,3 +68,4 @@
 - Participar en Trello y utilizarlo como herramienta chequear que es lo que hay que hacer.
 
 ###Dejar de hacer:
+- Dejar para ultimo momento el proyecto.

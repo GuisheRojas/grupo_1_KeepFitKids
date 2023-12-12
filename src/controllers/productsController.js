@@ -81,7 +81,7 @@ const controller = {
                 }
                 let modifiedProductJSON = JSON.stringify(productos);
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
-                res.redirect('/list');
+                res.redirect('/products/list');
             } else {
                 res.redirect('./editProduct')
             }
@@ -118,15 +118,17 @@ const controller = {
         res.redirect("/");
     },
 
-    listadoProd: (req, res) => {
-        res.render('./listadoProductos', {productos: productos})
+    listadoProductos: (req, res) => {
+        res.render('./products/listadoProductos', {productos: productos})
     },
 
     eliminarProd: (req, res) => {
         for(i=0; i<productos.length; i++) {
             if(req.params.id == productos[i].id){
                 productos.splice(i, 1);
-                res.redirect("")
+                let modifiedProductJSON = JSON.stringify(productos);
+                fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
+                res.redirect("/products/list")
             }
         }
     }
