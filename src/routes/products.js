@@ -42,7 +42,7 @@ let validateFormProducts=[
                 throw new Error ('Debes cargar una imagen del producto');
             } else {
                 let fileExt = path.extname(file.originalname);
-                let acceptedExt = ['.png', 'jpg'];
+                let acceptedExt = ['.png', '.jpg'];
                 if(!acceptedExt.includes(fileExt)){
                     throw new Error ('Las extensiones permitidas son .png, .jpg');
                 }
@@ -67,10 +67,10 @@ router.get('/nenes', productsController.controller.nenes);
 router.get('/nenas', productsController.controller.nenas);
 
 //muestra el listado de productos
-//router.get('/list', productsController.controller.listadoProductos)
+router.get('/list', productsController.controller.listadoProductos)
 
 //eliminar un producto del listado de productos
-router.delete(routes.delete, controller.delete);
+router.delete(router.delete, controller.delete);
 
 //carga de un nuevo producto
 router.get('/getProduct', productsController.controller.getProduct)

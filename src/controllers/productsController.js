@@ -81,7 +81,7 @@ const controller = {
                 }
                 let modifiedProductJSON = JSON.stringify(productos);
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
-                res.redirect('/');
+                res.redirect('/list');
             } else {
                 res.redirect('./editProduct')
             }
