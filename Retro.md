@@ -69,3 +69,29 @@
 
 ###Dejar de hacer:
 - Dejar para ultimo momento el proyecto.
+
+
+- ## SPRINT 4:
+
+### Hacer mas:
+- Comprometernos con el curso y el equipo de trabajo.
+
+### Hacer menos:
+- Dejar para ultimo momento
+
+
+### Continuar haciendo:
+- Escuchar y ayudar al otro.
+
+
+### Comenzar a hacer:
+- Realizar completas las partes que nos corresponden.
+- Empezar a desarrollar las tareas de cada uno con tiempo.
+- Participar en Trello y utilizarlo como herramienta chequear que es lo que hay que hacer.
+
+### Dejar de hacer:
+- Dejar para ultimo momento el proyecto.
+
+### PLAN PARA MEJORAR:
+- Poner fechas de entrega intermedias para saber que avanzamos
+- Comprometernos a mover las tarjetas del trello.
