@@ -27,9 +27,10 @@ router.get('/nenes', productsController.controller.nenes);
 router.get('/nenas', productsController.controller.nenas);
 
 //muestra el listado de productos
-//router.get('/list', productsController.controller.listado)
+//router.get('/list', productsController.controller.listadoProductos)
 
 //eliminar un producto del listado de productos
+router.delete(routes.delete, controller.delete);
 
 //carga de un nuevo producto
 router.get('/getProduct', productsController.controller.getProduct)

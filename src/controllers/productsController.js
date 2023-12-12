@@ -92,9 +92,20 @@ const controller = {
             }
         }
         res.redirect("/");
+    },
 
+    listadoProd: (req, res) => {
+        res.render('./listadoProductos', {productos: productos})
+    },
+
+    eliminarProd: (req, res) => {
+        for(i=0; i<productos.length; i++) {
+            if(req.params.id == productos[i].id){
+                productos.splice(i, 1);
+                res.redirect("")
+            }
+        }
     }
-
 }
 
 module.exports = {productos, controller};
