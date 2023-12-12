@@ -18,7 +18,6 @@ let validateFormProducts=[
         .notEmpty().withMessage("Debe completar el campo nombre del producto"),
     body('price')
         .notEmpty().withMessage("Debe completar el campo precio").bail()
-        .isFloat({locale: 'es-ES'}).withMessage("Debe completar el campo precio con un número decimal")
         .trim(),
     body('description')
         .notEmpty().withMessage("Debe completar el campo descripción").bail()

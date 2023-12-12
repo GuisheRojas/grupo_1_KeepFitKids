@@ -66,15 +66,22 @@ const controller = {
         let errors = validationResult(req);
         if(errors.errors.length == 0){
             if(req.file){ 
-                let modifiedProduct = {};
-                modifiedProduct = req.body;
-                modifiedProduct.src = req.file.filename;
-                modifiedProduct.new = false;
-                productos.push(modifiedProduct);
-                
+                for(let i = 0; i < productos.length; i++){
+                    if(productos[i].id == req.params.id){
+                        productos[i].src = req.file.filename;
+                        productos[i].price = req.body.price;
+                        productos[i].nameProd = req.body.nameProd;
+                        productos[i].description = req.body.description;
+                        productos[i].color = req.body.color;
+                        productos[i].talle = req.body.talle;
+                        productos[i].stock = req.body.stock;
+                        productos[i].genero = req.body.genero;
+                        productos[i].new = false;                       
+                    }
+                }
                 let modifiedProductJSON = JSON.stringify(productos);
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
-                res.redirect('./editProduct');
+                res.redirect('/');
             } else {
                 res.redirect('./editProduct')
             }
