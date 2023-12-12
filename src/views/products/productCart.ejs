@@ -24,11 +24,11 @@
                     <article class="articulo">
                         <h3>Producto</h3>        
                         <div class="imagen">
-                            <img src=<%= productId?.src%> alt="top_verde">
+                            <img src=/img/products/<%= productId?.src%> alt="top_verde">
                             <br>
                         </div>
                         <div class="detalle">
-                            <p><%= productId?.name%></p>
+                            <p><%= productId?.nameProd%></p>
                             <br>
                         </div>
                         <div class="color-prod">
@@ -59,7 +59,7 @@
                             <br>
                         </div>
                         <div class="unitario">
-                            <p><%= productId?.price%></p>
+                            <p>$<%= productId?.price%></p>
                             <br>
                         </div>
 
@@ -83,7 +83,7 @@
 
             <div class="subtotal">
                 <h4>Subtotal</h4>
-                <h4><%= productId?.price%></h4>
+                <h4>$<%= productId?.price%></h4>
             </div>             
           
         </section>
@@ -93,7 +93,7 @@
            
             <div class="subtotal-art">
                 <h3>Subtotal</h3>
-                <p><%= productId?.price%></p><br>
+                <p>$<%= productId?.price%></p><br>
             </div>
             <div class="envio">
                 <h3>Envio</h3>
@@ -105,7 +105,7 @@
             </div>
             <div class="Total">
                 <h3><b></b>Total</h3>
-                <p><b></b><%= productId?.price%></p><br>
+                <p><b></b>$<%= productId?.price%></p><br>
             </div>
      
         </section>
