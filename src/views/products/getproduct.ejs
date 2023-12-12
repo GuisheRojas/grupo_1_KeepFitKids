@@ -2,17 +2,19 @@
 <html lang="en">
  <head>
     <%- include('../partials/head') %>
-    <title>Editar producto</title>
+    <title>Añadir producto</title>
  </head>
 <body>
     <%- include('../partials/header') %>
-    <main class="mainForm">
-        <form action="/products/modifiedProduct/<%= product.id%>?_method=PUT" method="post" class="forms" enctype="multipart/form-data">
-            <h1 class="titulares">Ingrese el producto</h1>
+    <main class='mainForm'>
+        <form action="/products/addProduct" method="POST" class="forms" enctype="multipart/form-data">
+            <h1 class="titulares">Ingrese el nuevo producto</h1>
             <div class="container">
                 <div class="group">
                     <input type="text" id="name" name="nameProd" class="input" placeholder="" 
-                        value="<%= product.nameProd%>" >
+                    <%if(locals.old && old.nameProd){%> 
+                        value="<%= old.nameProd%>"
+                    <% } %> >
                     <label for="nameProd" class="label">Nombre del producto</label>
                     <span class="line"></span>
                 </div>
@@ -24,7 +26,9 @@
                 
                 <div class="group">
                     <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
-                        value="/img/products/<%= product.src%>" >
+                    <%if(locals.old && old.productImage){%> 
+                        value="<%= old.productImage%>"
+                    <%}%> >
                     <label for="productImage" class="label">Imagen del producto</label>
                     <span class="line"></span>
                 </div>
@@ -36,7 +40,9 @@
                 
                 <div class="group">
                     <input type="number" id="price" name="price" class="input" placeholder=""
-                        value="<%= product.price%>" >
+                    <%if(locals.old && old.price){%> 
+                        value="<%= old.price%>"
+                    <%}%> >
                     <label for="price" class="label">Precio del producto</label>
                     <span class="line"></span>
                 </div>
@@ -45,8 +51,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="text" id="description" name="description" class="input" placeholder=""
-                        value="<%= product.description%>" >
+                    <input type="text" id="description" name="description" class="input" placeholder="" 
+                    <%if(locals.old && old.description){%> 
+                        value="<%= old.description%>"
+                    <%}%> >
                     <label for="description" class="label">Descripción del producto</label>
                     <span class="line"></span>
                 </div>
@@ -55,8 +63,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="text" id="color" name="color" class="input" placeholder=""
-                        value="<%= product.color%>" >
+                    <input type="text" id="color" name="color" class="input" placeholder="" 
+                    <%if(locals.old && old.color){%> 
+                        value="<%= old.color%>"
+                    <%}%> >
                     <label for="color" class="label">Color del producto</label>
                     <span class="line"></span>
                 </div>
@@ -65,8 +75,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="number" id="talle" name="talle" class="input" placeholder=""
-                        value="<%= product.talle%>" >
+                    <input type="number" id="talle" name="talle" class="input" placeholder="" 
+                    <%if(locals.old && old.talle){%> 
+                        value="<%= old.talle%>"
+                    <%}%> >
                     <label for="talle" class="label">Talle del producto</label>
                     <span class="line"></span>
                 </div>
@@ -76,11 +88,14 @@
                 
                 <div class="group">
                     <select id="genero" name="genero" class="input" placeholder="" >
-                            <option value="<%=product.genero%>"><%=product.genero%></option>
+                        <%if(locals.old && old.genero){%> 
+                            <option value="<%=old.genero%>"><%=old.genero%></option>
+                        <%} else {%> 
                             <option value="">Seleccione el genero del producto</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Unisex">Unisex</option>
+                        <% } %>
                     </select>
                     <span class="line"></span>
                 </div>
@@ -89,8 +104,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="number" id="stock" name="stock" class="input" placeholder=""
-                        value="<%= product.stock%>" >
+                    <input type="number" id="stock" name="stock" class="input" placeholder="" 
+                    <%if(locals.old && old.stock){%> 
+                        value="<%= old.stock%>"
+                    <%}%> >
                     <label for="stock" class="label">Stock del producto</label>
                     <span class="line"></span>
                 </div>
@@ -99,8 +116,7 @@
                 <% } %>
                 
                 
-                
-                <button type="submit" class="submit">Editar producto</button>
+                <button type="submit" class="submit">Añadir producto</button>
             </div>
         </form>
     </main>
