@@ -6,16 +6,13 @@ let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
 
-let carrito = [
-{
-}
-];
+let carrito = [];
 
 const controller = {
 
     productCart: (req, res) => {
-        const productId = productos.find(productos => productos.id == req.params.id);
-        res.render('./products/productCart', {productId})
+        //const productId = productos.find(productos => productos.id == req.params.id);
+        res.render('./products/productCart', {carrito})
     },
 
     detailproduct: (req, res) => {
@@ -93,21 +90,17 @@ const controller = {
         }
     },
 
-    agregarCarrito: (req, res) => {
-        const newBuy = {
-            src: req.body.src,
-            price: req.body.price,
-            name: req.body.name,
-            color: req.body.color,
-            talle: req.body.talle,
-            stock: req.body.stock,
-            id: req.body.id
-        }
-        carrito.push({newBuy: newBuy})
-       
+    agregarProdCarrito: (req, res) => {
+        const newBuy = productos.find(product => product.id == req.params.id);
+        newBuy.color = req.body.colorStock;
+        newBuy.talle = req.body.talleStock;
+        newBuy.stock = req.body.cantidad;            
+        
+        carrito.push({newBuy})
+        res.redirect('/products/productCart')       
     },
 
-    eliminarCarrito: (req, res) => {
+    eliminarProdCarrito: (req, res) => {
         
         for(i=0; i<carrito.length; i++) {
             if(req.params.id == carrito[i].id){
