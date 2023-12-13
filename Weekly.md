@@ -80,6 +80,13 @@
 		- avatar
 
 -	02/12
-	- 
+	- CRUD de productos:
+		- Organizamos y Dividimos las tareas de manera equitativa.
+		- Creamos las rutas del proyecto.
+ 
 
 -	09/12
+	- Revisión de las rutas del proyecto:
+		- corregimos rutas que nos daban error y no respondian en el navegador.
+
+
