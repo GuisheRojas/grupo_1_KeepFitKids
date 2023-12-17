@@ -13,6 +13,7 @@ const productsController = require('../controllers/productsController');
 
 const {body} = require('express-validator');
 
+//hace las validaciones para un producto
 let validateFormProducts=[
     body('nameProd')
         .notEmpty().withMessage("Debe completar el campo nombre del producto"),
@@ -51,13 +52,16 @@ let validateFormProducts=[
         })
 ]
 
+//muestra el detalle de un producto
 router.get('/detailproduct/:id', productsController.controller.detailproduct);
+
+//agrega un producto al carrito
 router.post('/detailproduct/:id', productsController.controller.agregarProdCarrito);
 
-
-
-//
+//muestra los productos cargados al carrito
 router.get('/productCart', productsController.controller.productCart);
+
+//elimina un producto determinado del carrito
 router.delete('/productCart/:id', productsController.controller.eliminarProdCarrito);
 
 //muestra los productos para nenes
@@ -69,14 +73,14 @@ router.get('/nenas', productsController.controller.nenas);
 //muestra el listado de productos
 router.get('/list', productsController.controller.listadoProductos)
 
-//eliminar un producto del listado de productos
+//elimina un producto del listado de productos
 router.delete('/list/:id', productsController.controller.eliminarProd);
 
-//carga de un nuevo producto
+//carga un nuevo producto
 router.get('/getProduct', productsController.controller.getProduct)
 router.post('/addProduct', upload.single('productImage'), validateFormProducts, productsController.controller.addProduct)
 
-//edición de un producto
+//edita un producto
 router.get('/editProduct/:id', productsController.controller.editProduct)
 router.put('/modifiedProduct/:id', upload.single('productImage'), validateFormProducts, productsController.controller.modifiedProduct)
 
