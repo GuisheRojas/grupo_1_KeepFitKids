@@ -1,18 +1,18 @@
-#ARCHIVO WEEKLY
+# ARCHIVO WEEKLY
 
-- ##SPRINT 3:
+- ## SPRINT 3:
 
-###Fecha de reunión
+### Fecha de reunión
 -	11/11
 -	18/11
 
-###Participantes:
+### Participantes:
 -	Santiago
 -	Guillermo
 -	Silvina
 -	Ana
 
-###Temas tratados
+### Temas tratados
 -	11/11
     - Retro
 	- Actualizar el tablero de trabajo.
@@ -21,7 +21,7 @@
 	- Dudas y consultas.
 
 
-###Decisiones tomadas
+### Decisiones tomadas
 -	11/11
 	- Organizamos cómo hacer y subir el archivo Retro.
 	- Dividimos las tareas de manera equitativa.
@@ -30,20 +30,20 @@
 	- Resolvimos algunos problemas que presentaban Silvi y Santi en la aplicación Node.js+Express+EJS en los archivos detalle del producto (Santi) y carrito de productos (Silvi).
 
 
-- ##SPRINT 4:
+- ## SPRINT 4:
 
-###Fecha de reunión
+### Fecha de reunión
 -	25/11
 -	02/12
 -	09/12
 
-###Participantes:
+### Participantes:
 -	Santiago
 -	Guillermo
 -	Silvina
 -	Ana
 
-###Temas tratados
+### Temas tratados
 -	25/11
     - Retro
 	- Actualizar el tablero de trabajo.
@@ -56,7 +56,7 @@
 -	09/12
 	- Revisión de las rutas del proyecto
 
-###Decisiones tomadas
+### Decisiones tomadas
 -	25/11
 	- Actualizar el tablero de trabajo: Asignamos las tareas a cada participante.
 
