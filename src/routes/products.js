@@ -52,6 +52,9 @@ let validateFormProducts=[
         })
 ]
 
+//muestra los resultados de una búsqueda
+router.get('/resultssearch', productsController.controller.search)
+
 //muestra el detalle de un producto
 router.get('/detailproduct/:id', productsController.controller.detailproduct);
 
