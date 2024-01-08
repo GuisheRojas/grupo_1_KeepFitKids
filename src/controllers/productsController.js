@@ -113,7 +113,7 @@ const controller = {
         const newBuy = productos.find(product => product.id == req.params.id);
         newBuy.color = req.body.colorStock;
         newBuy.talle = req.body.talleStock;
-        newBuy.stock = req.body.cantidad;            
+        newBuy.cantidad = req.body.cantidad;            
 
         carrito.push({newBuy})
         for(let i = 0; i < carrito.length; i++){
