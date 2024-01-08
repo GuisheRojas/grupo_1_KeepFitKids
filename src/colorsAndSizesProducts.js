@@ -2,4 +2,4 @@ const colors = ['verde claro', 'verde oscuro', 'rojo', 'amarillo', 'azul', 'rosa
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
-module.exports = [colors, sizes];
+module.exports = {colors, sizes};

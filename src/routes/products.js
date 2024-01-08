@@ -25,10 +25,10 @@ let validateFormProducts=[
         .isLength({min: 30}).withMessage("El campo descripción tiene un mínimo de 50 caracteres")
         .trim(),
     body('color')
-        .notEmpty().withMessage("Debe completar el campo color")
+        .notEmpty().withMessage("Debe seleccionar al menos un color")
         .trim(),
     body('talle')
-        .notEmpty().withMessage("Debe completar el campo talle")
+        .notEmpty().withMessage("Debe seleccionar al menos un talle")
         .trim(),
     body('stock')
         .notEmpty().withMessage("Debe completar el campo stock del producto")
