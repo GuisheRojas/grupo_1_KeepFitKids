@@ -10,24 +10,40 @@
     <main class="mainForm">
         <form action="/users/singIn" method="POST" class="forms">
             <h2 class="titulares">Ingresa a tu cuenta</h2>
+            <% if(locals.errors && errors.invalid){ %>
+                <p class="fbFormsProd"> <%= errors.credentials.msg %></p>    
+            <% } %>
             <div class="container">
                 <div class="group">
-                    <input type="email" id="email" class="input" placeholder=" ">
+                    <input type="email" id="email" name="email" class="input" placeholder=" "
+                    <% if(locals.old && old.email){%>
+                        value="<%= old.email %>"
+                    <% } %>>
                     <label for="email" class="label">Email:</label>
                     <span class="line"></span>
                 </div>
+                <% if(locals.errors && errors.email){ %>
+                    <p class="fbFormsProd"> <%= errors.email.msg %></p>    
+                <% } %>
+
                 <div class="group">
-                    <input type="password" id="password" class="input" placeholder=" ">
+                    <input type="password" id="password" name="password" class="input" placeholder=" ">
                     <label for="password" class="label">Contraseña: </label>
                     <span class="line"></span>
                 </div>
+                <% if(locals.errors && errors.password){ %>
+                    <p class="fbFormsProd"> <%= errors.password.msg %></p>    
+                <% } %>
+
                 <div class="group-remember">
                     <input type="checkbox" id="remember" class="remember">
                     <label for="remember" class="remember-text">Recordarme</label>
                 </div>
+
                 <div class="cuentaregister">
                     <a href="/users/register"><p>¿No tenés cuenta? ¡Regístrate!</p></a>
                 </div>
+                
                 <input type="submit" class="submit" value="Ingresar">
             </div>
         </form>
