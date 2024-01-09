@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+let authMiddleware = require("../middlewares/authMiddleware")
 
 const multer = require('multer');
 const path = require('path');
@@ -12,6 +13,7 @@ const upload = multer({storage});
 const productsController = require('../controllers/productsController');
 
 const {body} = require('express-validator');
+const huespedMiddleware = require('../middlewares/huespedMiddleware');
 
 //hace las validaciones para un producto
 let validateFormProducts=[
@@ -59,10 +61,10 @@ router.get('/resultssearch', productsController.controller.search)
 router.get('/detailproduct/:id', productsController.controller.detailproduct);
 
 //agrega un producto al carrito
-router.post('/detailproduct/:id', productsController.controller.agregarProdCarrito);
+router.post('/detailproduct/:id', authMiddleware, productsController.controller.agregarProdCarrito);
 
 //muestra los productos cargados al carrito
-router.get('/productCart', productsController.controller.productCart);
+router.get('/productCart',productsController.controller.productCart);
 
 //elimina un producto determinado del carrito
 router.delete('/productCart/:id', productsController.controller.eliminarProdCarrito);

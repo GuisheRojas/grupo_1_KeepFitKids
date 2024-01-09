@@ -4,6 +4,7 @@ const router = express.Router();
 const userController = require('../controllers/userController.js');
 
 const {check} = require('express-validator');
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
 let singInValidation = [
     check('email')
@@ -19,6 +20,6 @@ router.post('/register', userController.singUp)
 
 //inicia la sesión de un usuario
 router.get('/login', userController.login);
-router.post('/singIn', singInValidation, userController.singIn)
+router.post('/singIn', singInValidation, guestMiddleware, userController.singIn)
 
 module.exports = router;
