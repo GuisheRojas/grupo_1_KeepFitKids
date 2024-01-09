@@ -8,6 +8,7 @@ const productRouter = require('./routes/products');
 const userRouter = require('./routes/user');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const session = require('express-session')
 
 app.use(express.static('public'));
 
@@ -15,11 +16,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', path.join(__dirname, 'views'));
 app.use(methodOverride('_method'));
+app.use(session({secret: 'Secret'}))
 
 app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)
 });
-
 
 app.use('/', mainRouter)
 

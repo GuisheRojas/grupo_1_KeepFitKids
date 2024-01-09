@@ -13,6 +13,7 @@ const productsController = require('../controllers/productsController');
 
 const {body} = require('express-validator');
 
+//hace las validaciones para un producto
 let validateFormProducts=[
     body('nameProd')
         .notEmpty().withMessage("Debe completar el campo nombre del producto"),
@@ -21,13 +22,13 @@ let validateFormProducts=[
         .trim(),
     body('description')
         .notEmpty().withMessage("Debe completar el campo descripción").bail()
-        .isLength({min: 50}).withMessage("El campo descripción tiene un mínimo de 50 caracteres")
+        .isLength({min: 30}).withMessage("El campo descripción tiene un mínimo de 50 caracteres")
         .trim(),
     body('color')
-        .notEmpty().withMessage("Debe completar el campo color")
+        .notEmpty().withMessage("Debe seleccionar al menos un color")
         .trim(),
     body('talle')
-        .notEmpty().withMessage("Debe completar el campo talle")
+        .notEmpty().withMessage("Debe seleccionar al menos un talle")
         .trim(),
     body('stock')
         .notEmpty().withMessage("Debe completar el campo stock del producto")
@@ -42,7 +43,7 @@ let validateFormProducts=[
                 throw new Error ('Debes cargar una imagen del producto');
             } else {
                 let fileExt = path.extname(file.originalname);
-                let acceptedExt = ['.png', 'jpg'];
+                let acceptedExt = ['.png', '.jpg'];
                 if(!acceptedExt.includes(fileExt)){
                     throw new Error ('Las extensiones permitidas son .png, .jpg');
                 }
@@ -51,14 +52,20 @@ let validateFormProducts=[
         })
 ]
 
-router.get('/detailproduct/:id', productsController.controller.detailproduct);
-router.post('/detailproduct/:id', productsController.controller.agregarCarrito);
+//muestra los resultados de una búsqueda
+router.get('/resultssearch', productsController.controller.search)
 
+//muestra el detalle de un producto
+router.get('/detailproduct/:id', productsController.controller.detailproduct);
+
+//agrega un producto al carrito
+router.post('/detailproduct/:id', productsController.controller.agregarProdCarrito);
+
+//muestra los productos cargados al carrito
 router.get('/productCart', productsController.controller.productCart);
 
-//
-router.get('/productCart/:id', productsController.controller.productCart);
-router.delete('/productCart/:id', productsController.controller.eliminarCarrito);
+//elimina un producto determinado del carrito
+router.delete('/productCart/:id', productsController.controller.eliminarProdCarrito);
 
 //muestra los productos para nenes
 router.get('/nenes', productsController.controller.nenes);
@@ -67,15 +74,16 @@ router.get('/nenes', productsController.controller.nenes);
 router.get('/nenas', productsController.controller.nenas);
 
 //muestra el listado de productos
-//router.get('/list', productsController.controller.listado)
+router.get('/list', productsController.controller.listadoProductos)
 
-//eliminar un producto del listado de productos
+//elimina un producto del listado de productos
+router.delete('/list/:id', productsController.controller.eliminarProd);
 
-//carga de un nuevo producto
+//carga un nuevo producto
 router.get('/getProduct', productsController.controller.getProduct)
 router.post('/addProduct', upload.single('productImage'), validateFormProducts, productsController.controller.addProduct)
 
-//edición de un producto
+//edita un producto
 router.get('/editProduct/:id', productsController.controller.editProduct)
 router.put('/modifiedProduct/:id', upload.single('productImage'), validateFormProducts, productsController.controller.modifiedProduct)
 

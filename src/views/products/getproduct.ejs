@@ -62,12 +62,19 @@
                     <p class="fbFormsProd"> <%= errors.description.msg %></p>    
                 <% } %>
                 
+                
                 <div class="group">
-                    <input type="text" id="color" name="color" class="input" placeholder="" 
-                    <%if(locals.old && old.color){%> 
-                        value="<%= old.color%>"
-                    <%}%> >
-                    <label for="color" class="label">Color del producto</label>
+                    <h2 class="input">Seleccione los colores</h2>
+                    <select id="color" name="color" class="input" placeholder="" size="5" multiple
+                        <%if(locals.old && old.color){%>
+                            <%for(let i = 0; i<old.color.length; i++){%>
+                                value="<%= old.color[i]%>"
+                            <%}%>
+                        <%}%>>
+                        <% for(let i = 0; i < colors.length; i++) {%>    
+                            <option value="<%= colors[i] %>"><%= colors[i] %></option>
+                        <%}%>
+                    </select>
                     <span class="line"></span>
                 </div>
                 <% if(locals.errors && errors.color){ %>
@@ -75,11 +82,15 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="number" id="talle" name="talle" class="input" placeholder="" 
-                    <%if(locals.old && old.talle){%> 
-                        value="<%= old.talle%>"
-                    <%}%> >
-                    <label for="talle" class="label">Talle del producto</label>
+                    <h2 class="input">Seleccione los talles</h2>
+                    <select id="talle" name="talle" class="input" placeholder="" size="6" multiple
+                        <%if(locals.old && old.talle){%> 
+                            value="<%= old.talle%>"
+                        <%}%> >
+                        <% for(let i = 0; i < sizes.length; i++) {%>    
+                            <option value="<%= sizes[i] %>"><%= sizes[i] %></option>
+                        <%}%>
+                    </select>
                     <span class="line"></span>
                 </div>
                 <% if(locals.errors && errors.talle){ %>

@@ -2,15 +2,17 @@
 <html lang="en">
     <head>
         <%- include('../partials/head') %>
-        <title>Carrito de compras</title>
+        <title>carrito de compras</title>
     </head>
 <body>
     
 <%- include('../partials/header') %> 
     <main class="productcart">
-        <h2 class="carrito">Mi Carrito</h2>
+        <% let suma = 0 
+           let totalCant = 0 %>
+        <h2 class="carrito">Mi carrito</h2>
         <div class="todo-junto">
-            <section class="Carrito">
+            <section class="carrito">
             
                 <ul type="none" class="tabla">
                     <li>Producto</li>
@@ -20,100 +22,100 @@
                     <li>Cantidad</li>
                     <li>Precio</li>
                 </ul>
-                <div class="articuloContainer">
-                    <article class="articulo">
-                        <h3>Producto</h3>        
-                        <div class="imagen">
-                            <img src=/img/products/<%= productId?.src%> alt="top_verde">
-                            <br>
-                        </div>
-                        <div class="detalle">
-                            <p><%= productId?.nameProd%></p>
-                            <br>
-                        </div>
-                        <div class="color-prod">
-                            <label class="titulo">Color:</label>
-                            <select class="color" name="colortop">
-                                <option value="#51B59F">Verde</option>
-                                <option value="#FF0000">Rojo</option>
-                                <option value="#000000">Negro</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="talle">
-                            <label class="titulo">Talle:</label>
-                            <select name="select" id="talle">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="cantidad">
-                            <label class="titulo">Cantidad:</label>
-                            <select name="select" id="cantidad">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="unitario">
-                            <p>$<%= productId?.price%></p>
-                            <br>
-                        </div>
+                <% if (carrito.length != 0){%>
+                    <% for(let i=0; i<carrito.length; i++){%>
+                        <div class="articuloContainer">
+                            <article class="articulo">
+                                
+                                <div class="imagen">
+                                    <img src="/img/products/<%= carrito[i].newBuy.src %>" alt="<%= carrito[i].newBuy.nameProd %>">
+                                </div>
 
-                        <div class="elim">
-                            <form method="post" action="/products/productCart/<%= productId?.id%>?_method=delete" class="formbotelim">
-                        <div>
-                            <button class="botonelim" type="submit">        
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                         </div>
-                            </form>
-                            <br>
+                                <div class="detalle">
+                                    <label class="titulo"><%= carrito[i].newBuy.nameProd%></label>
+                                </div>
+
+                                <div class="color-prod">
+                                    <label class="titulo">Color:</label>
+                                    <%= carrito[i].newBuy.color %>
+                                </div>
+
+                                <div class="talle">
+                                    <label class="titulo">Talle:</label>
+                                    <%= carrito[i].newBuy.talle %>
+                                </div>
+
+                                <div class="cantidad">
+                                    <label class="titulo">Cantidad:</label>
+                                    <%= carrito[i].newBuy.cantidad %>
+                                </div>
+
+                                <div class="unitario">
+                                    <% if(carrito[i].newBuy.cantidad > 1) {%>
+                                        <% totalCant = carrito[i].newBuy.price * carrito[i].newBuy.cantidad%>
+                                        <p>$<%= totalCant %></p>
+                                    <% } else { %>
+                                        <p>$<%= carrito[i].newBuy.price %></p>
+                                    <% } %>
+                                </div>
+
+                                <div class="elim">
+                                    <form method="post" action="/products/productCart/<%= carrito[i].newBuy.id %>?_method=delete" class="formbotelim">
+                                        <div>
+                                            <button class="botonelim" type="submit">        
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </article>
                         </div>
-                        
-                    </article>
+                    <% } %>                     
+
+                        <div class="subtotal">
+                            <h4>Subtotal</h4>
+                            <%for(let i=0; i<carrito.length; i++){ %>
+                                <% let price = parseInt(carrito[i].newBuy.price);
+                                suma = suma + (price * carrito[i].newBuy.cantidad) %>
+                            <% } %>
+                            <h4>$<%= suma %></h4>
+                        </div>  
+                                 
+                <% } else {%>
+                    <h3>Todavia no seleccionó ningún producto</h3>
+                <% } %>
+            </section>
+            
+            <section class="Resumen"> 
+                <h3>RESUMEN</h3>
+            
+                <div class="subtotal-art">
+                    <h3>Subtotal</h3>
+                    <p>$<%= suma %></p>
                 </div>
-
+                <div class="envio">
+                    <h3>Envio</h3>
+                    <p>$ 0,00</p>
+                </div>
+                <div class="codigo-descuento">
+                    <h3>Cod.Descuento:</h3>
+                    <input type="descuento" name="codigo-desc">
+                </div>
+                <div class="Total">
+                    <h3><b></b>Total</h3>
+                    <p><b></b>$<%= suma %></p>
+                </div>
                 
-            
-            
-
-            <div class="subtotal">
-                <h4>Subtotal</h4>
-                <h4>$<%= productId?.price%></h4>
-            </div>             
-          
-        </section>
-        
-        <section class="Resumen"> 
-            <h3>RESUMEN</h3>
-           
-            <div class="subtotal-art">
-                <h3>Subtotal</h3>
-                <p>$<%= productId?.price%></p><br>
+            </section>
             </div>
-            <div class="envio">
-                <h3>Envio</h3>
-                <p>$ 0,00</p><br>
-            </div>
-            <div class="codigo-descuento">
-                <H3>Cod.Descuento:</H3><br>
-                <input type="descuento" name="codigo-desc">
-            </div>
-            <div class="Total">
-                <h3><b></b>Total</h3>
-                <p><b></b>$<%= productId?.price%></p><br>
-            </div>
-     
-        </section>
-        </div>
 
         <div class="botones">
             <form class="bot-continuar" action="/" method="GET">
                 <button class="botonCarrrito" type="submit" name="continuar" alt="#">CONTINUAR</button>
+            </form>
+
+            <form class="bot-continuar" action="/comprar" method="POST">
                 <button class="botonCarrrito" type="submit" name="finalizar" alt="#">FINALIZAR</button>
             </form>
         </div>

@@ -9,11 +9,11 @@
     <main class="detailmain">
         <div class="productandprice">
             <section class="productimg">
-                <img class="prod" src=/img/products/<%= productId?.src%>>
+                <img class="prod" src=/img/products/<%= product?.src%>>
             </section>
             <section class="priceandinfo">
-                <h1 class="nameofproduct"><%= productId?.nameProd%></h1>
-                <h2 class="priceofproduct">$<%= productId?.price%></h2>
+                <h1 class="nameofproduct"><%= product?.nameProd%></h1>
+                <h2 class="priceofproduct">$<%= product?.price%></h2>
                 <div class="logistic">
                     <i class="fas fa-truck"></i>
                     <h4 class="freesend">Envío Gratis</h4>
@@ -25,29 +25,29 @@
                 </div>
 
                 <div class="opcionesdecompra">
-                    <form class="formdecomprar" action="/products/productCart/<%= productId?.id%>" method="GET">
+                    <form class="formdecomprar" action="/products/detailproduct/<%= product?.id %>" method="POST">
                         <div class="divcolors">
                             <label>Seleccione un color</label>
-                            <select class="colord" name="colorstock">
-                                <option value="#51B59F">Verde</option>
-                                <option value="#FF0000">Rojo</option>
-                                <option value="#000000">Negro</option>
+                            <select class="colord" name="colorStock">
+                                <% for(let i=0; i < product?.color.length; i++) {%>
+                                    <option value="<%= product?.color[i] %>"><%= product?.color[i]%></option>
+                                <% } %>
                             </select>
                         </div>
                         <div class="divtalles">
                             <label>Seleccione un talle</label>
-                            <select class="tallesd" name="tallestock">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                            <select class="tallesd" name="talleStock">
+                                <% for(let i=0; i < product?.talle.length; i++) {%>
+                                    <option value="<%= product?.talle[i] %>"><%= product?.talle[i]%></option>
+                                <% } %>
                             </select>
                         </div>
                         <div class="seleccioncuant">
-                            <label>Selecciona la cantidad</label>
-                            <input class="cuantd" type="text" name="cantidad">
+                            <label for="cantidad">Selecciona la cantidad</label>
+                            <input class="cuantd" type="number" name="cantidad">
                         </div> 
                         <div class="buttonagregar" ></div>
-                            <button class="agregarDetail" method= "POST " type="submit"  value="Agregar"><p>Agregar al carrito</p>                            </button>    
+                            <button class="agregarDetail" type="submit"  value="Agregar"><p>Agregar al carrito</p>                            </button>    
                         </div>  
                     </form>
                 </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="productdescription">
             <h1>DESCRIPCIÓN</h1>
-            <p> <%= productId?.description%></p>
+            <p> <%= product?.description%></p>
         </div>
         <div class="container">
             <form action="/contact" method="POST">

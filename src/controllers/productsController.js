@@ -6,35 +6,47 @@ let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
 
-let carrito = [
-{
-}
-];
+const {colors, sizes} = require('../colorsAndSizesProducts');
+
+let carrito = [];
 
 const controller = {
 
+    //muestra los resultados de una búsqueda
+    search: (req, res) => {
+        let search = req.query.search.toUpperCase();
+        let resultsSearch = productos.filter((product) => product.nameProd.toUpperCase().includes(search))
+        console.log(resultsSearch)
+        res.render('./products/resultsSearch', {resultsSearch, search})
+    },
+
+    //muestra el carrito de compras del cliente
     productCart: (req, res) => {
-        const productId = productos.find(productos => productos.id == req.params.id);
-        res.render('./products/productCart', {productId})
+        res.render('./products/productCart', {carrito})
     },
 
+    //muestra el detalle de un producto
     detailproduct: (req, res) => {
-        const productId = productos.find(productos => productos.id == req.params.id);
-        res.render('./products/detailproduct', {productId})
+        const product = productos.find(product => product.id == req.params.id);
+        res.render('./products/detailproduct', {product})
     },
 
+    //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
         res.render('./products/nenes', {productos: productos})
     },
 
+    //muestra una página solo con ropa de nenas 
     nenas: (req, res) => {
         res.render('./products/nenas', {productos: productos})
     },
 
+    //muestra la página de carga de un producto
     getProduct: (req, res) => {
-        res.render("./products/getproduct", {productos: productos})
+        res.render("./products/getproduct", {productos: productos, colors, sizes})
     },
 
+    //agrega un producto
     addProduct: (req,res) => {
         let errors = validationResult(req);
         if(errors.errors.length == 0){
@@ -50,18 +62,21 @@ const controller = {
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), newProductJSON);
                 res.redirect('./getProduct');
             } else {
-                res.render("./products/getproduct", {errors: errors.mapped()});
+                res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes});
             }
         } else{
-            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body});
+            console.log(req.body)
+            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes});
         }
     },
 
+    //muestra la pagina de edición de un producto
     editProduct: (req, res)=>{
         const product = productos.find(product => product.id == req.params.id);                
-        return res.render("./products/editproduct", {product})
+        return res.render("./products/editproduct", {product, colors, sizes})
     },
 
+    //modifica un producto
     modifiedProduct: (req, res) => {
         let errors = validationResult(req);
         if(errors.errors.length == 0){
@@ -81,42 +96,58 @@ const controller = {
                 }
                 let modifiedProductJSON = JSON.stringify(productos);
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
-                res.redirect('/');
+                res.redirect('/products/list');
             } else {
-                res.redirect('./editProduct')
+                res.render('./editProduct')
             }
         } else{
             let product = {}
             product = req.body;
             product.id = req.params.id;
-            res.render("./products/editproduct", {errors: errors.mapped(), product});
+            res.render("./products/editproduct", {errors: errors.mapped(), product, colors, sizes});
         }
     },
 
-    agregarCarrito: (req, res) => {
-        const newBuy = {
-            src: req.body.src,
-            price: req.body.price,
-            name: req.body.name,
-            color: req.body.color,
-            talle: req.body.talle,
-            stock: req.body.stock,
-            id: req.body.id
+    //agrega un producto al carrito
+    agregarProdCarrito: (req, res) => {
+        const newBuy = productos.find(product => product.id == req.params.id);
+        newBuy.color = req.body.colorStock;
+        newBuy.talle = req.body.talleStock;
+        newBuy.cantidad = req.body.cantidad;            
+
+        carrito.push({newBuy})
+        for(let i = 0; i < carrito.length; i++){
+            console.log(carrito[i])
         }
-        carrito.push({newBuy: newBuy})
-       
+        res.redirect('/products/productCart')  
     },
 
-    eliminarCarrito: (req, res) => {
-        
+    //elimina un producto del carrito
+    eliminarProdCarrito: (req, res) => {
         for(i=0; i<carrito.length; i++) {
             if(req.params.id == carrito[i].id){
                 carrito.splice(i, 1)
-            
+
             }
         }
-        res.redirect("/");
+        res.redirect('/products/productCart');
+    },
 
+    //muestra el listado de productos
+    listadoProductos: (req, res) => {
+        res.render('./products/listadoProductos', {productos: productos})
+    },
+
+    //elimina un producto del listado de productos
+    eliminarProd: (req, res) => {
+        for(i=0; i<productos.length; i++) {
+            if(req.params.id == productos[i].id){
+                productos.splice(i, 1);
+                let modifiedProductJSON = JSON.stringify(productos);
+                fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
+                res.redirect("/products/list")
+            }
+        }
     }
 
 }
