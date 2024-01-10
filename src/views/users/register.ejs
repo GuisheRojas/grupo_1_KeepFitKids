@@ -7,7 +7,7 @@
 <body>
     <%- include('../partials/header') %>
     <main class="mainForm">
-        <form action="/users/register" method="POST" class="forms">
+        <form action="/users/register" method="POST" class="forms" enctype="multipart/form-data">
             <h2 class="titulares">Registra una cuenta</h2>
             <div class="container">
                 <div class="group">
@@ -15,26 +15,51 @@
                     <label for="email" class="label">Email:</label>
                     <span class="line"></span>
                 </div>
+                <% if(locals.errors && errors.email){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.email.msg %>
+                    </p>    
+                <% } %>
                 <div class="group">
                     <input type="password" id="password" class="input" placeholder=" ">
                     <label for="password" class="label">Contraseña: </label>
                     <span class="line"></span>
                 </div>
+                <% if(locals.errors && errors.password){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.password.msg %>
+                    </p>    
+                <% } %>
                 <div class="group">
                     <input type="text" id="name" class="input" placeholder=" ">
                     <label for="name" class="label">Nombre: </label>
                     <span class="line"></span>
                 </div>
+                <% if(locals.errors && errors.nameProd){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.name.msg %>
+                    </p>    
+                <% } %>
                 <div class="group">
                     <input type="text" id="lastname" class="input" placeholder=" ">
                     <label for="lastname" class="label">Apellido: </label>
                     <span class="line"></span>
                 </div>
+                <% if(locals.errors && errors.lastname){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.lastname.msg %>
+                    </p>    
+                <% } %>
                 <div class="group">
                     <input type="file" id="avatar" class="input" placeholder=" " accept=".jpg, .png, .gif">
                     <label for="avatar" class="label">Foto de perfil: </label>
                     <span class="line"></span>
                 </div>
+                <% if(locals.errors && errors.avatar){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.avatar.msg %>
+                    </p>    
+                <% } %>
                 <input type="submit" class="submit" value="Registrarse">
             </div>
         </form>
