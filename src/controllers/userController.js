@@ -23,6 +23,9 @@ const controller = {
                     }
                 }
             }
+            if(req.body.remember){
+                res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
+            }
             if(!user){
                 res.render('./users/login', {errors: {
                     credentials: {
