@@ -11,6 +11,8 @@ const userRouter = require('./routes/user');
 
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 // en el video - silvina
  app.use(express.urlencoded({extended: false}));
@@ -21,6 +23,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', path.join(__dirname, 'views'));
 app.use(methodOverride('_method'));
+app.use(session({secret: 'Secret'}))
+app.use(cookies())
 
 app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)

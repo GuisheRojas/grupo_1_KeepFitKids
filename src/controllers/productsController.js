@@ -6,6 +6,8 @@ let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
 
+const {colors, sizes} = require('../colorsAndSizesProducts');
+
 let carrito = [];
 
 const controller = {
@@ -41,7 +43,7 @@ const controller = {
 
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
-        res.render("./products/getproduct", {productos: productos})
+        res.render("./products/getproduct", {productos: productos, colors, sizes})
     },
 
     //agrega un producto
@@ -60,17 +62,18 @@ const controller = {
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), newProductJSON);
                 res.redirect('./getProduct');
             } else {
-                res.render("./products/getproduct", {errors: errors.mapped()});
+                res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes});
             }
         } else{
-            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body});
+            console.log(req.body)
+            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes});
         }
     },
 
     //muestra la pagina de edición de un producto
     editProduct: (req, res)=>{
         const product = productos.find(product => product.id == req.params.id);                
-        return res.render("./products/editproduct", {product})
+        return res.render("./products/editproduct", {product, colors, sizes})
     },
 
     //modifica un producto
@@ -95,31 +98,28 @@ const controller = {
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
                 res.redirect('/products/list');
             } else {
-                res.redirect('./editProduct')
+                res.render('./editProduct')
             }
         } else{
             let product = {}
             product = req.body;
             product.id = req.params.id;
-            res.render("./products/editproduct", {errors: errors.mapped(), product});
+            res.render("./products/editproduct", {errors: errors.mapped(), product, colors, sizes});
         }
     },
 
     //agrega un producto al carrito
     agregarProdCarrito: (req, res) => {
-        let position = productos.findIndex(product => product.id == req.params.id);
+        const newBuy = productos.find(product => product.id == req.params.id);
         newBuy.color = req.body.colorStock;
         newBuy.talle = req.body.talleStock;
-        newBuy.cantidad = req.body.cantidad;
-        newBuy.id = carrito.length + 1;          
-        
-        
+        newBuy.cantidad = req.body.cantidad;            
+
         carrito.push({newBuy})
-        for(let i=0; i<carrito.length; i++){
-            console.log(carrito[i].newBuy)
+        for(let i = 0; i < carrito.length; i++){
+            console.log(carrito[i])
         }
-        
-        res.redirect('/products/productCart')       
+        res.redirect('/products/productCart')  
     },
 
     //elimina un producto del carrito
