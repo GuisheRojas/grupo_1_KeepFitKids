@@ -10,7 +10,7 @@ const {colors, sizes} = require('../colorsAndSizesProducts');
 
 let carrito = [];
 
-const controller = {
+const productsController = {
 
     //muestra los resultados de una búsqueda
     search: (req, res) => {
@@ -152,4 +152,4 @@ const controller = {
 
 }
 
-module.exports = {productos, controller};
+module.exports = {productos, productsController};

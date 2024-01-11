@@ -10,9 +10,11 @@ const bcrypt = require('bcryptjs')
 const User = require('../Models/User');
 
 const controller = {
+
     login: (req, res) => {
         res.render('./users/login')
     },
+
     singIn: (req, res) => {
         let errors = validationResult(req);
         if(errors.errors.length == 0){
@@ -25,9 +27,7 @@ const controller = {
                     }
                 }
             }
-            if(req.body.remember){
-                res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
-            }
+            
             if(!user){
                 res.render('./users/login', {errors: {
                     credentials: {
@@ -36,8 +36,14 @@ const controller = {
                 }, old: req.body});
             } 
             req.session.user = user;
+
+            if(req.body.remember){
+                res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
+            }
+            
             res.redirect('/')
         } else{
+            console.log(errors.mapped())
             res.render('./users/login', {errors: errors.mapped(), old: req.body});
         }
     },
@@ -46,43 +52,39 @@ const controller = {
     },
 
     // video - silvina
-    processRegisterUser: (req, res)=>{
-        const resultValidation = validationResult(req);
-
-        if (resultValidation.errors.length > 0){
-            return res.render('register', {
-                errors:resultValidation.mapped(),
-                oldData: req.body
+    processRegisterUser: (req, res) => {
+        const errors = validationResult(req);
+        if (errors.errors.length > 0){
+            console.log(errors.mapped(), req.body);
+            return res.render('./users/register', {
+                errors: errors.mapped(),
+                old: req.body
             });
         }
+
         let userInDB = User.findByField('email', req.body.email);
 
 		if (userInDB) {
-			return res.render('register', {
+			return res.render('./users/register', {
 				errors: {
 					email: {
 						msg: 'Este email ya está registrado'
 					}
 				},
-				oldData: req.body
+				old: req.body
 			});
 		}
 
 		let userToCreate = {
 			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 6),
+			password: bcrypt.hashSync(req.body.password, 6),
 			avatar: req.file.filename
 		}
 
-		let userCreated = User.create(userToCreate);
+		User.create(userToCreate);
 
-		return res.redirect('/users/login');
-	},
-    
-
-    singUp: (req, res) => {
-        res.redirect('/users/login')
-    }
+		return res.redirect('./users/login');
+	}
 }
 
 module.exports = controller;
