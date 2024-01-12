@@ -9,6 +9,7 @@ const userController = require('../controllers/userController');
                             /* MIDDLEWARES */
 
 const guestMiddleware = require('../middlewares/users/guestMiddleware');
+const authMiddleware = require('../middlewares/users/authMiddleware')
 
 //hace las validaciones para iniciar sesión
 const singInValidation = require('../middlewares/users/singInValidationMiddleware');
@@ -29,7 +30,10 @@ router.post('/register', registerValidation, upload.single('avatar'), userContro
 
 //inicia la sesión de un usuario
 router.get('/login', guestMiddleware, userController.login);
-router.post('/singIn', singInValidation, userController.singIn)
+router.post('/login', singInValidation, userController.singIn)
+
+//accede al perfil del usuario
+router.get('/profile', authMiddleware, userController.profile)
 
 //module.exports = upload;
 module.exports = router;

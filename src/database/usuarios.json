@@ -1,10 +1,10 @@
 [
  {
   "id": 1,
-  "name": "Guillermo",
-  "lastname": "Rojas",
-  "email": "correo@gmail.com",
-  "password": "contraseña",
-  "avatar": ""
+  "email": "anita.migueles@gmail.com",
+  "password": "$2a$06$1wJZM3ZcnqW5rh5oyThvlO0XM15eJ6zYj5wobuGt4ByESCIonAGvG",
+  "name": "Ana Belen",
+  "lastname": "Migueles",
+  "avatar": "avatar-1705021110307.jpg"
  }
 ]

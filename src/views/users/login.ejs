@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/header') %>
     <main class="mainForm">
-        <form action="/users/singIn" method="POST" class="forms">
+        <form action="/users/login" method="POST" class="forms">
             <h2 class="titulares">Ingresa a tu cuenta</h2>
             <% if(locals.errors && errors.credentials){ %>
                 <p class="fbFormsProd"> <%= errors.credentials.msg %></p>    

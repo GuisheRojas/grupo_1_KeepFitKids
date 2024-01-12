@@ -12,12 +12,10 @@
 
             <div class="container">
                 <div class="group">
-                    <input type="email" name="email" id="email" class="input" placeholder=" "
+                    <input type="email" name="email" id="email" class="input" placeholder=" " value=""
                     <% if(locals.old && old.email){%>
                         value="<%= old.email %>"
-                    <% } else { %>
-                        value=""
-                    <%} %>>
+                    <% } %>>
                     <label for="email" class="label">Email:</label>
                     <span class="line"></span>
                 </div>
@@ -26,21 +24,19 @@
                 <% } %>
 
                 <div class="group">
-                    <input type="password" name="password" id="password" class="input" placeholder=" ">
+                    <input type="password" name="password" id="password" class="input" placeholder=" " value="">
                     <label for="password" class="label">Contraseña: </label>
                     <span class="line"></span>
                 </div>
                 <% if(locals.errors && errors.password){ %>
-                    <p class="fbFormsProd"> <%= errors.password.msg %> <p>    
+                    <p class="fbFormsProd"> <%= errors.password.msg %> </p>    
                 <% } %>
 
                 <div class="group">
-                    <input type="text" name="name" id="name" class="input" placeholder=" " 
+                    <input type="text" name="name" id="name" class="input" placeholder=" " value=""
                     <% if(locals.old && old.name){%>
                         value="<%= old.name %>"
-                    <% } else { %>
-                        value=""
-                    <%} %>>
+                    <% } %>>
                     <label for="name" class="label">Nombre: </label>
                     <span class="line"></span>
                 </div>
@@ -49,12 +45,10 @@
                 <% } %>
 
                 <div class="group">
-                    <input type="text" name="lastname" id="lastname" class="input" placeholder=" "
+                    <input type="text" name="lastname" id="lastname" class="input" placeholder=" " value=""
                     <% if(locals.old && old.lastname){%>
                         value="<%= old.lastname %>"
-                    <% } else { %>
-                        value=""
-                    <%} %>>
+                    <% } %>>
                     <label for="lastname" class="label">Apellido: </label>
                     <span class="line"></span>
                 </div>

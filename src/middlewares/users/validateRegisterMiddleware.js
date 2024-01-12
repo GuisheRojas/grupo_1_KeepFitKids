@@ -7,10 +7,10 @@ const registerValidation=[
         .isEmail().withMessage("Debe ser un mail valido"),
     check('password')
         .notEmpty().withMessage("Debe completar el campo contraseña").bail()
-        .isLength({min: 6}).withMessage("Minimo 6 carateres"),
+        .isLength({min: 6}).withMessage("La contraseña debe tener minimo 6 caracteres"),
     check('name')
         .notEmpty().withMessage("Debe completar el campo Nombre").bail()
-        .isLength({min: 3}).withMessage("El campo Nombre tiene un mínimo de 5 caracteres"),
+        .isLength({min: 3}).withMessage("El campo Nombre tiene un mínimo de 3 caracteres"),
     check('lastname')
         .notEmpty().withMessage("Debe completar el campo apellido").bail()
         .trim(),

@@ -17,7 +17,7 @@ const controller = {
 
     singIn: (req, res) => {
         let errors = validationResult(req);
-        if(errors.errors.length == 0){
+        if(errors.isEmpty()){
             let user;
             for(let i = 0; i < usuarios.length; i++){
                 if(usuarios[i].email == req.body.email){
@@ -29,7 +29,7 @@ const controller = {
             }
             
             if(!user){
-                res.render('./users/login', {errors: {
+                return res.render('./users/login', {errors: {
                     credentials: {
                         msg:'Credenciales inválidas'
                     }
@@ -37,25 +37,24 @@ const controller = {
             } 
             req.session.user = user;
 
-            if(req.body.remember){
+            if(!req.body.remember){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
             }
             
             res.redirect('/')
         } else{
-            console.log(errors.mapped())
             res.render('./users/login', {errors: errors.mapped(), old: req.body});
         }
     },
+
     register: (req, res)=>{
         res.render('./users/register')
     },
 
-    // video - silvina
     processRegisterUser: (req, res) => {
         const errors = validationResult(req);
-        if (errors.errors.length > 0){
-            console.log(errors.mapped(), req.body);
+
+        if(errors.isEmpty()) {
             return res.render('./users/register', {
                 errors: errors.mapped(),
                 old: req.body
@@ -83,8 +82,12 @@ const controller = {
 
 		User.create(userToCreate);
 
-		return res.redirect('./users/login');
-	}
+		return res.redirect('./login');
+	},
+
+    profile: (req, res) => {
+        res.render('./users/profile', {user: req.session.user})
+    }
 }
 
 module.exports = controller;
