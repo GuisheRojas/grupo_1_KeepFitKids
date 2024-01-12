@@ -6,5 +6,13 @@
   "name": "Ana Belen",
   "lastname": "Migueles",
   "avatar": "avatar-1705021110307.jpg"
+ },
+ {
+  "id": 2,
+  "email": "ifireflyisland@gmail.com",
+  "password": "$2a$06$xiBrBjW7iX1VeKjCLQZ/6ut/Nw1tx4EROLBOnjyePM1Z2fp5CA9Om",
+  "name": "Guillermo",
+  "lastname": "Rojas",
+  "avatar": "avatar-1705025826545.jpg"
  }
 ]

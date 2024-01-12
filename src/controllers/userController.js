@@ -37,7 +37,7 @@ const controller = {
             } 
             req.session.user = user;
 
-            if(!req.body.remember){
+            if(req.body.remember){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
             }
             
@@ -87,7 +87,12 @@ const controller = {
 
     profile: (req, res) => {
         res.render('./users/profile', {user: req.session.user})
-    }
+    },
+    logout: (req, res) => {
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	}
 }
 
 module.exports = controller;
