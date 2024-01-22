@@ -288,6 +288,11 @@ div.group-remember{
 }
 
 
+/*PERFIL DE USUARIO*/
+.profileImage{
+    width: 15%;
+}
+
 /*FOOTER*/
 footer{
     display: flex;
