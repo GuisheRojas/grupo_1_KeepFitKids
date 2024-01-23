@@ -25,7 +25,7 @@ const productsController = {
         res.render('./products/productCart', {carrito})
     },
 
-    //muestra el detalle de un producto
+    //muestra el desize de un producto
     detailproduct: (req, res) => {
         const product = productos.find(product => product.id == req.params.id);
         res.render('./products/detailproduct', {product})
@@ -88,9 +88,9 @@ const productsController = {
                         productos[i].nameProd = req.body.nameProd;
                         productos[i].description = req.body.description;
                         productos[i].color = req.body.color;
-                        productos[i].talle = req.body.talle;
+                        productos[i].size = req.body.size;
                         productos[i].stock = req.body.stock;
-                        productos[i].genero = req.body.genero;
+                        productos[i].genre = req.body.genre;
                         productos[i].new = false;                       
                     }
                 }
@@ -112,25 +112,25 @@ const productsController = {
     agregarProdCarrito: (req, res) => {
         const newBuy = productos.find(product => product.id == req.params.id);
         newBuy.color = req.body.colorStock;
-        newBuy.talle = req.body.talleStock;
+        newBuy.size = req.body.sizeStock;
         newBuy.cantidad = req.body.cantidad;            
 
         carrito.push({newBuy})
         for(let i = 0; i < carrito.length; i++){
             console.log(carrito[i])
         }
-        res.redirect('/products/productCart')  
+        res.render('./products/productCart', {carrito})  
     },
 
     //elimina un producto del carrito
     eliminarProdCarrito: (req, res) => {
-        for(i=0; i<carrito.length; i++) {
-            if(req.params.id == carrito[i].id){
-                carrito.splice(i, 1)
-
+        for(let i=0; i<carrito.length; i++) {
+            if(req.params.id == carrito[i].newBuy.id){
+                carrito.splice(i, 1);
+                
             }
         }
-        res.redirect('/products/productCart');
+        res.render('./products/productCart', {carrito});
     },
 
     //muestra el listado de productos

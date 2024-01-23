@@ -7,19 +7,40 @@
 <body>
     <%- include('../partials/header') %>
     <main class="profileUser">
+        <h1 class="titulares"> Mi perfil </h1>
         <container class="userInformation">
-            <h1 class="titulares"> Mi perfil </h2>
-            <img src="/img/users/<%=user.avatar%>" alt="Profile Image" class="profileImage">
+            <div class="titleBox">
+                <h2>Mis datos</h2>
+                <a href="/users/editProfile">
+                    <i class="fa-solid fa-pencil" id="editProfile"></i>
+                </a>
+            </div>
+
+            <div class="imgUser">
+                <img src="/img/users/<%=user.avatar%>" alt="Profile Image" class="profileImage">
+            </div>
+
             <div class="userBox">
                 <h3>Nombre y apellido</h3>
                 <h2 id="userName"> <%= user.name %> </h2>
                 <h2 id="userName"> <%= user.lastname %> </h2>
             </div>
+
             <div class="userBox">
                 <h4>Datos de ingreso</h4>
                 <h3> <%= user.email %></h3>
             </div>
         </container>
+
+        <div class="logOut">
+            <form method="post" action="/users/logOut" class="formLogOut">
+                <div>
+                    <button class="buttonLogOut" type="submit">        
+                        <p>Cerrar Sesión</p>
+                    </button>
+                </div>
+            </form>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>

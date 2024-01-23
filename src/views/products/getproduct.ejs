@@ -65,7 +65,7 @@
                 
                 <div class="group">
                     <h2 class="input">Seleccione los colores</h2>
-                    <select id="color" name="color" class="input" placeholder="" size="5" multiple
+                    <select id="color" name="color" class="input" placeholder="" size="5">
                         <%if(locals.old && old.color){%>
                             <%for(let i = 0; i<old.color.length; i++){%>
                                 value="<%= old.color[i]%>"
@@ -82,10 +82,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <h2 class="input">Seleccione los talles</h2>
-                    <select id="talle" name="talle" class="input" placeholder="" size="6" multiple
-                        <%if(locals.old && old.talle){%> 
-                            value="<%= old.talle%>"
+                    <h2 class="input">Seleccione los sizes</h2>
+                    <select id="size" name="size" class="input" placeholder="" size="6">
+                        <%if(locals.old && old.size){%> 
+                            value="<%= old.size%>"
                         <%}%> >
                         <% for(let i = 0; i < sizes.length; i++) {%>    
                             <option value="<%= sizes[i] %>"><%= sizes[i] %></option>
@@ -93,14 +93,14 @@
                     </select>
                     <span class="line"></span>
                 </div>
-                <% if(locals.errors && errors.talle){ %>
-                    <p class="fbFormsProd"> <%= errors.talle.msg %></p>    
+                <% if(locals.errors && errors.size){ %>
+                    <p class="fbFormsProd"> <%= errors.size.msg %></p>    
                 <% } %>
                 
                 <div class="group">
-                    <select id="genero" name="genero" class="input" placeholder="" >
-                        <%if(locals.old && old.genero){%> 
-                            <option value="<%=old.genero%>"><%=old.genero%></option>
+                    <select id="genero" name="genre" class="input" placeholder="" >
+                        <%if(locals.old && old.genre){%> 
+                            <option value="<%=old.genre%>"><%=old.genre%></option>
                         <%} else {%> 
                             <option value="">Seleccione el genero del producto</option>
                             <option value="Femenino">Femenino</option>
@@ -110,8 +110,8 @@
                     </select>
                     <span class="line"></span>
                 </div>
-                <% if(locals.errors && errors.genero){ %>
-                    <p class="fbFormsProd"> <%= errors.genero.msg %></p>    
+                <% if(locals.errors && errors.genre){ %>
+                    <p class="fbFormsProd"> <%= errors.genre.msg %></p>    
                 <% } %>
                 
                 <div class="group">

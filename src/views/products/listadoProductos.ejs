@@ -16,28 +16,27 @@
                     <article class="article">
                        
                             <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].nameProd %> class="product_img">
-                            <p class="price"><%=productos[i].price %></p>
+                            <p class="price">$<%=productos[i].price %></p>
                             <h4 class="description"><%=productos[i].nameProd%></h4>
-                            <div class="elim">
-                                <form method="post" action="/products/list/<%= productos[i].id%>?_method=delete" class="formbotelim">
-                                    <div>
-                                        <button class="botonelim" type="submit">        
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </button>
-                                    </div>
-
-                                </form>
-                                <br>
-                            </div>
-                            <div class="editarProducto">
-                                <form method="get" action="/products/editProduct/<%= productos[i].id%>" class="formeditar">
-                                    <div>
-                                        <button class="botonEdit" type="submit">        
-                                            <i class="fa-solid fa-pencil"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                                <br>
+                            <div class="buttonsBox">
+                                <div class="elim">
+                                    <form method="post" action="/products/list/<%= productos[i].id%>?_method=delete" class="formbotelim">
+                                        <div>
+                                            <button class="botonElim" type="submit">        
+                                                <i id="botonElim" class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="editarProducto">
+                                    <form method="get" action="/products/editProduct/<%= productos[i].id%>" class="formeditar">
+                                        <div>
+                                            <button class="botonEdit" type="submit">        
+                                                <i id="botonEdit" class="fa-solid fa-pencil"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         
                     </article>

@@ -14,13 +14,13 @@ let productsValidation = [
     body('color')
         .notEmpty().withMessage("Debe seleccionar al menos un color")
         .trim(),
-    body('talle')
-        .notEmpty().withMessage("Debe seleccionar al menos un talle")
+    body('size')
+        .notEmpty().withMessage("Debe seleccionar al menos un size")
         .trim(),
     body('stock')
         .notEmpty().withMessage("Debe completar el campo stock del producto")
         .trim(),
-    body('genero')
+    body('genre')
         .notEmpty().withMessage("Debe seleccionar el género del producto").bail()
         .trim(),
     body('productImage')

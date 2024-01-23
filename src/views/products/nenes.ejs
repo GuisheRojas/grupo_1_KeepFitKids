@@ -13,7 +13,7 @@
     <main>
         <section class="nenes">
             <% for(let i=0; i < productos.length; i++){ %>
-                <% if(productos[i].genero == 'Masculino') { %>
+                <% if(productos[i].genre == 'Masculino') { %>
                     <article class="article">
                         <a href="/products/detailproduct/<%= productos[i].id %>">
                             <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].nameProd %> class="product_img">

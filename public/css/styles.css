@@ -293,6 +293,46 @@ div.group-remember{
     width: 15%;
 }
 
+
+/*LISTADO DE PRODUCTOS*/
+.buttonsBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.buttonsBox .elim, 
+.buttonsBox .editarProducto {
+    width: 30%;
+    justify-content: space-around;
+}
+
+.buttonsBox .elim div, 
+.buttonsBox .editarProducto div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.botonEdit{
+    margin: 5px;
+    border: none;
+    background: none; 
+}
+
+#botonEdit{
+    font-size:150%;
+}
+
+.botonElim{
+    border: none;
+    background: none;
+    margin: 5px;
+}
+
+
 /*FOOTER*/
 footer{
     display: flex;
@@ -556,10 +596,42 @@ button.agregarDetail{
 }
 
 /* SILVINA - PRODUCTCART*/
+section.carrito{
+    display: flex;
+    flex-direction: column;
+}
+
+article.articulo{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+/*
+article.articulo .imagen{
+    width:80%;
+    padding-left: 20px;
+    margin: auto;
+}
+
+article.articulo .imagen img{
+    width: 80%;
+}
+
+article.articulo .imagen, article.articulo .detalle,
+article.articulo .color-prod, article.articulo .talle,
+article.articulo .cantidad, article.articulo .precio,
+article.articulo .elim{
+    display: flex;
+    flex-direction: row;
+}*/
 
 main.productcart h2{
     margin: 2%;
-    font-size: 25px;
+    font-size: 18px;
     text-align:start;
     background-color:var(--naranja);
     color: #FFF;
@@ -570,57 +642,18 @@ main.productcart{
 }
 
 main.productcart h3{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     font-weight: normal;
     color:#706c6c;
 }
 
-section.Carrito{
-    display: flex;
-    flex-direction:column ;
-}
 section.Resumen{
     display: none;
 }
-ul.tabla{
-    display: flex;
-    justify-content: space-around;
-    font-size: 24px;
-    /* margin: 0% 2%; */
-}
 
 ul.tabla{
     display: none;
-}
-
-article.articulo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.imagen img{
-    width: 25vw;
-    position: relative;
-}
-
-select.color{
-    border-color: var(--gris-oscuro);
-    padding: 5px 20px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-select#talle{
-    border-color: var(--gris-oscuro);
-    padding: 5px 20px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-select#cantidad{
-    border-color: var(--gris-oscuro);
-    padding: 5px 20px;
-    font-size: 16px;
-    margin-bottom: 10px;
 }
 
 div.subtotal{
@@ -628,7 +661,6 @@ div.subtotal{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /*margin: 2% 30%;*/
     padding: 15px;
     align-items: center;
     border-radius: 5px;
@@ -640,21 +672,14 @@ div.subtotal{
 }
 
 main.productcart p{
-    font-size: 20px;
-    margin-right: 10%;
+    font-size: 14px;
     text-align: center;
     font-weight: normal;
     color:#706c6c;
 }
 main.productcart h4{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
-}
-
-label.titulo{
-    font-size: 16px;
-    text-align: center;
-    color: #706c6c;
 }
 
 div.elim{
@@ -680,21 +705,17 @@ div.botones button{
     box-shadow: 0px 0px 5px var(--verde-botones);
 }
 
-div.elim form.formbotelim button {
+.botonelim {
     background-color: white;
     border-color: white;
     border: white;
-    font-size: 200%;
+    font-size: 100%;
     display: flex;
     position: relative;
     left: 50%;
     justify-content: center;
     align-items: center;
 }
-
-
-
-
 
 
 /*TABLETS*/
@@ -923,6 +944,77 @@ div.elim form.formbotelim button {
         font-size: .8rem;
     }
 
+    /*PRODUCTCART*/
+    /*section.carrito{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 'imagen nombre'
+                             'imagen color'
+                             'imagen talle'
+                             'imagen cantidad'
+                             'imagen precio'
+                             'eliminar elminar';
+        padding: 15px 20px;
+        align-self: center;
+    }
+    
+    section.carrito p{
+        font-size: 14px;
+    }
+    
+    article.articulo{
+        display: contents;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+    
+    article.articulo .imagen, article.articulo .detalle,
+    article.articulo .color-prod, article.articulo .talle,
+    article.articulo .cantidad, article.articulo .precio,
+    article.articulo .elim{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    article.articulo .imagen{
+        grid-area: imagen;
+        place-self: start center;
+        padding: 0px;
+        width: 60%;
+    }
+    
+    .imagen img{
+        width: 100%;
+    }
+    
+    article.articulo .detalle{
+        grid-area: nombre;
+    }
+    
+    article.articulo .color-prod{
+        grid-area: color;
+    }
+    
+    article.articulo .talle{
+        grid-area: talle;
+    }
+    
+    article.articulo .cantidad{
+        grid-area: cantidad;
+    }
+    
+    article.articulo .precio{
+        grid-area: precio;
+    }
+    
+    article.articulo .elim .botonelim{
+        grid-area: eliminar;
+        font-size: 20px;
+        place-self: end end;
+    }*/
+
 }
 
 
@@ -989,7 +1081,7 @@ div.elim form.formbotelim button {
         background-color: white;
         border-color: white;
         border: white;
-        font-size: 200%;
+        font-size: 100%;
         display: flex;
         position: relative;
         justify-content: center;
@@ -1155,57 +1247,35 @@ div.elim form.formbotelim button {
 
 
     /* PRODUCT-CART*/
+    .carrito-vacio{
+        min-height: 400px;
+    }
+
     .todo-junto{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
-
-    .articuloContainer{
-        min-height: 340px;
-    }
     
-    section.Carrito{
-        padding: 20px;
-        flex-direction: column;
-        width: 75%; 
+    section.carrito{
+        display: grid;
+        grid-template-columns: repeat(7, auto);
+        grid-template-rows: 20px;
+        grid-auto-flow: row;
+        row-gap: 15px;
+        padding: 15px;        
+        width: 70%; 
+        grid-template-areas: none;
     }
-    section.Resumen{
-        display: flex;
-        padding: 10px;
-        flex-direction: column;
-        justify-content: center ;
-        color: #000;
-        margin: 10px;
-        width: 25%;
-        background-color: var(--verde-claro);
-    }
-    div.subtotal{
-        width: 35vw;
-    }
-    main.productcart section.Carrito h3{
-        display: none;
-    }
-    main.productcart section.Resumen h3,
-    main.productcart section.Carrito p{
-        font-size: 20px;
-        margin-right: 10%;
-        text-align: center;
-        font-weight: normal;
-        color:#706c6c;
-    }
-    div.codigo-descuento {
-        text-align: center;
-    }
+
     ul.tabla{
-        display: flex;
+        display: contents;
+        margin-bottom: 20px;
     }
+
     ul.tabla li{
-        flex-direction: row-reverse;
-        justify-content: space-around;
-        align-items: flex-start;
         font-size: 20px;
         margin: 0% 2%;
         text-align: center;
@@ -1214,12 +1284,61 @@ div.elim form.formbotelim button {
     }
 
     article.articulo{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-grow: 1;
+        display: contents;
     }
+
+    article.articulo .imagen, article.articulo .detalle,
+    article.articulo .color-prod, article.articulo .talle,
+    article.articulo .cantidad, article.articulo .precio,
+    article.articulo .elim{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .descrip-campo{
+        display: none;
+    }
+
+    section.Resumen{
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center ;
+        color: #000;
+        margin: 10px;
+        width: 20%;
+        background-color: var(--verde-claro);
+    }
+
+    div.subtotal{
+        width: 35vw;
+    }
+
+    main.productcart section.carrito h3{
+        display: none;
+    }
+    
+    main.productcart section.carrito p{
+        font-size: 15px;
+        margin-right: 10%;
+        text-align: center;
+        font-weight: normal;
+        color:#706c6c;
+    }
+
+    main.productcart section.Resumen h3{
+        font-size: 20px;
+        margin-right: 10%;
+        text-align: center;
+        font-weight: normal;
+        color:#706c6c;
+    }
+
+    div.codigo-descuento {
+        text-align: center;
+    }
+
     .imagen img{
         width: 10vw;
     }
@@ -1230,6 +1349,7 @@ div.elim form.formbotelim button {
         justify-content: space-around;
         padding: 15px;
     }
+
     button.botonCarrito{
         border-radius: 10px;
         padding: 15px 5px;
@@ -1239,6 +1359,8 @@ div.elim form.formbotelim button {
         background-color: var(--gris-claro);
         box-shadow: 0px 0px 0px --gris-claro;
     }
+
+
 
 
     /*FORMS*/

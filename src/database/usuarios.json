@@ -14,5 +14,13 @@
   "name": "Guillermo",
   "lastname": "Rojas",
   "avatar": "avatar-1705025826545.jpg"
+ },
+ {
+  "id": 3,
+  "email": "",
+  "password": "$2a$06$QUtmoKkKoZPz9qznhfhVeOYYJQYWEpGfPIfJKcSEiERT.We9Xr1Vm",
+  "name": "",
+  "lastname": "",
+  "avatar": "avatar-1705950550387.png"
  }
 ]

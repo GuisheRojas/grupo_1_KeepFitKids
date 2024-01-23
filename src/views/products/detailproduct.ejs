@@ -36,9 +36,9 @@
                         </div>
                         <div class="divtalles">
                             <label>Seleccione un talle</label>
-                            <select class="tallesd" name="talleStock">
-                                <% for(let i=0; i < product?.talle.length; i++) {%>
-                                    <option value="<%= product?.talle[i] %>"><%= product?.talle[i]%></option>
+                            <select class="tallesd" name="sizeStock">
+                                <% for(let i=0; i < product?.size.length; i++) {%>
+                                    <option value="<%= product?.size[i] %>"><%= product?.size[i]%></option>
                                 <% } %>
                             </select>
                         </div>
