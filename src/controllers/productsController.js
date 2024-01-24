@@ -22,7 +22,7 @@ const productsController = {
 
     //muestra el carrito de compras del cliente
     productCart: (req, res) => {
-        res.render('./products/productCart', {carrito})
+        res.render('./products/productCart', {carrito, css: '/css/productCart.css'})
     },
 
     //muestra el desize de un producto
@@ -131,7 +131,7 @@ const productsController = {
                 
             }
         }
-        res.render('./products/productCart', {carrito});
+        res.redirect('/products/productCart');
     },
 
     //muestra el listado de productos
