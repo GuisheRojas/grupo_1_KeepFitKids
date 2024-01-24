@@ -11,7 +11,7 @@
             <h1 class="titulares">Ingrese el nuevo producto</h1>
             <div class="container">
                 <div class="group">
-                    <input type="text" id="name" name="nameProd" class="input" placeholder="" 
+                    <input type="text" id="name" name="nameProd" class="input" placeholder=""
                     <%if(locals.old && old.nameProd){%> 
                         value="<%= old.nameProd%>"
                     <% } %> >
@@ -25,7 +25,7 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
+                    <input type="file" id="productImage" name="productImage" accept=".jpg, .png, .jpeg" class="input" placeholder=""
                     <%if(locals.old && old.productImage){%> 
                         value="<%= old.productImage%>"
                     <%}%> >
@@ -39,7 +39,7 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="number" id="price" name="price" class="input" placeholder=""
+                    <input type="number" min="1" id="price" name="price" class="input" placeholder=""
                     <%if(locals.old && old.price){%> 
                         value="<%= old.price%>"
                     <%}%> >
@@ -51,7 +51,7 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="text" id="description" name="description" class="input" placeholder="" 
+                    <input type="text" id="description" name="description" class="input" placeholder=""
                     <%if(locals.old && old.description){%> 
                         value="<%= old.description%>"
                     <%}%> >
@@ -64,8 +64,8 @@
                 
                 
                 <div class="group">
-                    <h2 class="input">Seleccione los colores</h2>
-                    <select id="color" name="color" class="input" placeholder="" size="5">
+                    <h2 class="input">Seleccione el color</h2>
+                    <select id="color" name="color" class="input" size="5">
                         <%if(locals.old && old.color){%>
                             <%for(let i = 0; i<old.color.length; i++){%>
                                 value="<%= old.color[i]%>"
@@ -82,8 +82,8 @@
                 <% } %>
                 
                 <div class="group">
-                    <h2 class="input">Seleccione los sizes</h2>
-                    <select id="size" name="size" class="input" placeholder="" size="6">
+                    <h2 class="input">Seleccione el talle</h2>
+                    <select id="size" name="size" class="input" size="6">
                         <%if(locals.old && old.size){%> 
                             value="<%= old.size%>"
                         <%}%> >
@@ -98,7 +98,7 @@
                 <% } %>
                 
                 <div class="group">
-                    <select id="genero" name="genre" class="input" placeholder="" >
+                    <select id="genero" name="genre" class="input" placeholder="">
                         <%if(locals.old && old.genre){%> 
                             <option value="<%=old.genre%>"><%=old.genre%></option>
                         <%} else {%> 
@@ -115,7 +115,7 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="number" id="stock" name="stock" class="input" placeholder="" 
+                    <input type="number" id="stock" name="stock" class="input" placeholder=""
                     <%if(locals.old && old.stock){%> 
                         value="<%= old.stock%>"
                     <%}%> >

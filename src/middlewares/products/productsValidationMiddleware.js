@@ -9,13 +9,13 @@ let productsValidation = [
         .trim(),
     body('description')
         .notEmpty().withMessage("Debe completar el campo descripción").bail()
-        .isLength({min: 30}).withMessage("El campo descripción tiene un mínimo de 50 caracteres")
+        .isLength({min: 20}).withMessage("El campo descripción tiene un mínimo de 20 caracteres")
         .trim(),
     body('color')
         .notEmpty().withMessage("Debe seleccionar al menos un color")
         .trim(),
     body('size')
-        .notEmpty().withMessage("Debe seleccionar al menos un size")
+        .notEmpty().withMessage("Debe seleccionar al menos un talle")
         .trim(),
     body('stock')
         .notEmpty().withMessage("Debe completar el campo stock del producto")
@@ -30,9 +30,9 @@ let productsValidation = [
                 throw new Error ('Debes cargar una imagen del producto');
             } else {
                 let fileExt = path.extname(file.originalname);
-                let acceptedExt = ['.png', '.jpg'];
+                let acceptedExt = ['.png', '.jpg', '.jpeg'];
                 if(!acceptedExt.includes(fileExt)){
-                    throw new Error ('Las extensiones permitidas son .png, .jpg');
+                    throw new Error ('Las extensiones permitidas son .png, .jpg y .jpeg');
                 }
             }
             return true;

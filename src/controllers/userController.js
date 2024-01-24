@@ -56,8 +56,12 @@ const controller = {
 
     processRegisterUser: (req, res) => {
         const errors = validationResult(req);
-
         if(errors.isEmpty()) {
+            res.redirect('/users/login');
+        }
+        else {
+            let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
+            fs.unlinkSync(avatarPath);
             return res.render('./users/register', {
                 errors: errors.mapped(),
                 old: req.body

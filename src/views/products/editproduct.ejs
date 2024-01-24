@@ -55,10 +55,8 @@
                 <% } %>
                 
                 <div class="group">
-                    <h3 class="input">Colores (última actualización)</h3>
-                    <% for(let i = 0; i < colors.length; i++) {%>    
-                        <%=product.color[i]%>
-                    <%}%>
+                    <h3 class="input">Colores (última actualización)</h3> 
+                    <%=product.color%>
                     <h3 class="input">Actualice los colores en stock</h3>
                     <select id="color" name="color" class="input" placeholder="" size="5">
                         <% for(let i = 0; i < colors.length; i++) {%>    
@@ -72,10 +70,8 @@
                 <% } %>
                 
                 <div class="group">
-                    <h3 class="input">Talles (última actualización)</h3>
-                    <% for(let i = 0; i < sizes.length; i++) {%>    
-                        <%=product.size[i]%>
-                    <%}%>
+                    <h3 class="input">Talles (última actualización)</h3>  
+                    <%=product.size%>
                     <h2 class="input">Actualice los talles en stock</h2>
                     <select id="size" name="size" class="input" placeholder="" size="6" value="<%= product.size%>">
                         <% for(let i = 0; i < sizes.length; i++) {%>    
