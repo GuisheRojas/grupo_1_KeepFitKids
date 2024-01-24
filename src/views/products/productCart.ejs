@@ -30,36 +30,36 @@
                     <% for(let i=0; i<carrito.length; i++){%>
                         <article class="articulo">
                             <div class="imagen">
-                                <img src="/img/products/<%= carrito[i].newBuy.src %>" alt="<%= carrito[i].newBuy.nameProd %>">
+                                <img src="/img/products/<%= carrito[i].src %>" alt="<%= carrito[i].nameProd %>">
                             </div>
                             <div class="detalle">
                                 <p class="descrip-campo">Producto: </p>
-                                <p><%= carrito[i].newBuy.nameProd%></p>
+                                <p><%= carrito[i].nameProd%></p>
                             </div>
                             <div class="color-prod">
                                 <p class="descrip-campo">Color: </p>
-                                <p><%= carrito[i].newBuy.color %></p>
+                                <p><%= carrito[i].color %></p>
                             </div>
                             <div class="talle">
                                 <p class="descrip-campo">Talle: </p>
-                                <p><%= carrito[i].newBuy.size %></p>
+                                <p><%= carrito[i].size %></p>
                             </div>
                             <div class="cantidad">
                                 <p class="descrip-campo">Cantidad: </p>
-                                <p><%= carrito[i].newBuy.cantidad %></p>
+                                <p><%= carrito[i].cantidad %></p>
                             </div>
                             <div class="precio">
-                                <% if(carrito[i].newBuy.cantidad > 1) {%>
-                                    <% totalCant = carrito[i].newBuy.price * carrito[i].newBuy.cantidad%>
+                                <% if(carrito[i].cantidad > 1) {%>
+                                    <% totalCant = carrito[i].price * carrito[i].cantidad%>
                                     <p class="descrip-campo">Precio: </p>
                                     <p>$<%= totalCant %></p>
                                 <% } else { %>
                                     <p class="descrip-campo">Precio: </p>
-                                    <p>$<%= carrito[i].newBuy.price %></p>
+                                    <p>$<%= carrito[i].price %></p>
                                 <% } %>
                             </div>
                             <div class="elim">
-                                <form method="post" action="/products/productCart/<%= carrito[i].newBuy.id %>?_method=delete" class="formbotelim">
+                                <form method="post" action="/products/productCart/<%= carrito[i].id %>?_method=delete" class="formbotelim">
                                     <div>
                                         <button class="botonelim" type="submit">        
                                             <i class="fa-solid fa-trash-can"></i>
@@ -77,8 +77,8 @@
                     <div class="subtotal-art">
                         <h3>Subtotal</h3>
                         <%for(let i=0; i<carrito.length; i++){ %>
-                            <% let price = parseInt(carrito[i].newBuy.price);
-                            suma = suma + (price * carrito[i].newBuy.cantidad) %>
+                            <% let price = parseInt(carrito[i].price);
+                            suma = suma + (price * carrito[i].cantidad) %>
                         <% } %>
                         <h3>$<%= suma %></h3>
                     </div>

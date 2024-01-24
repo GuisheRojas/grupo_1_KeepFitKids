@@ -28,7 +28,7 @@ const productsController = {
     //muestra el desize de un producto
     detailproduct: (req, res) => {
         const product = productos.find(product => product.id == req.params.id);
-        res.render('./products/detailproduct', {product})
+        res.render('./products/detailproduct', {product});
     },
 
     //muestra una página solo con ropa de nenes 
@@ -44,12 +44,13 @@ const productsController = {
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
         res.render("./products/getproduct", {productos: productos, colors, sizes})
+        console.log(productos.length)
     },
 
     //agrega un producto
     addProduct: (req,res) => {
         let errors = validationResult(req);
-        if(errors.errors.length == 0){
+        if(errors.isEmpty()){
             if(req.file){ 
                 let newProduct = {};
                 newProduct = req.body;
@@ -110,22 +111,23 @@ const productsController = {
 
     //agrega un producto al carrito
     agregarProdCarrito: (req, res) => {
-        const newBuy = productos.find(product => product.id == req.params.id);
-        newBuy.color = req.body.colorStock;
-        newBuy.size = req.body.sizeStock;
-        newBuy.cantidad = req.body.cantidad;            
+        let newBuy = productos.find(product => product.id == req.params.id);
 
-        carrito.push({newBuy})
-        for(let i = 0; i < carrito.length; i++){
-            console.log(carrito[i])
-        }
-        res.render('./products/productCart', {carrito})  
+        let newProduct = { ...newBuy}
+        newProduct.color = req.body.colorStock;
+        newProduct.size = req.body.sizeStock;
+        newProduct.cantidad = req.body.cantidad;            
+        newProduct.id = carrito.length + 1;
+
+        carrito.push(newProduct)
+
+        res.redirect('/products/productCart');  
     },
 
     //elimina un producto del carrito
     eliminarProdCarrito: (req, res) => {
         for(let i=0; i<carrito.length; i++) {
-            if(req.params.id == carrito[i].newBuy.id){
+            if(req.params.id == carrito[i].id){
                 carrito.splice(i, 1);
                 
             }

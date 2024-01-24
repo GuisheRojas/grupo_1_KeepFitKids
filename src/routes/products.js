@@ -49,10 +49,10 @@ router.delete('/list/:id', productsController.eliminarProd);
 
 //carga un nuevo producto
 router.get('/getProduct', productsController.getProduct)
-router.post('/addProduct', productsValidation, upload.single('productImage'), productsController.addProduct)
+router.post('/addProduct', upload.single('productImage'), productsValidation, productsController.addProduct)
 
 //edita un producto
 router.get('/editProduct/:id', productsController.editProduct)
-router.put('/modifiedProduct/:id', productsValidation, upload.single('productImage'), productsController.modifiedProduct)
+router.put('/modifiedProduct/:id', upload.single('productImage'), productsValidation, productsController.modifiedProduct)
 
 module.exports = router;

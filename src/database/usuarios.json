@@ -22,5 +22,13 @@
   "name": "",
   "lastname": "",
   "avatar": "avatar-1705950550387.png"
+ },
+ {
+  "id": 4,
+  "email": "jorge.neder97@gmail.com",
+  "password": "$2a$06$bhFLwmV.u.Vc3uRqOvqJEuPzKukUL18fH7924uVQtBorNDWUYj/Ue",
+  "name": "Jorge Lian",
+  "lastname": "Neder Allub",
+  "avatar": "avatar-1706055257762.jpeg"
  }
 ]
