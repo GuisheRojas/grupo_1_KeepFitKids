@@ -12,7 +12,7 @@ const User = require('../Models/User');
 const controller = {
 
     login: (req, res) => {
-        res.render('./users/login')
+        res.render('./users/login', {css: '/css/forms.css'})
     },
 
     singIn: (req, res) => {
@@ -32,8 +32,11 @@ const controller = {
                 return res.render('./users/login', {errors: {
                     credentials: {
                         msg:'Credenciales inválidas'
-                    }
-                }, old: req.body});
+                        }
+                    }, 
+                    old: req.body,
+                    css: '/css/forms.css'
+                });
             } 
             req.session.user = user;
 
@@ -43,12 +46,12 @@ const controller = {
             
             res.redirect('/')
         } else{
-            res.render('./users/login', {errors: errors.mapped(), old: req.body});
+            res.render('./users/login', {errors: errors.mapped(), old: req.body, css: '/css/forms.css'});
         }
     },
 
     register: (req, res)=>{
-        res.render('./users/register')
+        res.render('./users/register', {css: '/css/forms.css'})
     },
 
     processRegisterUser: (req, res) => {
@@ -70,7 +73,8 @@ const controller = {
 						msg: 'Este email ya está registrado'
 					}
 				},
-				old: req.body
+				old: req.body, 
+                css: '/css/forms.css'
 			});
 		}
 

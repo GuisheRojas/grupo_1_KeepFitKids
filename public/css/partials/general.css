@@ -1,0 +1,18 @@
+/*CONFIG GENERAL*/
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
+/*TIPOGRAFIAS*/
+body{
+    font-size: 12px;
+    font-family: 'Comic Neue', cursive;
+}
+
+.titulares{
+    font-family: 'Coming Soon', cursive;
+    color: var(--blanco);
+    background-color: var(--verde-keep);
+}

@@ -6,7 +6,7 @@ let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
 
-const {colors, sizes} = require('../colorsAndSizesProducts');
+const { colors, sizes } = require('../colorsAndSizesProducts');
 
 let carrito = [];
 
@@ -33,17 +33,17 @@ const productsController = {
 
     //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
-        res.render('./products/nenes', {productos: productos})
+        res.render('./products/nenes', {productos: productos, css: '/css/nenes.css'})
     },
 
     //muestra una página solo con ropa de nenas 
     nenas: (req, res) => {
-        res.render('./products/nenas', {productos: productos})
+        res.render('./products/nenas', {productos: productos, css: '/css/nenes.css'})
     },
 
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
-        res.render("./products/getproduct", {productos: productos, colors, sizes})
+        res.render("./products/getproduct", {productos: productos, colors, sizes, css: '/css/forms.css'})
     },
 
     //agrega un producto
@@ -62,24 +62,24 @@ const productsController = {
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), newProductJSON);
                 res.redirect('./getProduct');
             } else {
-                res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes});
+                res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
             }
         } else{
             console.log(req.body)
-            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes});
+            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
         }
     },
 
     //muestra la pagina de edición de un producto
     editProduct: (req, res)=>{
         const product = productos.find(product => product.id == req.params.id);                
-        return res.render("./products/editproduct", {product, colors, sizes})
+        return res.render("./products/editproduct", {product, colors, sizes, css: '/css/forms.css'})
     },
 
     //modifica un producto
     modifiedProduct: (req, res) => {
-        let errors = validationResult(req);
-        if(errors.errors.length == 0){
+        const errors = validationResult(req);
+        if(errors.isEmpty()){
             if(req.file){ 
                 for(let i = 0; i < productos.length; i++){
                     if(productos[i].id == req.params.id){
@@ -98,13 +98,13 @@ const productsController = {
                 fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
                 res.redirect('/products/list');
             } else {
-                res.render('./editProduct')
+                res.render('./editProduct', {errors: errors.mapped(), product, colors, sizes, css: '/css/forms.css'})
             }
         } else{
             let product = {}
             product = req.body;
             product.id = req.params.id;
-            res.render("./products/editproduct", {errors: errors.mapped(), product, colors, sizes});
+            res.render("./products/editproduct", {errors: errors.mapped(), product, colors, sizes, css: '/css/forms.css'});
         }
     },
 
