@@ -15,6 +15,7 @@ Soy Santiago, mi labor es el analisis del mercado y la inovacion. Soy enemigo de
 
 Soy Ana, y me encargo de la producción y abastecimiento. Mi función es coordinar la adquisición de los materiales requeridos y la posterior producción de las prendas, asegurando que los productos estén disponibles en tiempo, forma y cantidades suficientes para satisfacer, de manera exitosa, la demanda de nuestro mercado.
 
+Soy Jorge, estoy a cargo del area de Marketing y Publicidad, mi trabajo se basa en promocionar la marca de los productos a través de estrategias de marketing y publicidad dirigidas especificamente a padres y cuidadores de niños, así como a los niños en edad suficiente para influir en sus propias decisiones de compra.
 
 ## Sitios de referencia
 
