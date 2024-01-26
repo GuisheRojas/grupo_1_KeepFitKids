@@ -1,0 +1,18 @@
+/*VARIABLES*/
+:root{
+    --verde-claro: #e6ffef;
+    --gris-oscuro: #666;
+    --gris-claro: #ebebeb;
+    --blanco: #FFF;
+    --negro: #000;
+    --verde-keep: #4fb59f;
+    --verde-botones: #3d6e64;
+    --verde-fit: rgb(105, 230, 56);
+    --naranja: rgba(255, 72, 0, 0.753);
+}
+
+
+/*PERFIL DE USUARIO*/
+.profileImage{
+    width: 15%;
+}

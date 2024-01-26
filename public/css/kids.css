@@ -17,8 +17,7 @@ img{
 }
 
 
-/*Nuevos Ingresos y Resultados de Búsqueda*/
-.nenas, .nenes{
+.kids{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -30,7 +29,7 @@ img{
     margin-bottom: 15px;
 }
 
-.nenas, .nenes{
+.kids{
     padding: 20px;
 }
 
@@ -40,7 +39,8 @@ img{
     margin: 10px;
     width: 100%;
 }
-.nuevos-ingresos, .results{
+
+.kids{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -48,7 +48,7 @@ img{
     margin-bottom: 50px;
 }
 
-.nuevos-ingresos .titulares, .results .titulares{
+.titulares{
     font-size: 2.5vw;
     padding: 0px 15px;
     margin-bottom: 40px; 
