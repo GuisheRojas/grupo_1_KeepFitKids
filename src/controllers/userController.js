@@ -12,7 +12,7 @@ const User = require('../Models/User');
 const controller = {
 
     login: (req, res) => {
-        res.render('./users/login', {css: '/css/forms.css'})
+        res.render('./users/login', {css:'/css/forms.css', user: req.session.user})
     },
 
     singIn: (req, res) => {

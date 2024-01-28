@@ -22,28 +22,37 @@ const productsController = {
 
     //muestra el carrito de compras del cliente
     productCart: (req, res) => {
-        res.render('./products/productCart', {carrito, css: '/css/productCart.css'})
+        if(req.session.user) {
+            res.render('./products/productCart', {carrito, user: req.session.user, css:'/css/productCart.css'})
+        } else {
+            res.redirect('/users/login');
+        }
     },
 
     //muestra el desize de un producto
     detailproduct: (req, res) => {
         const product = productos.find(product => product.id == req.params.id);
-        res.render('./products/detailproduct', {product, css: '/css/styles.css'});
+        res.render('./products/detailproduct', {product, css:'/css/styles.css', user:req.session.user});
     },
 
     //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
-        res.render('./products/nenes', {productos: productos, css: '/css/nenes.css'})
+        res.render('./products/nenes', {productos: productos, user: req.session.user, css: '/css/nenes.css'})
     },
 
     //muestra una página solo con ropa de nenas 
     nenas: (req, res) => {
-        res.render('./products/nenas', {productos: productos, css: '/css/nenes.css'})
+        res.render('./products/nenas', {productos: productos, user: req.session.user, css: '/css/nenes.css'})
     },
 
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
-        res.render("./products/getproduct", {productos: productos, colors, sizes, css: '/css/forms.css'})
+        if(req.session.user) {
+            res.render("./products/getproduct", {productos: productos, colors, sizes, user: req.session.user, css: '/css/forms.css'})
+        }
+        else {
+            res.redirect('/users/login');
+        }
     },
 
     //agrega un producto
@@ -110,17 +119,22 @@ const productsController = {
 
     //agrega un producto al carrito
     agregarProdCarrito: (req, res) => {
-        let newBuy = productos.find(product => product.id == req.params.id);
-
-        let newProduct = { ...newBuy}
-        newProduct.color = req.body.colorStock;
-        newProduct.size = req.body.sizeStock;
-        newProduct.cantidad = req.body.cantidad;            
-        newProduct.id = carrito.length + 1;
-
-        carrito.push(newProduct)
-
-        res.redirect('/products/productCart');  
+        if(req.session.user) {
+            let newBuy = productos.find(product => product.id == req.params.id);
+    
+            let newProduct = { ...newBuy}
+            newProduct.color = req.body.colorStock;
+            newProduct.size = req.body.sizeStock;
+            newProduct.cantidad = req.body.cantidad;            
+            newProduct.id = carrito.length + 1;
+    
+            carrito.push(newProduct)
+    
+            res.redirect('/products/productCart');  
+        }
+        else {
+            res.redirect('/users/login');
+        }
     },
 
     //elimina un producto del carrito

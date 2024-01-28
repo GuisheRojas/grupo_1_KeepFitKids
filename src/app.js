@@ -20,8 +20,8 @@ const cookies = require('cookie-parser');
 // Template Engine
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', path.join(__dirname, 'views'));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(session({secret: 'Secret'}))
 app.use(cookies())
