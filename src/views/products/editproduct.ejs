@@ -12,13 +12,13 @@
             <div class="container">
                 <div class="group">
                     <input type="text" id="name" name="nameProd" class="input" placeholder="" 
-                        value="<%= product.nameProd%>" >
+                        value="<%= product.name%>" >
                     <label for="nameProd" class="label">Nombre del producto</label>
                     <span class="line"></span>
                 </div>
-                <% if(locals.errors && errors.nameProd){ %>
+                <% if(locals.errors && errors.name){ %>
                     <p class="fbFormsProd"> 
-                        <%= errors.nameProd.msg %>
+                        <%= errors.name.msg %>
                     </p>    
                 <% } %>
                 

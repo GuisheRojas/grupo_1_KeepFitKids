@@ -12,12 +12,15 @@
     
     <main>
         <section class="listadoProductos">
+            <div id="titulares">
+                <h4 class="titulares">  Listado de productos  </h4>
+            </div>
             <% for(let i=0; i < productos.length; i++){ %>
                     <article class="article">
                        
-                            <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].nameProd %> class="product_img">
+                            <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
                             <p class="price">$<%=productos[i].price %></p>
-                            <h4 class="description"><%=productos[i].nameProd%></h4>
+                            <h4 class="description"><%=productos[i].name%></h4>
                             <div class="buttonsBox">
                                 <div class="elim">
                                     <form method="post" action="/products/list/<%= productos[i].id%>?_method=delete" class="formbotelim">

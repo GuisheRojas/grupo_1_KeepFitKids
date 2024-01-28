@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <title>Sección <%= genre %> </title>
+    </head>
+<body>    
+    <%- include('../partials/header') %> 
+    <section class="banner">
+        <img src="/img/banner.png" alt="Banner">
+    </section>
+    
+    <main>
+        <section class="kids">
+            <div id="titulares">
+                <h4 class="titulares">  <%= genre.toUpperCase() %>  </h4>
+            </div>
+            <% for(let i=0; i < products.length; i++){ %>
+                <article class="article">
+                    <a href="/products/detailproduct/<%= products[i].id %>">
+                        <img src=/img/products/<%= products[i].src %> alt=<%= products[i].name %> class="product_img">
+                        <p class="price">$<%=products[i].price %></p>
+                        <h4 class="description"><%=products[i].name%></h4>
+                    </a>
+                </article>
+            <% } %>
+        </section>        
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

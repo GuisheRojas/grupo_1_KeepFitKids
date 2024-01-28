@@ -15,9 +15,9 @@ const productsController = {
     //muestra los resultados de una búsqueda
     search: (req, res) => {
         let search = req.query.search.toUpperCase();
-        let resultsSearch = productos.filter((product) => product.nameProd.toUpperCase().includes(search))
+        let resultsSearch = productos.filter((product) => product.name.toUpperCase().includes(search))
         console.log(resultsSearch)
-        res.render('./products/resultsSearch', {resultsSearch, search})
+        res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
     },
 
     //muestra el carrito de compras del cliente
@@ -32,27 +32,22 @@ const productsController = {
     //muestra el desize de un producto
     detailproduct: (req, res) => {
         const product = productos.find(product => product.id == req.params.id);
-        res.render('./products/detailproduct', {product, css:'/css/styles.css', user:req.session.user});
+        res.render('./products/detailproduct', {product, css: '/css/styles.css'});
     },
 
     //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
-        res.render('./products/nenes', {productos: productos, user: req.session.user, css: '/css/nenes.css'})
+        res.render('./products/nenes', {productos: productos, css: '/css/nenes.css'})
     },
 
     //muestra una página solo con ropa de nenas 
     nenas: (req, res) => {
-        res.render('./products/nenas', {productos: productos, user: req.session.user, css: '/css/nenes.css'})
+        res.render('./products/nenas', {productos: productos, css: '/css/nenes.css'})
     },
 
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
-        if(req.session.user) {
-            res.render("./products/getproduct", {productos: productos, colors, sizes, user: req.session.user, css: '/css/forms.css'})
-        }
-        else {
-            res.redirect('/users/login');
-        }
+        res.render("./products/getproduct", {productos: productos, colors, sizes, css: '/css/forms.css'})
     },
 
     //agrega un producto
@@ -94,7 +89,7 @@ const productsController = {
                     if(productos[i].id == req.params.id){
                         productos[i].src = req.file.filename;
                         productos[i].price = req.body.price;
-                        productos[i].nameProd = req.body.nameProd;
+                        productos[i].name = req.body.name;
                         productos[i].description = req.body.description;
                         productos[i].color = req.body.color;
                         productos[i].size = req.body.size;
@@ -150,7 +145,7 @@ const productsController = {
 
     //muestra el listado de productos
     listadoProductos: (req, res) => {
-        res.render('./products/listadoProductos', {productos: productos})
+        res.render('./products/productsList', {productos, css: '/css/productsList.css'})
     },
 
     //elimina un producto del listado de productos

@@ -20,9 +20,9 @@
             <% for(let i=0; i < resultsSearch.length; i++){ %>%>
                     <article class="article">
                         <a href="/products/detailproduct/<%= resultsSearch[i].id %>">
-                            <img src=/img/products/<%= resultsSearch[i].src %> alt=<%= resultsSearch[i].nameProd %> class="product_img">
+                            <img src=/img/products/<%= resultsSearch[i].src %> alt=<%= resultsSearch[i].name %> class="product_img">
                             <p class="price">$<%=resultsSearch[i].price %></p>
-                            <h4 class="description"><%=resultsSearch[i].nameProd%></h4>
+                            <h4 class="description"><%=resultsSearch[i].name%></h4>
                         </a>
                     </article>
                 <% } %>

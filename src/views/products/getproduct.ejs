@@ -12,15 +12,15 @@
             <div class="container">
                 <div class="group">
                     <input type="text" id="name" name="nameProd" class="input" placeholder=""
-                    <%if(locals.old && old.nameProd){%> 
-                        value="<%= old.nameProd%>"
+                    <%if(locals.old && old.name){%> 
+                        value="<%= old.name%>"
                     <% } %> >
                     <label for="nameProd" class="label">Nombre del producto</label>
                     <span class="line"></span>
                 </div>
-                <% if(locals.errors && errors.nameProd){ %>
+                <% if(locals.errors && errors.name){ %>
                     <p class="fbFormsProd"> 
-                        <%= errors.nameProd.msg %>
+                        <%= errors.name.msg %>
                     </p>    
                 <% } %>
                 

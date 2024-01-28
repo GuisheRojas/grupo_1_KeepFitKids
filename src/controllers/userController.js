@@ -64,7 +64,8 @@ const controller = {
             fs.unlinkSync(avatarPath);
             return res.render('./users/register', {
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                css: '/css/forms.css'
             });
         }
 
