@@ -25,10 +25,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="file" id="productImage" name="productImage" accept=".jpg, .png, .jpeg" class="input" placeholder=""
+                    <input type="file" id="productImage" name="productImage" multiple accept=".jpg, .png, .jpeg" class="input" placeholder=""
                     <%if(locals.old && old.productImage){%> 
                         value="<%= old.productImage%>"
-                    <%}%> >
+                    <%}%>>
                     <label for="productImage" class="label">Imagen del producto</label>
                     <span class="line"></span>
                 </div>

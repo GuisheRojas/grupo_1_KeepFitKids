@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
-const productsFilePath = path.join(__dirname, '../database/productos.json');
+const productsFilePath = path.join(__dirname, '../db (JSON)/productos.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
@@ -37,7 +38,7 @@ const productsController = {
 
     //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
-        res.render('./products/nenes', {productos: productos, css: '/css/nenes.css'})
+        res.render('./products/kids', {productos: productos, css: '/css/kids.css'})
     },
 
     //muestra una página solo con ropa de nenas 
@@ -47,7 +48,7 @@ const productsController = {
 
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
-        res.render("./products/getproduct", {productos: productos, colors, sizes, css: '/css/forms.css'})
+        res.render('products/getproduct', {productos: productos, colors, sizes, css: '/css/forms.css'})
     },
 
     //agrega un producto
@@ -73,6 +74,24 @@ const productsController = {
             res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
         }
     },
+
+    // addProduct: (req, res) => {
+    //     db.Images.create({
+    //         name: req.body.productImage   
+    //     });
+    //     let imagen = db.Images.findOne({
+    //         where: { name: [sequelize.Op.like]: % + req.body.productImage + % }
+    //     });
+    //     db.Product.create({
+    //         name: req.body.name,
+    //         description: req.body.description,
+    //         price: req.body.price,
+    //         stock: req.body.stock,
+    //         genre: req.body.genre,
+    //         new: req.body.new,
+    //         id_image: imagen.id
+    //     });
+    // }
 
     //muestra la pagina de edición de un producto
     editProduct: (req, res)=>{

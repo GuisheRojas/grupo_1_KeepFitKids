@@ -30,29 +30,29 @@ router.get('/detailproduct/:id', productsController.detailproduct);
 router.post('/detailproduct/:id', authMiddleware, productsController.agregarProdCarrito);
 
 //muestra los productos cargados al carrito
-router.get('/productCart',productsController.productCart);
+router.get('/productCart', authMiddleware, productsController.productCart);
 
 //elimina un producto determinado del carrito
-router.delete('/productCart/:id', productsController.eliminarProdCarrito);
+router.delete('/productCart/:id', authMiddleware, productsController.eliminarProdCarrito);
 
 //muestra los productos para nenes
 router.get('/nenes', productsController.nenes);
 
-//muestra los productos para nenes
+//muestra los productos para nenas
 router.get('/nenas', productsController.nenas);
 
 //muestra el listado de productos
 router.get('/list', productsController.listadoProductos)
 
 //elimina un producto del listado de productos
-router.delete('/list/:id', productsController.eliminarProd);
+router.delete('/list/:id', authMiddleware, productsController.eliminarProd);
 
 //carga un nuevo producto
-router.get('/getProduct', productsController.getProduct)
+router.get('/getProduct',authMiddleware, productsController.getProduct)
 router.post('/addProduct', upload.single('productImage'), productsValidation, productsController.addProduct)
 
 //edita un producto
-router.get('/editProduct/:id', productsController.editProduct)
+router.get('/editProduct/:id', authMiddleware, productsController.editProduct)
 router.put('/modifiedProduct/:id', upload.single('productImage'), productsValidation, productsController.modifiedProduct)
 
 module.exports = router;

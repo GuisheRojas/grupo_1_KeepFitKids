@@ -6,19 +6,7 @@
             <button type="submit" class="icon" name="lupa"><i class="fa fa-search"></i></button>
         </form>
         <a href="/products/productCart" id="product-cart"><p>Mis compras</p><i class="fa-solid fa-cart-shopping"></i></a>
-        <% if(!user) { %>
-            <a href="/users/login" id="circle-user"><p>Iniciar sesion</p></a> 
-        <% } else { %>
-            <div class="logOut">
-                <form method="post" action="/users/logOut" class="formLogOut">
-                    <div>
-                        <button class="buttonLogOut" type="submit">        
-                            <p>Cerrar Sesión</p>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        <% } %>
+        <a href="/users/login" id="circle-user"><p>Iniciar sesion</p></a> 
         <a href="/users/profile"><i class="fa-solid fa-circle-user"></i></a>     
     </div>
 </header>

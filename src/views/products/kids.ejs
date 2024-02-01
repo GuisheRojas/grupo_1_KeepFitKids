@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%- include('../partials/head') %>
-        <title>Sección <%= genre %> </title>
+        <title>Sección <%= productos.genre %> </title>
     </head>
 <body>    
     <%- include('../partials/header') %> 
@@ -13,14 +13,14 @@
     <main>
         <section class="kids">
             <div id="titulares">
-                <h4 class="titulares">  <%= genre.toUpperCase() %>  </h4>
+                <h4 class="titulares">  <%= productos.genre.toUpperCase() %>  </h4>
             </div>
-            <% for(let i=0; i < products.length; i++){ %>
+            <% for(let i=0; i < productos.length; i++){ %>
                 <article class="article">
-                    <a href="/products/detailproduct/<%= products[i].id %>">
-                        <img src=/img/products/<%= products[i].src %> alt=<%= products[i].name %> class="product_img">
-                        <p class="price">$<%=products[i].price %></p>
-                        <h4 class="description"><%=products[i].name%></h4>
+                    <a href="/products/detailproduct/<%= productos[i].id %>">
+                        <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
+                        <p class="price">$<%=productos[i].price %></p>
+                        <h4 class="description"><%=productos[i].name%></h4>
                     </a>
                 </article>
             <% } %>
