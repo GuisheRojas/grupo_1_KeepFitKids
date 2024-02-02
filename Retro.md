@@ -104,7 +104,8 @@
 # SPRINT 5:
 
 - ### Hacer mas:
-	- 
+	- Participar y mantener activo el tablero Trello.	
+	
 
 - ### Hacer menos:
 	- 
@@ -119,4 +120,4 @@
 	- 
 
 - ### Dejar de hacer:
-	- 
+	-  Dejar para ultimo momento el proyecto.

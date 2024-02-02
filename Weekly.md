@@ -90,3 +90,41 @@
 		- corregimos rutas que nos daban error y no respondian en el navegador.
 
 
+- ## SPRINT 5:
+Fecha de reunión
+-	21/12
+-   05/01
+-	08/01
+-	11/01
+
+### Participantes:
+-	Santiago
+-	Guillermo
+-	Silvina
+-	Ana
+
+### Temas tratados
+-	21/12
+    -
+
+-   05/01
+	-
+
+-	08/01
+	- 
+
+-	11/01
+	- 
+
+### Decisiones tomadas
+-	21/12
+    -
+
+-   05/01
+	-
+
+-	08/01
+	- 
+
+-	11/01
+	- 
