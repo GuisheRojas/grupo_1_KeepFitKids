@@ -120,4 +120,4 @@
 	- 
 
 - ### Dejar de hacer:
-	-  Dejar para ultimo momento el proyecto.
+	-  Dejar para último momento el proyecto.
