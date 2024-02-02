@@ -104,11 +104,13 @@ Fecha de reunión
 -	Ana
 
 ### Temas tratados
--	21/12
-    -
-
--   05/01
+-   15/12
 	-
+
+-	21/12
+	- Actualizamos el tablero de trabajo.
+    - Organizamos cómo trabajaríamos.
+	- Dividimos las tareas entre todos.
 
 -	08/01
 	- 
@@ -117,11 +119,16 @@ Fecha de reunión
 	- 
 
 ### Decisiones tomadas
--	21/12
-    -
-
--   05/01
+-   15/12
 	-
+
+-	21/12
+	- Actualizar el tablero de trabajo: Asignamos las tareas a cada participante.
+	- Dividimos el trabajo de la siguiente manera:
+		- Ana: Implementar el login de usuarios.
+		- Guillermo: Implmeta la función recordar usuario.
+		- Santiago: Implementar las rutas de huéspedes y usuarios.
+		- Silvina:	Implementar el registro de usuarios.
 
 -	08/01
 	- 
