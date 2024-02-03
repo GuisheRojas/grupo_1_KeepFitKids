@@ -10,7 +10,7 @@ const { productsController } = require('../controllers/productsController');
 
 const upload = require('../middlewares/products/multerMiddleware')
 
-const huespedMiddleware = require('../middlewares/users/huespedMiddleware');
+const authMiddleware = require('../middlewares/users/authMiddleware');
 
 //hace las validaciones para un producto
 const productsValidation = require('../middlewares/products/productsValidationMiddleware')
@@ -25,13 +25,13 @@ router.get('/resultssearch', productsController.search)
 router.get('/detailproduct/:id', productsController.detailproduct);
 
 //agrega un producto al carrito
-router.post('/detailproduct/:id', huespedMiddleware, productsController.agregarProdCarrito);
+router.post('/detailproduct/:id', authMiddleware, productsController.agregarProdCarrito);
 
 //muestra los productos cargados al carrito
-router.get('/productCart', huespedMiddleware, productsController.productCart);
+router.get('/productCart', authMiddleware, productsController.productCart);
 
 //elimina un producto determinado del carrito
-router.delete('/productCart/:id', huespedMiddleware, productsController.eliminarProdCarrito);
+router.delete('/productCart/:id', authMiddleware, productsController.eliminarProdCarrito);
 
 //muestra los productos para nenes
 router.get('/nenes', productsController.nenes);
@@ -43,14 +43,14 @@ router.get('/nenas', productsController.nenas);
 router.get('/list', productsController.listadoProductos)
 
 //elimina un producto del listado de productos
-router.delete('/list/:id', huespedMiddleware, productsController.eliminarProd);
+router.delete('/list/:id', authMiddleware, productsController.eliminarProd);
 
 //carga un nuevo producto
-router.get('/getProduct', huespedMiddleware, productsController.getProduct)
+router.get('/getProduct', authMiddleware, productsController.getProduct)
 router.post('/addProduct', upload.single('productImage'), productsValidation, productsController.addProduct)
 
 //edita un producto
-router.get('/editProduct/:id', huespedMiddleware, productsController.editProduct)
+router.get('/editProduct/:id', authMiddleware, productsController.editProduct)
 router.put('/modifiedProduct/:id', upload.single('productImage'), productsValidation, productsController.modifiedProduct)
 
 module.exports = router;
