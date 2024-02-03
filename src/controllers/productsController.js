@@ -17,7 +17,6 @@ const productsController = {
     search: (req, res) => {
         let search = req.query.search.toUpperCase();
         let resultsSearch = productos.filter((product) => product.name.toUpperCase().includes(search))
-        console.log(resultsSearch)
         res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
     },
 
