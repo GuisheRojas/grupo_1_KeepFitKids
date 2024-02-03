@@ -97,7 +97,7 @@ const controller = {
 	},
 
     profile: (req, res) => {
-        res.render('./users/profile', {user: req.session.user})
+        res.render('./users/profile', {user: req.session.user, css: '/css/profile.css'})
     },
 
     editProfile: (req, res) => {
