@@ -23,7 +23,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
-app.use(session({secret: 'Secret'}))
+app.use(session({secret: 'Secret',
+    resave: false,
+    saveUninitialized: false}))
 app.use(cookies())
 
 app.listen(PORT, ()=>{

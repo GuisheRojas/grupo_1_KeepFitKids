@@ -37,7 +37,9 @@ const controller = {
                     old: req.body,
                     css: '/css/forms.css'
                 });
-            } 
+            }
+            
+            delete user.password;
             req.session.user = user;
 
             if(req.body.remember){
