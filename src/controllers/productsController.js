@@ -33,7 +33,7 @@ const productsController = {
     //muestra el desize de un producto
     detailproduct: (req, res) => {
         const product = productos.find(product => product.id == req.params.id);
-        res.render('./products/detailproduct', {product, css: '/css/styles.css'});
+        res.render('./products/detailproduct', {product, css: '/css/detailProduct.css'});
     },
 
     //muestra una página solo con ropa de nenes 
