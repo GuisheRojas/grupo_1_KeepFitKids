@@ -38,12 +38,12 @@ const productsController = {
 
     //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
-        res.render('./products/kids', {productos: productos, css: '/css/kids.css'})
+        res.render('./products/kids', {productos: productos, css: '/css/kids.css', genre: 'Masculino'})
     },
 
     //muestra una página solo con ropa de nenas 
     nenas: (req, res) => {
-        res.render('./products/nenas', {productos: productos, css: '/css/nenes.css'})
+        res.render('./products/kids', {productos: productos, css: '/css/kids.css', genre: 'Femenino'})
     },
 
     //muestra la página de carga de un producto
