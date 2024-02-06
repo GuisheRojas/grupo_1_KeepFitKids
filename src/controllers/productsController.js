@@ -17,7 +17,6 @@ const productsController = {
     search: (req, res) => {
         let search = req.query.search.toUpperCase();
         let resultsSearch = productos.filter((product) => product.name.toUpperCase().includes(search))
-        console.log(resultsSearch)
         res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
     },
 
@@ -33,17 +32,17 @@ const productsController = {
     //muestra el desize de un producto
     detailproduct: (req, res) => {
         const product = productos.find(product => product.id == req.params.id);
-        res.render('./products/detailproduct', {product, css: '/css/styles.css'});
+        res.render('./products/detailproduct', {product, css: '/css/detailProduct.css'});
     },
 
     //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
-        res.render('./products/kids', {productos: productos, css: '/css/kids.css'})
+        res.render('./products/kids', {productos: productos, css: '/css/kids.css', genre: 'Masculino'})
     },
 
     //muestra una página solo con ropa de nenas 
     nenas: (req, res) => {
-        res.render('./products/nenas', {productos: productos, css: '/css/nenes.css'})
+        res.render('./products/kids', {productos: productos, css: '/css/kids.css', genre: 'Femenino'})
     },
 
     //muestra la página de carga de un producto

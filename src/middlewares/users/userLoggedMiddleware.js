@@ -1,19 +1,11 @@
-const fs = require('fs');
+const User = require('../../Models/User')
 
 function userLoggedMiddleware(req, res, next){
     res.locals.isLogged = false;
-    let emailInCookie = req.cookies.userEmail;
-    function FindUser(campo, texto){
-        let allUsers = function(){
-            return JSON.parse(fs.readFileSync('./database/usuarios.json', 'utf-8'))
-        }
-        let userFound = allUsers.find(User => User[campo] === texto);
-        return userFound;
-    }
-    let userFromCookie = FindUser('email', emailInCookie)
-    if (userFromCookie){
+    
+    if (req.session && req.session.user){
         res.locals.isLogged = true;
-        res.locals.userLogged = req.session.userLogged;
+        res.locals.userLogged = req.session.user;
     }
 
     next()

@@ -8,11 +8,9 @@ const { productsController } = require('../controllers/productsController');
 
                             /* MIDDLEWARES */
 
-let authMiddleware = require("../middlewares/users/authMiddleware")
-
 const upload = require('../middlewares/products/multerMiddleware')
 
-const huespedMiddleware = require('../middlewares/users/huespedMiddleware');
+const authMiddleware = require('../middlewares/users/authMiddleware');
 
 //hace las validaciones para un producto
 const productsValidation = require('../middlewares/products/productsValidationMiddleware')
@@ -48,7 +46,7 @@ router.get('/list', productsController.listadoProductos)
 router.delete('/list/:id', authMiddleware, productsController.eliminarProd);
 
 //carga un nuevo producto
-router.get('/getProduct',authMiddleware, productsController.getProduct)
+router.get('/getProduct', authMiddleware, productsController.getProduct)
 router.post('/addProduct', upload.single('productImage'), productsValidation, productsController.addProduct)
 
 //edita un producto

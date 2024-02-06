@@ -35,13 +35,13 @@ header .icon{
     background-color: var(--verde-claro);
 }
 
-#product-cart, #circle-user, header .icon{
+#product-cart, #circle-user, header .icon, #logIn{
     color: var(--gris-oscuro);
     font-size: 6vw;
     margin: 2px;
 }
 
-#product-cart p, #circle-user p{
+#product-cart p, #circle-user p, #logIn p{
     display: none;
 }
 
@@ -95,7 +95,7 @@ header .icon{
         font-size: 14px;
     }
 
-    #product-cart, #circle-user{
+    #product-cart, #circle-user, #logIn{
         font-size: 21px;
     }
 }
@@ -138,12 +138,12 @@ header .icon{
     }
 
     /*product-cart y circle-user*/
-    #product-cart p, #circle-user p{
+    #product-cart p, #circle-user p, #logIn p{
         display: block;
         font-size: 15px;
     }
 
-    #product-cart, #circle-user{
+    #product-cart, #circle-user, #logIn{
         display: flex;
         flex-wrap: wrap; 
         flex-direction: row;
@@ -152,7 +152,7 @@ header .icon{
         text-decoration: none;
     }
 
-    #product-cart i, #circle-user i{
+    #product-cart i, #circle-user i, #logIn i{
         font-size: 18px;
     }
 }
@@ -196,12 +196,12 @@ header .icon{
     }
 
     /*product-cart y circle-user*/
-    #product-cart p, #circle-user p{
+    #product-cart p, #circle-user p, #logIn p{
         display: block;
         font-size: 20px;
     }
 
-    #product-cart, #circle-user{
+    #product-cart, #circle-user, #logIn{
         display: flex;
         flex-wrap: wrap; 
         flex-direction: row;
@@ -210,7 +210,7 @@ header .icon{
         text-decoration: none;
     }
 
-    #product-cart i, #circle-user i{
+    #product-cart i, #circle-user i, #logIn i{
         font-size: 20px;
     }
 }

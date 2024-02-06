@@ -37,8 +37,11 @@ const controller = {
                     old: req.body,
                     css: '/css/forms.css'
                 });
-            } 
+            }
+            
+            delete user.password;
             req.session.user = user;
+            console.log(req.session.user)
 
             if(req.body.remember){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
@@ -95,7 +98,7 @@ const controller = {
 	},
 
     profile: (req, res) => {
-        res.render('./users/profile', {user: req.session.user})
+        res.render('./users/profile', {user: req.session.user, css: '/css/profile.css'})
     },
 
     editProfile: (req, res) => {
