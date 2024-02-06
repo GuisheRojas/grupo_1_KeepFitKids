@@ -97,7 +97,7 @@ Fecha de reunión
 -	08/01
 -	11/01
 
-### Participantes:
+### Participantes
 -	Santiago
 -	Guillermo
 -	Silvina
@@ -114,7 +114,9 @@ Fecha de reunión
 	- 
 
 -	11/01
-	- 
+	- Errores con el login de usuarios.
+	- Boton de cerrar sesion.
+	- Revision del proyecto.
 
 ### Decisiones tomadas
 -	21/12
@@ -127,4 +129,5 @@ Fecha de reunión
 	- 
 
 -	11/01
-	-
+	- Se modificó las cookies.
+	
