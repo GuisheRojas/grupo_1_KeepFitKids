@@ -10,6 +10,7 @@
         <form action="/products/addProduct" method="POST" class="forms" enctype="multipart/form-data">
             <h1 class="titulares">Ingrese el nuevo producto</h1>
             <div class="container">
+
                 <div class="group">
                     <input type="text" id="name" name="nameProd" class="input" placeholder=""
                     <%if(locals.old && old.name){%> 
@@ -21,20 +22,6 @@
                 <% if(locals.errors && errors.name){ %>
                     <p class="fbFormsProd"> 
                         <%= errors.name.msg %>
-                    </p>    
-                <% } %>
-                
-                <div class="group">
-                    <input type="file" id="productImage" name="productImage" multiple accept=".jpg, .png, .jpeg" class="input" placeholder=""
-                    <%if(locals.old && old.productImage){%> 
-                        value="<%= old.productImage%>"
-                    <%}%>>
-                    <label for="productImage" class="label">Imagen del producto</label>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.productImage){ %>
-                    <p class="fbFormsProd"> 
-                        <%= errors.productImage.msg %>
                     </p>    
                 <% } %>
                 
@@ -62,6 +49,11 @@
                     <p class="fbFormsProd"> <%= errors.description.msg %></p>    
                 <% } %>
                 
+                <div class="group">
+                    <input type="number" id="cantColors" name="cantColors" class="input" placeHolder="">
+                    <label for="cantColors">¿En cuántos colores tiene stock el producto?</label>
+                    <span class="line"></span>
+                </div>
                 
                 <div class="group">
                     <h2 class="input">Seleccione el color</h2>
@@ -96,6 +88,29 @@
                 <% if(locals.errors && errors.size){ %>
                     <p class="fbFormsProd"> <%= errors.size.msg %></p>    
                 <% } %>
+
+                <div class="group">
+                    <input type="number" id="stock" name="stock" class="input" placeholder=""
+                    <%if(locals.old && old.stock){%> 
+                        value="<%= old.stock%>"
+                    <%}%> >
+                    <label for="stock" class="label">Stock del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.stock){ %>
+                    <p class="fbFormsProd"> <%= errors.stock.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="file" id="productImage" name="productImage" multiple accept=".jpg, .png, .jpeg" class="input" placeholder="">
+                    <label for="productImage" class="label">Imagen del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.productImage){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.productImage.msg %>
+                    </p>    
+                <% } %>
                 
                 <div class="group">
                     <select id="genero" name="genre" class="input" placeholder="">
@@ -113,19 +128,6 @@
                 <% if(locals.errors && errors.genre){ %>
                     <p class="fbFormsProd"> <%= errors.genre.msg %></p>    
                 <% } %>
-                
-                <div class="group">
-                    <input type="number" id="stock" name="stock" class="input" placeholder=""
-                    <%if(locals.old && old.stock){%> 
-                        value="<%= old.stock%>"
-                    <%}%> >
-                    <label for="stock" class="label">Stock del producto</label>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.stock){ %>
-                    <p class="fbFormsProd"> <%= errors.stock.msg %></p>    
-                <% } %>
-                
                 
                 <button type="submit" class="submit">Añadir producto</button>
             </div>
