@@ -16,12 +16,12 @@ const productsController = {
     //muestra los resultados de una búsqueda
     search: (req, res) => {
         let search = req.query.search.toUpperCase();
-        let resultsSearch = productos.filter((product) => product.name.toUpperCase().includes(search))
+        let resultsSearch = db.Product.filter((product) => product.name.toUpperCase().includes(search))
         res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
     },
 
     //muestra el carrito de compras del cliente
-    productCart: (req, res) => {
+    productCart: (req, res) => { 
         if(req.session.user) {
             res.render('./products/productCart', {carrito, user: req.session.user, css:'/css/productCart.css'})
         } else {
@@ -29,20 +29,34 @@ const productsController = {
         }
     },
 
-    //muestra el desize de un producto
+    //muestra el detalle de un producto
     detailproduct: (req, res) => {
         const product = productos.find(product => product.id == req.params.id);
         res.render('./products/detailproduct', {product, css: '/css/detailProduct.css'});
     },
+        /* CON BASE DE DATOS */
+
+    // detailproduct: (req, res) => {
+    //     db.Product.findByPk(req.params.id)
+    //         .then(product => res.render('./products/detailproduct', {product, css: '/css/detailProduct.css'}));
+    // },
+    
 
     //muestra una página solo con ropa de nenes 
     nenes: (req, res) => {
-        res.render('./products/kids', {productos: productos, css: '/css/kids.css', genre: 'Masculino'})
+        res.render('./products/kids', {productos, css: '/css/kids.css', genre: 'Masculino'})
     },
+        /* CON BASE DE DATOS */
+
+    // nenes: (req, res) => {
+    //     db.Product.findAll()
+    //         .then(productos => res.render('./products/kids', {productos, css: '/css/kids.css', genre: 'Masculino'}))
+    // },
+
 
     //muestra una página solo con ropa de nenas 
     nenas: (req, res) => {
-        res.render('./products/kids', {productos: productos, css: '/css/kids.css', genre: 'Femenino'})
+        res.render('./products/kids', {productos, css: '/css/kids.css', genre: 'Femenino'})
     },
 
     //muestra la página de carga de un producto
