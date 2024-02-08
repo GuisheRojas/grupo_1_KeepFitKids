@@ -108,7 +108,9 @@
 	
 
 - ### Hacer menos:
-	- 
+	- Dejar todo a ultimo momento.
+	- Pedir ayuda sobre la hora.
+	- No cuidar la salud mental.
 
 - ### Continuar haciendo:
 	- Escucharnos y ayudarnos cuando estamos trabados con algo.

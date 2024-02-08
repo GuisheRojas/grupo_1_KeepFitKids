@@ -114,7 +114,8 @@ Fecha de reunión
 	- Dividimos las tareas entre todos.
 
 -	08/01
-	- 
+	- Consultas con el fin de resolver dudas.
+	- Conflictos con el middleware.
 
 -	11/01
 	- Errores con el login de usuarios.
@@ -132,9 +133,10 @@ Fecha de reunión
 		- Guillermo: Implmeta la función recordar usuario.
 		- Santiago: Implementar las rutas de huéspedes y usuarios.
 		- Silvina:	Implementar el registro de usuarios.
+	
 
 -	08/01
-	- 
+	- No se tomaron decisiones que cambien la metodología de trabajo.
 
 -	11/01
 	- Se modificó las cookies.
