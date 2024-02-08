@@ -177,21 +177,37 @@ const productsController = {
 
     //muestra el listado de productos
     listadoProductos: (req, res) => {
-        res.render('./products/productsList', {productos, css: '/css/productsList.css'})
+        db.Product.findAll()
+        .then((product)=> {
+            res.render('./products/productsList', {product, css: '/css/productsList.css'})
+
+        })
+        
     },
 
     //elimina un producto del listado de productos
     eliminarProd: (req, res) => {
-        for(i=0; i<productos.length; i++) {
-            if(req.params.id == productos[i].id){
-                productos.splice(i, 1);
-                let modifiedProductJSON = JSON.stringify(productos);
-                fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
-                res.redirect("/products/list")
-            }
-        }
+       db.Product.findByPk({
+        where: 
+        {id:req.params.id}
+       })
+
+       .then((product) => {
+        product.splice(i, 1);
+        res.redirect("/products/list")
+       })
+       
     }
 
 }
+
+// for(i=0; i<productos.length; i++) {
+//     if(req.params.id == productos[i].id){
+//         productos.splice(i, 1);
+//         let modifiedProductJSON = JSON.stringify(productos);
+//         fs.writeFileSync(path.join(__dirname, '../database/productos.json'), modifiedProductJSON);
+//         res.redirect("/products/list")
+
+
 
 module.exports = {productos, productsController};
