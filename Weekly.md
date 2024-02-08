@@ -105,7 +105,8 @@ Fecha de reunión
 
 ### Temas tratados
 -   15/12
-	-
+	-Hablamos sobre las actividades que tenemos que hacer y como afrontarlas.
+	-Empezamos a organizar los metodos que usariamos para trabajar.
 
 -	21/12
 	- Actualizamos el tablero de trabajo.
@@ -120,7 +121,7 @@ Fecha de reunión
 
 ### Decisiones tomadas
 -   15/12
-	-
+	-Acordamos en comenzar a trabajar en el proyecto luego de las fiestas de fin de año.
 
 -	21/12
 	- Actualizar el tablero de trabajo: Asignamos las tareas a cada participante.
