@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
+const Op = require('sequelize');
 
 const productsFilePath = path.join(__dirname, '../db (JSON)/productos.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -16,8 +17,20 @@ const productsController = {
     //muestra los resultados de una búsqueda
     search: (req, res) => {
         let search = req.query.search.toUpperCase();
-        let resultsSearch = db.Product.filter((product) => product.name.toUpperCase().includes(search))
+        let resultsSearch = productos.filter((product) => product.name.toUpperCase().includes(search))
         res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
+
+            /* CON BASE DE DATOS */
+        // let search = req.query.search.toUpperCase();
+        // db.Product.findAll({
+        //     where:{
+        //         name: {
+        //             [Op.like]: '%' + search + '%'
+        //         }
+        //     }
+        // })
+        //     .then(resultsSearch => res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
+        // )
     },
 
     //muestra el carrito de compras del cliente
@@ -35,7 +48,6 @@ const productsController = {
         res.render('./products/detailproduct', {product, css: '/css/detailProduct.css'});
     },
         /* CON BASE DE DATOS */
-
     // detailproduct: (req, res) => {
     //     db.Product.findByPk(req.params.id)
     //         .then(product => res.render('./products/detailproduct', {product, css: '/css/detailProduct.css'}));
@@ -58,11 +70,23 @@ const productsController = {
     nenas: (req, res) => {
         res.render('./products/kids', {productos, css: '/css/kids.css', genre: 'Femenino'})
     },
+     /* CON BASE DE DATOS */
+
+    // nenas: (req, res) => {
+    //     db.Product.findAll()
+    //         .then(productos => res.render('./products/kids', {productos, css: '/css/kids.css', genre: 'Femenino'}))
+    // },
 
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
         res.render('products/getproduct', {productos: productos, colors, sizes, css: '/css/forms.css'})
     },
+
+    // CON BASE DE DATOS 
+    //getProduct: (req, res) => {
+    //     db.Product.findByPk(req.params.id)
+    //         .then(product => res.render('products/getproduct', {productos: productos, colors, sizes, css: '/css/forms.css'})
+    // },
 
     //agrega un producto
     addProduct: (req,res) => {
@@ -93,7 +117,7 @@ const productsController = {
     //         name: req.body.productImage   
     //     });
     //     let imagen = db.Images.findOne({
-    //         where: { name: [sequelize.Op.like]: % + req.body.productImage + % }
+    //         where: { name: [Op.like]: % + req.body.productImage + % }
     //     });
     //     db.Product.create({
     //         name: req.body.name,
@@ -111,6 +135,15 @@ const productsController = {
         const product = productos.find(product => product.id == req.params.id);                
         return res.render("./products/editproduct", {product, colors, sizes, css: '/css/forms.css'})
     },
+
+
+    // CON BASE DE DATOS 
+    // editProduct: (req, res) => {
+    //     db.Product.findByPk(req.params.id)
+    //         .then(product => res.render("./products/editproduct", {product, colors, sizes, css: '/css/forms.css'})
+    // },
+
+    
 
     //modifica un producto
     modifiedProduct: (req, res) => {
@@ -143,6 +176,26 @@ const productsController = {
             res.render("./products/editproduct", {errors: errors.mapped(), product, colors, sizes, css: '/css/forms.css'});
         }
     },
+
+    // CON BASE DE DATOS
+    //  modifiedProduct: (req, res) => {
+    //     db.Product.update({
+    //         name: req.body.productImage   
+    //     });
+    //     let imagen = db.Images.findOne({
+    //         where: { name: [sequelize.Op.like]: % + req.body.productImage + % }
+    //     });
+    //     db.Product.update({
+    //         name: req.body.name,
+    //         description: req.body.description,
+    //         price: req.body.price,
+    //         stock: req.body.stock,
+    //         genre: req.body.genre,
+    //         new: req.body.new,
+    //         id_image: imagen.id
+    //     });
+    // }
+
 
     //agrega un producto al carrito
     agregarProdCarrito: (req, res) => {
