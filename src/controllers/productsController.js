@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
+const Op = require('sequelize');
 
 const productsFilePath = path.join(__dirname, '../db (JSON)/productos.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -16,8 +17,20 @@ const productsController = {
     //muestra los resultados de una búsqueda
     search: (req, res) => {
         let search = req.query.search.toUpperCase();
-        let resultsSearch = db.Product.filter((product) => product.name.toUpperCase().includes(search))
+        let resultsSearch = productos.filter((product) => product.name.toUpperCase().includes(search))
         res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
+
+            /* CON BASE DE DATOS */
+        // let search = req.query.search.toUpperCase();
+        // db.Product.findAll({
+        //     where:{
+        //         name: {
+        //             [Op.like]: '%' + search + '%'
+        //         }
+        //     }
+        // })
+        //     .then(resultsSearch => res.render('./products/resultsSearch', {resultsSearch, search, css: '/css/resultsSearch.css'})
+        // )
     },
 
     //muestra el carrito de compras del cliente
@@ -104,7 +117,7 @@ const productsController = {
     //         name: req.body.productImage   
     //     });
     //     let imagen = db.Images.findOne({
-    //         where: { name: [sequelize.Op.like]: % + req.body.productImage + % }
+    //         where: { name: [Op.like]: % + req.body.productImage + % }
     //     });
     //     db.Product.create({
     //         name: req.body.name,

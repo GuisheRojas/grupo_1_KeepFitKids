@@ -117,7 +117,7 @@
 	- Mantener la buena relación entre el equipo de trabajo.
 
 - ### Comenzar a hacer:
-	- 
+	- Revisar el proyecto mucho más seguido y con más tiempo.
 
 - ### Dejar de hacer:
 	-  Dejar para último momento el proyecto.
