@@ -1,6 +1,7 @@
 'use strict';
+
 const {DataTypes} = require("sequelize")
-/** @type {import('sequelize-cli').Migration} */
+
 module.exports = {
   async up (queryInterface, Sequelize) {
    await queryInterface.createTable('users', { 
@@ -29,19 +30,18 @@ module.exports = {
       type: DataTypes.STRING,
       allowNull: false
     },
-    id_roles:{
+    avatar: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    id_role:{
       type: DataTypes.INTEGER,
       references: {
         model: {
-          tableName: 'roles',
-          schema: 'schema'
+          tableName: 'roles'
         }, 
         key: 'id'
       },
-      allowNull: false
-    },
-    avatar: {
-      type: DataTypes.STRING,
       allowNull: false
     }
   

@@ -2,12 +2,12 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Sizes';
     let cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
         name: {
-        type: DataTypes.STRING,
+        type: dataTypes.STRING,
         allowNull: false
         }
     };
@@ -16,6 +16,11 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     const Size = sequelize.define(alias, cols, config)
-   
+    Size.associate = (models) => {
+        Size.hasMany(models.Stock, {
+            foreignKey: 'id_size',
+            as: 'Sizes'            
+        })
+    }
     return Size
 }

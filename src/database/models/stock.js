@@ -2,34 +2,34 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Stock';
     let cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
         quantity: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
     let config = {
-        tableName: 'sizes',
+        tableName: 'stock',
         timestamps: false
     };
     const Stock = sequelize.define(alias, cols, config)
     Stock.associate = (models) => {
-        Stock.hasMany(models.Products, {
+        Stock.belongsTo(models.Products, {
             foreignKey: "id_product",
-            as: "products", 
+            as: "Products", 
         })
 
-        Stock.hasMany(models.Colors, {
+        Stock.belongsTo(models.Colors, {
             foreignKey: 'id_color',
-            as: 'colors'
+            as: 'Colors'
         })
 
-        Stock.hasMany(models.Sizes, {
+        Stock.belongsTo(models.Sizes, {
             foreignKey: 'id_size',
-            as: 'sizes'
+            as: 'Sizes'
         })
     }
    

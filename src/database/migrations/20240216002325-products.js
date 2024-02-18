@@ -1,6 +1,7 @@
 'use strict';
+
 const {DataTypes} = require("sequelize")
-/** @type {import('sequelize-cli').Migration} */
+
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('products', {
@@ -21,10 +22,6 @@ module.exports = {
         type: DataTypes.DECIMAL,
         allowNull: false
       },
-      stock: {
-        type: DataTypes.TINYINT,
-        allowNull: false
-      },
       category: {
         type: DataTypes.STRING,
         allowNull: false
@@ -37,12 +34,12 @@ module.exports = {
         type: DataTypes.INTEGER,
         references: {
           model: {
-            tableName: 'product_image',
-            schema: 'schema'
+            tableName: 'product_image'
           }, 
           key: 'id'
         },
-        allowNull: false
+        allowNull: false,
+        onDelete: 'CASCADE'
       }
       });
      

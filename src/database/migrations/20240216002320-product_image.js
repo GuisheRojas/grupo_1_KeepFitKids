@@ -1,9 +1,10 @@
 'use strict';
+
 const {DataTypes} = require("sequelize")
-/** @type {import('sequelize-cli').Migration} */
+
 module.exports = {
   async up (queryInterface, Sequelize) {
-     await queryInterface.createTable('product_images', {
+     await queryInterface.createTable('product_image', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -17,6 +18,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('product_images');
+    await queryInterface.dropTable('product_image');
   }
 };

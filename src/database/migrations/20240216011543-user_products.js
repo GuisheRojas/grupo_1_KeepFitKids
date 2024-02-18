@@ -13,23 +13,23 @@ module.exports = {
       type: DataTypes.INTEGER,
       references: {
         model: {
-          tableName: 'users',
-          schema: 'schema'
+          tableName: 'users'
         }, 
         key: 'id'
       },
-      allowNull: false
+      allowNull: false,
+      onDelete: 'CASCADE'
     },
     id_product: {
       type: DataTypes.INTEGER,
       references: {
         model: {
-          tableName: 'products',
-          schema: 'schema'
+          tableName: 'products'
         }, 
         key: 'id'
       },
-      allowNull: false
+      allowNull: false,
+      onDelete: 'CASCADE'
     },
   });
     

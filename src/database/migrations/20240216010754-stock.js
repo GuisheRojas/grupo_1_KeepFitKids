@@ -17,34 +17,34 @@ module.exports = {
           type: DataTypes.INTEGER,
           references: {
             model: {
-              tableName: 'products',
-              schema: 'schema'
+              tableName: 'products'
             }, 
             key: 'id'
           },
-          allowNull: false
+          allowNull: false,
+          onDelete: 'CASCADE'
         },
         id_color: {
-          type: DataTypes.STRING,
+          type: DataTypes.INTEGER,
           references: {
             model: {
-              tableName: 'colors',
-              schema: 'schema'
+              tableName: 'colors'
             }, 
             key: 'id'
           },
-          allowNull: false
+          allowNull: false,
+          onDelete: 'CASCADE'
         },
         id_size:{
           type: DataTypes.INTEGER,
           references: {
             model: {
-              tableName: 'sizes',
-              schema: 'schema'
+              tableName: 'sizes'
             }, 
             key: 'id'
           },
-          allowNull: false
+          allowNull: false,
+          onDelete: 'CASCADE'
         }
        }
       

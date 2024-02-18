@@ -2,46 +2,56 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Users';
     let cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
           },
           name: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
           },
           first_name: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
           },
           last_name: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
           },
           email: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
           },
           password: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
           },
           avatar: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
           }
     };
     let config = {
-        tableName: 'sizes',
+        tableName: 'users',
         timestamps: true
     };
     const User = sequelize.define(alias, cols, config)
     User.associate = (models)=>{
         User.belongsToMany(models.Roles, {
-            as: 'user_role',
-            through: 'user_roles',
+            as: 'user_roles',
+            through: 'User_roles',
             foreignKey: 'id_user',
             otherKey: 'id_role'            
+        })
+        User.hasMany(models.Shopping_carts, {
+          foreignKey: 'id_user',
+          as: 'Users'
+        })
+        User.belongsToMany(models.Products, {
+          as: 'user_products',
+          through: 'User_products',
+          foreignKey: 'id_user',
+          otherKey: 'id_product'
         })
     }
     return User
