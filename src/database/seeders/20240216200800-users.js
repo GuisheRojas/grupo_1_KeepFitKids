@@ -17,7 +17,7 @@ module.exports = {
           first_name: faker.person.firstName(),          
           last_name: faker.person.lastName(),         
           email: faker.internet.email(),
-          password: faker.internet.password({ length: 8 }, false, /(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])/),
+          password: faker.internet.password({ length: 8, memorable:true, prefix:""  }),
           avatar: faker.image.avatar(),
            // createdAt: new Date(),
           // updatedAt: new Date()

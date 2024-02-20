@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'Shopping_carts',
-        timestamps: true
+        timestamps: false
     };
     const Shopping_cart = sequelize.define(alias, cols, config)
     Shopping_cart.associate = (models) => {
