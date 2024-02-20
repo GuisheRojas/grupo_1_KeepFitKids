@@ -33,7 +33,10 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'users',
-        timestamps: true
+        timestamps: false,
+         // createdAt: "created_at",
+          // updatedAt: "updated_at"
+       
     };
     const User = sequelize.define(alias, cols, config)
     User.associate = (models)=>{

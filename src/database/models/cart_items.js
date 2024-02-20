@@ -7,10 +7,10 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
         },
         quantity: {
-          type: DataTypes.INTEGER,
+          type: dataTypes.INTEGER,
         },
         subtotal: {
-          type: DataTypes.DECIMAL
+          type: dataTypes.DECIMAL
         }
     };
     let config = {

@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
           as: 'user_roles',
           through: 'User_roles',
           foreignKey: 'id_role',    
-          otherKey: 'is_user'
+          otherKey: 'id_user'
       })
     }
     return Role
