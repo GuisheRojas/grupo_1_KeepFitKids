@@ -1,3 +1,5 @@
+const { DATE } = require("sequelize");
+
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product_Image';
     let cols = {
@@ -13,9 +15,11 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: 'product_image',
-        created_at: new DATE(),
-        updated_at: new DATE()
+        timestamps: false
+        // createdAt: "created_at",
+          // updatedAt: "updated_at"
     };
+
 
     const Product_Image = sequelize.define(alias, cols, config)
     Product_Image.associate = (models) => {

@@ -1,23 +1,21 @@
-'use strict';
+"use strict";
 
-const {DataTypes} = require("sequelize")
+const { DataTypes } = require("sequelize");
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-     await queryInterface.createTable('product_image', {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable("product_image", {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      name:{
+      name: {
         type: DataTypes.STRING,
-      }
-      });
-     
+      },
+    });
   },
-
-  async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('product_image');
-  }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable("product_image");
+  },
 };

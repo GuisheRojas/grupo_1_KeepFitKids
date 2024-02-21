@@ -7,14 +7,16 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
         },
         quantity: {
-          type: DataTypes.INTEGER,
+          type: dataTypes.INTEGER,
+          allowNull: false
         },
         subtotal: {
-          type: DataTypes.DECIMAL
+          type: dataTypes.DECIMAL,
+          allowNull: false
         }
     };
     let config = {
-        tableName: 'stock',
+        tableName: 'cart_items',
         timestamps: false
     };
     const Cart_item = sequelize.define(alias, cols, config)
