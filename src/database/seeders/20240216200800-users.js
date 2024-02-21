@@ -1,7 +1,9 @@
 "use strict";
 
 const { faker } = require("@faker-js/faker");
-const db = require("../models");
+
+const db = require('../models');
+
 
 module.exports = {
   async up(queryInterface, Sequelize) {
