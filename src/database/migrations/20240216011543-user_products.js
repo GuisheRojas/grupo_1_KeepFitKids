@@ -8,30 +8,30 @@ module.exports = {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-    },
-    id_user: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: {
-          tableName: 'users'
-        }, 
-        key: 'id'
       },
-      allowNull: false,
-      onDelete: 'CASCADE'
-    },
-    id_product: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: {
-          tableName: 'products'
-        }, 
-        key: 'id'
+      id_user: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: 'users'
+          }, 
+          key: 'id'
+        },
+        allowNull: false,
+        onDelete: 'CASCADE'
       },
-      allowNull: false,
-      onDelete: 'CASCADE'
-    },
-  });
+      id_product: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: 'products'
+          }, 
+          key: 'id'
+        },
+        allowNull: false,
+        onDelete: 'CASCADE'
+      },
+    });
     
   },
 

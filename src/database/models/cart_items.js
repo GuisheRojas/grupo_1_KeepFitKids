@@ -8,13 +8,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         quantity: {
           type: dataTypes.INTEGER,
+          allowNull: false
         },
         subtotal: {
-          type: dataTypes.DECIMAL
+          type: dataTypes.DECIMAL,
+          allowNull: false
         }
     };
     let config = {
-        tableName: 'stock',
+        tableName: 'cart_items',
         timestamps: false
     };
     const Cart_item = sequelize.define(alias, cols, config)

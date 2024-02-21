@@ -25,7 +25,15 @@ module.exports = (sequelize, dataTypes) => {
       is_new: {
         type: dataTypes.TINYINT,
         allowNull: false
-      }
+      },
+      id_product_image: {
+        type: dataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "product_image",
+          key: "id",
+        },
+      },
     };
     let config = {
         tableName: 'products',
@@ -38,8 +46,8 @@ module.exports = (sequelize, dataTypes) => {
             as: "product_image", 
         })
         Product.belongsToMany(models.Users, {
-          as: 'user_products',
-          through: 'User_products',
+          as: 'user_product',
+          through: 'user_products',
           foreignKey: 'id_product',
           otherKey: 'id_user'
         })

@@ -37,7 +37,7 @@ module.exports = {
       subtotal: {
         type: DataTypes.DECIMAL
       }
-     });
+    });
   },
 
   async down (queryInterface, Sequelize) {
