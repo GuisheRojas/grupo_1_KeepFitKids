@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
             as: 'user_roles',
             through: 'User_roles',
             foreignKey: 'id_user',
-            otherKey: 'id_role'            
+            otherKey: 'id'            
         })
         User.hasMany(models.Shopping_carts, {
           foreignKey: 'id_user',
@@ -54,7 +54,7 @@ module.exports = (sequelize, dataTypes) => {
           as: 'user_products',
           through: 'User_products',
           foreignKey: 'id_user',
-          otherKey: 'id_product'
+          otherKey: 'id'
         })
     }
     return User
