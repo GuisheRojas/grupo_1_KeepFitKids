@@ -21,7 +21,7 @@ module.exports = {
         onDelete: 'CASCADE'
       }
     });
-    },
+  },
 
   async down (queryInterface, Sequelize) {
      await queryInterface.dropTable('shopping_carts');

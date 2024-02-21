@@ -6,6 +6,22 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
+        id_product: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            references: {
+              model: "products",
+              key: "id",
+            },
+        },
+        id_color: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            references: {
+              model: "roles",
+              key: "id",
+            },
+        },
         quantity: {
             type: dataTypes.INTEGER,
             allowNull: false

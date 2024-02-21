@@ -1,5 +1,3 @@
-const { DATE } = require("sequelize");
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product_Image';
     let cols = {
