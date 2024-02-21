@@ -30,7 +30,7 @@ router.get('/login', guestMiddleware, userController.login);
 router.post('/login', singInValidation, userController.singIn);
 
 //accede al perfil del usuario
-router.get('/profile', authMiddleware, userController.profile);
+router.get('/profile',authMiddleware, userController.profile);
 
 //muestra el formulario de edición de la información del usuario
 router.get('/editProfile', authMiddleware, userController.editProfile);
