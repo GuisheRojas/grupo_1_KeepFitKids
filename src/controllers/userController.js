@@ -7,7 +7,7 @@ let usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs')
 
-const User = require('../Models/User');
+const User = require('../database/models/users');
 
 const controller = {
 

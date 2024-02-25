@@ -1,4 +1,4 @@
-const User = require('../../Models/User')
+const User = require('../../database/models/users');
 
 function userLoggedMiddleware(req, res, next){
     res.locals.isLogged = false;
