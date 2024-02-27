@@ -3,136 +3,80 @@
  <head>
     <%- include('../partials/head') %>
     <title>Añadir producto</title>
+    <script src="/js/getProductForm.js"></script>
  </head>
 <body>
     <%- include('../partials/header') %>
-    <main class='mainForm'>
-        <form action="/products/addProduct" method="POST" class="forms" enctype="multipart/form-data">
-            <h1 class="titulares">Ingrese el nuevo producto</h1>
-            <div class="container">
-
-                <div class="group">
-                    <input type="text" id="name" name="nameProd" class="input" placeholder=""
-                    <%if(locals.old && old.name){%> 
-                        value="<%= old.name%>"
-                    <% } %> >
-                    <label for="nameProd" class="label">Nombre del producto</label>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.name){ %>
-                    <p class="fbFormsProd"> 
-                        <%= errors.name.msg %>
-                    </p>    
-                <% } %>
-                
-                <div class="group">
-                    <input type="number" min="1" id="price" name="price" class="input" placeholder=""
-                    <%if(locals.old && old.price){%> 
-                        value="<%= old.price%>"
-                    <%}%> >
-                    <label for="price" class="label">Precio del producto</label>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.price){ %>
-                    <p class="fbFormsProd"> <%= errors.price.msg %></p>    
-                <% } %>
-                
-                <div class="group">
-                    <input type="text" id="description" name="description" class="input" placeholder=""
-                    <%if(locals.old && old.description){%> 
-                        value="<%= old.description%>"
-                    <%}%> >
-                    <label for="description" class="label">Descripción del producto</label>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.description){ %>
-                    <p class="fbFormsProd"> <%= errors.description.msg %></p>    
-                <% } %>
-                
-                <div class="group">
-                    <input type="number" id="cantColors" name="cantColors" class="input" placeHolder="">
-                    <label for="cantColors">¿En cuántos colores tiene stock el producto?</label>
-                    <span class="line"></span>
-                </div>
-                
-                <div class="group">
-                    <h2 class="input">Seleccione el color</h2>
-                    <select id="color" name="color" class="input" size="5">
-                        <%if(locals.old && old.color){%>
-                            <%for(let i = 0; i<old.color.length; i++){%>
-                                value="<%= old.color[i]%>"
-                            <%}%>
-                        <%}%>>
-                        <% for(let i = 0; i < colors.length; i++) {%>    
-                            <option value="<%= colors[i] %>"><%= colors[i] %></option>
-                        <%}%>
-                    </select>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.color){ %>
-                    <p class="fbFormsProd"> <%= errors.color.msg %></p>    
-                <% } %>
-                
-                <div class="group">
-                    <h2 class="input">Seleccione el talle</h2>
-                    <select id="size" name="size" class="input" size="6">
-                        <%if(locals.old && old.size){%> 
-                            value="<%= old.size%>"
-                        <%}%> >
-                        <% for(let i = 0; i < sizes.length; i++) {%>    
-                            <option value="<%= sizes[i] %>"><%= sizes[i] %></option>
-                        <%}%>
-                    </select>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.size){ %>
-                    <p class="fbFormsProd"> <%= errors.size.msg %></p>    
-                <% } %>
-
-                <div class="group">
-                    <input type="number" id="stock" name="stock" class="input" placeholder=""
-                    <%if(locals.old && old.stock){%> 
-                        value="<%= old.stock%>"
-                    <%}%> >
-                    <label for="stock" class="label">Stock del producto</label>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.stock){ %>
-                    <p class="fbFormsProd"> <%= errors.stock.msg %></p>    
-                <% } %>
-                
-                <div class="group">
-                    <input type="file" id="productImage" name="productImage" multiple accept=".jpg, .png, .jpeg" class="input" placeholder="">
-                    <label for="productImage" class="label">Imagen del producto</label>
-                    <span class="line"></span>
-                </div>
-                <% if(locals.errors && errors.productImage){ %>
-                    <p class="fbFormsProd"> 
-                        <%= errors.productImage.msg %>
-                    </p>    
-                <% } %>
-                
-                <div class="group">
-                    <select id="genero" name="genre" class="input" placeholder="">
-                        <%if(locals.old && old.genre){%> 
-                            <option value="<%=old.genre%>"><%=old.genre%></option>
-                        <%} else {%> 
-                            <option value="">Seleccione el genero del producto</option>
-                            <option value="Femenino">Femenino</option>
+    <main>
+        <form action="/products/addProduct" method="POST" enctype="multipart/form-data">
+            <div class="form__container">
+                <h1>Agregar un producto</h1>
+                <div class="form__container-div1">
+                    <div class="group__input">
+                        <label for="name">Nombre del producto</label>
+                        <input type="text" name="name" id="input__productName" placeholder="Ingresa el nombre del producto">
+                    </div>
+                    <div class="group__input">
+                        <label for="description">Descripción</label>
+                        <textarea name="description" id="input__productDescription" cols="30" rows="3" placeholder="Ingresa la descripción del producto"></textarea>
+                    </div>
+                    <div class="group__input">
+                        <label for="price">Precio</label>
+                        <input type="number" min="1" max="200000" name="price" id="input__productPrice">
+                    </div>
+                    <div class="group__input">
+                        <label for="category">Categoría</label>
+                        <select name="category" id="input__productCategory">
+                            <option value="">Seleccione una categoría</option>
                             <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
                             <option value="Unisex">Unisex</option>
-                        <% } %>
-                    </select>
-                    <span class="line"></span>
+                        </select>
+                    </div>
+                    <div class="group__input">
+                        <label for="images">Imagenes del producto</label>
+                        <input type="file" name="images" id="input__productImages" multiple accept=".jpg, .png, .jpeg, .svg, .webp">
+                    </div>
                 </div>
-                <% if(locals.errors && errors.genre){ %>
-                    <p class="fbFormsProd"> <%= errors.genre.msg %></p>    
-                <% } %>
-                
-                <button type="submit" class="submit">Añadir producto</button>
+                <div class="form__container-div2">
+                    <div class="cantidad_colores">
+                        <label for="cantColores">Cantidad de colores del producto</label>
+                        <input type="number" min="1" max="20" name="cantColores" id="input__productCantColores" value="1">
+                        <button id="cantColoresButton">Agregar colores</button>
+                    </div>
+                    <div class="group__color-talle">
+                            <%for(let i = 0; i < 2; i++) { %>
+                                <div class="group__color-talle-n">
+                                    <div class="group__color">
+                                        <label for="color">Color</label>
+                                        <select name="color" id="input__productColor">
+                                            <option value="">Seleccione un color</option>
+                                            <% for(let i = 0; i < colores.length; i++) { %>
+                                                <option value="<%=i + 1%>"><%=colores[i]%></option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="group__talle">
+                                        <% for(let i = 0; i < talles.length; i++) { %>
+                                            <div class="talle">
+                                                <label for="talle"><%= talles[i] %></label>
+                                                <input type="checkbox" name="talle" class="input__productTalle">
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            <% } %>
+                    </div>
+                    <div class="group__cantidad">
+                        <label for="">STOCK</label>
+                        <p id="cantidadStock">0</p>
+                    </div>
+                </div>
+                <input type="submit" value="Agregar Producto" id="submitButton">
             </div>
         </form>
     </main>
+
     <%- include('../partials/footer') %>
 </body>
 </html>

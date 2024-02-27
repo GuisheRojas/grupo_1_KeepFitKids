@@ -8,7 +8,20 @@ let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
 
-const { colors, sizes } = require('../colorsAndSizesProducts');
+// COLORES Y TALLES (Obtenidos de la base de datos)
+let colors = [];
+let sizes = [];
+
+db.Colors.findAll()
+    .then(color => color.forEach(color => colors.push(color.dataValues.name)))
+    .catch(err => console.log(err));
+
+db.Sizes.findAll()
+    .then(size => size.forEach(size => sizes.push(size.dataValues.name)))
+    .catch(err => console.log(err));
+
+
+// Dentro de colors y sizes, cada elemento es la columna name de cada tabla, y el id es el indice + 1.
 
 let carrito = [];
 
@@ -79,7 +92,8 @@ const productsController = {
 
     //muestra la página de carga de un producto
     getProduct: (req, res) => {
-        res.render('products/getproduct', {productos: productos, colors, sizes, css: '/css/forms.css'})
+        console.log(colors[0][0].dataValues);
+        res.render('products/getproduct', {productos: productos, colores: colors, talles: sizes, css: '/css/forms.css'})
     },
 
     // CON BASE DE DATOS 
