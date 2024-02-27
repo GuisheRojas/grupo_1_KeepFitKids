@@ -101,11 +101,54 @@ const controller = {
     },
 
     editProfile: (req, res) => {
-        res.render('./users/editProfile', {user: req.session.user})
+        User.findByPk(req.session.user.id)
+        .then((usuario) =>{
+            return res.render("editProfile", {usuario:usuario})
+        })
+        // User.Users.findByPk(req.params.id)
+        //     .then((usuario) =>{
+        //         return res.render("Usuario", {usuario:usuario})
+        //     })
+        // res.render('./users/editProfile', {user: req.session.user})
     },
 
     editedProfile: (req, res) => {
+        const errors = validationResult(req);
+        if(errors.isEmpty()) {
+            res.redirect('/users/profile');
+        }
+        else {
+            let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
+            fs.unlinkSync(avatarPath);
+            return res.render('./users/editProfile', {
+                errors: errors.mapped(),
+                old: req.body,
+                css: '/css/forms.css'
+            });
+        }
 
+        let userInDB = User.findByField('email', req.body.email);
+
+		if (userInDB) {
+			return res.render('./users/profile', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				old: req.body, 
+                css: '/css/forms.css'
+			});
+		}
+
+		let userToUpdate = {
+			...req.body,
+			password: bcrypt.hashSync(req.body.password, 6),
+			avatar: req.file.filename
+		}
+        User.update(userToUpdate, {where:{
+            id: req.session.id
+        }})
     },
 
     logOut: (req, res) => {
