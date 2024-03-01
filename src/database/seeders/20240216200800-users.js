@@ -1,5 +1,6 @@
 "use strict";
 
+const bcryptjs = require("bcryptjs");
 const { faker } = require("@faker-js/faker");
 
 const db = require('../models');
@@ -21,11 +22,7 @@ module.exports = {
           first_name: faker.person.firstName(),
           last_name: faker.person.lastName(),
           email: faker.internet.email(),
-          password: faker.internet.password({
-            length: 8,
-            memorable: true,
-            prefix: "",
-          }),
+          password: bcryptjs.hashSync("123456", 10),
           avatar: faker.image.avatar(),
           createdAt: new Date(),
           updatedAt: new Date(),

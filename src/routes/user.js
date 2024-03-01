@@ -34,7 +34,7 @@ router.get('/profile',authMiddleware, userController.profile);
 
 //muestra el formulario de edición de la información del usuario
 router.get('/editProfile', authMiddleware, userController.editProfile);
-router.post('/editProfile', authMiddleware, userController.editedProfile);
+router.post('/editProfile', upload.single('avatar'), registerValidation, userController.editedProfile);
 router.post('/logOut', authMiddleware, userController.logOut);
 
 //module.exports = upload

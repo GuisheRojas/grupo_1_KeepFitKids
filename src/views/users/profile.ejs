@@ -15,15 +15,20 @@
                     <i class="fa-solid fa-pencil" id="editProfile"></i>
                 </a>
             </div>
-
+            
             <div class="imgUser">
                 <img src="/img/users/<%=user.avatar%>" alt="Profile Image" class="profileImage">
             </div>
 
             <div class="userBox">
+                <h4>Nombre de usuario</h4>
+                <h3> <%= user.name %></h3>
+            </div>
+
+            <div class="userBox">
                 <h3>Nombre y apellido</h3>
-                <h2 id="userName"> <%= user.name %> </h2>
-                <h2 id="userName"> <%= user.lastname %> </h2>
+                <h2 id="userName"> <%= user.first_name %> </h2>
+                <h2 id="userName"> <%= user.last_name %> </h2>
             </div>
 
             <div class="userBox">
