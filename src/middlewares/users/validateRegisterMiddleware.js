@@ -20,9 +20,7 @@ const registerValidation=[
     body('avatar')
         .custom((value, {req}) =>{
             let file = req.file;
-            if(!file){
-                throw new Error ('Debes cargar una imagen del usuario');
-            } else {
+            if(file){
                 let fileExt = path.extname(file.originalname);
                 let acceptedExt = ['.png', '.jpg', '.gif', '.jpeg'];
                 if(!acceptedExt.includes(fileExt)){

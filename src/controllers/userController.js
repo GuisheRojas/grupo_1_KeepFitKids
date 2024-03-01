@@ -43,13 +43,21 @@ const controller = {
                 css:'/css/forms.css'
 			});
 		}
-		let userToCreate = {
-			...req.body,
-			password: bcrypt.hashSync(req.body.password, 6),
-			avatar: req.file.filename
+        if(req.file){
+            let userToCreate = {
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 6),
+                avatar: req.file.filename
+            }
+            User.create(userToCreate);
+        } else {
+            let userToCreate = {
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 6),
+                avatar: 'profile-42914_960_720.png'
+            }
+            User.create(userToCreate);
         }
-
-		User.create(userToCreate);
 
 		return res.redirect('./login');
 	},
@@ -65,11 +73,9 @@ const controller = {
             const userInDB = await User.findAll({where: {email: {[Op.like]: req.body.email }}})
 
             if(userInDB){
-                console.log("entré");
                 if(bcrypt.compareSync(req.body.password, userInDB[0].dataValues.password)){
                     user = userInDB[0].dataValues;
                 }
-                console.log(user);
                 if(!user){
                     return res.render('./users/login', {errors: {
                         credentials: {
@@ -97,24 +103,25 @@ const controller = {
     },
 
     profile: async (req, res) => {
-        const userInDB = await User.findAll({where: {email: {[Op.like]: req.session.user.email }}})
-        res.render('./users/profile', {user: userInDB[0].dataValues, css: '/css/profile.css'})
+        const userInDB = await User.findByPk(req.session.user.id)
+        res.render('./users/profile', {user: userInDB.dataValues, css: '/css/profile.css'})
     },
 
     editProfile: async (req, res) => {
-        const userInDB = await User.findAll({where: {email: {[Op.like]: req.session.user.email }}})
-        return res.render("./users/editProfile", {usuario: userInDB[0].dataValues, css:'/css/forms.css'})
+        const userInDB = await User.findByPk(req.session.user.id)
+        return res.render("./users/editProfile", {usuario: userInDB.dataValues, css:'/css/forms.css'})
     },
 
     editedProfile: async (req, res) => {
         const errors = validationResult(req);
         if(errors.isEmpty()) {
             //buscamos el usuario con el que estamos trabajando
-            const userInDB = await User.findAll({where: {email: {[Op.like]: req.session.user.email }}})
+            let idUser = req.session.user.id;
+            const userInDB = await User.findByPk(idUser)
 
             const existentEmail = await User.findAll({where: {email: {[Op.like]: req.body.email}}});
             
-            if ((existentEmail > 0) && (existentEmail[0].dataValues.email != userInDB[0].dataValues.email)){
+            if ((existentEmail > 0) && (existentEmail[0].dataValues.email != userInDB.dataValues.email)){
                 
                 return res.render('./users/editProfile', {
                     errors: {
@@ -124,30 +131,38 @@ const controller = {
                     },
                     old: req.body, 
                     css: '/css/forms.css',
-                    usuario: userInDB[0].dataValues
+                    usuario: userInDB.dataValues
                 });
             } else {
-                let userToUpdate = {
-                    ...req.body,
-                    password: bcrypt.hashSync(req.body.password, 6),
-                    avatar: req.file.filename
+                if(req.file){ 
+                    console.log(req.file)  
+                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.session.user.avatar}`);
+                    fs.unlinkSync(avatarPath);
+
+                    let userToUpdate = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 6),
+                        avatar: req.file.filename
+                    }
+                    await User.update(userToUpdate, { where:{ id: idUser } } )
+                } else {
+                    let userToUpdate = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 6),
+                        avatar: 'profile-42914_960_720.png'
+                    }
+                    await User.update(userToUpdate, { where:{ id: idUser } } )
                 }
-                console.log('----- USER TO UPDATE -----', userToUpdate)
-
-                console.log('----- SESSION USUARIO -----', req.session.user)
-                let idUser = req.session.user.id;
-
-                await User.update(userToUpdate, { where:{ id: idUser } } )
                 const newUserInDB = await User.findByPk(idUser)
-                console.log('----- NUEVO USUARIO -----', newUserInDB)
-                return res.render('./users/profile', {user: newUserInDB.dataValues, css: '/css/profile.css'});
+                req.session.user = newUserInDB;
+                return res.redirect('./profile');
             }
         }
         else {
-            if(req.file){
-                let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
-                fs.unlinkSync(avatarPath);
-            }
+                if(req.file){
+                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
+                    fs.unlinkSync(avatarPath);
+                }
             return res.render('./users/editProfile', {
                 errors: errors.mapped(),
                 old: req.body,
