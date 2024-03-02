@@ -106,7 +106,6 @@
 - ### Hacer mas:
 	- Participar y mantener activo el tablero Trello.	
 	
-
 - ### Hacer menos:
 	- Dejar todo a ultimo momento.
 	- Pedir ayuda sobre la hora.
@@ -122,4 +121,55 @@
 	- Revisar el proyecto mucho más seguido y con más tiempo.
 
 - ### Dejar de hacer:
-	-  Dejar para último momento el proyecto.
+	- Dejar para último momento el proyecto.
+
+
+[========]
+
+# SPRINT 6:
+
+- ### Hacer mas:
+	- Participar y mantener activo el tablero Trello.
+
+- ### Hacer menos:
+	- Dejar todo a ultimo momento.
+	- Pedir ayuda sobre la hora.
+
+- ### Continuar haciendo:
+	- Motivarnos para no abandonar.
+	- Felicitarnos cuando las cosas salen bien.
+
+- ### Comenzar a hacer:
+	- Comprometerse con el grupo y el curso.
+	- Empezar y terminar las tareas que cada uno debe hacer.
+	- Revisar el proyecto mucho más seguido y con más tiempo.
+	- Interesarse más por que el proyecto salga bien.
+	- Involucrarse más en el proyecto.
+	- Participar en las reuniones.
+
+- ### Dejar de hacer:
+	- Dejar para último momento el proyecto.
+	- No cuidar la salud mental propia y del resto de los integrantes del equipo.
+	- No darle importancia al curso.
+	- No hacer lo posible para poder resolver las cosas que nos están trabando.
+	- No asistir a las reuniones establecidas en consenso.
+
+
+[========]
+
+# SPRINT 7:
+
+- ### Hacer mas:
+	- 
+
+- ### Hacer menos:
+	- 
+
+- ### Continuar haciendo:
+	- 
+
+- ### Comenzar a hacer:
+	- 
+
+- ### Dejar de hacer:
+	- 

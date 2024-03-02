@@ -155,6 +155,14 @@ Fecha de reunión
 - 	10/02/2024
 - 	13/02/2024
 - 	15/02/2024
+- 	16/02/2024
+- 	19/02/2024
+- 	20/02/2024
+- 	21/02/2024
+- 	22/02/2024
+- 	23/02/2024
+- 	26/02/2024
+- 	29/02/2024
 
 ### Participantes
 -	Santiago
@@ -201,6 +209,35 @@ Fecha de reunión
 
 - 	15/02/2024
 	- Problema con la base de datos.
+
+- 	16/02/2024
+	- Creación de la base de datos de cero.
+
+- 	19/02/2024
+	- Errores con la base de datos.
+	- Ana y Silvi pedimos participación para continuar con la creación de la base de datos.
+
+- 	20/02/2024
+	- Pedimos ayuda al profe para solucionar problemas con la creación de la base de datos.
+
+- 	21/02/2024
+	- Organizamos una reunión para seguir todos con la creación de la base.
+	- Continuamos con la creación de la base de datos.
+	- Falta de compromiso y respeto con los compañeros.
+	- Continuamos con la creación de la base de datos.
+
+- 	22/02/2024
+	- Creación de los últimos 3 seeders de la base de datos.
+	- Organizamos cómo seguiríamos trabajando para terminar el sprint 6.
+
+- 	23/02/2024
+	- Funcionamiento del equipo de trabajo.
+
+- 	26/02/2024
+	- Dificultades con el formulario de creación de un producto.
+
+- 	29/02/2024
+	- Dificultades con el formulario de creación de un producto y los metodos del userController.
 	
 
 ### Decisiones tomadas
@@ -261,7 +298,49 @@ Fecha de reunión
 
 -	13/02/2024
 	- Creamos la base de datos.
-	- Hicimos las migraciones y la mayor parte de los modelos.
+	- Hicimos las migraciones y la mayor parte de los modelos (Silvi, Ana y Guille).
 
 - 	15/02/2024
-	- Creamos la base de cero de nuevo.
+	- Creamos la base de cero de nuevo, hicimos las migraciones y parte de los modelos (Silvi y Ana).
+
+- 	16/02/2024
+	- Continuamos haciendo la base, terminamos los modelos y comenzamos con los seeders (Silvi y Ana).
+
+- 	19/02/2024
+	- Errores con la base de datos:
+		- Silvi hizo llamada con el profesor Piero pero no pudieroon resolverlo.
+	- Ana y Silvi pedimos participación para continuar con la creación de la base de datos.
+		- Intentamos resolver problemas con la creación de la base (Silvi, Ana, Santi y Guille).
+		- Resolvimos algunos pero no pudimos.
+
+- 	20/02/2024
+	- El profe Piero nos ayudó a resolver problemas.
+
+- 	21/02/2024
+	- Organizamos una reunión para seguir todos con la creación de la base:
+		- Reunirnos todos por la mañana para seguir trabajando en la base de datos.
+	- Continuamos con la creación de la base de datos:
+		- Avanzamos con la base de datos, hicimos casi todos los seeders (Silvi y Ana).
+	- Falta de compromiso y respeto con los compañeros:
+		- Ana pidió compromiso con el grupo y el proyecto, y respeto por los horarios acordados.
+	- Continuamos con la creación de la base de datos:
+		- Avanzamos con la creación de la base de datos (Santi, Silvi y Ana).
+	
+- 	22/02/2024
+	- Creación de los últimos 3 seeders de la base de datos:
+		- Terminamos la base de datos (Silvi y Santi, y Ana explicó la lógica de la tabla stock).
+	- Organizamos cómo seguiríamos trabajando para terminar el sprint 6:
+		- Guille adaptaría los métodos del userController para que trabajen con la base de datos como habiamos acordado, y haría el formulario de edición del perfil de un usuario.
+		- Jorge haría el formulario de creación de productos.
+		- Luego nos repartiríamos el resto.
+
+- 	23/02/2024
+	- Ana habló con cada integrante por separado para intentar resolver los problemas que de participación y compromiso del grupo.
+	- Los chicos comenzarían a participar más.
+
+- 	26/02/2024
+	- Intentamos razonar la solución para el problema que teniamos (Ana y Jorge).
+	- Decidimos pedir ayuda a los profesores.
+
+- 	29/02/2024
+	- Ana hizo llamada con el profesor Piero y le explicó como trabajar con el userController y el formulario de creación.
