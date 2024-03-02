@@ -32,7 +32,7 @@ const controller = {
         }
 
         let userInDB = await User.findAll({ where: { email: { [Op.like]: req.body.email } } });
-		if (userInDB == 1) {
+		if (userInDB.length == 1) {
 			return res.render('./users/register', {
 				errors: {
 					email: {
@@ -72,14 +72,14 @@ const controller = {
             let user;
             const userInDB = await User.findAll({where: {email: {[Op.like]: req.body.email }}})
 
-            if(userInDB){
+            if(userInDB.length == 1){
                 if(bcrypt.compareSync(req.body.password, userInDB[0].dataValues.password)){
                     user = userInDB[0].dataValues;
                 }
                 if(!user){
                     return res.render('./users/login', {errors: {
                         credentials: {
-                            msg:'Credenciales inválidas'
+                            msg:'La contraseña es incorrecta'
                             }
                         }, 
                         old: req.body,
@@ -95,6 +95,15 @@ const controller = {
                 }
                 
                 res.redirect('/')
+            } else {
+                return res.render('./users/login', {errors: {
+                    credentials: {
+                        msg:'Este email no está registrado'
+                        }
+                    }, 
+                    old: req.body,
+                    css: '/css/forms.css'
+                });
             }
             
         } else{
