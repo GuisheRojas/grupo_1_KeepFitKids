@@ -88,6 +88,8 @@ const controller = {
                 }
                 
                 delete user.password;
+                const user_role = await db.User_roles.findOne({where:{ id_user: user.id }})
+                user.role = user_role.dataValues.id_role
                 req.session.user = user;
     
                 if(req.body.remember){
@@ -143,8 +145,7 @@ const controller = {
                     usuario: userInDB.dataValues
                 });
             } else {
-                if(req.file){ 
-                    console.log(req.file)  
+                if(req.file){  
                     let avatarPath = path.join(__dirname, `../../public/img/users/${req.session.user.avatar}`);
                     fs.unlinkSync(avatarPath);
 

@@ -11,6 +11,7 @@ const productsController = require('../controllers/productsController');
 const upload = require('../middlewares/products/multerMiddleware')
 
 const authMiddleware = require('../middlewares/users/authMiddleware');
+const adminMiddleware = require('../middlewares/users/adminMiddleware');
 
 //hace las validaciones para un producto
 const productsValidation = require('../middlewares/products/productsValidationMiddleware')
@@ -40,17 +41,17 @@ router.get('/nenes', productsController.nenes);
 router.get('/nenas', productsController.nenas);
 
 //muestra el listado de productos
-router.get('/list', productsController.listadoProductos)
+router.get('/list', adminMiddleware, productsController.listadoProductos)
 
 //elimina un producto del listado de productos
-router.delete('/list/:id', authMiddleware, productsController.eliminarProd);
+router.delete('/list/:id', adminMiddleware, productsController.eliminarProd);
 
 //carga un nuevo producto
-router.get('/getProduct', authMiddleware, productsController.getProduct)
-router.post('/addProduct', upload.single('productImage'), productsValidation, productsController.addProduct)
+router.get('/getProduct', adminMiddleware, productsController.getProduct)
+router.post('/addProduct', adminMiddleware, upload.single('productImage'), productsValidation, productsController.addProduct)
 
 //edita un producto
-router.get('/editProduct/:id', authMiddleware, productsController.editProduct)
-router.put('/modifiedProduct/:id', upload.single('productImage'), productsValidation, productsController.modifiedProduct)
+router.get('/editProduct/:id', adminMiddleware, productsController.editProduct)
+router.put('/modifiedProduct/:id', adminMiddleware, upload.single('productImage'), productsValidation, productsController.modifiedProduct)
 
 module.exports = router;
