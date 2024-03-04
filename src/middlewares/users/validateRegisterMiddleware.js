@@ -7,15 +7,21 @@ const registerValidation=[
         .isEmail().withMessage("Debe ser un mail valido"),
     body('password')
         .notEmpty().withMessage("Debe completar el campo contraseña").bail()
-        .isLength({min: 6}).withMessage("La contraseña debe tener minimo 6 caracteres"),
+        .custom((value) => {
+            if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(value)) {
+              throw new Error('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial');
+            }
+            return true;
+          }),        
     body('name')
-        .notEmpty().withMessage("Debe completar el campo Nombre").bail()
-        .isLength({min: 3}).withMessage("El campo Nombre tiene un mínimo de 3 caracteres"),
+        .notEmpty().withMessage("Debe completar el campo Nombre de usuario").bail()
+        .isLength({min: 3}).withMessage("El campo Nombre de usuario tiene un mínimo de 3 caracteres"),
     body('first_name')
         .notEmpty().withMessage("Debe completar el campo Nombre").bail()
         .isLength({min: 3}).withMessage("El campo Nombre tiene un mínimo de 3 caracteres"),
     body('last_name')
-        .notEmpty().withMessage("Debe completar el campo apellido").bail().isLength({min: 3}).withMessage("El campo Apellido tiene un mínimo de 3 caracteres.").bail()
+        .notEmpty().withMessage("Debe completar el campo apellido").bail()
+        .isLength({min: 3}).withMessage("El campo Apellido tiene un mínimo de 3 caracteres.").bail()
         .trim(),
     body('avatar')
         .custom((value, {req}) =>{
