@@ -15,35 +15,39 @@
             <div id="titulares">
                 <h4 class="titulares">  Listado de productos  </h4>
             </div>
-            <% for(let i=0; i < productos.length; i++){ %>
-                    <article class="article">
-                       
-                            <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
-                            <p class="price">$<%=productos[i].price %></p>
-                            <h4 class="description"><%=productos[i].name%></h4>
-                            <div class="buttonsBox">
-                                <div class="elim">
-                                    <form method="post" action="/products/list/<%= productos[i].id%>?_method=delete" class="formbotelim">
-                                        <div>
-                                            <button class="botonElim" type="submit">        
-                                                <i id="botonElim" class="fa-solid fa-trash-can"></i>
-                                            </button>
-                                        </div>
-                                    </form>
+            <% for(let i=0; i < products.length; i++){ %>
+                <article class="article">
+                    
+                    <% for (let j = 0; j < products_images.length; j++) { %>
+                        <% if (products[i].dataValues.id == products_images[j].dataValues.id_product) { %>
+                            <img src=/img/products/<%= products_images[j].dataValues.name %> alt=<%= products[i].dataValues.name %> class="product_img">
+                        <% } %>
+                    <% } %>
+                    
+                    <p class="price">$<%=products[i].dataValues.price %></p>
+                    <h4 class="description"><%=products[i].dataValues.name%></h4>
+                    <div class="buttonsBox">
+                        <div class="elim">
+                            <form method="post" action="/products/list/<%= products[i].dataValues.id%>?_method=delete" class="formbotelim">
+                                <div>
+                                    <button class="botonElim" type="submit">        
+                                        <i id="botonElim" class="fa-solid fa-trash-can"></i>
+                                    </button>
                                 </div>
-                                <div class="editarProducto">
-                                    <form method="get" action="/products/editProduct/<%= productos[i].id%>" class="formeditar">
-                                        <div>
-                                            <button class="botonEdit" type="submit">        
-                                                <i id="botonEdit" class="fa-solid fa-pencil"></i>
-                                            </button>
-                                        </div>
-                                    </form>
+                            </form>
+                        </div>
+                        <div class="editarProducto">
+                            <form method="get" action="/products/editProduct/<%= products[i].dataValues.id%>" class="formeditar">
+                                <div>
+                                    <button class="botonEdit" type="submit">        
+                                        <i id="botonEdit" class="fa-solid fa-pencil"></i>
+                                    </button>
                                 </div>
-                            </div>
-                        
-                    </article>
+                            </form>
+                        </div>
+                    </div>
                 
+                </article>  
             <% } %>
         </section>        
     </main>

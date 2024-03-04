@@ -27,12 +27,18 @@
                 <h4 class="titulares">  NUEVOS INGRESOS  </h4>
             </div>
             <% for(let i=0; i < productos.length; i++){ %>
-                <% if(productos[i].new) { %>
+                <% if(productos[i].is_new) { %>
                     <article class="article">
-                        <a href="/products/detailproduct/<%= productos[i].id %>">
-                            <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
-                            <p class="price">$<%=productos[i].price %></p>
-                            <h4 class="description"><%=productos[i].name%></h4>
+                        
+                        <a href="/products/detailproduct/<%= productos[i].dataValues.id %>">
+                            <% for (let j = 0; j < products_images.length; j++) { %>
+                                <% if (productos[i].dataValues.id == products_images[j].dataValues.id) { %>
+                                    <img src="/img/products/<%= products_images[j].dataValues.name %>" alt=<%= productos[i].dataValues.name %> class="product_img">
+                                <% } %>
+                            <% } %>
+                            
+                            <p class="price">$<%=productos[i].dataValues.price %></p>
+                            <h4 class="description"><%=productos[i].dataValues.name%></h4>
                         </a>
                     </article>
                 <% } %>

@@ -52,14 +52,14 @@
                                         <select name="color" id="input__productColor">
                                             <option value="">Seleccione un color</option>
                                             <% for(let i = 0; i < colores.length; i++) { %>
-                                                <option value="<%=i + 1%>"><%=colores[i]%></option>
+                                                <option value="<%=i + 1%>"><%=colores[i].dataValues.name%></option>
                                             <% } %>
                                         </select>
                                     </div>
                                     <div class="group__talle">
                                         <% for(let i = 0; i < talles.length; i++) { %>
                                             <div class="talle">
-                                                <label for="talle"><%= talles[i] %></label>
+                                                <label for="talle"><%= talles[i].dataValues.name %></label>
                                                 <input type="checkbox" name="talle" class="input__productTalle">
                                             </div>
                                         <% } %>

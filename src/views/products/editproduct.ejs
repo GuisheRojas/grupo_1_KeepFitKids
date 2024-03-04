@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="group">
                     <input type="text" id="name" name="nameProd" class="input" placeholder="" 
-                        value="<%= product.name%>" >
+                        value="<%= product?.name%>" >
                     <label for="nameProd" class="label">Nombre del producto</label>
                     <span class="line"></span>
                 </div>
@@ -24,7 +24,11 @@
                 
                 <div class="group">
                     <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
-                        value="/img/products/<%= product.src%>" >
+                    <% for (let j = 0; j < product_image?.length; j++) { %>
+                        <% if (product.dataValues.id == product_image[j].dataValues.id_product) { %>
+                            value="/img/products/<%= product_image[j].dataValues.name %>" >
+                        <% } %>
+                    <% } %>
                     <label for="productImage" class="label">Imagen del producto</label>
                     <span class="line"></span>
                 </div>
@@ -36,7 +40,7 @@
                 
                 <div class="group">
                     <input type="number" id="price" name="price" class="input" placeholder=""
-                        value="<%= product.price%>" >
+                        value="<%= product?.dataValues.price%>" >
                     <label for="price" class="label">Precio del producto</label>
                     <span class="line"></span>
                 </div>
@@ -46,7 +50,7 @@
                 
                 <div class="group">
                     <input type="text" id="description" name="description" class="input" placeholder=""
-                        value="<%= product.description%>" >
+                        value="<%= product?.dataValues.description%>" >
                     <label for="description" class="label">Descripción del producto</label>
                     <span class="line"></span>
                 </div>
@@ -59,8 +63,8 @@
                     <%=product.color%>
                     <h3 class="input">Actualice los colores en stock</h3>
                     <select id="color" name="color" class="input" placeholder="" size="5">
-                        <% for(let i = 0; i < colors.length; i++) {%>    
-                            <option value="<%= colors[i] %>"><%= colors[i] %></option>
+                        <% for(let i = 0; i < colors?.length; i++) {%>    
+                            <option value="<%= colors[i].dataValues.name %>"><%= colors[i].dataValues.name %></option>
                         <%}%>
                     </select>
                     <span class="line"></span>
@@ -74,8 +78,8 @@
                     <%=product.size%>
                     <h2 class="input">Actualice los talles en stock</h2>
                     <select id="size" name="size" class="input" placeholder="" size="6" value="<%= product.size%>">
-                        <% for(let i = 0; i < sizes.length; i++) {%>    
-                            <option value="<%= sizes[i] %>"><%= sizes[i] %></option>
+                        <% for(let i = 0; i < sizes?.length; i++) {%>    
+                            <option value="<%= sizes[i].dataValues.name %>"><%= sizes[i].dataValues.name %></option>
                         <%}%>
                     </select>
                     <span class="line"></span>
@@ -85,8 +89,8 @@
                 <% } %>
                 
                 <div class="group">
-                    <select id="genre" name="genre" class="input" placeholder="" >
-                            <option value="<%=product.genre%>"><%=product.genre%></option>
+                    <select id="category" name="category" class="input" placeholder="" >
+                            <option value="<%=product.category%>"><%=product.category%></option>
                             <option value="">Seleccione el genero del producto</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
@@ -94,13 +98,13 @@
                     </select>
                     <span class="line"></span>
                 </div>
-                <% if(locals.errors && errors.genre){ %>
-                    <p class="fbFormsProd"> <%= errors.genre.msg %></p>    
+                <% if(locals.errors && errors.category){ %>
+                    <p class="fbFormsProd"> <%= errors.category.msg %></p>    
                 <% } %>
                 
                 <div class="group">
                     <input type="number" id="stock" name="stock" class="input" placeholder=""
-                        value="<%= product.stock%>" >
+                        value="<%= stock[0].dataValues.quantity%>" >
                     <label for="stock" class="label">Stock del producto</label>
                     <span class="line"></span>
                 </div>

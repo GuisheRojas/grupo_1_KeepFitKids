@@ -9,7 +9,7 @@
     <main class="detailmain">
         <div class="productandprice">
             <section class="productimg">
-                <img class="prod" src=/img/products/<%= product?.src%>>
+                <img class="prod" src=/img/products/<%= product_image?.dataValues.name %>>
             </section>
             <section class="priceandinfo">
                 <h1 class="nameofproduct"><%= product?.name%></h1>
@@ -29,16 +29,24 @@
                         <div class="divcolors">
                             <label>Seleccione un color</label>
                             <select class="colord" name="colorStock">
-                                <% for(let i=0; i < product?.color.length; i++) {%>
-                                    <option value="<%= product?.color[i] %>"><%= product?.color[i]%></option>
+                                <% for (let i=0; i < stock?.length; i++) {%>
+                                    <% for (let j=0; j < colors?.length; j++) { %>
+                                        <% if (stock[i].dataValues.id_color == colors[j].dataValues.id) { %>
+                                            <option value="<%= colors[j].dataValues.name %>"><%= colors[j].dataValues.name %></option>
+                                        <% } %>
+                                    <% } %>
                                 <% } %>
                             </select>
                         </div>
                         <div class="divtalles">
                             <label>Seleccione un talle</label>
                             <select class="tallesd" name="sizeStock">
-                                <% for(let i=0; i < product?.size.length; i++) {%>
-                                    <option value="<%= product?.size[i] %>"><%= product?.size[i]%></option>
+                                <% for (let i=0; i < stock?.length; i++) {%>
+                                    <% for (let j=0; j < sizes?.length; j++) { %>
+                                        <% if (stock[i].dataValues.id_size == sizes[j].dataValues.id) { %>
+                                            <option value="<%= sizes[j].dataValues.name %>"><%= sizes[j].dataValues.name %></option>
+                                        <% } %>
+                                    <% } %>
                                 <% } %>
                             </select>
                         </div>

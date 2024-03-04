@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%- include('../partials/head') %>
-        <title>Sección <%= genre %> </title>
+        <title>Sección <%= category %> </title>
     </head>
 <body>    
     <%- include('../partials/header') %> 
@@ -14,17 +14,21 @@
         <section class="kids">
             <div id="titulares">
                 <h4 class="titulares"> Ropa para 
-                    <% if(genre == 'Masculino'){ %> 
+                    <% if(category == 'Masculino'){ %> 
                         niños
                     <% } else {%>
                         niñas
                     <% } %> </h4>
             </div>
             <% for(let i=0; i < productos.length; i++){ %>
-                <% if(genre == productos[i].genre) {%>
+                <% if(category == productos[i].category) {%>
                     <article class="article">
                         <a href="/products/detailproduct/<%= productos[i].id %>">
-                            <img src=/img/products/<%= productos[i].src %> alt=<%= productos[i].name %> class="product_img">
+                            <% for (let j = 0; j < products_images.length; j++) { %>
+                                <% if (productos[i].dataValues.id == products_images[j].dataValues.id_product) { %>
+                                    <img src=/img/products/<%= products_images[j].dataValues.name %> alt=<%= productos[i].dataValues.name %> class="product_img">
+                                <% } %>
+                            <% } %>
                             <p class="price">$<%=productos[i].price %></p>
                             <h4 class="description"><%=productos[i].name%></h4>
                         </a>
