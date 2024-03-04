@@ -13,6 +13,14 @@ module.exports = {
       name: {
         type: DataTypes.STRING,
       },
+      id_product: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "products",
+          key: "id",
+        },
+      },
     });
   },
   async down(queryInterface, Sequelize) {

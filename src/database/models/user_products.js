@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'user_products',
         timestamps: false
     };
-    const Size = sequelize.define(alias, cols, config)
+    const User_product = sequelize.define(alias, cols, config)
     
-    return Size
+    return User_product
 }

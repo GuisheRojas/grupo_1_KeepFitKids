@@ -23,17 +23,13 @@ module.exports = {
           last_name: faker.person.lastName(),
           email: faker.internet.email(),
           password: bcryptjs.hashSync("123456", 10),
-          avatar: faker.image.avatar(),
-          createdAt: new Date(),
-          updatedAt: new Date(),
+          avatar: faker.image.avatar()
         };
         users.push(randomUser);
 
         const userRoleData = {
           id_user: randomUser.id,
-          id_role: randomRole.id,
-          createdAt: new Date(),
-          updatedAt: new Date(),
+          id_role: randomRole.id
         };
         userRolesData.push(userRoleData);
       });

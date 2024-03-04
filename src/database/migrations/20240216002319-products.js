@@ -29,19 +29,8 @@ module.exports = {
       is_new: {
         type: DataTypes.TINYINT,
         allowNull: false
-      },
-      id_product_image: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: {
-            tableName: 'product_image'
-          }, 
-          key: 'id'
-        },
-        allowNull: false,
-        onDelete: 'CASCADE'
       }
-      });
+    });
      
   },
 
