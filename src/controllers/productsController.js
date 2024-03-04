@@ -80,6 +80,8 @@ const productsController = {
                 });
                 res.redirect('./getProduct');
             } else {
+                const colors = await db.Colors.findAll()
+                const sizes = await db.Sizes.findAll();
                 res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
             }
         } else{
@@ -87,6 +89,8 @@ const productsController = {
                 let productPath = path.join(__dirname, `../../public/img/products/${req.file.filename}`);
                 fs.unlinkSync(productPath);
             }
+            const colors = await db.Colors.findAll()
+            const sizes = await db.Sizes.findAll();
             res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
         }
     },

@@ -3,7 +3,7 @@ const router = express.Router();
 
                             /* CONTROLLER */
                             
-const { productsController } = require('../controllers/productsController');
+const productsController = require('../controllers/productsController');
 
 
                             /* MIDDLEWARES */
@@ -19,7 +19,7 @@ const productsValidation = require('../middlewares/products/productsValidationMi
                             /* RUTAS */
 
 //muestra los resultados de una búsqueda
-router.get('/resultssearch', productsController.search)
+router.get('/resultssearch', productsController.resultsSearch)
 
 //muestra el detalle de un producto
 router.get('/detailproduct/:id', productsController.detailproduct);

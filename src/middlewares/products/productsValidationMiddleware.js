@@ -20,7 +20,7 @@ let productsValidation = [
     body('stock')
         .notEmpty().withMessage("Debe completar el campo stock del producto")
         .trim(),
-    body('genre')
+    body('category')
         .notEmpty().withMessage("Debe seleccionar el género del producto").bail()
         .trim(),
     body('productImage')
