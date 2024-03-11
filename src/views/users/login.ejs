@@ -15,7 +15,8 @@
             <% } %>
             <div class="container">
                 <div class="group">
-                    <input type="email" id="email" name="email" class="input" placeholder=" "
+                    <input type="email" id="email" name="email" class="input" placeholder=" "> <br><span class="errors"></span> 
+                    
                     <% if(locals.old && old.email){%>
                         value="<%= old.email %>"
                     <% } %>>
@@ -27,7 +28,7 @@
                 <% } %>
 
                 <div class="group">
-                    <input type="password" id="password" name="password" class="input" placeholder=" ">
+                    <input type="password" id="password" name="password" class="input" placeholder=" "> <br><span class="errors"></span>
                     <label for="password" class="label">Contraseña: </label>
                     <span class="line"></span>
                 </div>
@@ -50,5 +51,8 @@
     </main>
 
     <%- include('../partials/footer') %>
+   
+        
 </body>
+<script src="public/js/validationLoginForm.js"></script> 
 </html>
