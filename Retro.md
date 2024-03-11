@@ -163,7 +163,8 @@
 	- 
 
 - ### Hacer menos:
-	- 
+	- Dejar todo a ultimo momento.
+	- Pedir ayuda sobre la hora.
 
 - ### Continuar haciendo:
 	- 

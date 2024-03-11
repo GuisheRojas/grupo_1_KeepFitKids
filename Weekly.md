@@ -308,7 +308,7 @@ Fecha de reunión
 
 - 	19/02/2024
 	- Errores con la base de datos:
-		- Silvi hizo llamada con el profesor Piero pero no pudieroon resolverlo.
+		- Silvi hizo llamada con el profesor Piero pero no pudieron resolverlo.
 	- Ana y Silvi pedimos participación para continuar con la creación de la base de datos.
 		- Intentamos resolver problemas con la creación de la base (Silvi, Ana, Santi y Guille).
 		- Resolvimos algunos pero no pudimos.
@@ -344,3 +344,19 @@ Fecha de reunión
 
 - 	29/02/2024
 	- Ana hizo llamada con el profesor Piero y le explicó como trabajar con el userController y el formulario de creación.
+
+- ## SPRINT 7:
+Fecha de reunión
+-	
+
+### Participantes
+-	Santiago
+-	Guillermo
+-	Silvina
+-	Ana
+-	Jorge
+
+### Temas tratados
+-   
+
+### Decisiones tomadas
