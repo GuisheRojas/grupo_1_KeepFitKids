@@ -36,6 +36,7 @@ const productsController = {
         const stock = await db.Stock.findAll({where: {id_product: req.params.id}})
         const colors = await db.Colors.findAll()
         const sizes = await db.Sizes.findAll();
+        
         res.render('./products/detailproduct', {product, product_image: product_image[0], stock, colors, sizes, css: '/css/detailProduct.css'});
     },
     
@@ -59,7 +60,7 @@ const productsController = {
     getProduct: async (req, res) => {
         const colors = await db.Colors.findAll()
         const sizes = await db.Sizes.findAll();
-        res.render('products/getproduct', {colores: colors, talles: sizes, css: '/css/forms.css'})
+        res.render('products/getProductBasico', {colors, sizes, css: '/css/forms.css'})
     },
 
     //agrega un producto
@@ -72,17 +73,30 @@ const productsController = {
                     description: req.body.description,
                     price: req.body.price,
                     category: req.body.category,
-                    is_new: req.body.is_new
+                    is_new: true
                 });
-                await db.Images.create({
-                    name: req.body.productImage,
+                
+                await db.Product_Image.create({
+                    name: req.file.filename,
                     id_product: newProduct.id  
                 });
-                res.redirect('./getProduct');
+
+                for (let i = 0; i < req.body.size.length; i++) {
+                    let newStock = await db.Stock.create({
+                        quantity: req.body.quantity,
+                        id_product: newProduct.id,
+                        id_color: req.body.color,
+                        id_size: req.body.size[i]
+                    })
+                }
+
+                const colors = await db.Colors.findAll()
+                const sizes = await db.Sizes.findAll();
+                res.render('products/getProductBasico', {colors, sizes, css: '/css/forms.css'})
             } else {
                 const colors = await db.Colors.findAll()
                 const sizes = await db.Sizes.findAll();
-                res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
+                res.render("./products/getProductBasico", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
             }
         } else{
             if(req.file){
@@ -91,7 +105,7 @@ const productsController = {
             }
             const colors = await db.Colors.findAll()
             const sizes = await db.Sizes.findAll();
-            res.render("./products/getproduct", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
+            res.render("./products/getProductBasico", {errors: errors.mapped(), old: req.body, colors, sizes, css: '/css/forms.css'});
         }
     },
 

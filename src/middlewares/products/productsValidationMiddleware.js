@@ -2,7 +2,7 @@ const path = require('path')
 const { body } = require('express-validator')
 
 let productsValidation = [
-    body('nameProd')
+    body('name')
         .notEmpty().withMessage("Debe completar el campo nombre del producto"),
     body('price')
         .notEmpty().withMessage("Debe completar el campo precio").bail()
@@ -17,7 +17,7 @@ let productsValidation = [
     body('size')
         .notEmpty().withMessage("Debe seleccionar al menos un talle")
         .trim(),
-    body('stock')
+    body('quantity')
         .notEmpty().withMessage("Debe completar el campo stock del producto")
         .trim(),
     body('category')
