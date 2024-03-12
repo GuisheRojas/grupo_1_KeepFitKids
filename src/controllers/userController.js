@@ -1,79 +1,39 @@
-const fs = require('fs');
-const path = require('path');
-
-const usersFilePath = path.join(__dirname, '../db (JSON)/usuarios.json');
-let usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs')
 
-const User = require('../database/models/users');
+const fs = require('fs');
+const path = require('path')
+
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+const User = db.Users
+const User_roles = db.User_roles
 
 const controller = {
-
-    login: (req, res) => {
-        res.render('./users/login', {css:'/css/forms.css', user: req.session.user})
-    },
-
-    singIn: (req, res) => {
-        let errors = validationResult(req);
-        if(errors.isEmpty()){
-            let user;
-            for(let i = 0; i < usuarios.length; i++){
-                if(usuarios[i].email == req.body.email){
-                    if(bcrypt.compareSync(req.body.password, usuarios[i].password)){
-                        user = usuarios[i];
-                        break;
-                    }
-                }
-            }
-            
-            if(!user){
-                return res.render('./users/login', {errors: {
-                    credentials: {
-                        msg:'Credenciales inválidas'
-                        }
-                    }, 
-                    old: req.body,
-                    css: '/css/forms.css'
-                });
-            }
-            
-            delete user.password;
-            req.session.user = user;
-
-            if(req.body.remember){
-                res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
-            }
-            
-            res.redirect('/')
-        } else{
-            res.render('./users/login', {errors: errors.mapped(), old: req.body, css: '/css/forms.css'});
-        }
-    },
-
-    register: (req, res)=>{
+    
+    register: async (req, res)=>{
         res.render('./users/register', {css: '/css/forms.css'})
     },
 
-    processRegisterUser: (req, res) => {
+    processRegisterUser: async (req, res) => {
         const errors = validationResult(req);
-        if(errors.isEmpty()) {
-            res.redirect('/users/login');
-        }
-        else {
-            let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
-            fs.unlinkSync(avatarPath);
+
+        if(!errors.isEmpty()) {
+            if(req.file){
+                let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
+                fs.unlinkSync(avatarPath);
+            }
             return res.render('./users/register', {
                 errors: errors.mapped(),
-                old: req.body,
-                css: '/css/forms.css'
+                old: req.body, 
+                css:'/css/forms.css'
             });
         }
 
-        let userInDB = User.findByField('email', req.body.email);
-
-		if (userInDB) {
+        let userInDB = await User.findAll({ where: { email: { [Op.like]: req.body.email } } });
+		if (userInDB.length == 1) {
 			return res.render('./users/register', {
 				errors: {
 					email: {
@@ -81,74 +41,155 @@ const controller = {
 					}
 				},
 				old: req.body, 
-                css: '/css/forms.css'
+                css:'/css/forms.css'
 			});
 		}
-
-		let userToCreate = {
-			...req.body,
-			password: bcrypt.hashSync(req.body.password, 6),
-			avatar: req.file.filename
-		}
-
-		User.create(userToCreate);
+        if(req.file){
+            let userToCreate = {
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 6),
+                avatar: req.file.filename
+            }
+            let user = await User.create(userToCreate);
+            User_roles.create({
+                id_user: user.id,
+                id_role: 2
+            })
+        } else {
+            let userToCreate = {
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 6),
+                avatar: 'profile-42914_960_720.png'
+            }
+            let user = await User.create(userToCreate);
+            console.log(user)
+            User_roles.create({
+                id_user: user.id,
+                id_role: 2
+            })
+        }
 
 		return res.redirect('./login');
 	},
 
-    profile: (req, res) => {
-        res.render('./users/profile', {user: req.session.user, css: '/css/profile.css'})
+    login: (req, res) => {
+        res.render('./users/login', {css:'/css/forms.css', user: req.session.user})
     },
 
-    editProfile: (req, res) => {
-        User.findByPk(req.session.user.id)
-        .then((usuario) =>{
-            return res.render("editProfile", {usuario:usuario})
-        })
-        // User.Users.findByPk(req.params.id)
-        //     .then((usuario) =>{
-        //         return res.render("Usuario", {usuario:usuario})
-        //     })
-        // res.render('./users/editProfile', {user: req.session.user})
+    singIn: async (req, res) => {
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            let user;
+            const userInDB = await User.findAll({where: {email: {[Op.like]: req.body.email }}})
+
+            if(userInDB.length == 1){
+                if(bcrypt.compareSync(req.body.password, userInDB[0].dataValues.password)){
+                    user = userInDB[0].dataValues;
+                }
+                if(!user){
+                    return res.render('./users/login', {errors: {
+                        credentials: {
+                            msg:'La contraseña es incorrecta'
+                            }
+                        }, 
+                        old: req.body,
+                        css: '/css/forms.css'
+                    });
+                }
+                
+                delete user.password;
+                const user_role = await db.User_roles.findOne({where:{ id_user: user.id }})
+                user.role = user_role.dataValues.id_role
+                req.session.user = user;
+    
+                if(req.body.remember){
+                    res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
+                }
+                
+                res.redirect('/')
+            } else {
+                return res.render('./users/login', {errors: {
+                    credentials: {
+                        msg:'Este email no está registrado'
+                        }
+                    }, 
+                    old: req.body,
+                    css: '/css/forms.css'
+                });
+            }
+            
+        } else{
+            res.render('./users/login', {errors: errors.mapped(), old: req.body, css: '/css/forms.css'});
+        }
     },
 
-    editedProfile: (req, res) => {
+    profile: async (req, res) => {
+        const userInDB = await User.findByPk(req.session.user.id)
+        res.render('./users/profile', {user: userInDB.dataValues, css: '/css/profile.css'})
+    },
+
+    editProfile: async (req, res) => {
+        const userInDB = await User.findByPk(req.session.user.id)
+        return res.render("./users/editProfile", {usuario: userInDB.dataValues, css:'/css/forms.css'})
+    },
+
+    editedProfile: async (req, res) => {
         const errors = validationResult(req);
         if(errors.isEmpty()) {
-            res.redirect('/users/profile');
+            //buscamos el usuario con el que estamos trabajando
+            let idUser = req.session.user.id;
+            const userInDB = await User.findByPk(idUser)
+
+            const existentEmail = await User.findAll({where: {email: {[Op.like]: req.body.email}}});
+            
+            if ((existentEmail > 0) && (existentEmail[0].dataValues.email != userInDB.dataValues.email)){
+                
+                return res.render('./users/editProfile', {
+                    errors: {
+                        email: {
+                            msg: 'Este email ya está registrado'
+                        }
+                    },
+                    old: req.body, 
+                    css: '/css/forms.css',
+                    usuario: userInDB.dataValues
+                });
+            } else {
+                if(req.file){  
+                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.session.user.avatar}`);
+                    fs.unlinkSync(avatarPath);
+
+                    let userToUpdate = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 6),
+                        avatar: req.file.filename
+                    }
+                    await User.update(userToUpdate, { where:{ id: idUser } } )
+                } else {
+                    let userToUpdate = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 6),
+                        avatar: 'profile-42914_960_720.png'
+                    }
+                    await User.update(userToUpdate, { where:{ id: idUser } } )
+                }
+                const newUserInDB = await User.findByPk(idUser)
+                req.session.user = newUserInDB;
+                return res.redirect('./profile');
+            }
         }
         else {
-            let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
-            fs.unlinkSync(avatarPath);
+                if(req.file){
+                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
+                    fs.unlinkSync(avatarPath);
+                }
             return res.render('./users/editProfile', {
                 errors: errors.mapped(),
                 old: req.body,
                 css: '/css/forms.css'
             });
         }
-
-        let userInDB = User.findByField('email', req.body.email);
-
-		if (userInDB) {
-			return res.render('./users/profile', {
-				errors: {
-					email: {
-						msg: 'Este email ya está registrado'
-					}
-				},
-				old: req.body, 
-                css: '/css/forms.css'
-			});
-		}
-
-		let userToUpdate = {
-			...req.body,
-			password: bcrypt.hashSync(req.body.password, 6),
-			avatar: req.file.filename
-		}
-        User.update(userToUpdate, {where:{
-            id: req.session.id
-        }})
+	
     },
 
     logOut: (req, res) => {
