@@ -20,11 +20,7 @@
                 <% for(let i=0; i < resultsSearch.length; i++){ %>%>
                         <article class="article">
                             <a href="/products/detailproduct/<%= resultsSearch[i].id %>">
-                                <% for (let j = 0; j < products_images.length; j++) { %>
-                                    <% if (resultsSearch[i].id == products_images[j].dataValues.id_product) { %>
-                                        <img src=/img/products/<%= products_images[j].dataValues.name %> alt=<%= resultsSearch[i].name %> class="product_img">
-                                    <% } %>
-                                <% } %>
+                                <img src=/img/products/<%= resultsSearch[i].image %> alt=<%= resultsSearch[i].name %> class="product_img">
                                 <p class="price">$<%=resultsSearch[i].price %></p>
                                 <h4 class="description"><%=resultsSearch[i].name%></h4>
                             </a>

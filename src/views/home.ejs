@@ -31,12 +31,7 @@
                     <article class="article">
                         
                         <a href="/products/detailproduct/<%= productos[i].dataValues.id %>">
-                            <% for (let j = 0; j < products_images.length; j++) { %>
-                                <% if (productos[i].dataValues.id == products_images[j].dataValues.id_product) { %>
-                                    <img src="/img/products/<%= products_images[j].dataValues.name %>" alt=<%= productos[i].dataValues.name %> class="product_img">
-                                <% } %>
-                            <% } %>
-                            
+                            <img src="/img/products/<%= productos[i].dataValues.image %>" alt=<%= productos[i].dataValues.name %> class="product_img">
                             <p class="price">$<%=productos[i].dataValues.price %></p>
                             <h4 class="description"><%=productos[i].dataValues.name%></h4>
                         </a>

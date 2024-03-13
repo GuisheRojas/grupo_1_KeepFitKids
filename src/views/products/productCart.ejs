@@ -19,18 +19,18 @@
             <div class="todo-junto">
                 <section class="carrito">
                     <ul type="none" class="tabla">
-                        <li>Producto</li>
-                        <li>Detalle</li>
-                        <li>Color</li>
-                        <li>Talle</li>
-                        <li>Cantidad</li>
-                        <li>Precio</li>
-                        <li></li>
+                        <li id="imagen">Producto</li>
+                        <li id="nombre">Detalle</li>
+                        <li id="color">Color</li>
+                        <li id="talle">Talle</li>
+                        <li id="cantidad">Cantidad</li>
+                        <li id="precio">Precio</li>
+                        <li id="elim">    </li>
                     </ul>
                     <% for(let i=0; i<carrito.length; i++){%>
                         <article class="articulo">
                             <div class="imagen">
-                                <img src="/img/products/<%= carrito[i].product_image %>" alt="<%= carrito[i].name %>">
+                                <img src="/img/products/<%= carrito[i].image %>" alt="<%= carrito[i].name %>">
                             </div>
                             <div class="detalle">
                                 <p class="descrip-campo">Producto: </p>

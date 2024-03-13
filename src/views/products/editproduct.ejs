@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="group">
                     <input type="text" id="name" name="nameProd" class="input" placeholder="" 
-                        value="<%= product?.name%>" >
+                        value="<%= product?.dataValues.name%>" >
                     <label for="nameProd" class="label">Nombre del producto</label>
                     <span class="line"></span>
                 </div>
@@ -24,10 +24,8 @@
                 
                 <div class="group">
                     <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
-                    <% for (let j = 0; j < product_image?.length; j++) { %>
-                        <% if (product.dataValues.id == product_image[j].dataValues.id_product) { %>
-                            value="/img/products/<%= product_image[j].dataValues.name %>" >
-                        <% } %>
+                    <% if (product?.image) { %>
+                            value="/img/products/<%= product?.dataValues.name %>" >
                     <% } %>
                     <label for="productImage" class="label">Imagen del producto</label>
                     <span class="line"></span>
@@ -90,7 +88,7 @@
                 
                 <div class="group">
                     <select id="category" name="category" class="input" placeholder="" >
-                            <option value="<%=product.category%>"><%=product.category%></option>
+                            <option value="<%=product?.dataValues.category%>"><%=product?.dataValues.category%></option>
                             <option value="">Seleccione el genero del producto</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>

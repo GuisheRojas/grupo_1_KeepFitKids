@@ -17,13 +17,7 @@
             </div>
             <% for(let i=0; i < products.length; i++){ %>
                 <article class="article">
-                    
-                    <% for (let j = 0; j < products_images.length; j++) { %>
-                        <% if (products[i].dataValues.id == products_images[j].dataValues.id_product) { %>
-                            <img src=/img/products/<%= products_images[j].dataValues.name %> alt=<%= products[i].dataValues.name %> class="product_img">
-                        <% } %>
-                    <% } %>
-                    
+                    <img src=/img/products/<%= products[i].dataValues.image %> alt=<%= products[i].dataValues.name %> class="product_img">
                     <p class="price">$<%=products[i].dataValues.price %></p>
                     <h4 class="description"><%=products[i].dataValues.name%></h4>
                     <div class="buttonsBox">
