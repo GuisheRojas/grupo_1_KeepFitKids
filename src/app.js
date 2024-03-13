@@ -15,6 +15,10 @@ const mainRouter = require('./routes/main');
 const productRouter = require('./routes/products');
 const userRouter = require('./routes/user');
 
+//APIs Routers
+const usersApiRouter = require('./routes/api/usersApiRoutes');
+const productsApiRouter = require('./routes/api/productsApiRoutes');
+
 // Template Engine
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -31,7 +35,11 @@ app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)
 });
 
-app.use('/', mainRouter)
-app.use('/users', userRouter)
-app.use('/products', productRouter)
+//use routers
+app.use('/', mainRouter);
+app.use('/users', userRouter);
+app.use('/products', productRouter);
 
+//use API routers
+app.use('/api/users', usersApiRouter);
+app.use('/api/products', productsApiRouter);
