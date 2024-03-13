@@ -25,17 +25,20 @@ module.exports = (sequelize, dataTypes) => {
       is_new: {
         type: dataTypes.TINYINT,
         allowNull: false
+      },
+      image: {
+        type: dataTypes.STRING,
+        allowNull: false
       }
     };
     let config = {
         tableName: 'products',
         timestamps: false
     };
+
     const Product = sequelize.define(alias, cols, config)
+    
     Product.associate = (models) => {
-        Product.hasMany(models.Product_Image, {
-            foreignKey: "id_product"
-        })
         Product.belongsToMany(models.Users, {
           as: 'user_product',
           through: 'user_products',
@@ -53,5 +56,6 @@ module.exports = (sequelize, dataTypes) => {
           as: "Products", 
       });
     }
+    
   return Product
 }

@@ -29,6 +29,10 @@ module.exports = {
       is_new: {
         type: DataTypes.TINYINT,
         allowNull: false
+      },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
     });
      
