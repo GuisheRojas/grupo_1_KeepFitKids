@@ -7,7 +7,8 @@
 <body>
     <%- include('../partials/header') %>
     <main class="mainForm">
-        <form action="/users/register" method="POST" class="forms" enctype="multipart/form-data">
+        <div class="errors"><ul></ul></div>
+        <form action="/users/register" method="POST" class="forms" id="register-form" enctype="multipart/form-data">
             <h2 class="titulares">Registra una cuenta</h2>
 
             <div class="container">
@@ -83,5 +84,6 @@
     </main>
     
     <%- include('../partials/footer') %>
+    <script src="/public/js/userRegisterValidator.js"></script>
 </body>
 </html>
