@@ -44,7 +44,7 @@ const validations = [
 ]
 window.addEventListener('load', function(){
     let formulario = document.querySelector('#formulario');
-
+    
     form.addEventListener("submit", function(e) {
         e.preventDefault();
 
