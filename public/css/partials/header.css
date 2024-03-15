@@ -44,6 +44,9 @@ header .icon{
     font-size: 6vw;
     margin: 2px;
 }
+#logIn {
+    font-size: 30px;
+}
 
 /* Menu Mobile */
 .menuMobile {
@@ -289,6 +292,10 @@ header .icon, #product-cart {
     #product-cart p, #circle-user p, #logIn p{
         display: block;
         font-size: 15px;
+    }
+
+    #logIn p {
+        margin-right: 10px;
     }
 
     #product-cart, #circle-user, #logIn{
