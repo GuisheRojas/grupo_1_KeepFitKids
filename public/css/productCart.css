@@ -241,8 +241,10 @@ div.botones button{
     }
 
     article.articulo{
-        display: contents;
+        display: flex;
     }
+
+    
 
     article.articulo .imagen, article.articulo .detalle,
     article.articulo .color-prod, article.articulo .talle,

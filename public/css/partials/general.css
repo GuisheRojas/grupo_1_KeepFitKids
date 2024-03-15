@@ -15,4 +15,5 @@ body{
     font-family: 'Coming Soon', cursive;
     color: var(--blanco);
     background-color: var(--verde-keep);
+    border-radius: 3px;
 }

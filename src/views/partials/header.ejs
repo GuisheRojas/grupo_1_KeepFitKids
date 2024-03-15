@@ -6,14 +6,28 @@
             <button type="submit" class="icon" name="lupa"><i class="fa fa-search"></i></button>
         </form>
         <% if(locals.isLogged) {%>
-            <a href="/products/productCart" id="product-cart"><p>Mis compras</p><i class="fa-solid fa-cart-shopping"></i></a>
-            <div>
-                <p>Hola <%= locals.userLogged.name %>!</p>
-                <a href="/users/profile" id="circle-user"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="/products/productCart" id="product-cart"><p id="misCompras">Mis compras</p><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a>
+            <div id="userWelcomeImage">
+                <p id="bienvenidoP">Bienvenido <br> <%= locals.userLogged.name %></p>
+                <a href="/users/profile" id="circle-user"><img src="/img/users/<%= locals.userLogged.avatar%>" id="userImageHeader"></a>
             </div>
-             
+            
         <% } else { %> 
             <a href="/users/login" id="logIn"><p>Iniciar sesion</p><i class="fa-solid fa-right-to-bracket"></i></a> 
-        <% } %>
-    </div>
-</header>
+            <% } %>
+            <div class="openCloseMenu">
+                <a href="#menuMobile" class="openMenuMobile"><i class="fa-solid fa-bars" id="openMenuMobile"></i></a>
+                <a href="#" class="closeMenuMobile"><i class="fa-solid fa-xmark" id="closeMenuMobile"></i></a>
+            </div>
+            <div class="menuMobile" id="menuMobile">
+                <h2 id="menuH2">Menu</h2>
+                <form class="formMobile" action="/products/resultssearch" method="GET">
+                    <input type="search" id="searchMobile" name="search" placeholder="Buscar productos"/>
+                    <button type="submit" id="iconMobile" name="lupa"><i class="fa fa-search"></i></button>
+                </form>
+                <% if(locals.isLogged) { %>
+                    <a href="/products/productCart" id="product-cartMobile"><p id="misComprasMobile">Mis compras</p><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a>
+                <% } %>
+            </div>
+        </div>
+    </header>

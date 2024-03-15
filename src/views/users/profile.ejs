@@ -7,33 +7,35 @@
 <body>
     <%- include('../partials/header') %>
     <main class="profileUser">
-        <h1 class="titulares"> Mi perfil </h1>
+        <div class="perfilTituloEdit">
+            <h1 id="miPerfil"> Mi perfil </h1>
+            <a href="/users/editProfile">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+        </div>
         <container class="userInformation">
             <div class="titleBox">
-                <h2>Mis datos</h2>
-                <a href="/users/editProfile">
-                    <i class="fa-solid fa-pencil" id="editProfile"></i>
-                </a>
+                <h2>Foto de perfil</h2>
             </div>
-            
-            <div class="imgUser">
+            <h2 id="tituloDatos">Mis Datos</h2>
+            <div class="fotoDePerfil">
                 <img src="/img/users/<%=user.avatar%>" alt="Profile Image" class="profileImage">
             </div>
-
-            <div class="userBox">
-                <h4>Nombre de usuario</h4>
-                <h3> <%= user.name %></h3>
-            </div>
-
-            <div class="userBox">
-                <h3>Nombre y apellido</h3>
-                <h2 id="userName"> <%= user.first_name %> </h2>
-                <h2 id="userName"> <%= user.last_name %> </h2>
-            </div>
-
-            <div class="userBox">
-                <h4>Datos de ingreso</h4>
-                <h3> <%= user.email %></h3>
+            <div class="datos">
+                <div class="userBox">
+                    <h3>Nombre de usuario</h3>
+                    <h4> <%= user.name %></h4>
+                </div>
+    
+                <div class="userBox">
+                    <h3>Nombre y apellido</h3>
+                    <h4 id="userName"> <%= user.first_name %> <%= user.last_name %> </h4>
+                </div>
+    
+                <div class="userBox">
+                    <h3>Datos de ingreso</h3>
+                    <h4> <%= user.email %></h4>
+                </div>
             </div>
         </container>
 
