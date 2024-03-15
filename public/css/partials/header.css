@@ -4,6 +4,7 @@
     --gris-oscuro: #666;
     --blanco: #FFF;
     --verde-keep: #4fb59f;
+    --naranja: rgba(255, 72, 0, 0.753);
 }
 
 /*HEADER*/
@@ -406,6 +407,11 @@ header .icon, #product-cart {
         transition: .3s all;
     }
 
+    #product-cart:active #misCompras {
+        color: var(--naranja);
+        transition: 0s all;
+    }
+
     #product-cart:hover #cartIcon {
         font-size: 22px;
         transition: .3s all;
@@ -414,6 +420,11 @@ header .icon, #product-cart {
     #product-cart:not(:hover) #cartIcon {
         font-size: 20px;
         transition: .3s all;
+    }
+
+    #product-cart:active #cartIcon {
+        color: var(--naranja);
+        transition: 0s all;
     }
 
     #circle-user:hover #userImageHeader {

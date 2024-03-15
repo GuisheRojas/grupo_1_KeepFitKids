@@ -30,14 +30,31 @@ img{
 
 .niños, .niñas{
     width: 100%;
+    border-radius: 15px;
+}
+
+.niños img, .niñas img {
+    border-radius: 15px;
 }
 
 #niños:hover{
     box-shadow: 1px 1px 30px #193bbc;
+    transition: .3s all;
+}
+
+#niños:not(:hover) {
+    box-shadow: 0px 0px 0px #193bbc;
+    transition: .3s all;
 }
 
 #niñas:hover{
     box-shadow: 1px 1px 30px #5e6a2c;
+    transition: .3s all;
+}
+
+#niñas:not(:hover) {
+    box-shadow: 0px 0px 0px #5e6a2c;
+    transition: .3s all;
 }
 
 .niños img{
@@ -79,6 +96,7 @@ img{
     flex-wrap: nowrap;
     padding: 15px;
     background-color: var(--verde-claro);
+    border-radius: 20px;
     margin: 10px;
 }
 
@@ -88,7 +106,13 @@ img{
 }
 
 .article:hover{
-    box-shadow: 0px 0px 20px var(--verde-keep);
+    box-shadow: 0px 0px 15px var(--verde-keep);
+    transition: .3s all;
+}
+
+.article:not(:hover) {
+    box-shadow: 0px 0px 0px var(--verde-keep);
+    transition: .3s all;
 }
 
 .produt_img{
