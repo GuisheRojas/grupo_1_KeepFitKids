@@ -5,9 +5,9 @@ const router = express.Router();
                             
 const productsApiController = require('../../controllers/api/productsApiController');
 
-router.get('/list', productsApiController.list)
+router.get('/', productsApiController.list)
 
-router.get('/detail/:id', productsApiController.detail)
+router.get('/:id', productsApiController.detail)
 
 
 module.exports = router;
