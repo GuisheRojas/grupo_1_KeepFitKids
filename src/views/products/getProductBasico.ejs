@@ -33,7 +33,24 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="number" id="price" name="price" class="input" placeholder="">
+                    <input type="url" id="productImageUrl" name="productImageUrl" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.productImageUrl %>"
+                    <%}%>>
+                    <label for="productImageUrl" class="label">Url de la imagen del producto</label>
+                    <span class="line"></span>
+                </div>
+                <% if(locals.errors && errors.productImageUrl){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.productImageUrl.msg %>
+                    </p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="price" name="price" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.price %>"
+                    <%}%>>
                     <label for="price" class="label">Precio del producto</label>
                     <span class="line"></span>
                 </div>

@@ -23,6 +23,9 @@ let productsValidation = [
     body('category')
         .notEmpty().withMessage("Debe seleccionar el género del producto").bail()
         .trim(),
+    body('productImageUrl')
+        .notEmpty().withMessage("Debe completar este campo").bail()
+        .isURL().withMessage("Debe completar el campo con la url de la imagen del producto"),
     body('productImage')
         .custom((value, {req}) =>{
             let file = req.file;
