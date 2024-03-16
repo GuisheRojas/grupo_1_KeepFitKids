@@ -11,7 +11,10 @@
             <h1 class="titulares">Ingrese el producto</h1>
             <div class="container">
                 <div class="group">
-                    <input type="text" id="name" name="name" class="input" placeholder="">
+                    <input type="text" id="name" name="name" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.name %>"
+                    <%}%>>
                     <label for="nameProd" class="label">Nombre del producto</label>
                     <span class="line"></span>
                 </div>
@@ -59,7 +62,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="text" id="description" name="description" class="input" placeholder="">
+                    <input type="text" id="description" name="description" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.description %>"
+                    <%}%>>
                     <label for="description" class="label">Descripción del producto</label>
                     <span class="line"></span>
                 </div>
@@ -95,7 +101,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <select id="category" name="category" class="input" placeholder="" >
+                    <select id="category" name="category" class="input" placeholder="" 
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.category %>"
+                    <%}%>>
                             <option value="">Seleccione el genero del producto</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
@@ -108,7 +117,10 @@
                 <% } %>
                 
                 <div class="group">
-                    <input type="number" id="quantity" name="quantity" class="input" placeholder="">
+                    <input type="number" id="quantity" name="quantity" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.quantity %>"
+                    <%}%>>
                     <label for="quantity" class="label">Stock del producto</label>
                     <span class="line"></span>
                 </div>
