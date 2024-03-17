@@ -49,6 +49,7 @@ header .icon{
     font-size: 30px;
 }
 
+
 /* Menu Mobile */
 .menuMobile {
     position: absolute;
@@ -393,8 +394,23 @@ header .icon, #product-cart {
         margin-left: 10px;
     }
 
-    #product-cart i, #circle-user i, #logIn i{
+    #product-cart i, #circle-user i, #logIn i {
         font-size: 20px;
+    }
+
+    #logIn:hover #pLogIn, #logIn:hover #iLogIn {
+        font-size: 21px;
+        transition: .3s all;
+    }
+
+    #logIn:not(:hover) #pLogIn, #logIn:not(:hover) #iLogIn {
+        font-size: 20px;
+        transition: .3s all;
+    }
+
+    #logIn:active #pLogIn, #logIn:active #iLogIn {
+        color: var(--naranja);
+        transition: 0s all;
     }
 
     #product-cart:hover #misCompras {
