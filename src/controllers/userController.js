@@ -77,50 +77,50 @@ const controller = {
     },
 
     singIn: async (req, res) => {
-        let errors = validationResult(req);
-        if(errors.isEmpty()){
-            let user;
-            const userInDB = await User.findAll({where: {email: {[Op.like]: req.body.email }}})
+        // let errors = validationResult(req);
+        // if(errors.isEmpty()){
+        //     let user;
+        //     const userInDB = await User.findAll({where: {email: {[Op.like]: req.body.email }}})
 
-            if(userInDB.length == 1){
-                if(bcrypt.compareSync(req.body.password, userInDB[0].dataValues.password)){
-                    user = userInDB[0].dataValues;
-                }
-                if(!user){
-                    return res.render('./users/login', {errors: {
-                        credentials: {
-                            msg:'La contraseña es incorrecta'
-                            }
-                        }, 
-                        old: req.body,
-                        css: '/css/forms.css'
-                    });
-                }
+        //     if(userInDB.length == 1){
+        //         if(bcrypt.compareSync(req.body.password, userInDB[0].dataValues.password)){
+        //             user = userInDB[0].dataValues;
+        //         }
+        //         if(!user){
+        //             return res.render('./users/login', {errors: {
+        //                 credentials: {
+        //                     msg:'La contraseña es incorrecta'
+        //                     }
+        //                 }, 
+        //                 old: req.body,
+        //                 css: '/css/forms.css'
+        //             });
+        //         }
                 
-                delete user.password;
-                const user_role = await db.User_roles.findOne({where:{ id_user: user.id }})
-                user.role = user_role.dataValues.id_role
-                req.session.user = user;
+        //         delete user.password;
+        //         const user_role = await db.User_roles.findOne({where:{ id_user: user.id }})
+        //         user.role = user_role.dataValues.id_role
+        //         req.session.user = user;
     
-                if(req.body.remember){
-                    res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
-                }
+        //         if(req.body.remember){
+        //             res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
+        //         }
                 
-                res.redirect('/')
-            } else {
-                return res.render('./users/login', {errors: {
-                    credentials: {
-                        msg:'Este email no está registrado'
-                        }
-                    }, 
-                    old: req.body,
-                    css: '/css/forms.css'
-                });
-            }
+        //         res.redirect('/')
+        //     } else {
+        //         return res.render('./users/login', {errors: {
+        //             credentials: {
+        //                 msg:'Este email no está registrado'
+        //                 }
+        //             }, 
+        //             old: req.body,
+        //             css: '/css/forms.css'
+        //         });
+        //     }
             
-        } else{
-            res.render('./users/login', {errors: errors.mapped(), old: req.body, css: '/css/forms.css'});
-        }
+        // } else{
+        //     res.render('./users/login', {errors: errors.mapped(), old: req.body, css: '/css/forms.css'});
+        // }
     },
 
     profile: async (req, res) => {
