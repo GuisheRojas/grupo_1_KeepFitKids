@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;    
     box-sizing: border-box;
+    font-family: 'Truculenta'
 }
 
 /*TIPOGRAFIAS*/
@@ -12,7 +13,8 @@ body{
 }
 
 .titulares{
-    font-family: 'Coming Soon', cursive;
+    /* font-family: 'Coming Soon', cursive; */
     color: var(--blanco);
     background-color: var(--verde-keep);
+    border-radius: 3px;
 }

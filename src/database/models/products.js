@@ -29,6 +29,10 @@ module.exports = (sequelize, dataTypes) => {
       image: {
         type: dataTypes.STRING,
         allowNull: false
+      },
+      imageUrl: {
+        type: dataTypes.STRING,
+        allowNull: false
       }
     };
     let config = {
@@ -53,7 +57,7 @@ module.exports = (sequelize, dataTypes) => {
         })
         Product.hasMany(models.Stock, {
           foreignKey: "id_product",
-          as: "Products", 
+          as: "products_stock", 
       });
     }
     
