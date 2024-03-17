@@ -59,7 +59,7 @@ const controller = {
             let userToCreate = {
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 6),
-                avatar: 'profile-42914_960_720.png'
+                avatar: 'defaultUserImage.png'
             }
             let user = await User.create(userToCreate);
             console.log(user)
@@ -155,10 +155,7 @@ const controller = {
                     usuario: userInDB.dataValues
                 });
             } else {
-                if(req.file){  
-                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.session.user.avatar}`);
-                    fs.unlinkSync(avatarPath);
-
+                if(req.file){
                     let userToUpdate = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 6),
@@ -166,10 +163,13 @@ const controller = {
                     }
                     await User.update(userToUpdate, { where:{ id: idUser } } )
                 } else {
+                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.session.user.avatar}`);
+                    fs.unlinkSync(avatarPath);
+                    
                     let userToUpdate = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 6),
-                        avatar: 'profile-42914_960_720.png'
+                        avatar: 'defaultUserImage.png'
                     }
                     await User.update(userToUpdate, { where:{ id: idUser } } )
                 }
@@ -179,10 +179,10 @@ const controller = {
             }
         }
         else {
-                if(req.file){
-                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
-                    fs.unlinkSync(avatarPath);
-                }
+            if(req.file){
+                let avatarPath = path.join(__dirname, `../../public/img/users/${req.file.filename}`);
+                fs.unlinkSync(avatarPath);
+            }
             return res.render('./users/editProfile', {
                 errors: errors.mapped(),
                 old: req.body,
