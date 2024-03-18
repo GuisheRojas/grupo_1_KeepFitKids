@@ -11,7 +11,7 @@ const guestMiddleware = require('../middlewares/users/guestMiddleware');
 const authMiddleware = require('../middlewares/users/authMiddleware');
 
 //hace las validaciones para iniciar sesión
-const {singInValidation, processLogin} = require('../middlewares/users/singInValidationMiddleware');
+const singInValidation = require('../middlewares/users/singInValidationMiddleware');
 const upload = require('../middlewares/users/multerMiddleware');
 
 //hace las validaciones para el registro de un usuario
@@ -27,7 +27,7 @@ router.post('/register', upload.single('avatar'), registerValidation, userContro
 
 //inicia la sesión de un usuario
 router.get('/login', guestMiddleware, userController.login);
-router.post('/login', singInValidation, processLogin, userController.singIn);
+router.post('/login', singInValidation, userController.singIn);
 
 //accede al perfil del usuario
 router.get('/profile',authMiddleware, userController.profile);
