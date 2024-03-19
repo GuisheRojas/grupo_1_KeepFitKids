@@ -27,7 +27,7 @@
     text-align: center;
 }
 .forms .titulares{
-    font-size: 12px;
+    font-size: 25px;
     margin-bottom: .5em;
     color: var(--naranja);
     background: none;
@@ -49,7 +49,7 @@
     width: 100%;
     background: none;
     color: #706c6c;
-    font-size: .5rem;
+    font-size: 1rem;
     margin-top: 1.5em;
     margin-bottom: .5em;
     border: none;
@@ -62,7 +62,7 @@
 
 .group .input:focus + .label,
 .group .input:not(:placeholder-shown) + .label{
-    transform: translateY(-12px) scale(.7);
+    transform: translateY(-20px) scale(.7);
     transform-origin: left top;
     color: var(--naranja)
 }
@@ -71,10 +71,11 @@
     color: var(--color);
     cursor: pointer;
     position: absolute;
-    margin-top: 1.8em;
+    font-size: 1.7rem;
+    margin-top: 1.1em;
     top: 0;
     left: 5px;
-    transform: translateY(10px);
+    transform: translateY(0px);
     transition: transform 500ms, color 300ms;
 }
 
@@ -82,11 +83,17 @@
     background: var(--verde-keep);
     color: white;
     font-weight: 300;
-    font-size: .6rem;
+    font-size: 1.5rem;
     padding: .5em .3em;
     margin-top: 1.5em;
     border: none;
     border-radius: .5em;
+}
+
+.forms .submit:hover {
+    background: #6cd4be;
+    font-size: 1.6rem;
+    transition: .3s all;
 }
 
 .line{
@@ -119,23 +126,39 @@ div.group-remember{
     margin: 1em;
 }
 
+.cuentaregister a {
+    font-size: 1rem;
+}
+
 
 @media(min-width: 361px){
     /*FORMS*/
     .forms .titulares{
-        font-size: 1rem;
+        font-size: 2rem;
     }
     
     .group .input{
-        font-size: .3rem;
+        font-size: 1rem;
+    }
+
+    div.group-remember {
+        margin: 2em;
+    }
+
+    .remember-text {
+        font-size: 1.2rem;
     }
     
     .forms .submit{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     
     .label{
-        font-size: .8rem;
+        font-size: 1rem;
+    }
+
+    .cuentaregister a {
+        font-size: 1.1rem;
     }
 }
 
@@ -145,19 +168,27 @@ div.group-remember{
             background-image:  radial-gradient(#ff4800c0 1.3px, transparent 1.3px), radial-gradient(#ff4800c0 1.3px, #fff 1.3px);
         }
         .forms .titulares{
-            font-size: 1.3;
+            font-size: 2;
         }
         
         .group .input{
-            font-size: .8rem;
+            font-size: 1rem;
         }
         
-        .forms .submit{
+        .remember-text {
             font-size: 1.3rem;
+        }
+
+        .forms .submit{
+            font-size: 1.5rem;
         }
         
         .label{
             font-size: 1.1rem;
+        }
+
+        .cuentaregister a {
+            font-size: 1.3rem;
         }
 }
 
@@ -168,11 +199,11 @@ div.group-remember{
     }
 
     .forms .titulares{
-        font-size: 1.5rem;
+        font-size: 2.3rem;
     }
     
     .group .input{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
         
     .forms .submit{
@@ -181,6 +212,16 @@ div.group-remember{
         
     .label{
         font-size: 1.3rem;
+    }
+
+    .group .input:focus + .label,
+    .group .input:not(:placeholder-shown) + .label{
+    transform: translateY(-24px) scale(.7);
+    }
+
+    .group .label{
+        margin-top: 1.7em;
+        transform: translateY(1px);
     }
 
 }
