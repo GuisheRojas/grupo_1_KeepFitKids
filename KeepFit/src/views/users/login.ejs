@@ -9,10 +9,10 @@
 <body>
     <%- include('../partials/header') %>
     <main class="mainForm">
-        <form action="/users/login" method="POST" class="forms" id="formulario" novalidate>
+        <form action="/users/login" method="POST" class="forms" id="formLogIn">
             <h2 class="titulares">Ingresa a tu cuenta</h2>
             <% if(locals.errors && errors.credentials){ %>
-                <p class="fbFormsProd"> <%= errors.credentials.msg %></p>    
+                <p class="fbFormsProd"> <%= errors.credentials.msg %></p>
             <% } %>
             <div class="container">
                 <div class="group">
@@ -22,20 +22,20 @@
                     <% } %>> 
                     <label for="email" class="label">Email:</label>
                     <span class="line"></span>
-                    <span class="errors"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.email){ %>
-                    <p class="fbFormsProd"> <%= errors.email.msg %></p>    
+                    <p class="fbFormsProd"> <%= errors.email.msg %></p>
                 <% } %>
 
                 <div class="group">
                     <input type="password" id="password" name="password" class="input" placeholder=" "> 
                     <label for="password" class="label">Contraseña: </label>
                     <span class="line"></span>
-                    <span class="errors"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.password){ %>
-                    <p class="fbFormsProd"> <%= errors.password.msg %></p>    
+                    <p class="fbFormsProd"> <%= errors.password.msg %></p>
                 <% } %>
 
                 <div class="group-remember">
@@ -46,7 +46,7 @@
                 <div class="cuentaregister">
                     <a href="/users/register"><p>¿No tenés cuenta? ¡Regístrate!</p></a>
                 </div>
-                
+
                 <input type="submit" class="submit" value="Ingresar">
             </div>
         </form>

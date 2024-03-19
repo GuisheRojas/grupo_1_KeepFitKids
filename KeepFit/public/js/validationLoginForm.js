@@ -5,20 +5,15 @@ const isEmpty = (input) => input.value && input.value.trim() != "";
 const validations = [
     {
         inputName: "email",
-        validations: [
+        inputValidations: [
             {
-                inputName: "email",
-                validations: [
-                  {
-                    validator: isEmpty,
-                    errorMsg: "Debes completar tu email",
-                  },
-                  {
-                    validator: (input) => /\S+@\S+\.\S+/.test(input.value) != "",
-                    errorMsg: "Email debe tener un formato válido",
-                  },
-                ],
-              },
+                validator: isEmpty,
+                errorMsg: "El mail no puede estar vacio"
+            },
+            //{
+            //    validator: isEmail,
+            //    errorMsg: "El mail debe ser valido"
+            //},
             //{
             //    validator: existe,
             //    errorMsg: "El mail debe existir en la BD"
@@ -27,7 +22,7 @@ const validations = [
     },
     {
         inputName: "password",
-        validations: [
+        inputValidations: [
             {
                 validator: isEmpty,
                 errorMsg: "La contraseña no puede estar vacia"
@@ -41,28 +36,28 @@ const validations = [
    
 ]
 window.addEventListener('load', function(){
-    let formulario = document.querySelector('#formulario');
-    console.log(formulario)
+    let form = document.querySelector('#formLogIn');
+
     form.addEventListener("submit", function(e) {
         e.preventDefault();
+        console.log('Entré')
 
-        const errores = [];
+        let errores = [];
         validations.forEach((inputToValidate) => {
-            const input = form[inputToValidate.inputName];
-            for(const validation of inputToValidate.validations) {
-                console.log(validation)
-                const isValid = validation.validator(input);
+            let input = form[inputToValidate.inputName];
+            for(let validation of inputToValidate.inputValidations) {
+                let isValid = validation.validator(input);
                 if (!isValid) {
                     errores.push(validation.errorMsg);
-                    input.parentElement.classList.add("is-invalid");
+                    input.parentElement.classList.add("fbFormsProd");
                     input.parentElement.classList.remove("is-valid");
-                    input.parentElementr.querySelector(".error").innerHTML =
+                    input.parentElement.querySelector(".error").innerHTML =
                         validation.errorMsg;
                     return
                 }
             }
             input.parentElement.classList.add("is-valid");
-            input.parentElement.classList.remove("is-invalid");
+            input.parentElement.classList.remove("fbFormsProd");
             input.parentElement.querySelector(".error").innerHTML = "";
         })
 
