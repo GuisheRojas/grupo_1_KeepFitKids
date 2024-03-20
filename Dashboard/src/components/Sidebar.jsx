@@ -1,12 +1,13 @@
 import logoDH from "../assets/images/logo-DH.png"
+import logoKF from "../assets/images/logo-KeepFit.png"
 
 const Sidebar = () => {
   return (
     <>
-        <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
         <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div className="sidebar-brand-icon">
-                <img className="w-100" src={logoDH} alt="Digital House"/>
+                <img className="w-100" src={logoKF} alt="Digital House"/>
             </div>
         </a>
 

@@ -44,15 +44,15 @@ class ContentRowTop extends Component {
     }];
 
     const contentRowMovies = [
-      { titulo: "Movies in Data Base", cifra: this.state.totalProd, colorBorde: "primary", icono: "film" },
-      { titulo: "Total awards", cifra: this.state.totalUsers, colorBorde: "success", icono: "award" },
-      { titulo: "Actors quantity", cifra: this.state.totalCategories, colorBorde: "warning", icono: "user" }
+      { titulo: "Total de productos", cifra: this.state.totalProd, colorBorde: "primary", icono: "box" },
+      { titulo: "Total de usuarios", cifra: this.state.totalUsers, colorBorde: "success", icono: "user" },
+      { titulo: "Total de categorías", cifra: this.state.totalCategories, colorBorde: "warning", icono: "star" }
     ];
 
     return (
       <div className="container-fluid">
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+          <h1 className="h3 mb-0 text-gray-800">KeepFit Dashboard</h1>
         </div>
 
         <div className="row">

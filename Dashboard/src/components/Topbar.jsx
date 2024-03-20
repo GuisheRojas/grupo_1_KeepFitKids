@@ -1,4 +1,4 @@
-import jordan from "../assets/images/jordan-walke.png"
+import defaultImage from "../assets/images/defaultUserImage.png"
 
 const Topbar = () => {
   return (
@@ -12,14 +12,14 @@ const Topbar = () => {
             <li className="nav-item dropdown no-arrow mx-1">
                 <a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
                     <i className="fas fa-bell fa-fw"></i>
-                        <span className="badge badge-danger badge-counter">3+</span>
+                        <span className="badge badge-danger badge-counter"></span>
                 </a>
             </li>
 
             <li className="nav-item dropdown no-arrow mx-1">
                 <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
                     <i className="fas fa-envelope fa-fw"></i>
-                    <span className="badge badge-danger badge-counter">7</span>
+                    <span className="badge badge-danger badge-counter"></span>
                 </a>
             </li>
 
@@ -27,8 +27,8 @@ const Topbar = () => {
 
             <li className="nav-item dropdown no-arrow">
                 <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-                    <span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
-                    <img className="img-profile rounded-circle" src={jordan} alt="Jordan Walke - Creador de React" width="60"/>
+                    <span className="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                    <img className="img-profile rounded-circle" src={defaultImage} alt="Default Profile Image" width="60"/>
                 </a>
             </li>
         </ul>
