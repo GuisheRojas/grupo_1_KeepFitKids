@@ -5,7 +5,7 @@ const {Op} = require('sequelize');
 const productsApiController = {
     list: async (req, res) => {
         const productos = await db.Products.findAll({
-            attributes:['id', 'name', 'description'],
+            attributes:['id', 'name', 'description', 'category'],
             include: [{model: db.Stock, as: 'products_stock', attributes: ['quantity'],
                 include: [
                     {model: db.Colors,as: 'colors_stock', attributes: ['name']}, 
@@ -18,7 +18,7 @@ const productsApiController = {
         let contUni = 0;
         for (let i = 0; i < productos.length; i++) {
             const element = productos[i];
-            element.dataValues.detail = 'http://localhost:8000' + req.originalUrl + '/' + element.id;
+            element.dataValues.detail = 'http://localhost:8000' + req.originalUrl + element.id;
             if(element.category == 'Femenino'){
                 contFem ++;
             } else if(element.category == 'Masculino'){
@@ -51,11 +51,6 @@ const productsApiController = {
         res.json(product)
     },
 
-    create: async (req, res) => {},
-
-    update: (req, res) => {},
-
-    destroy: async (req, res) => {}
 }
 
 module.exports = productsApiController;
