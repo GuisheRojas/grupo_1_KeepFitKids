@@ -29,12 +29,12 @@ const productsApiController = {
         }
         let respuesta = {
             count: productos.length,
-            countByCategrory: {
+            countByCategory: {
                 Femenino: contFem,
                 Masculino: contMasc,
                 Unisex: contUni
             },
-            products: { ...productos }
+            products: [{ ...productos }]
         }
         res.json(respuesta)
     },
