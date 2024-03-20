@@ -19,6 +19,7 @@
                     <% } %>>
                     <label for="name" class="label">Nombre de Usuario: </label>
                     <span class="line"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.name){ %>
                     <p class="fbFormsProd"> <%= errors.name.msg %> </p>    
@@ -31,6 +32,7 @@
                     <% } %>>
                     <label for="first_name" class="label">Nombre: </label>
                     <span class="line"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.first_name){ %>
                     <p class="fbFormsProd"> <%= errors.first_name.msg %> </p>    
@@ -43,6 +45,7 @@
                     <% } %>>
                     <label for="last_name" class="label">Apellido: </label>
                     <span class="line"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.last_name){ %>
                     <p class="fbFormsProd"> <%= errors.last_name.msg %> </p>    
@@ -55,6 +58,7 @@
                     <% } %>>
                     <label for="email" class="label">Email:</label>
                     <span class="line"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.email){ %>
                     <p class="fbFormsProd"> <%= errors.email.msg %> </p>    
@@ -64,6 +68,7 @@
                     <input type="password" name="password" id="password" class="input">
                     <label for="password" class="label">Contraseña: </label>
                     <span class="line"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.password){ %>
                     <p class="fbFormsProd"> <%= errors.password.msg %> </p>    
@@ -73,6 +78,7 @@
                     <input type="file" name="avatar" id="avatar" class="input" accept=".jpg, .png, .gif, .jpeg" value="">
                     <label for="avatar" class="label">Foto de perfil: </label>
                     <span class="line"></span>
+                    <span class="error"></span>
                 </div>
                 <% if(locals.errors && errors.avatar){ %>
                     <p class="fbFormsProd"> <%= errors.avatar.msg %> </p>    
@@ -84,6 +90,6 @@
     </main>
     
     <%- include('../partials/footer') %>
-    <script src="/public/js/userRegisterValidator.js"></script>
+    <script src="/js/userRegisterValidator.js"></script>
 </body>
 </html>

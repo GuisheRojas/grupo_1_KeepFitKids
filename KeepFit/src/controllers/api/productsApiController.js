@@ -51,11 +51,6 @@ const productsApiController = {
         res.json(product)
     },
 
-    create: async (req, res) => {},
-
-    update: (req, res) => {},
-
-    destroy: async (req, res) => {}
 }
 
 module.exports = productsApiController;
