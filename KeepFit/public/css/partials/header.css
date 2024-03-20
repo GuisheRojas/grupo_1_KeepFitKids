@@ -42,7 +42,7 @@ header .icon{
 
 #product-cart, #circle-user, #logIn{
     color: var(--verde-keep);
-    font-size: 6vw;
+    font-size: 10vw;
     margin: 2px;
 }
 #logIn {
@@ -214,12 +214,15 @@ header .icon, #product-cart {
         outline: none;
         color: var(--verde-keep);
         padding-left: 10px;
+        font-size: 20px;
         width: 160px;
     }
 
     header .form input[type="search"]::placeholder {
         color: var(--verde-keep);
     }
+
+    
     
     header .form .icon{
         background-color: var(--blanco);
@@ -230,16 +233,21 @@ header .icon, #product-cart {
         padding: 2px;
         left: 142px;
         bottom: 13px;
-        font-size: 21px;
+        font-size: 20px;
     }
     
     header .form .icon i{
-        font-size: 14px;
+        font-size: 18px;
     }
 
     #product-cart, #circle-user, #logIn{
         font-size: 21px;
     }
+
+    #logIn i {
+        font-size: 25px;
+    }
+
     #userImageHeader {
         width: 50px;
     }
@@ -274,7 +282,7 @@ header .icon, #product-cart {
     }
     
     header .form input[type="search"]{
-        font-size: 14px;
+        font-size: 25px;
         padding-left: 15px;
         width: 220px;
     }
@@ -293,7 +301,7 @@ header .icon, #product-cart {
     /*product-cart y circle-user*/
     #product-cart p, #circle-user p, #logIn p{
         display: block;
-        font-size: 15px;
+        font-size: 25px;
     }
 
     #logIn p {
@@ -326,7 +334,7 @@ header .icon, #product-cart {
         text-align: center;
         font-family: 'Truculenta', 'sans-serif';
         font-weight: 400;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: var(--verde-keep);
     }
 
@@ -358,11 +366,11 @@ header .icon, #product-cart {
 
         
     header .form input[type="search"]{
-        font-size: 18px;
+        font-size: 30px;
         padding-left: 15px;
         width: 300px;
     }
-        
+
     header .form .icon{
         border-left: var(--gris-oscuro);
         width: 25px;
@@ -372,13 +380,13 @@ header .icon, #product-cart {
     }
 
     header .form .icon i{
-        font-size: 24px;
+        font-size: 30px;
     }
 
     /*product-cart y circle-user*/
     #product-cart p, #circle-user p, #logIn p{
         display: block;
-        font-size: 20px;
+        font-size: 30px;
     }
 
     #product-cart, #circle-user, #logIn{
@@ -395,16 +403,16 @@ header .icon, #product-cart {
     }
 
     #product-cart i, #circle-user i, #logIn i {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     #logIn:hover #pLogIn, #logIn:hover #iLogIn {
-        font-size: 21px;
+        font-size: 31px;
         transition: .3s all;
     }
 
     #logIn:not(:hover) #pLogIn, #logIn:not(:hover) #iLogIn {
-        font-size: 20px;
+        font-size: 30px;
         transition: .3s all;
     }
 
@@ -414,12 +422,12 @@ header .icon, #product-cart {
     }
 
     #product-cart:hover #misCompras {
-        font-size: 22px;
+        font-size: 31px;
         transition: .3s all;
     }
 
     #product-cart:not(:hover) #misCompras {
-        font-size: 20px;
+        font-size: 30px;
         transition: .3s all;
     }
 

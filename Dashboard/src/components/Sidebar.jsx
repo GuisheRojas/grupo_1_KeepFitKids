@@ -15,7 +15,7 @@ const Sidebar = () => {
         <li className="nav-item active">
             <a className="nav-link" href="/">
                 <i className="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard - DH movies</span></a>
+                <span>Dashboard - KeepFit Kids</span></a>
         </li>
 
         <hr className="sidebar-divider" />
@@ -24,21 +24,21 @@ const Sidebar = () => {
 
         <li className="nav-item">
             <a className="nav-link collapsed" href="/">
-                <i className="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
+                <i className="fa fa-archive"></i>
+                <span>Productos</span>
             </a>
         </li>
 
         <li className="nav-item">
             <a className="nav-link" href="/">
-                <i className="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+                <i className="fa fa-user-circle"></i>
+                <span>Usuarios</span></a>
         </li>
 
         <li className="nav-item">
             <a className="nav-link" href="/">
                 <i className="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Categorias</span></a>
         </li>
 
         <hr className="sidebar-divider d-none d-md-block" />
