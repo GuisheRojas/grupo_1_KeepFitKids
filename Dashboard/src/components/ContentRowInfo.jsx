@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const ContentRowMovies = ({titulo, cifra, colorBorde, icono}) => {
+const ContentRowInfo = ({titulo, cifra, colorBorde, icono}) => {
 
   return (
     <div className="col-md-4 mb-4">
@@ -21,18 +21,20 @@ const ContentRowMovies = ({titulo, cifra, colorBorde, icono}) => {
   )
 }
 
-ContentRowMovies.propTypes = {
+ContentRowInfo
+.propTypes = {
     titulo: PropTypes.string.isRequired,
     colorBorde: PropTypes.oneOf(["primary", "success", "warning"]),
     cifra: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     icono: PropTypes.oneOf(["film", "award", "user"]).isRequired
 }
 
-ContentRowMovies.defaultProps = {
+ContentRowInfo
+.defaultProps = {
     titulo: "N/A",
     colorBorde: "danger",
     cifra: "N/A",
     icono: "question"
 }
 
-export default ContentRowMovies
+export default ContentRowInfo

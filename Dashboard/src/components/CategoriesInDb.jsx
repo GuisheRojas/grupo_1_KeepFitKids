@@ -1,5 +1,5 @@
-const GenresInDb = () => {
-const genres = ["Femenino", "Masculino", "Unisex"];
+const CategoriesInDb = () => {
+const categories = ["Femenino", "Masculino", "Unisex"];
 
   return (
     <div className="col-lg-6 mb-4">						
@@ -10,11 +10,11 @@ const genres = ["Femenino", "Masculino", "Unisex"];
             <div className="card-body">
                 <div className="row">
 
-                    { genres.map( (genre, index) => 
+                    { categories.map( (categorie, index) => 
                         <div className="col-lg-6 mb-4" key={index}>
                             <div className="card bg-dark text-white shadow">
                                 <div className="card-body">
-                                    {genre}
+                                    {categorie}
                                 </div>
                             </div>
                         </div>
@@ -26,4 +26,4 @@ const genres = ["Femenino", "Masculino", "Unisex"];
   )
 }
 
-export default GenresInDb
+export default CategoriesInDb

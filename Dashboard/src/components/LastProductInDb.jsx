@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import DH from '../assets/images/logo-DH.png'
 
 
-const LastMovieInDb = ({ img, alt, description }) => {
+const LastProductInDb
+ = ({ img, alt, description }) => {
   return (
     <div className="col-lg-6 mb-4">
         <div className="card shadow mb-4">
@@ -21,16 +21,18 @@ const LastMovieInDb = ({ img, alt, description }) => {
   )
 }
 
-LastMovieInDb.propTypes = {
+LastProductInDb
+.propTypes = {
     img: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
 }
 
-LastMovieInDb.defaultProps = {
-    img: DH,
-    alt: "N/A",
-    description: "N/A"
+LastProductInDb
+.defaultProps = {
+    img: '',
+    alt: '',
+    description: ''
 }
 
-export default LastMovieInDb
+export default LastProductInDb

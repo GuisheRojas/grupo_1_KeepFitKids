@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ContentRowMovies from "./ContentRowMovies";
-import GenresInDb from "./GenresInDb";
-import LastMovieInDb from "./LastMovieInDb";
+import ContentRowInfo from "./ContentRowInfo";
+import CategoriesInDb from "./CategoriesInDb";
+import LastProductInDb from "./LastProductInDb";
 
 class ContentRowTop extends Component {
   constructor(props) {

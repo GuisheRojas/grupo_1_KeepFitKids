@@ -24,20 +24,20 @@ const Sidebar = () => {
         <div className="sidebar-heading">Actions</div>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/">
+            <a className="nav-link collapsed" href="/products">
                 <i className="fa fa-archive"></i>
                 <span>Productos</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link" href="/">
+            <a className="nav-link" href="/users">
                 <i className="fa fa-user-circle"></i>
                 <span>Usuarios</span></a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link" href="/">
+            <a className="nav-link" href="/categories">
                 <i className="fas fa-fw fa-table"></i>
                 <span>Categorias</span></a>
         </li>
