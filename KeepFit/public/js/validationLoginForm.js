@@ -1,7 +1,6 @@
 const isEmpty = (input) => input.value && input.value.trim() != "";
 //const existe = (input) => 
 
-
 const validations = [
     {
         inputName: "email",
@@ -10,14 +9,21 @@ const validations = [
                 validator: isEmpty,
                 errorMsg: "El mail no puede estar vacio"
             },
-            //{
-            //    validator: isEmail,
-            //    errorMsg: "El mail debe ser valido"
-            //},
-            //{
-            //    validator: existe,
-            //    errorMsg: "El mail debe existir en la BD"
-            //}
+            {
+               validator: (input) => validator.isEmail(input),
+               errorMsg: "El mail debe ser valido"
+            },
+            {
+            // CREAMOS UNA FUNC ASINCRONICA PARA BUSCAR EN LA BASE DE DATOS
+                validator: async(input) => {
+                // luego creamos un endpoint que lo llamamos utilizando el metodo fetch
+                    const res = await fetch (`/users/validations/${input}`)
+                    // poner comilla simple invertida
+                    const data = await res.json()
+                    return !data.existe
+                },
+                errorMsg: "El e-mail ya existe"
+            }
         ]
     },
     {
@@ -27,13 +33,19 @@ const validations = [
                 validator: isEmpty,
                 errorMsg: "La contraseña no puede estar vacia"
             },
-            //{
-            //    validator: existe,
-            //    errorMsg: "debe coincidir con la existente en la BD"
-            //}
+            {
+                // CREAMOS UNA FUNC ASINCRONICA PARA BUSCAR EN LA BASE DE DATOS
+                    validator: async(input) => {
+                    // luego creamos un endpoint que lo llamamos utilizando el metodo fetch
+                        const res = await fetch (`/users/validations/${input}`)
+                        // poner comilla simple invertida
+                        const data = await res.json()
+                        return !data.existe
+                    },
+                    errorMsg: "La contraseña ya existe"
+                }
         ]
     }
-   
 ]
 window.addEventListener('load', function(){
     let form = document.querySelector('#formLogIn');

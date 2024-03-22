@@ -23,7 +23,7 @@ const registerValidation = require('../middlewares/users/validateRegisterMiddlew
 router.get('/register', guestMiddleware, userController.register);
 
 //procesa a un usuario
-router.post('/register', upload.single('avatar'), registerValidation, userController.processRegisterUser);
+router.post('/register', upload.single('avatar'), userController.processRegisterUser);
 
 //inicia la sesión de un usuario
 router.get('/login', guestMiddleware, userController.login);
