@@ -18,16 +18,14 @@ const usersApiController = {
 
     detail: async (req, res) => {
         const user = await db.Users.findByPk(req.params.id, {attributes: ['id', 'name', 'first_name', 'last_name', 'email', 'avatar']});
+        const http = 'http://';
+        const https = 'https://';
+        if(!user.dataValues.avatar.includes(http) && !user.dataValues.avatar.includes(https)) {
+            user.dataValues.avatar = `http://localhost:8000/img/users/${user.dataValues.avatar}`;
+        }
         res.json(user)
     },
 
-    search: (req, res) => {},
-
-    create: (req, res) => {},
-
-    update: (req, res) => {},
-
-    destroy: (req, res) => {},
 }
 
 module.exports = usersApiController;

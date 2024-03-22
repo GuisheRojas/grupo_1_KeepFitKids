@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors')
 
 const PORT = 8000;
 
@@ -30,6 +31,7 @@ app.use(session({secret: 'Secret',
     saveUninitialized: false}))
 app.use(cookies())
 app.use(userLoggedMiddleware);
+app.use(cors());
 
 app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)

@@ -48,9 +48,10 @@
         
         if (errores.length > 0) {
             event.preventDefault()
-            let ulErrores = document.querySelector("div.errors ul");
+            let ulErrores = document.querySelector(".error");
+            console.log(ulErrores);
             for (let i= 0; i < errores.length; i++){
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+                ulErrores.innerHTML += `<li>${errores[i]}</li>`
             }
         } else {
              

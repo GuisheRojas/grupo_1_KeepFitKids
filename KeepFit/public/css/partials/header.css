@@ -334,7 +334,7 @@ header .icon, #product-cart {
         text-align: center;
         font-family: 'Truculenta', 'sans-serif';
         font-weight: 400;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: var(--verde-keep);
     }
 
@@ -370,11 +370,6 @@ header .icon, #product-cart {
         padding-left: 15px;
         width: 300px;
     }
-        
-    header .form input[type="search"]:hover {
-        animation-name: borderSearch;
-        transition: .3s all;
-    }
 
     header .form .icon{
         border-left: var(--gris-oscuro);
@@ -391,7 +386,7 @@ header .icon, #product-cart {
     /*product-cart y circle-user*/
     #product-cart p, #circle-user p, #logIn p{
         display: block;
-        font-size: 24px;
+        font-size: 30px;
     }
 
     #product-cart, #circle-user, #logIn{
@@ -427,12 +422,12 @@ header .icon, #product-cart {
     }
 
     #product-cart:hover #misCompras {
-        font-size: 22px;
+        font-size: 31px;
         transition: .3s all;
     }
 
     #product-cart:not(:hover) #misCompras {
-        font-size: 20px;
+        font-size: 30px;
         transition: .3s all;
     }
 
@@ -464,29 +459,5 @@ header .icon, #product-cart {
     #circle-user:not(:hover) #userImageHeader {
         width: 70px;
         transition: .3s all;
-    }
-}
-
-
-
-@keyframes bordeSearch {
-    0% {
-        border-bottom: 1px solid var(--verde-keep);
-    }
-
-    20% {
-        border-right: 1px solid var(--verde-keep);
-    }
-
-    40% {
-        border-top: 1px solid var(--verde-keep);
-    }
-
-    60% {
-        border-left: 1px solid var(--verde-keep);
-    }
-
-    100% {
-        border: 1px solid var(--verde-keep);
     }
 }

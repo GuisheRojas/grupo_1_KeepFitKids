@@ -5,7 +5,7 @@ const {Op} = require('sequelize');
 const productsApiController = {
     list: async (req, res) => {
         const productos = await db.Products.findAll({
-            attributes:['id', 'name', 'description'],
+            attributes:['id', 'name', 'description', 'category'],
             include: [{model: db.Stock, as: 'products_stock', attributes: ['quantity'],
                 include: [
                     {model: db.Colors,as: 'colors_stock', attributes: ['name']}, 
@@ -27,14 +27,16 @@ const productsApiController = {
                 contUni ++;
             }
         }
+        const prod = [...productos]
         let respuesta = {
             count: productos.length,
-            countByCategrory: {
+            countByCategory: {
                 Femenino: contFem,
                 Masculino: contMasc,
                 Unisex: contUni
             },
-            products: { ...productos }
+            products:  [...prod ]
+        
         }
         res.json(respuesta)
     },
@@ -48,14 +50,14 @@ const productsApiController = {
                 ]
             }]
         })
+        const http = 'http://';
+        const https = 'https://';
+        if(!product.dataValues.image.includes(http) && !product.dataValues.image.includes(https)) {
+            product.dataValues.image = `http://localhost:8000/img/products/${product.dataValues.image}`;
+        }
         res.json(product)
     },
 
-    create: async (req, res) => {},
-
-    update: (req, res) => {},
-
-    destroy: async (req, res) => {}
 }
 
 module.exports = productsApiController;

@@ -1,48 +1,86 @@
-import ContentRowMovies from "./ContentRowMovies"
-import GenresInDb from "./GenresInDb"
-import LastMovieInDb from "./LastMovieInDb"
-//import mandalorian from '../assets/images/mandalorian.jpg'
+import React, { Component } from "react";
+import ContentRowInfo from "./ContentRowInfo";
+import CategoriesInDb from "./CategoriesInDb";
+import LastProductInDb from "./LastProductInDb";
 
+class ContentRowTop extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalProd: 0,
+      totalUsers: 0,
+      totalCategories: 0,
+      lastProduct: {}
+    };
+  }
 
-const ContentRowTop = () => {
-  const contentRowMovies = [
-    { titulo: "Movies in Data Base", cifra: 21, colorBorde: "primary", icono: "film" },
-    { titulo: "Total awards", cifra: 79, colorBorde: "success", icono: "award" },
-    { titulo: "Actors quantity", cifra: 49, colorBorde: "warning",icono: "user" }
-  ]
+  componentDidMount() {
+    fetch("http://localhost:8000/api/products")
+      .then((response) => response.json())
+      .then((data) => {
+        const lastProductIndex = data.products.length - 1; // Acceder al último producto dentro del primer elemento de "products"
+        this.setState({
+          totalProd: data.count,
+          totalCategories: Object.keys(data.countByCategory).length
+        });
+        fetch(data.products[lastProductIndex].detail)
+          .then(response => response.json())
+          .then(data => {
+            this.setState({
+              lastProduct: data
+            })
+          })
+      })
+      .catch((err) => console.log(err));
+    
+    fetch("http://localhost:8000/api/users")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          totalUsers: data.count
+        });
+      })
+      .catch((err) => console.log(err));
+  }
 
-  const lastMovieInDB = [{
-    imagen: '../assets/images/mandalorian.jpg',
-    alt: "Star Wars - Mandalorian",
-    descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?"
-  }]
+  render() {
+    const { totalProd, totalUsers, totalCategories, lastProduct } = this.state;
 
-  return (
-    <div className="container-fluid">
-      <div className="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+    const contentRowInfo = [
+      { titulo: "Cantidad de productos", cifra: totalProd, colorBorde: "primary", icono: "box" },
+      { titulo: "Cantidad de usuarios", cifra: totalUsers, colorBorde: "success", icono: "user" },
+      { titulo: "Cantidad de categorías", cifra: totalCategories, colorBorde: "warning", icono: "star" }
+    ];
+
+    return (
+      <div className="container-fluid">
+        <div className="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
         </div>
 
         <div className="row">
-          {contentRowMovies.map((content, index) => 
-              <ContentRowMovies
-                key = {index + content}
-                titulo = {content.titulo}
-                cifra = {content.cifra}
-                colorBorde = {content.colorBorde}
-                icono = {content.icono}
-                />
-            )}
+          {contentRowInfo.map((content, index) => (
+            <ContentRowInfo
+              key={index}
+              titulo={content.titulo}
+              cifra={content.cifra}
+              colorBorde={content.colorBorde}
+              icono={content.icono}
+            />
+          ))}
         </div>
 
-        {/*<ContentRowMovies/>*/}
-        
         <div className="row">
-            <LastMovieInDb img={lastMovieInDB.imagen} alt={lastMovieInDB.alt} description={lastMovieInDB.descripcion}/>
-            <GenresInDb/>
+          <LastProductInDb
+            img={ lastProduct.image }
+            alt={ lastProduct.name }
+            description={ lastProduct.description }
+          />
+          <CategoriesInDb />
         </div>
-    </div>
-  )
+      </div>
+    );
+  }
 }
 
-export default ContentRowTop
+export default ContentRowTop;

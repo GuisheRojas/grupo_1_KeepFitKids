@@ -28,6 +28,8 @@ router.post('/register', upload.single('avatar'), userController.processRegister
 //inicia la sesión de un usuario
 router.get('/login', guestMiddleware, userController.login);
 router.post('/login', singInValidation, userController.singIn);
+// router.post('/login', userController.singIn);
+
 
 //accede al perfil del usuario
 router.get('/profile',authMiddleware, userController.profile);
