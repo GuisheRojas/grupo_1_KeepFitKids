@@ -1,4 +1,3 @@
-import logoDH from "../assets/images/logo-DH.png"
 import logoKF from "../assets/images/logo-KeepFit.png"
 
 const Sidebar = () => {

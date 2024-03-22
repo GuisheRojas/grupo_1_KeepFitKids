@@ -18,13 +18,18 @@ class ContentRowTop extends Component {
     fetch("http://localhost:8000/api/products")
       .then((response) => response.json())
       .then((data) => {
-        const lastProductIndex = data.products[0].productos.length - 1; // Acceder al último producto dentro del primer elemento de "products"
-        const lastProduct = data.products[0].productos[lastProductIndex]; // Acceder al último producto
+        const lastProductIndex = data.products.length - 1; // Acceder al último producto dentro del primer elemento de "products"
         this.setState({
           totalProd: data.count,
-          totalCategories: Object.keys(data.countByCategory).length,
-          lastProduct: lastProduct
+          totalCategories: Object.keys(data.countByCategory).length
         });
+        fetch(data.products[lastProductIndex].detail)
+          .then(response => response.json())
+          .then(data => {
+            this.setState({
+              lastProduct: data
+            })
+          })
       })
       .catch((err) => console.log(err));
     
@@ -54,8 +59,8 @@ class ContentRowTop extends Component {
         </div>
 
         <div className="row">
-          {contentRowMovies.map((content, index) => (
-            <ContentRowMovies
+          {contentRowInfo.map((content, index) => (
+            <ContentRowInfo
               key={index}
               titulo={content.titulo}
               cifra={content.cifra}
@@ -66,12 +71,12 @@ class ContentRowTop extends Component {
         </div>
 
         <div className="row">
-          <LastMovieInDb
-            img={lastProduct && lastProduct.image ? lastProduct.image : ""}
-            alt={lastProduct && lastProduct.name ? lastProduct.name : ""}
-            description={lastProduct && lastProduct.description ? lastProduct.description : ""}
+          <LastProductInDb
+            img={ lastProduct.image }
+            alt={ lastProduct.name }
+            description={ lastProduct.description }
           />
-          <GenresInDb />
+          <CategoriesInDb />
         </div>
       </div>
     );
