@@ -18,7 +18,7 @@ const productsApiController = {
         let contUni = 0;
         for (let i = 0; i < productos.length; i++) {
             const element = productos[i];
-            element.dataValues.detail = 'http://localhost:8000' + req.originalUrl + element.id;
+            element.dataValues.detail = 'http://localhost:8000' + req.originalUrl + '/' + element.id;
             if(element.category == 'Femenino'){
                 contFem ++;
             } else if(element.category == 'Masculino'){
@@ -27,6 +27,7 @@ const productsApiController = {
                 contUni ++;
             }
         }
+        const prod = [...productos]
         let respuesta = {
             count: productos.length,
             countByCategory: {
@@ -34,7 +35,7 @@ const productsApiController = {
                 Masculino: contMasc,
                 Unisex: contUni
             },
-            products: [{ productos }]
+            products:  [...prod ]
         
         }
         res.json(respuesta)
@@ -49,6 +50,11 @@ const productsApiController = {
                 ]
             }]
         })
+        const http = 'http://';
+        const https = 'https://';
+        if(!product.dataValues.image.includes(http) && !product.dataValues.image.includes(https)) {
+            product.dataValues.image = `http://localhost:8000/img/products/${product.dataValues.image}`;
+        }
         res.json(product)
     },
 

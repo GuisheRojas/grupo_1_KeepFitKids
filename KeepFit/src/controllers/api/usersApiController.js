@@ -7,7 +7,7 @@ const usersApiController = {
         const users = await db.Users.findAll({attributes: ['id', 'name', 'email']});
         for (let i = 0; i < users.length; i++) {
             const element = users[i];
-            element.dataValues.detail = 'http://localhost:8000' + req.originalUrl + element.id;
+            element.dataValues.detail = 'http://localhost:8000' + req.originalUrl + '/' + element.id;
         }
         let respuesta = {
             count: users.length,
