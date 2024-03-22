@@ -33,6 +33,19 @@ module.exports = {
         };
         userRolesData.push(userRoleData);
       });
+      users.push({
+        id: 6,
+        name: 'Admin',
+        first_name: 'Administrador',
+        last_name: 'Keep Fit',
+        email: 'admin@admin.com',
+        password: bcryptjs.hashSync("12345678", 10),
+        avatar: 'defaultUserImage.png'
+      })
+      userRolesData.push({
+        id_user: 6,
+        id_role: 1
+      })
     await queryInterface.bulkInsert("users", users);
     await queryInterface.bulkInsert("user_roles", userRolesData);
   },
