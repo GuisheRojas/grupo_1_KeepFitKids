@@ -1,7 +1,7 @@
+import React, { Component } from "react";
 import ContentRowMovies from "./ContentRowMovies";
 import GenresInDb from "./GenresInDb";
 import LastMovieInDb from "./LastMovieInDb";
-import React, { Component } from "react";
 
 class ContentRowTop extends Component {
   constructor(props) {
@@ -9,7 +9,8 @@ class ContentRowTop extends Component {
     this.state = {
       totalProd: 0,
       totalUsers: 0,
-      totalCategories: 0
+      totalCategories: 0,
+      lastProduct: {}
     };
   }
 
@@ -17,18 +18,19 @@ class ContentRowTop extends Component {
     fetch("http://localhost:8000/api/products")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.count);
+        const lastProductIndex = data.products[0].productos.length - 1; // Acceder al último producto dentro del primer elemento de "products"
+        const lastProduct = data.products[0].productos[lastProductIndex]; // Acceder al último producto
         this.setState({
           totalProd: data.count,
-          totalCategories: Object.keys(data.countByCategory).length // Corrección de 'countByCategrory' a 'countByCategory'
+          totalCategories: Object.keys(data.countByCategory).length,
+          lastProduct: lastProduct
         });
       })
       .catch((err) => console.log(err));
-
+    
     fetch("http://localhost:8000/api/users")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.count);
         this.setState({
           totalUsers: data.count
         });
@@ -37,28 +39,24 @@ class ContentRowTop extends Component {
   }
 
   render() {
-    const lastMovieInDB = [{
-      imagen: '../assets/images/mandalorian.jpg',
-      alt: "Star Wars - Mandalorian",
-      descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?"
-    }];
+    const { totalProd, totalUsers, totalCategories, lastProduct } = this.state;
 
     const contentRowMovies = [
-      { titulo: "Total de productos", cifra: this.state.totalProd, colorBorde: "primary", icono: "box" },
-      { titulo: "Total de usuarios", cifra: this.state.totalUsers, colorBorde: "success", icono: "user" },
-      { titulo: "Total de categorías", cifra: this.state.totalCategories, colorBorde: "warning", icono: "star" }
+      { titulo: "Cantidad de productos", cifra: totalProd, colorBorde: "primary", icono: "film" },
+      { titulo: "Cantidad de usuarios", cifra: totalUsers, colorBorde: "success", icono: "award" },
+      { titulo: "Cantidad de categorías", cifra: totalCategories, colorBorde: "warning", icono: "user" }
     ];
 
     return (
       <div className="container-fluid">
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 className="h3 mb-0 text-gray-800">KeepFit Dashboard</h1>
+          <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
         </div>
 
         <div className="row">
           {contentRowMovies.map((content, index) => (
             <ContentRowMovies
-              key={index + content}
+              key={index}
               titulo={content.titulo}
               cifra={content.cifra}
               colorBorde={content.colorBorde}
@@ -68,7 +66,11 @@ class ContentRowTop extends Component {
         </div>
 
         <div className="row">
-          <LastMovieInDb img={lastMovieInDB[0].imagen} alt={lastMovieInDB[0].alt} description={lastMovieInDB[0].descripcion} />
+          <LastMovieInDb
+            img={lastProduct && lastProduct.image ? lastProduct.image : ""}
+            alt={lastProduct && lastProduct.name ? lastProduct.name : ""}
+            description={lastProduct && lastProduct.description ? lastProduct.description : ""}
+          />
           <GenresInDb />
         </div>
       </div>

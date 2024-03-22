@@ -34,7 +34,8 @@ const productsApiController = {
                 Masculino: contMasc,
                 Unisex: contUni
             },
-            products: [{ ...productos }]
+            products: [{ productos }]
+        
         }
         res.json(respuesta)
     },
