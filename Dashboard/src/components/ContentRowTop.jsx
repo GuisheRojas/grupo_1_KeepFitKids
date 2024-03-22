@@ -41,10 +41,10 @@ class ContentRowTop extends Component {
   render() {
     const { totalProd, totalUsers, totalCategories, lastProduct } = this.state;
 
-    const contentRowMovies = [
-      { titulo: "Cantidad de productos", cifra: totalProd, colorBorde: "primary", icono: "film" },
-      { titulo: "Cantidad de usuarios", cifra: totalUsers, colorBorde: "success", icono: "award" },
-      { titulo: "Cantidad de categorías", cifra: totalCategories, colorBorde: "warning", icono: "user" }
+    const contentRowInfo = [
+      { titulo: "Cantidad de productos", cifra: totalProd, colorBorde: "primary", icono: "box" },
+      { titulo: "Cantidad de usuarios", cifra: totalUsers, colorBorde: "success", icono: "user" },
+      { titulo: "Cantidad de categorías", cifra: totalCategories, colorBorde: "warning", icono: "star" }
     ];
 
     return (
