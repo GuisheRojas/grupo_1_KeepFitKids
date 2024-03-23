@@ -46,7 +46,7 @@ header .icon{
     margin: 2px;
 }
 #logIn {
-    font-size: 30px;
+    font-size: 23px;
 }
 
 
@@ -138,9 +138,10 @@ header .icon{
 
 #openMenuMobile {
     position: relative;
-    font-size: 30px;
+    font-size: 23px;
     color: var(--verde-keep);
     margin-right: 2px;
+    margin-top: 4px;
 }
 
 .closeMenuMobile {
@@ -231,8 +232,8 @@ header .icon, #product-cart {
         width: 18px;
         position: absolute;
         padding: 2px;
-        left: 142px;
-        bottom: 13px;
+        left: 139px;
+        bottom: 15px;
         font-size: 20px;
     }
     
@@ -269,29 +270,29 @@ header .icon, #product-cart {
 
     /*logo*/
     a#logo{
-        width: 25%;
+        width: 35%;
     }
 
     .logo{
-        max-width: 175px;
+        max-width: 185px;
     }
 
     /*form*/
     .form .icon, #search{
-        height: 40px;
+        height: 30px;
     }
     
     header .form input[type="search"]{
-        font-size: 25px;
+        font-size: 20px;
         padding-left: 15px;
-        width: 220px;
+        width: 180px;
     }
     
     header .form .icon{
         border-left: var(--gris-oscuro);
         width: 20px;
-        left: 197px;
-        bottom: 13px;
+        left: 157px;
+        bottom: 15px;
     }
 
     header .form .icon i{
@@ -301,7 +302,7 @@ header .icon, #product-cart {
     /*product-cart y circle-user*/
     #product-cart p, #circle-user p, #logIn p{
         display: block;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     #logIn p {
@@ -334,7 +335,7 @@ header .icon, #product-cart {
         text-align: center;
         font-family: 'Truculenta', 'sans-serif';
         font-weight: 400;
-        font-size: 1.5rem;
+        font-size: 20px;
         color: var(--verde-keep);
     }
 
@@ -366,7 +367,7 @@ header .icon, #product-cart {
 
         
     header .form input[type="search"]{
-        font-size: 30px;
+        font-size: 24px;
         padding-left: 15px;
         width: 300px;
     }
@@ -375,8 +376,8 @@ header .icon, #product-cart {
         border-left: var(--gris-oscuro);
         width: 25px;
         height: 20px;
-        left: 273px;
-        bottom: 29px;
+        left: 262px;
+        bottom: 35px;
     }
 
     header .form .icon i{
@@ -422,12 +423,12 @@ header .icon, #product-cart {
     }
 
     #product-cart:hover #misCompras {
-        font-size: 31px;
+        font-size: 25px;
         transition: .3s all;
     }
 
     #product-cart:not(:hover) #misCompras {
-        font-size: 30px;
+        font-size: 24px;
         transition: .3s all;
     }
 
@@ -449,6 +450,10 @@ header .icon, #product-cart {
     #product-cart:active #cartIcon {
         color: var(--naranja);
         transition: 0s all;
+    }
+
+    #bienvenidoP {
+        font-size: 24px;
     }
 
     #circle-user:hover #userImageHeader {
