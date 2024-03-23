@@ -28,44 +28,50 @@
                         <li id="elim">    </li>
                     </ul>
                     <% for(let i=0; i<carrito.length; i++){%>
-                            <div class="imagen">
+                        <article class="articulo">
+                            <div>
+                                <div class="imagen">
                                 <img src="/img/products/<%= carrito[i].image %>" alt="<%= carrito[i].name %>">
                             </div>
-                            <div class="detalle">
-                                <p class="descrip-campo">Producto: </p>
-                                <p><%= carrito[i].name%></p>
                             </div>
-                            <div class="color-prod">
-                                <p class="descrip-campo">Color: </p>
-                                <p><%= carrito[i].color %></p>
+                            <div class="prodCartInfo">
+                                <div class="detalle">
+                                    <p class="descrip-campo">Producto: </p>
+                                    <p><%= carrito[i].name%></p>
+                                </div>
+                                <div class="color-prod">
+                                    <p class="descrip-campo">Color: </p>
+                                    <p><%= carrito[i].color %></p>
+                                </div>
+                                <div class="talle">
+                                    <p class="descrip-campo">Talle: </p>
+                                    <p><%= carrito[i].size %></p>
+                                </div>
+                                <div class="cantidad">
+                                    <p class="descrip-campo">Cantidad: </p>
+                                    <p><%= carrito[i].cantidad %></p>
+                                </div>
+                                <div class="precio">
+                                    <% if(carrito[i].cantidad > 1) {%>
+                                        <% totalCant = carrito[i].price * carrito[i].cantidad%>
+                                        <p class="descrip-campo">Precio: </p>
+                                        <p>$<%= totalCant %></p>
+                                    <% } else { %>
+                                        <p class="descrip-campo">Precio: </p>
+                                        <p>$<%= carrito[i].price %></p>
+                                    <% } %>
+                                </div>
+                                <div class="elim">
+                                    <form method="post" action="/products/productCart/<%= carrito[i].id %>?_method=delete" class="formbotelim">
+                                        <div>
+                                            <button class="botonelim" type="submit">        
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="talle">
-                                <p class="descrip-campo">Talle: </p>
-                                <p><%= carrito[i].size %></p>
-                            </div>
-                            <div class="cantidad">
-                                <p class="descrip-campo">Cantidad: </p>
-                                <p><%= carrito[i].cantidad %></p>
-                            </div>
-                            <div class="precio">
-                                <% if(carrito[i].cantidad > 1) {%>
-                                    <% totalCant = carrito[i].price * carrito[i].cantidad%>
-                                    <p class="descrip-campo">Precio: </p>
-                                    <p>$<%= totalCant %></p>
-                                <% } else { %>
-                                    <p class="descrip-campo">Precio: </p>
-                                    <p>$<%= carrito[i].price %></p>
-                                <% } %>
-                            </div>
-                            <div class="elim">
-                                <form method="post" action="/products/productCart/<%= carrito[i].id %>?_method=delete" class="formbotelim">
-                                    <div>
-                                        <button class="botonelim" type="submit">        
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                        </article>
                     <% } %>  
                 </section>                   
             
