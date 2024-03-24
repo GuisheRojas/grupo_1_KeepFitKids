@@ -1,4 +1,6 @@
 import logoKF from "../assets/images/logo-KeepFit.png"
+import { Link, Route } from 'react-router-dom'
+import Products from './Products'
 
 const Sidebar = () => {
   return (
@@ -9,13 +11,13 @@ const Sidebar = () => {
                 <img className="w-100" src={logoKF} alt="Digital House"/>
             </div>
         </a>
-
+        
         <hr className="sidebar-divider my-0" />
 
         <li className="nav-item active">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/">
                 <i className="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard - KeepFit Kids</span></a>
+                <span>Dashboard - KeepFit Kids</span></Link>
         </li>
 
         <hr className="sidebar-divider" />
@@ -23,22 +25,24 @@ const Sidebar = () => {
         <div className="sidebar-heading">Actions</div>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/products">
+            <Link className="nav-link collapsed" to="/products"> 
                 <i className="fa fa-archive"></i>
                 <span>Productos</span>
-            </a>
+            </Link>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link" href="/users">
+            <Link className="nav-link" to="/users">
                 <i className="fa fa-user-circle"></i>
-                <span>Usuarios</span></a>
+                <span>Usuarios</span>
+            </Link>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link" href="/categories">
+            <Link className="nav-link" to="/categories">
                 <i className="fas fa-fw fa-table"></i>
-                <span>Categorias</span></a>
+                <span>Categorias</span>
+            </Link>
         </li>
 
         <hr className="sidebar-divider d-none d-md-block" />
