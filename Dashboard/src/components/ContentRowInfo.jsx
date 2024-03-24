@@ -26,7 +26,7 @@ ContentRowInfo
     titulo: PropTypes.string.isRequired,
     colorBorde: PropTypes.oneOf(["primary", "success", "warning"]),
     cifra: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-    icono: PropTypes.oneOf(["film", "award", "user"]).isRequired
+    icono: PropTypes.oneOf(["box", "user", "star"]).isRequired
 }
 
 ContentRowInfo
