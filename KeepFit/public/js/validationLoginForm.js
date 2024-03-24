@@ -1,4 +1,6 @@
+
 const isEmpty = (input) => input.value && input.value.trim() != "";
+const isEmail = (input) => /[a-zA-Z0-9-_.]+@[a-zA-Z0-9]+(\.[a-zA-Z]{2,4}){1,2}/.test(input.value);
 //const existe = (input) => 
 
 const validations = [
@@ -7,23 +9,12 @@ const validations = [
         inputValidations: [
             {
                 validator: isEmpty,
-                errorMsg: "El mail no puede estar vacio"
+                errorMsg: "El email no puede estar vacio"
             },
             {
-               validator: (input) => validator.isEmail(input),
-               errorMsg: "El mail debe ser valido"
+               validator: isEmail,
+               errorMsg: "El email debe ser valido"
             },
-            {
-            // CREAMOS UNA FUNC ASINCRONICA PARA BUSCAR EN LA BASE DE DATOS
-                validator: async(input) => {
-                // luego creamos un endpoint que lo llamamos utilizando el metodo fetch
-                    const res = await fetch (`/users/validations/${input}`)
-                    // poner comilla simple invertida
-                    const data = await res.json()
-                    return !data.existe
-                },
-                errorMsg: "El e-mail ya existe"
-            }
         ]
     },
     {
@@ -33,17 +24,6 @@ const validations = [
                 validator: isEmpty,
                 errorMsg: "La contraseña no puede estar vacia"
             },
-            {
-                // CREAMOS UNA FUNC ASINCRONICA PARA BUSCAR EN LA BASE DE DATOS
-                    validator: async(input) => {
-                    // luego creamos un endpoint que lo llamamos utilizando el metodo fetch
-                        const res = await fetch (`/users/validations/${input}`)
-                        // poner comilla simple invertida
-                        const data = await res.json()
-                        return !data.existe
-                    },
-                    errorMsg: "La contraseña ya existe"
-                }
         ]
     }
 ]
