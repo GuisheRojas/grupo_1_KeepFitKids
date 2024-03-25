@@ -9,6 +9,7 @@ const userController = require('../controllers/userController');
 
 const guestMiddleware = require('../middlewares/users/guestMiddleware');
 const authMiddleware = require('../middlewares/users/authMiddleware');
+const adminMiddleware = require('../middlewares/users/adminMiddleware');
 
 //hace las validaciones para iniciar sesión
 const singInValidation = require('../middlewares/users/singInValidationMiddleware');
@@ -23,7 +24,7 @@ const registerValidation = require('../middlewares/users/validateRegisterMiddlew
 router.get('/register', guestMiddleware, userController.register);
 
 //procesa a un usuario
-router.post('/register', upload.single('avatar'), userController.processRegisterUser);
+router.post('/register', upload.single('avatar'), registerValidation, userController.processRegisterUser);
 
 //inicia la sesión de un usuario
 router.get('/login', guestMiddleware, userController.login);
@@ -33,6 +34,9 @@ router.post('/login', singInValidation, userController.singIn);
 
 //accede al perfil del usuario
 router.get('/profile',authMiddleware, userController.profile);
+
+//accede al panel de control del administrador
+router.get('/adminPanel',adminMiddleware, userController.admin);
 
 //muestra el formulario de edición de la información del usuario
 router.get('/editProfile', authMiddleware, userController.editProfile);

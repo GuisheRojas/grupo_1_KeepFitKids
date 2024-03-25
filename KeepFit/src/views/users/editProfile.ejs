@@ -91,8 +91,10 @@
                 <% if(locals.errors && errors.avatar){ %>
                     <p class="fbFormsProd"> <%= errors.avatar.msg %> </p>    
                 <% } %>
-
-                <input type="submit" class="submit" value="Editar">
+                <div id="botones-container">
+                    <input type="submit" class="submit" value="Editar">
+                    <a href="/users/profile" id="boton-volver">Volver</a>
+                </div>
             </div>
         </form>
     </main>

@@ -30,9 +30,9 @@ const registerValidation=[
             let file = req.file;
             if(file){
                 let fileExt = path.extname(file.originalname);
-                let acceptedExt = ['.png', '.jpg', '.gif', '.jpeg'];
+                let acceptedExt = ['.png', '.jpg', '.jpeg'];
                 if(!acceptedExt.includes(fileExt)){
-                    throw new Error ('Las extensiones permitidas son .png, .jpg');
+                    throw new Error ('Las extensiones permitidas son .png, .jpg, .jpeg');
                 }
             }
             return true;

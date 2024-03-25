@@ -45,3 +45,8 @@ app.use('/products', productRouter);
 //use API routers
 app.use('/api/users', usersApiRouter);
 app.use('/api/products', productsApiRouter);
+
+app.use('*', function(req, res, next){
+    res.status(404).render('404');
+    next();
+});

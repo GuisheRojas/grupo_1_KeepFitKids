@@ -6,10 +6,6 @@
     </head>
 <body>    
     <%- include('../partials/header') %> 
-    <section class="banner">
-        <img src="/img/banner.png" alt="Banner">
-    </section>
-    
     <main>
         <section class="listadoProductos">
             <div id="titulares">
@@ -43,7 +39,10 @@
                 
                 </article>  
             <% } %>
-        </section>        
+        </section>
+        <div id="container-a">
+            <a href="/users/adminPanel">Volver</a>
+        </div>       
     </main>
 
     <%- include('../partials/footer') %>

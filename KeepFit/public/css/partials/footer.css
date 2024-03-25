@@ -58,6 +58,7 @@ footer .cont-info1, footer .cont-info2,
 footer .conteiner .titulares{
     margin: 5px;
     margin-top: 15px;
+    font-size: 4vw;
     justify-content: center;
 }
 

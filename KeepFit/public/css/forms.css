@@ -9,16 +9,16 @@
 
 /*FORMS*/
 .mainForm{
-    background-color: var(--blanco);
-    background-image:  radial-gradient(#ff4800c0 1px, transparent 1px), radial-gradient(#ff4800c0 1px, #fff 1px);
-    background-size: 20px 20px;
-    background-position: 0 0,10px 10px;
+    background-image: url('../img/Register-Background.jpg');
+    background-size:contain;
     display: flex;
     min-height:80vh;
+    
 }
+
 .forms{
     background-color: var(--blanco);
-    margin: auto;
+    margin: 30px auto;
     width: 90%;
     max-width: 400px;
     padding: 3.5em 2em;
@@ -64,7 +64,7 @@
 .group .input:not(:placeholder-shown) + .label{
     transform: translateY(-20px) scale(.7);
     transform-origin: left top;
-    color: var(--naranja)
+    color: var(--naranja);
 }
 
 .group .label{
@@ -80,19 +80,26 @@
 }
 
 .forms .submit{
-    background: var(--verde-keep);
+    background: #6cd4be;
     color: white;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 1.5rem;
-    padding: .5em .3em;
+    padding: 5px 15px;
     margin-top: 1.5em;
+    letter-spacing: 1px;
     border: none;
-    border-radius: .5em;
+    border-radius: 5px;
+    width: 100%;
 }
 
 .forms .submit:hover {
+    background: var(--verde-keep);
+    cursor: pointer;
+    transition: .3s all;
+}
+
+.forms .submit:not(:hover) {
     background: #6cd4be;
-    font-size: 1.6rem;
     transition: .3s all;
 }
 
@@ -128,8 +135,85 @@ div.group-remember{
 
 .cuentaregister a {
     font-size: 1rem;
+    color: var(--naranja);
 }
 
+.cuentaregister a:hover {
+    color: var(--verde-keep);
+    transition: .3s all;
+}
+
+.cuentaregister a:not(:hover) {
+    color: var(--naranja);
+    transition: .3s all;
+}
+
+#boton-volver {
+    background: #6cd4be;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    margin-top: 1.5em;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 100%;
+}
+
+#boton-volver:hover {
+    background: var(--verde-keep);
+    transition: .3s all;
+}
+
+#boton-volver:not(:hover) {
+    background: #6cd4be;
+    transition: .3s all;
+}
+
+#botones-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#container-a {
+    width: 100%;
+    display:flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+#container-a a {
+    background: rgb(255, 72, 0);
+    text-decoration: none;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: 5px;
+    z-index: 10;
+    font-family: 'Truculenta';
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+#container-a a:hover {
+    background: rgb(255, 123, 0);
+    letter-spacing: 0;
+    padding: 5px 18px;
+    transition: .3s all;
+}
+
+#container-a a:not(:hover) {
+    background: rgb(255, 72, 0);
+    letter-spacing: 1px;
+    transition: .3s all;
+}
 
 @media(min-width: 361px){
     /*FORMS*/
@@ -164,9 +248,7 @@ div.group-remember{
 
 @media(min-width: 769px){
         /*FORMS*/
-        .mainForm{
-            background-image:  radial-gradient(#ff4800c0 1.3px, transparent 1.3px), radial-gradient(#ff4800c0 1.3px, #fff 1.3px);
-        }
+        
         .forms .titulares{
             font-size: 2;
         }
@@ -194,9 +276,7 @@ div.group-remember{
 
 @media(min-width: 1023px){
     /*FORMS*/
-    .mainForm{
-        background-image:  radial-gradient(#ff4800c0 1.5px, transparent 1.5px), radial-gradient(#ff4800c0 1.5px, #fff 1.5px);
-    }
+    
 
     .forms .titulares{
         font-size: 2.3rem;

@@ -79,13 +79,12 @@ const controller = {
     singIn: async (req, res) => {
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            let user = await User.findOne({where: {email: {[Op.like]: req.body.email }}})
-
+            let userData = await User.findOne({where: {email: {[Op.like]: req.body.email }}})
+            let user = userData.dataValues;
             delete user.password;
-            const user_role = await db.User_roles.findOne({where:{ id_user: user.id }})
+            let user_role = await db.User_roles.findOne({where:{ id_user: user.id }})
             user.role = user_role.dataValues.id_role
             req.session.user = user;
-
             if(req.body.remember){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60 })
             }
@@ -170,7 +169,12 @@ const controller = {
 		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
-	}
+	},
+
+    admin: async (req, res) => {
+        res.render('./users/adminPanel', {css: '/css/adminPanel.css'});
+    }
+
 }
 
 module.exports = controller;

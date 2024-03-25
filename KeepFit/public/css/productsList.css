@@ -37,7 +37,7 @@ img{
 }
 
 .titulares{
-    font-size: 6vw;
+    font-size: 10vw;
     padding: 3px 5px;
 }
 
@@ -64,11 +64,11 @@ img{
 }
 
 .article .price{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .description{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .buttonsBox{
@@ -108,6 +108,41 @@ img{
     margin: 5px;
 }
 
+#container-a {
+    width: 100%;
+    display:flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+#container-a a {
+    background: rgb(255, 72, 0);
+    text-decoration: none;
+    color: #FFF;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 10;
+    font-family: 'Truculenta';
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#container-a a:hover {
+    background: rgb(255, 123, 0);
+    letter-spacing: 0;
+    padding: 15px 18px;
+    transition: .3s all;
+}
+
+#container-a a:not(:hover) {
+    background: rgb(255, 72, 0);
+    letter-spacing: 1px;
+    transition: .3s all;
+}
+
 
 @media(min-width: 361px){
     /*Articles*/
@@ -120,7 +155,7 @@ img{
     }
 
     .titulares{
-        font-size: 3.5vw;
+        font-size: 8vw;
         padding: 3px 7px;
         margin-bottom: 5px; 
     }
@@ -130,11 +165,11 @@ img{
     }
 
     .article .price{
-        font-size: 16px;
+        font-size: 20px;
     }
     
     .description{
-        font-size: 14px;
+        font-size: 18px;
     } 
 }
 
@@ -150,7 +185,7 @@ img{
     }
 
     .titulares{
-        font-size: 3vw;
+        font-size: 6vw;
         padding: 0px 10px;
         margin-bottom: 10px; 
     }
@@ -160,11 +195,11 @@ img{
     }
 
     .article .price{
-        font-size: 18px;
+        font-size: 25px;
     }
     
     .description{
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 

@@ -7,12 +7,26 @@
 <body>
     <%- include('../partials/header') %>
     <main class="profileUser">
-        <div class="perfilTituloEdit">
-            <h1 id="miPerfil"> Mi perfil </h1>
-            <a href="/users/editProfile" id="linkEdit">
-                <i class="fa-regular fa-pen-to-square" id="iconEdit"></i>
-            </a>
-        </div>
+        <% if(locals.userLogged.role != 1) { %>
+            <div class="perfilTituloEdit">
+                <h1 id="miPerfil"> Mi perfil </h1>
+                <a href="/users/editProfile" id="linkEdit">
+                    <i class="fa-regular fa-pen-to-square" id="iconEdit"></i>
+                </a>
+            </div>
+        <% } else { %>
+            <div id="editAdmin-container">
+                <div class="perfilTituloEdit">
+                    <h1 id="miPerfil"> Mi perfil </h1>
+                    <a href="/users/editProfile" id="linkEdit">
+                        <i class="fa-regular fa-pen-to-square" id="iconEdit"></i>
+                    </a>
+                </div>
+                <div id="boton-admin-container">
+                    <a href="/users/adminPanel" id="boton-admin">Panel de Administrador</a>
+                </div>
+            </div>
+        <% } %>
         <container class="userInformation">
             <div class="titleBox">
                 <h2>Foto de perfil</h2>

@@ -84,7 +84,7 @@ const productsController = {
 
                 const colors = await db.Colors.findAll()
                 const sizes = await db.Sizes.findAll();
-                res.render('products/getProductBasico', {colors, sizes, css: '/css/forms.css'})
+                res.redirect('/products/list');
             } else {
                 const colors = await db.Colors.findAll()
                 const sizes = await db.Sizes.findAll();

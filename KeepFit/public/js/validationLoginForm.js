@@ -43,8 +43,7 @@ window.addEventListener('load', function(){
                     errores.push(validation.errorMsg);
                     input.parentElement.classList.add("fbFormsProd");
                     input.parentElement.classList.remove("is-valid");
-                    input.parentElement.querySelector(".error").innerHTML =
-                        validation.errorMsg;
+                    input.parentElement.querySelector(".error").innerHTML = validation.errorMsg;
                     return
                 }
             }
