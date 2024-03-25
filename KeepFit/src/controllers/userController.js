@@ -62,7 +62,6 @@ const controller = {
                 avatar: 'defaultUserImage.png'
             }
             let user = await User.create(userToCreate);
-            console.log(user)
             User_roles.create({
                 id_user: user.id,
                 id_role: 2
