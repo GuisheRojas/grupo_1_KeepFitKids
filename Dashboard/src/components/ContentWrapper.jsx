@@ -2,8 +2,10 @@ import ContentRowTop from "./ContentRowTop"
 import Footer from "./Footer"
 import Topbar from "./Topbar"
 import Products from './Products'
-import CategoriesInDb from "./CategoriesInDb"
+import ProductsByCategory from './ProductsByCategory'
 import Users from "./Users"
+import ProductDetail from "./ProductDetail";
+import UserDetail from "./UserDetail";
 
 import {Link, Route, Routes} from 'react-router-dom'
 
@@ -13,10 +15,16 @@ const ContentWrapper = () => {
             <div id="content">
                 <Topbar/>
                 <Routes>
-                    <Route path='/products' element={<Products/>}/>
+
                     <Route exact path='/' element={<ContentRowTop/>}/>
-                    <Route path="/categories" element={<CategoriesInDb />}/>
-                    <Route path="/users" element={<Users />}/>
+                    <Route exact path='/products' element={<Products/>}/>
+                    <Route path='/products/detail/:id' element={<ProductDetail/>}/>
+                    <Route exact path="/users" element={<Users />}/>
+                    <Route path="/users/detail/:id" element={<UserDetail />}/>
+                    <Route path='/categories/masculino' element={<ProductsByCategory category={'Masculino'}/>}/>
+                    <Route path='/categories/femenino' element={<ProductsByCategory category={'Femenino'}/>}/>
+                    <Route path='/categories/unisex' element={<ProductsByCategory category={'Unisex'}/>}/>
+                    
                 </Routes>
             </div>
             <Footer/>
