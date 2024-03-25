@@ -11,7 +11,7 @@ const usersApiController = {
         }
         let respuesta = {
             count: users.length,
-            users: { ...users }
+            users: [ ...users ]
         }
         res.json(respuesta)
     },
