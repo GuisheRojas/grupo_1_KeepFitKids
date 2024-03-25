@@ -39,10 +39,29 @@ const Sidebar = () => {
         </li>
 
         <li className="nav-item">
-            <Link className="nav-link" to="/categories">
-                <i className="fas fa-fw fa-table"></i>
+            <p className="nav-link">
+                <i className="fas fa-fw fa-table "></i>
                 <span>Categorias</span>
-            </Link>
+            </p>
+            <ul className="no-bullets">
+                <li>
+                    <Link className="nav-link" to="/categories/masculino">
+                        <span>Masculino</span>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link className="nav-link" to="/categories/femenino">
+                        <span>Femenino</span>
+                    </Link>
+                </li>
+                
+                <li>
+                    <Link className="nav-link" to="/categories/unisex">
+                        <span>Unisex</span>
+                    </Link>
+                </li>
+            </ul>
         </li>
 
         <hr className="sidebar-divider d-none d-md-block" />
