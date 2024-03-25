@@ -2,34 +2,40 @@ import React, { Component } from "react";
 import Article from './Article'
 
 class Products extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             products: []
-        }
+        };
     }
 
     componentDidMount() {
+        let prod = [];
         fetch("http://localhost:8000/api/products")
             .then((response) => response.json())
             .then((data) => {
-                data.products.map((product) => {
-                    fetch(product.detail)
-                        .then(response => response.json())
-                        .then(data => {
-                            this.setState((prevState) => ({
-                                products: [prevState, data]
-                            }))
-                        })
-                        .catch((err) => console.log(err))
-                })
+                // Mapeamos las solicitudes fetch en un array de promesas
+                const productPromises = data.products.map((product) => {
+                    return fetch(product.detail)
+                        .then(response => response.json());
+                });
+
+                // Esperamos a que todas las promesas se resuelvan
+                Promise.all(productPromises)
+                    .then((productData) => {
+                        // Actualizamos el estado con los datos completos
+                        this.setState({
+                            products: productData
+                        });
+                    })
+                    .catch((err) => console.log(err));
             })
             .catch((err) => console.log(err));
     }
 
-    render(){
+    render() {
         const { products } = this.state;
-        return(
+        return (
             <div>
                 {products.map((product, index) => (
                     <Article
@@ -44,7 +50,7 @@ class Products extends Component {
                     />
                 ))}
             </div>
-        )
+        );
     }
 }
 
