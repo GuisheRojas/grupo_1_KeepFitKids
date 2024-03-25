@@ -22,7 +22,7 @@ const registerValidation=[
             // expresion anterior /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])[A-Za-z\d$@$.-_!%?&]{8,}$/
             const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value);
             if (!passwordRegex) {
-              throw new Error('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial');
+              throw new Error('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un caracter especial');
             }
             return true;
           }),
