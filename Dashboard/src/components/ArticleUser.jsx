@@ -1,10 +1,15 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const Article = ({id, name, avatar}) => {
     return(
         <div className="card shadow mb-4 d-inline-block">
             <div className="card-body">
-                <h4 className="description">Nombre: {name}</h4>
                 <h5>ID: {id}</h5>
-                <img src={avatar} alt={name} />
+                <Link to={`/products/detail/${id}`}>
+                    <img src={avatar} alt={`Avatar de ${name}`} />
+                </Link>
+                <h4>Nombre de usuario: {name}</h4>
             </div>
         </div>
         
