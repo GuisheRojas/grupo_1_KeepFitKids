@@ -38,14 +38,14 @@ class Products extends Component {
             <div>
                 {products.map((product, index) => (
                     <Article
-                        key={index}
-                        id={product.id}
-                        name={product.name}
-                        description={product.description}
-                        price={product.price}
-                        category={product.category}
-                        is_new={product.is_new}
-                        image={product.image}
+                        key={product.product.id}
+                        id={product.product.id}
+                        name={product.product.name}
+                        description={product.product.description}
+                        price={product.product.price}
+                        category={product.product.category}
+                        is_new={product.product.is_new}
+                        image={product.product.image}
                     />
                 ))}
             </div>
