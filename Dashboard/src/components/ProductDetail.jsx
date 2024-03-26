@@ -17,17 +17,27 @@ function ProductDetail() {
     }, [id]); // Ejecuta este efecto cada vez que cambia el ID
 
     return (       
-        <div class="card mb-3" >
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src={product?.image} class="img-fluid rounded-start" alt={product?.name}/>
+        <div className="card mb-3" >
+            <div className="row g-0">
+                <div className="col-md-4">
+                    <img src={product?.product.image} className="img-fluid rounded-start" alt={product?.product.name}/>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h2 class="card-title">{product?.name}</h2>
-                        <h3>${product?.price}</h3>
-                        <h4 class="card-text">{product?.description}</h4>
-                        <p class="card-text"><small class="text-body">Producto {product?.category}</small></p>
+                <div className="col-md-8">
+                    <div className="card-body">
+                        <h2 className="card-title">{product?.product.name}</h2>
+                        <h4>${product?.product.price}</h4>
+                        <h5 className="card-text">{product?.product.description}</h5>
+
+                        <h6 className="card-text">Stock: </h6>
+                        {product?.Stock.map((stock) =>{
+                            return(
+                                <ul>
+                                    <li><h6 className="card-text">Color {stock.color} talle {stock.size} = {stock.quantity}</h6></li>
+                                </ul>
+                            )
+                        })}
+                        <p className="card-text"><small class="text-body">Producto {product?.product.category}</small></p>
+
                     </div>
                 </div>
             </div>
