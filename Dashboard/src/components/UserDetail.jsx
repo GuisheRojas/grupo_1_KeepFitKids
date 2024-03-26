@@ -16,15 +16,20 @@ function UserDetail() {
             .catch((err) => console.log(err));
     }, [id]); // Ejecuta este efecto cada vez que cambia el ID
 
-    render(
-        <div className="card shadow mb-4">
-            <div className="card-body">
-                <div className="text-center">
-                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "40rem" }} src={image} alt={name}/>
+    return(
+        <div class="p-5 card mb-3" >
+            <div class=" row g-0">
+                <div class="col-md-4">
+                    <img src={user?.avatar} class="img-fluid rounded-start " alt={`Avatar de ${user?.name}`}/>
                 </div>
-                <p>${price}</p>
-                <p>Categoría: {category}</p>
-                <h4>{description}</h4>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">Usuario: {user?.name}</h2>
+                        <h4>Nombre: {user?.first_name}</h4>
+                        <h4 class="card-text">Apellido: {user?.last_name}</h4>
+                        <h4 class="card-text">Correo Electrónico: {user?.email}</h4>
+                    </div>
+                </div>
             </div>
         </div>
     )
