@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const LastProductInDb
- = ({ img, alt, description }) => {
+ = ({ id, img, name, price, description, }) => {
   return (
     <div className="col-lg-6 mb-4">
         <div className="card shadow mb-4">
@@ -11,10 +12,12 @@ const LastProductInDb
             </div>
             <div className="card-body">
                 <div className="text-center">
-                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "40rem" }} src={img} alt={alt}/>
+                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "40rem" }} src={img} alt={name}/>
                 </div>
                 <p>{description}</p>
-                <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View product detail</a>
+                <Link to={`/products/detail/${id}`} className="btn btn-danger" target="_blank" rel="nofollow">
+                    View product detail
+                </Link>
             </div>
         </div>
     </div>

@@ -72,11 +72,12 @@ class ContentRowTop extends Component {
 
         <div className="row">
           <LastProductInDb
+            id={lastProduct.id}
             img={ lastProduct.image }
-            alt={ lastProduct.name }
+            name={ lastProduct.name }
             description={ lastProduct.description }
           />
-          <CategoriesInDb />
+          <CategoriesInDb/>
         </div>
       </div>
     );
