@@ -5,12 +5,15 @@
     --blanco: #FFF;
     --verde-keep: #4fb59f;
     --naranja: rgba(255, 72, 0, 0.753);
+    --verde-claro: #e6ffef;
 }
 
 /*FORMS*/
 .mainForm{
-    background: linear-gradient(150deg, #A1FFCE, #FAFFD1);
-    background-size:contain;
+    background: linear-gradient(to bottom, var(--verde-claro), var(--verde-keep));
+    /* background: url('/img/FondoPuntillado.png'); */
+    background-size:15%;
+    background-repeat: repeat;
     display: flex;
     min-height:80vh;
     

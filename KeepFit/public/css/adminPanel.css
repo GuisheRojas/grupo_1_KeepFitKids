@@ -51,7 +51,7 @@ h3 {
     width: 100%;
 }
 
-#productList, #productCreate {
+#productList, #productCreate, #dashboardLink {
     background: var(--verde-keep);
     text-decoration: none;
     color: #FFF;
@@ -85,6 +85,18 @@ h3 {
 }
 
 #productList:not(:hover) {
+    background: var(--verde-keep);
+    letter-spacing: 1px;
+    transition: .3s all;
+}
+
+#dashboardLink:hover {
+    background: #6cd4be;
+    letter-spacing: 0;
+    transition: .3s all;
+}
+
+#dashboardLink:not(:hover) {
     background: var(--verde-keep);
     letter-spacing: 1px;
     transition: .3s all;
@@ -127,7 +139,7 @@ h3 {
         font-size: 6vw;
     }
 
-    #productList, #productCreate, #container-a a {
+    #productList, #productCreate, #dashboardLink, #container-a a {
         font-size: 1.3rem;
     }
 }
@@ -140,7 +152,7 @@ h3 {
         font-size: 5vw;
     }
 
-    #productList, #productCreate, #container-a a {
+    #productList, #productCreate, #dashboardLink, #container-a a {
         font-size: 1.5rem;
     }
 }
@@ -154,7 +166,7 @@ h3 {
         font-size: 4vw;
     }
 
-    #productList, #productCreate, #container-a a {
+    #productList, #productCreate, #dashboardLink, #container-a a {
         font-size: 2rem;
     }
 

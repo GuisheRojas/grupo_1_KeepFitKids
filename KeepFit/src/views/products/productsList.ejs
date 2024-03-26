@@ -18,8 +18,8 @@
                     <h4 class="description"><%=products[i].dataValues.name%></h4>
                     <div class="buttonsBox">
                         <div class="elim">
-                            <form method="post" action="/products/list/<%= products[i].dataValues.id%>?_method=delete" class="formbotelim">
-                                <div>
+                            <form method="post" action="/products/list/<%= products[i].dataValues.id%>?_method=delete" class="formbotelim" id="formEliminar">
+                                <div id="divEliminar">
                                     <button class="botonElim" type="submit">        
                                         <i id="botonElim" class="fa-solid fa-trash-can"></i>
                                     </button>
@@ -46,6 +46,6 @@
     </main>
 
     <%- include('../partials/footer') %>
-
+    <script src="/js/deleteConfirm.js"></script>
 </body>
 </html>
