@@ -18,7 +18,7 @@ const isValidFormat = (input) => {
 
 const validations = [
     {
-        inputName: "name",
+        inputName: "nameProd",
         inputValidations: [
             {
                 validator: isEmpty,
@@ -38,7 +38,7 @@ const validations = [
                 errorMsg: "La imagen del producto no puede estar vacia"
             },
             {
-                validator: isValidFormat,
+                validator: isEmpty,
                 errorMsg: "Debe subir un archivo con una extensión válida (.png, .jpg, .jpeg)"
             }
 
@@ -98,7 +98,7 @@ const validations = [
         ]
     },
     {
-        inputName: "quantity",
+        inputName: "stock",
         inputValidations: [
             {
                 validator: isEmpty,
@@ -141,7 +141,6 @@ window.addEventListener('load', function(){
         }
     });
 });
-
 
 
 // ?????????

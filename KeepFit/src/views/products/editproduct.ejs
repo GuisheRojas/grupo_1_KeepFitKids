@@ -7,7 +7,7 @@
 <body>
     <%- include('../partials/header') %>
     <main class="mainForm">
-        <form action="/products/modifiedProduct/<%= product.id%>?_method=PUT" method="post" class="forms" id="formEditProduct" enctype="multipart/form-data">
+        <form action="/products/modifiedProduct/<%=product.id%>?_method=PUT" method="POST" class="forms" id="formEditProduct" enctype="multipart/form-data">
             <h1 class="titulares">Ingrese el producto</h1>
             <div class="container">
                 <div class="group">
@@ -22,7 +22,7 @@
                         <%= errors.name.msg %>
                     </p>    
                 <% } %>
-                
+
                 <div class="group">
                     <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
                     <% if (product?.image) { %>
@@ -61,8 +61,6 @@
                 <% } %>
                 
                 <div class="group">
-                    <h3 class="input">Colores (última actualización)</h3> 
-                    <%=product.color%>
                     <h3 class="input">Actualice los colores en stock</h3>
                     <select id="color" name="color" class="input" placeholder="" size="5">
                         <% for(let i = 0; i < colors?.length; i++) {%>    
@@ -77,10 +75,8 @@
                 <% } %>
                 
                 <div class="group">
-                    <h3 class="input">Talles (última actualización)</h3>  
-                    <%=product.size%>
                     <h2 class="input">Actualice los talles en stock</h2>
-                    <select id="size" name="size" class="input" placeholder="" size="6" value="<%= product.size%>">
+                    <select id="size" name="size" class="input" placeholder="" size="6" value="<%= product.size%>" multiple>
                         <% for(let i = 0; i < sizes?.length; i++) {%>    
                             <option value="<%= sizes[i].dataValues.name %>"><%= sizes[i].dataValues.name %></option>
                         <%}%>

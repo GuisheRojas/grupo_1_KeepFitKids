@@ -70,6 +70,10 @@ article.articulo .elim .botonelim{
     font-size: 20px;
 }
 
+.botonelim:hover {
+    cursor: pointer;
+}
+
 
 main.productcart h2{
     margin: 2%;
@@ -367,6 +371,11 @@ div.botones button{
         color: var(--verde-fit);
         background-color: var(--gris-claro);
         box-shadow: 0px 0px 0px --gris-claro;
+        
+    }
+
+    button.botonCarrrito:hover {
+        cursor: pointer;
     }
 }
 

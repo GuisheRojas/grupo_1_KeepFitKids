@@ -14,7 +14,8 @@ const authMiddleware = require('../middlewares/users/authMiddleware');
 const adminMiddleware = require('../middlewares/users/adminMiddleware');
 
 //hace las validaciones para un producto
-const productsValidation = require('../middlewares/products/productsValidationMiddleware')
+const productsValidation = require('../middlewares/products/productsValidationMiddleware');
+const productsEditValidation = require('../middlewares/products/productsEditValidationMiddleware');
 
 
                             /* RUTAS */
@@ -52,6 +53,7 @@ router.post('/addProduct', adminMiddleware, upload.single('productImage'), produ
 
 //edita un producto
 router.get('/editProduct/:id', adminMiddleware, productsController.editProduct)
-router.put('/modifiedProduct/:id', adminMiddleware, upload.single('productImage'), productsValidation, productsController.modifiedProduct)
+router.put('/modifiedProduct/:id', adminMiddleware, upload.single('productImage'), productsEditValidation, productsController.modifiedProduct)
+
 
 module.exports = router;

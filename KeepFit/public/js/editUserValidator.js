@@ -16,13 +16,13 @@ const isValidFormat = (input) => {
         return false;
     }
 }
+
 const isValidPassword = (input) => {
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(input.value);
     if (!passwordRegex) {
         return false
     } else return true;
 }
-
 
 const validations = [
     {

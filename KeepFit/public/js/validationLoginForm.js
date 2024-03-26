@@ -1,7 +1,7 @@
 
 const isEmpty = (input) => input.value && input.value.trim() != "";
 const isEmail = (input) => /[a-zA-Z0-9-_.]+@[a-zA-Z0-9]+(\.[a-zA-Z]{2,4}){1,2}/.test(input.value);
-//const existe = (input) => 
+
 
 const validations = [
     {
@@ -32,7 +32,6 @@ window.addEventListener('load', function(){
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();
-        console.log('Entré')
 
         let errores = [];
         validations.forEach((inputToValidate) => {
@@ -57,5 +56,5 @@ window.addEventListener('load', function(){
         } else {
             console.log(errores)
         }
-    })
-})
+    });
+});

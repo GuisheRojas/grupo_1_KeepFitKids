@@ -191,7 +191,7 @@ const productsController = {
             where: {id:req.params.id}
         });
         res.redirect("/products/list");
-    }
+    },
 
 }
 

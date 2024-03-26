@@ -130,6 +130,10 @@ button.agregarDetail{
     padding: 3px;
 }
 
+button.agregarDetail:hover {
+    cursor: pointer;
+}
+
 button.agregarDetail{
     box-shadow: 1px 1px 2px var(--gris-oscuro);
 }
@@ -189,6 +193,7 @@ button.agregarDetail{
     max-height: 5vw;
 }
 
+
 .enviar{
     width: 80%;
     min-height: 10px;
@@ -198,6 +203,10 @@ button.agregarDetail{
     color: var(--blanco);
     border: none;
     padding: 3px;
+}
+
+.enviar:hover {
+    cursor: pointer;
 }
 
 
