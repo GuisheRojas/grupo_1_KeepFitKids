@@ -16,21 +16,20 @@ function ProductDetail() {
             .catch((err) => console.log(err));
     }, [id]); // Ejecuta este efecto cada vez que cambia el ID
 
-    return (
-        <div className="card shadow mb-4">
-            <div className="card-body">
-                <div className="text-center">
-                    <img
-                        className="img-fluid px-3 px-sm-4 mt-3 mb-4 product_img"
-                        style={{ width: "40rem" }}
-                        src={product.image}
-                        alt={product.name}
-                    />
+    return (       
+        <div class="card mb-3" >
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src={product?.image} class="img-fluid rounded-start" alt={product?.name}/>
                 </div>
-                <h2>{product.name}</h2>
-                <h4>${product.price}</h4>
-                <h4>Categoría: {product.category}</h4>
-                <h4>{product.description}</h4>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">{product?.name}</h2>
+                        <h3>${product?.price}</h3>
+                        <h4 class="card-text">{product?.description}</h4>
+                        <p class="card-text"><small class="text-body">Producto {product?.category}</small></p>
+                    </div>
+                </div>
             </div>
         </div>
     );

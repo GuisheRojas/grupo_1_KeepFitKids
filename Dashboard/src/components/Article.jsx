@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Article = ({id, name, description, price, category, is_new, image}) => {
+const Article = ({id, name, description, price, image}) => {
     return(
-        
-            <div className="card shadow mb-4">
-                <div className="card-body">
-                <Link to={`/products/detail/${id}`}>
-                    <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4 product_img" style={{ width: "40rem" }} src={image} alt={name}/>
+        <div class="card mb-3" >
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <Link to={`/products/detail/${id}`}>
+                        <img src={image} class="img-fluid rounded-start" alt={name}/>
+                    </Link>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">{name}</h2>
+                        <h3>${price}</h3>
+                        <h4 class="card-text">{description}</h4>
                     </div>
-                </Link>
-                    <p className="price">${price}</p>
-                    <h4 className="description">{description}</h4>
                 </div>
             </div>
-        
-        
+        </div>
     )
 }
 
