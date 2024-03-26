@@ -103,6 +103,7 @@ img{
     margin: 5px;
     border: none;
     background: none; 
+    cursor: pointer;
 }
 
 #botonEdit{
@@ -113,6 +114,7 @@ img{
     border: none;
     background: none;
     margin: 5px;
+    cursor: pointer;
 }
 
 #container-a {

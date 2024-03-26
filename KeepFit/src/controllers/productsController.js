@@ -187,11 +187,10 @@ const productsController = {
 
     //elimina un producto del listado de productos
     eliminarProd: async (req, res) => {
-       await db.Products.destroy({
-        where: 
-        {id:req.params.id}
-       })
-       res.redirect("/products/list")
+        await db.Products.destroy({
+            where: {id:req.params.id}
+        });
+        res.redirect("/products/list");
     }
 
 }
