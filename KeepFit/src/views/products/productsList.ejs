@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <title>LISTADO PRODUCTOS</title>
+    </head>
+<body>    
+    <%- include('../partials/header') %> 
+    <main>
+        <section class="listadoProductos">
+            <div id="titulares">
+                <h4 class="titulares">  Listado de productos  </h4>
+            </div>
+            <% for(let i=0; i < products.length; i++){ %>
+                <article class="article">
+                    <img src=/img/products/<%= products[i].dataValues.image %> alt=<%= products[i].dataValues.name %> class="product_img">
+                    <p class="price">$<%=products[i].dataValues.price %></p>
+                    <h4 class="description"><%=products[i].dataValues.name%></h4>
+                    <div class="buttonsBox">
+                        <div class="elim">
+                            <form method="post" action="/products/list/<%= products[i].dataValues.id%>?_method=delete" class="formbotelim" id="formEliminar">
+                                <div id="divEliminar">
+                                    <button class="botonElim" type="submit">        
+                                        <i id="botonElim" class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="editarProducto">
+                            <form method="get" action="/products/editProduct/<%= products[i].dataValues.id%>" class="formeditar">
+                                <div>
+                                    <button class="botonEdit" type="submit">        
+                                        <i id="botonEdit" class="fa-solid fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                
+                </article>  
+            <% } %>
+        </section>
+        <div id="container-a">
+            <a href="/users/adminPanel">Volver</a>
+        </div>       
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script src="/js/deleteConfirm.js"></script>
+</body>
+</html>

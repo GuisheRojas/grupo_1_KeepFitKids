@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <%- include('../partials/head') %>
+    <title>Editar producto</title>
+ </head>
+<body>
+    <%- include('../partials/header') %>
+    <main class="mainForm">
+        <form action="/products/modifiedProduct/<%=product.id%>?_method=PUT" method="POST" class="forms" id="formEditProduct" enctype="multipart/form-data">
+            <h1 class="titulares">Ingrese el producto</h1>
+            <div class="container">
+                <div class="group">
+                    <input type="text" id="name" name="nameProd" class="input" placeholder="" 
+                        value="<%= product?.dataValues.name%>" >
+                    <label for="nameProd" class="label">Nombre del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.name){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.name.msg %>
+                    </p>    
+                <% } %>
+
+                <div class="group">
+                    <input type="file" id="productImage" name="productImage" class="input" placeholder="" 
+                    <% if (product?.image) { %>
+                            value="/img/products/<%= product?.dataValues.name %>" >
+                    <% } %>
+                    <label for="productImage" class="label">Imagen del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.productImage){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.productImage.msg %>
+                    </p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="price" name="price" class="input" placeholder=""
+                        value="<%= product?.dataValues.price%>" >
+                    <label for="price" class="label">Precio del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.price){ %>
+                    <p class="fbFormsProd"> <%= errors.price.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="text" id="description" name="description" class="input" placeholder=""
+                        value="<%= product?.dataValues.description%>" >
+                    <label for="description" class="label">Descripción del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.description){ %>
+                    <p class="fbFormsProd"> <%= errors.description.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <h3 class="input">Actualice los colores en stock</h3>
+                    <select id="color" name="color" class="input" placeholder="" size="5">
+                        <% for(let i = 0; i < colors?.length; i++) {%>    
+                            <option value="<%= colors[i].dataValues.name %>"><%= colors[i].dataValues.name %></option>
+                        <%}%>
+                    </select>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.color){ %>
+                    <p class="fbFormsProd"> <%= errors.color.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <h2 class="input">Actualice los talles en stock</h2>
+                    <select id="size" name="size" class="input" placeholder="" size="6" value="<%= product.size%>" multiple>
+                        <% for(let i = 0; i < sizes?.length; i++) {%>    
+                            <option value="<%= sizes[i].dataValues.name %>"><%= sizes[i].dataValues.name %></option>
+                        <%}%>
+                    </select>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.size){ %>
+                    <p class="fbFormsProd"> <%= errors.size.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <select id="category" name="category" class="input" placeholder="" >
+                            <option value="<%=product?.dataValues.category%>"><%=product?.dataValues.category%></option>
+                            <option value="">Seleccione el genero del producto</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Unisex">Unisex</option>
+                    </select>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.category){ %>
+                    <p class="fbFormsProd"> <%= errors.category.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="stock" name="stock" class="input" placeholder=""
+                        value="<%= stock[0].dataValues.quantity%>" >
+                    <label for="stock" class="label">Stock del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.stock){ %>
+                    <p class="fbFormsProd"> <%= errors.stock.msg %></p>    
+                <% } %>
+                
+                
+                
+                <button type="submit" class="submit">Editar producto</button>
+
+                <div id="container-a">
+                    <a href="/products/list">Volver</a>
+                </div>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/js/validationEditProduct.js"></script>
+</body>
+</html>

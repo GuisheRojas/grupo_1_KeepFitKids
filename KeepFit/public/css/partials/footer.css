@@ -1,0 +1,194 @@
+:root{
+    --blanco: #FFF;
+    --verde-keep: #4fb59f;
+    --naranja: rgba(255, 72, 0, 0.753);
+}
+
+/*FOOTER*/
+footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verde-keep);
+    padding: 20px;
+}
+
+.cont-info1, .cont-info2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#icon {
+    margin-right: 10px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info h4, .info p {
+    margin-bottom: 0px;
+}
+
+footer .description{
+    color:var(--blanco);
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+}
+
+#truck, #credit-card{
+    color: var(--blanco);
+    font-size: 1.5em;
+    margin: 5px;
+}
+
+footer .cont-info1, footer .cont-info2,
+ footer .conteiner{
+    margin: 5px;
+}
+
+footer .conteiner .titulares{
+    margin: 5px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ig, #fb, #tw, #mail, #wpp{
+    color: var(--blanco);
+    font-size: 1.7em;
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+#ig:hover, #fb:hover, #tw:hover, #mail:hover, #wpp:hover {
+    color: var(--naranja);
+    transition: .3s all;
+}
+
+#ig:not(:hover), #fb:not(:hover), #tw:not(:hover), #mail:not(:hover), #wpp:not(:hover) {
+    color: var(--blanco);
+    transition: .3s all;
+}
+
+@media(min-width: 924px){
+    /*FOOTER*/
+    footer{
+        flex-direction: row;
+        height: 150px;
+    }
+
+    footer .cont-info1, footer .cont-info2,
+     footer .conteiner{
+        margin: 0px;
+    }
+
+    .cont-info1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 28%;
+    }
+
+    .cont-info2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 35%;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .info .description{
+        font-size: 10px;
+    }
+    
+    #truck, #credit-card{
+        font-size: 2em;
+        margin: 1px;
+    }
+}
+
+@media(min-width: 1023px){
+    /*FOOTER*/
+    footer{
+        flex-direction: row;
+        height: 200px;
+    }
+
+    footer .titulares {
+        font-size: 1.5vw;
+    }
+
+    footer .cont-info1, footer .cont-info2, footer .conteiner{
+        margin: 0px;
+    }
+
+    .cont-info1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 5px;
+        width: 28%;
+    }
+
+    .cont-info2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 5px;
+        width: 35%;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .info .description{
+        font-size: 1vw;
+    }
+        
+    #truck, #credit-card{
+        font-size: 2.5em;
+        margin: 3px;
+    }
+
+}

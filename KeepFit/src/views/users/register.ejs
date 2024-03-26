@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Registra una cuenta</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main class="mainForm">
+        <div class="errors"><ul></ul></div>
+        <form action="/users/register" method="POST" class="forms" id="register-form" enctype="multipart/form-data">
+            <h2 class="titulares">Registra una cuenta</h2>
+
+            <div class="container">
+                <div class="group">
+                    <input type="text" name="name" id="name" class="input"
+                    <% if(locals.old && old.name){%>
+                        value="<%= old.name %>"
+                    <% } %>>
+                    <label for="name" class="label">Nombre de Usuario: </label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.name){ %>
+                    <p class="fbFormsProd"> <%= errors.name.msg %> </p>    
+                <% } %>
+
+                <div class="group">
+                    <input type="text" name="first_name" id="first_name" class="input"
+                    <% if(locals.old && old.first_name){%>
+                        value="<%= old.first_name %>"
+                    <% } %>>
+                    <label for="first_name" class="label">Nombre: </label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.first_name){ %>
+                    <p class="fbFormsProd"> <%= errors.first_name.msg %> </p>    
+                <% } %>
+
+                <div class="group">
+                    <input type="text" name="last_name" id="last_name" class="input"
+                    <% if(locals.old && old.last_name){%>
+                        value="<%= old.last_name %>"
+                    <% } %>>
+                    <label for="last_name" class="label">Apellido: </label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.last_name){ %>
+                    <p class="fbFormsProd"> <%= errors.last_name.msg %> </p>    
+                <% } %>
+
+                <div class="group">
+                    <input type="email" name="email" id="email" class="input"
+                    <% if(locals.old && old.email){%>
+                        value="<%= old.email %>"
+                    <% } %>>
+                    <label for="email" class="label">Email:</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.email){ %>
+                    <p class="fbFormsProd"> <%= errors.email.msg %> </p>    
+                <% } %>
+
+                <div class="group">
+                    <input type="password" name="password" id="password" class="input">
+                    <label for="password" class="label">Contraseña: </label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.password){ %>
+                    <p class="fbFormsProd"> <%= errors.password.msg %> </p>    
+                <% } %>
+
+                <div class="group">
+                    <input type="file" name="avatar" id="avatar" class="input" accept=".jpg, .png, .gif, .jpeg" value="">
+                    <label for="avatar" class="label">Foto de perfil: </label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.avatar){ %>
+                    <p class="fbFormsProd"> <%= errors.avatar.msg %> </p>    
+                <% } %>
+
+                <input type="submit" class="submit" value="Registrarse">
+            </div>
+        </form>
+    </main>
+    
+    <%- include('../partials/footer') %>
+    <script src="/js/userRegisterValidator.js"></script>
+</body>
+</html>

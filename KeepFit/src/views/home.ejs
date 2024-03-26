@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Keep Fit Kids</title>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <section class="banner">
+        <img src="/img/banner.png" alt="Banner">
+    </section>
+    <main>
+        <div class="eleccion">
+            <div class="niños">
+                <a href="/products/nenes" id="niños"><img src="/img/products/nenes.png" alt="Imagen niños"></a>
+            </div>
+            <br>
+            <br>
+            <div class="niñas">
+                <a href="/products/nenas" id="niñas"><img src="/img/products/nenas.png" alt="Imagen niñas"></a>
+            </div>
+        </div>
+        
+        <section class="nuevos-ingresos">
+            <div id="titulares">
+                <h4 class="titulares">  NUEVOS INGRESOS  </h4>
+            </div>
+            <% for(let i=0; i < productos.length; i++){ %>
+                <% if(productos[i].is_new) { %>
+                    <article class="article">
+                        
+                        <a href="/products/detailproduct/<%= productos[i].dataValues.id %>">
+                            <img src="/img/products/<%= productos[i].dataValues.image %>" alt=<%= productos[i].dataValues.name %> class="product_img">
+                            <p class="price">$<%=productos[i].dataValues.price %></p>
+                            <h4 class="description"><%=productos[i].dataValues.name%></h4>
+                        </a>
+                    </article>
+                <% } %>
+            <% } %>
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

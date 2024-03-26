@@ -1,0 +1,20 @@
+/*CONFIG GENERAL*/
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+    font-family: 'Truculenta'
+}
+
+/*TIPOGRAFIAS*/
+body{
+    font-size: 16px;
+    font-family: 'Comic Neue', cursive;
+}
+
+.titulares{
+    /* font-family: 'Coming Soon', cursive; */
+    color: var(--blanco);
+    background-color: var(--verde-keep);
+    border-radius: 3px;
+}

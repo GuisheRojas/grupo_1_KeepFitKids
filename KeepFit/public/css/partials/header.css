@@ -1,0 +1,473 @@
+/*VARIABLES*/
+:root{
+    --verde-claro: #e6ffef;
+    --gris-oscuro: #666;
+    --blanco: #FFF;
+    --verde-keep: #4fb59f;
+    --naranja: rgba(255, 72, 0, 0.753);
+}
+
+/*HEADER*/
+header{
+    background: var(--verde-claro);
+    max-height: 120px;
+    box-shadow: 0px 0px 10px #555;
+    z-index: 10;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    --img1: scale(1);
+    --img2: scale(0);
+}
+
+a#logo {
+    width: 50%;
+}
+
+.logo {
+    width: 100%;
+}
+
+
+#search{
+    display: none;
+}
+
+header .icon{
+    border: none;
+    background-color: var(--verde-claro);
+}
+
+#product-cart, #circle-user, #logIn{
+    color: var(--verde-keep);
+    font-size: 10vw;
+    margin: 2px;
+}
+#logIn {
+    font-size: 23px;
+}
+
+
+/* Menu Mobile */
+.menuMobile {
+    position: absolute;
+    background: var(--verde-claro);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 10px 17px 17px 17px;
+    clip-path: var(--clip, inset(0 0 0 100%));
+    transition: clip-path .3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+#menuH2 {
+    color: var(--verde-keep);
+    font-size: 2.2rem;
+    font-family: 'Truculenta', 'sans-serif';
+}
+
+.formMobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+#searchMobile {
+    height: 30px;
+    font-size: .8rem;
+    border-radius: 5px;
+    border: 1px solid var(--verde-keep);
+    color: var(--verde-keep);
+    outline: none;
+    padding-left: 5px;
+    background: var(--blanco);
+}
+
+#searchMobile::placeholder {
+    color: var(--verde-keep);
+    text-align: center;
+}
+
+#iconMobile {
+    color: var(--verde-keep);
+    height: 30px;
+    font-size: 1.3rem;
+    width: 30px;
+    border: 1px solid var(--verde-keep);
+    border-radius: 5px;
+    background: var(--blanco);
+}
+
+#product-cartMobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.3rem;
+    color: var(--verde-keep);
+    text-decoration: none;
+}
+
+
+/* Botones menu mobile */
+.openCloseMenu {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: menu;
+}
+
+.header:has( .menuMobile:target ) {
+    --img1: scale(0);
+    --img2: scale(1);
+    --clip: inset(0 0 0 0);
+}
+
+.openMenuMobile {
+    grid-area: menu;
+    transform: var(--img1);
+    z-index: 10;
+}
+
+#openMenuMobile {
+    position: relative;
+    font-size: 23px;
+    color: var(--verde-keep);
+    margin-right: 2px;
+    margin-top: 4px;
+}
+
+.closeMenuMobile {
+    position: relative;
+    z-index: 10;
+    grid-area: menu;
+    transform: var(--img2);
+}
+
+#closeMenuMobile {
+    font-size: 30px;
+    color: var(--verde-keep);
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* Quitamos los iconos del desktop */
+header .icon, #product-cart {
+    display: none;
+}
+
+#product-cart p, #circle-user p, #logIn p{
+    display: none;
+}
+
+/* Configuracion de la imagen de usuario y del texto de bienvenida */
+
+#userImageHeader {
+    width: 40px;
+    margin-left: 50px;
+    margin-right: 10px;
+    clip-path: circle(50% at 50% 50%);
+}
+
+#bienvenidoP {
+    display:none;
+}
+
+@media (min-width: 361px) {
+    /*HEADER*/
+    a#logo{
+        width: 25%;
+    }
+
+    #menuMobile {
+        display:none;
+    }
+
+    header .form input{
+        width: 25%;
+    }
+    
+    header .form{
+        display: flex;
+        align-items: center;
+        padding: 15px 2px;
+        position: relative;
+    }
+
+    .form .icon, #search{
+        display: block;
+        align-self: center;
+        border-radius: 5px;
+        border-color: var(--blanco);
+        height: 30px;
+    }
+    
+    header .form input[type="search"]{
+        border: none;
+        background-color: var(--blanco);
+        outline: none;
+        color: var(--verde-keep);
+        padding-left: 10px;
+        font-size: 20px;
+        width: 160px;
+    }
+
+    header .form input[type="search"]::placeholder {
+        color: var(--verde-keep);
+    }
+
+    
+    
+    header .form .icon{
+        background-color: var(--blanco);
+        border: 1px solid var(--blanco);
+        color: var(--verde-keep);
+        width: 18px;
+        position: absolute;
+        padding: 2px;
+        left: 141px;
+        bottom: 15px;
+        font-size: 20px;
+    }
+    
+    header .form .icon i{
+        font-size: 18px;
+    }
+
+    #product-cart, #circle-user, #logIn{
+        font-size: 21px;
+    }
+
+    #logIn i {
+        font-size: 25px;
+    }
+
+    #userImageHeader {
+        width: 50px;
+    }
+
+    .openCloseMenu {
+        display: none;
+    }
+
+    .menuMobile {
+        display: none;
+    }
+}
+
+@media (min-width: 769px){
+    /*HEADER*/
+    header{
+        max-height: 200px;
+    }
+
+    /*logo*/
+    a#logo{
+        width: 35%;
+    }
+
+    .logo{
+        max-width: 185px;
+    }
+
+    /*form*/
+    .form .icon, #search{
+        height: 30px;
+    }
+    
+
+    header .form input[type="search"]{
+        font-size: 20px;
+        padding-left: 15px;
+        width: 180px;
+    }
+    
+    header .form .icon{
+        border-left: var(--gris-oscuro);
+        width: 40px;
+        left: 160px;
+        bottom: 15px;
+    }
+
+    header .form .icon i{
+        font-size: 20px;
+    }
+
+    /*product-cart y circle-user*/
+    #product-cart p, #circle-user p, #logIn p{
+        display: block;
+        font-size: 20px;
+    }
+
+    #logIn p {
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
+
+    #product-cart, #circle-user, #logIn{
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        text-decoration: none;
+    }
+
+    #product-cart i, #circle-user i, #logIn i{
+        font-size: 18px;
+    }
+
+    #userWelcomeImage {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        margin: 0;
+    }
+
+    #bienvenidoP {
+        display: block;
+        text-align: center;
+        font-family: 'Truculenta', 'sans-serif';
+        font-weight: 400;
+        font-size: 20px;
+        color: var(--verde-keep);
+    }
+
+    #userImageHeader {
+        width: 70px;
+        margin: 0;
+    }
+}
+
+@media (min-width:1023px){
+    /*HEADER*/
+    header{
+        max-height: 280px;
+    }
+
+    /*logo*/
+    a#logo{
+        width: 25%;
+    }
+
+    .logo{
+        max-width: 250px;
+    }
+
+    /*form*/
+    .form .icon, #search{
+        height: 45px;
+    }
+
+        
+    header .form input[type="search"]{
+        font-size: 24px;
+        padding-left: 15px;
+        width: 300px;
+    }
+
+
+    header .form .icon{
+        border-left: var(--gris-oscuro);
+        width: 40px;
+        height: 40px;
+        left: 263px;
+        bottom: 20px;
+    }
+
+    header .form .icon i{
+        font-size: 30px;
+    }
+
+    /*product-cart y circle-user*/
+    #product-cart p, #circle-user p, #logIn p{
+        display: block;
+        font-size: 30px;
+    }
+
+    #product-cart, #circle-user, #logIn{
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        text-decoration: none;
+    }
+
+    #cartIcon {
+        margin-left: 10px;
+    }
+
+    #product-cart i, #circle-user i, #logIn i {
+        font-size: 30px;
+    }
+
+    #logIn:hover #pLogIn, #logIn:hover #iLogIn {
+        font-size: 31px;
+        transition: .3s all;
+    }
+
+    #logIn:not(:hover) #pLogIn, #logIn:not(:hover) #iLogIn {
+        font-size: 30px;
+        transition: .3s all;
+    }
+
+    #logIn:active #pLogIn, #logIn:active #iLogIn {
+        color: var(--naranja);
+        transition: 0s all;
+    }
+
+    #product-cart:hover #misCompras {
+        font-size: 25px;
+        transition: .3s all;
+    }
+
+    #product-cart:not(:hover) #misCompras {
+        font-size: 24px;
+        transition: .3s all;
+    }
+
+    #product-cart:active #misCompras {
+        color: var(--naranja);
+        transition: 0s all;
+    }
+
+    #product-cart:hover #cartIcon {
+        font-size: 22px;
+        transition: .3s all;
+    }
+
+    #product-cart:not(:hover) #cartIcon {
+        font-size: 20px;
+        transition: .3s all;
+    }
+
+    #product-cart:active #cartIcon {
+        color: var(--naranja);
+        transition: 0s all;
+    }
+
+    #bienvenidoP {
+        font-size: 24px;
+    }
+
+    #circle-user:hover #userImageHeader {
+        width: 75px;
+        transition: .3s all;
+    }
+    
+    #circle-user:not(:hover) #userImageHeader {
+        width: 70px;
+        transition: .3s all;
+    }
+}

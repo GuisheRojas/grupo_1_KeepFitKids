@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <title>carrito de compras</title>
+    </head>
+<body>
+    
+<%- include('../partials/header') %> 
+    <main class="productcart">
+        <% let suma = 0 
+           let totalCant = 0 %>
+        <h2 class="carrito">Mi carrito</h2>
+        <% if (carrito.length == 0){%>
+            <div class="carrito-vacio">
+                <h3>Todavia no seleccionó ningún producto</h3>
+            </div>
+        <% } else {%>
+            <div class="todo-junto">
+                <section class="carrito">
+                    <ul type="none" class="tabla">
+                        <li id="imagen">Producto</li>
+                        <li id="nombre">Detalle</li>
+                        <li id="color">Color</li>
+                        <li id="talle">Talle</li>
+                        <li id="cantidad">Cantidad</li>
+                        <li id="precio">Precio</li>
+                        <li id="elim">    </li>
+                    </ul>
+                    <% for(let i=0; i<carrito.length; i++){%>
+                        <article class="articulo">
+                            <div>
+                                <div class="imagen">
+                                <img src="/img/products/<%= carrito[i].image %>" alt="<%= carrito[i].name %>">
+                            </div>
+                            </div>
+                            <div class="prodCartInfo">
+                                <div class="detalle">
+                                    <p class="descrip-campo">Producto: </p>
+                                    <p><%= carrito[i].name%></p>
+                                </div>
+                                <div class="color-prod">
+                                    <p class="descrip-campo">Color: </p>
+                                    <p><%= carrito[i].color %></p>
+                                </div>
+                                <div class="talle">
+                                    <p class="descrip-campo">Talle: </p>
+                                    <p><%= carrito[i].size %></p>
+                                </div>
+                                <div class="cantidad">
+                                    <p class="descrip-campo">Cantidad: </p>
+                                    <p><%= carrito[i].cantidad %></p>
+                                </div>
+                                <div class="precio">
+                                    <% if(carrito[i].cantidad > 1) {%>
+                                        <% totalCant = carrito[i].price * carrito[i].cantidad%>
+                                        <p class="descrip-campo">Precio: </p>
+                                        <p>$<%= totalCant %></p>
+                                    <% } else { %>
+                                        <p class="descrip-campo">Precio: </p>
+                                        <p>$<%= carrito[i].price %></p>
+                                    <% } %>
+                                </div>
+                                <div class="elim">
+                                    <form method="post" action="/products/productCart/<%= carrito[i].id %>?_method=delete" class="formbotelim">
+                                        <div>
+                                            <button class="botonelim" type="submit">        
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </article>
+                    <% } %>  
+                </section>                   
+            
+                <section class="Resumen"> 
+                    <h3>RESUMEN</h3>
+                
+                    <div class="subtotal-art">
+                        <h3>Subtotal</h3>
+                        <%for(let i=0; i<carrito.length; i++){ %>
+                            <% let price = parseInt(carrito[i].price);
+                            suma = suma + (price * carrito[i].cantidad) %>
+                        <% } %>
+                        <h3>$<%= suma %></h3>
+                    </div>
+                    <div class="envio">
+                        <h3>Envio</h3>
+                        <h3>$ 0,00</h3>
+                    </div>
+                    <div class="codigo-descuento">
+                        <h3>Cod.Descuento:</h3>
+                        <input type="descuento" name="codigo-desc">
+                    </div>
+                    <div class="Total">
+                        <h3>Total</h3>
+                        <h3>$<%= suma %></h3>
+                    </div>
+                </section>
+            </div>
+        
+            <div class="subtotal">
+                <h4>Subtotal</h4>
+                <h4>$<%= suma %></h4>
+            </div>
+        <% } %>
+
+        <div class="botones">
+            <form class="bot-continuar" action="/" method="GET">
+                <button class="botonCarrrito" type="submit" name="continuar" alt="#">CONTINUAR</button>
+            </form>
+
+            <form class="bot-continuar" action="/" method="GET">
+                <button class="botonCarrrito" type="submit" name="finalizar" alt="#">FINALIZAR</button>
+            </form>
+        </div>
+
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

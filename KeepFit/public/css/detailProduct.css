@@ -1,0 +1,503 @@
+/*VARIABLES*/
+:root{
+    --verde-claro: #e6ffef;
+    --gris-oscuro: #666;
+    --gris-claro: #ebebeb;
+    --blanco: #FFF;
+    --negro: #000;
+    --verde-keep: #4fb59f;
+    --verde-botones: #3d6e64;
+    --verde-fit: rgb(105, 230, 56);
+    --naranja: rgba(255, 72, 0, 0.753);
+}
+
+
+/*PRODUCT-DETAIL*/
+
+.productandprice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.productimg{
+    width: 90%;
+    margin: 5px;
+}
+
+.productimg img.prod{
+    width: 100%;
+    border: 1vw solid var(--verde-claro) ;
+}
+
+.priceandinfo{
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+}
+
+.nameofproduct{
+    font-size: 6vw;
+    margin: 1px;
+}
+
+.priceofproduct{
+    font-size: 6vw;
+    color: var(--verde-botones);
+    margin: 1px;
+}
+
+.logistic{
+    display: flex;
+    flex-direction: row;
+    margin: 1px;
+}
+
+.logistic i{
+    color: var(--naranja);
+    font-size: 4vw;
+}
+
+.freesend{
+    font-size: 3.8vw;
+    color: var(--naranja);
+}
+
+.priceandinfo .mediodepago{
+    font-size: 3.8vw;
+}
+
+.logocards{
+    display: flex;
+    flex-direction: row;
+}
+
+.logocards img{
+    width: 4vw;  
+}
+
+div.opcionesdecompra form label{
+    font-weight: bold;
+    font-size: 5vw;
+}
+
+.divcolors, .divtalles, 
+.seleccioncuant, div.opcionesdecompra{
+    width: 100%;
+}
+
+.divcolors, .divtalles, .seleccioncuant{
+    padding: 1px;
+}
+
+.divcolors .colord{
+    width: 40%;
+    font-size: 5vw;
+    border-radius: 3px;
+}
+
+.divtalles .tallesd{
+    width: 30%;
+    font-size: 5vw;
+    border-radius: 3px;
+}
+
+.seleccioncuant{
+    display: flex;
+    flex-direction: row;
+}
+
+.seleccioncuant input{
+    width: 20%;
+    font-size: 5vw;
+    border-radius: 3px;
+}
+
+.buttonagregar{
+    display: flex;
+    width: 100%;
+}
+
+button.agregarDetail{
+    width: 60%;
+    min-height: 10px;
+    border-radius: 3px;
+    background-color: var(--naranja);
+    border: none;
+    padding: 3px;
+}
+
+button.agregarDetail:hover {
+    cursor: pointer;
+}
+
+button.agregarDetail{
+    box-shadow: 1px 1px 2px var(--gris-oscuro);
+}
+
+.agregarDetail p{
+    color: var(--blanco);
+    font-size: 3vw ;
+}
+
+.productdescription{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10px;
+}
+
+.productdescription h1{
+    font-size: 5vw;
+}
+
+.productdescription p{
+    font-size: 4vw;
+}
+
+.detailmain .container{
+    margin: 10px;
+}
+
+.detailmain .container form{
+    display: flex;
+    flex-direction: column;
+}
+
+.detailmain .container form label{
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.commentarea{
+    width: 100%;
+    height: 15vw;
+    border-color: #000;
+    border-radius: 3px;
+    font-size: 3.5vw;
+}
+
+.commentbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.buttonenviar{
+    display: flex;
+    width: 30%;
+    max-height: 5vw;
+}
+
+
+.enviar{
+    width: 80%;
+    min-height: 10px;
+    border-radius: 3px;
+    font-size: 3vw;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    border: none;
+    padding: 3px;
+}
+
+.enviar:hover {
+    cursor: pointer;
+}
+
+
+
+
+@media (min-width: 361px) {
+    
+    /*PRODUCT-DETAIL*/
+    .productandprice{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .productimg{
+        width: 60%;
+        margin: 10px;
+    }
+
+    .nameofproduct{
+        font-size: 4vw;
+        margin: 5px;
+    }
+    
+    .priceofproduct{
+        font-size: 4vw;
+        margin: 5px;
+    }
+    
+    .logistic{
+        margin: 5px;
+    }
+    
+    .logistic i{
+        font-size: 3vw;
+    }
+    
+    .freesend{
+        font-size: 3vw;
+    }
+    
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+    }
+    
+    .logocards img{
+        width: 6vw;  
+    }
+    
+    div.opcionesdecompra form label{
+        font-size: 2vw;
+    }
+
+    .divcolors, .divtalles, .seleccioncuant{
+        margin: 10px;
+    }
+    
+    .divcolors .colord{
+        width: 40%;
+        font-size: 2.5vw;
+    }
+    
+    .divtalles .tallesd{
+        width: 30%;
+        font-size: 2.5vw;
+    }
+    
+    .seleccioncuant input{
+        width: 20%;
+        font-size: 2.5vw;
+    }
+    
+    .buttonagregar button p{
+        font-size: 3vw ;
+    }
+    
+    .productdescription{
+        margin: 20px;
+    }
+    
+    .productdescription h1{
+        font-size: 3vw;
+    }
+    
+    .productdescription p{
+        font-size: 2vw;
+    }
+    
+    .container{
+        margin: 20px;
+    }
+    
+    .container form label{
+        font-size: 3vw;
+    }
+    
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
+    }
+
+    .buttonenviar{
+        width: 20%;
+    }
+}
+
+
+/*COMPUTADORAS*/
+@media (min-width: 769px){    
+    /*PRODUCT-DETAIL*/
+    .productimg{
+        width: 60%;
+        margin: 15px;
+    }
+
+    .nameofproduct{
+        font-size: 4vw;
+        margin: 10px;
+    }
+    
+    .priceofproduct{
+        font-size: 4vw;
+        margin: 10px;
+    }
+    
+    .logistic{
+        margin: 10px;
+    }
+    
+    .logistic i{
+        font-size: 3vw;
+    }
+    
+    .freesend{
+        font-size: 3vw;
+    }
+    
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+    }
+    
+    .logocards img{
+        width: 6vw;  
+    }
+    
+    div.opcionesdecompra form label{
+        font-weight: bold;
+        font-size: 2vw;
+    }
+
+    .divcolors, .divtalles, .seleccioncuant{
+        margin: 15px;
+    }
+    
+    .divcolors .colord{
+        font-size: 2.5vw;
+    }
+    
+    .divtalles .tallesd{
+        font-size: 2.5vw;
+    }
+    
+    .seleccioncuant input{
+        font-size: 2.5vw;
+    }
+    
+    .buttonagregar button p{
+        font-size: 3vw ;
+    }
+    
+    .productdescription{
+        margin: 40px;
+    }
+    
+    .productdescription h1{
+        font-size: 3vw;
+    }
+    
+    .productdescription p{
+        font-size: 2vw;
+    }
+    
+    .container{
+        margin: 40px;
+    }
+    
+    .container form label{
+        font-size: 3vw;
+    }
+    
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
+    }
+}
+
+    
+@media (min-width:1023px){
+    /*PRODUCT-DETAIL*/
+    .productimg{
+        width: 50%;
+        margin: 20px;
+    }
+
+    .nameofproduct{
+        font-size: 3vw;
+        margin: 20px;
+    }
+        
+    .priceofproduct{
+        font-size: 3vw;
+        margin: 20px;
+    }
+        
+    .logistic{
+        margin: 20px;
+    }
+        
+    .logistic i{
+        font-size: 2vw;
+    }
+        
+    .freesend{
+        font-size: 2vw;
+    }
+        
+    .priceandinfo .mediodepago{
+        font-size: 2.5vw;
+        margin: 20px;
+    }
+        
+    .logocards img{
+        width: 6vw;  
+    }
+        
+    div.opcionesdecompra form label{
+        font-weight: bold;
+        font-size: 2vw;
+    }
+    
+    .divcolors, .divtalles, .seleccioncuant{
+        width: 100%;
+        margin: 25px;
+    }
+        
+    .divcolors .colord{
+        font-size: 2vw;
+    }
+        
+    .divtalles .tallesd{
+        font-size: 2vw;
+    }
+        
+    .seleccioncuant input{
+        font-size: 2vw;
+    }
+
+    .buttonagregar button{
+        width: 80%;
+        padding: 10px;
+        margin: 20px;
+    }
+        
+    .buttonagregar button p{
+        font-size: 2vw ;
+    }
+        
+    .productdescription{
+        margin: 65px;
+    }
+    
+    .productdescription h1{
+        font-size: 3vw;
+    }
+        
+    .productdescription p{
+        font-size: 2vw;
+    }
+        
+    .detailmain .container{
+        margin: 80px;
+    }
+        
+    .detailmain .container form label{
+        font-size: 3vw;
+    }
+        
+    .commentarea{
+        height: 7vw;
+        font-size: 2vw;
+    }
+}     

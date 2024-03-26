@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <title>Busqueda: <%= search %></title>
+    </head>
+<body>    
+    <%- include('../partials/header') %> 
+    
+    <main>
+
+        <section class="results">
+            <div id="titulares">
+                <h4 class="titulares">Resultados de la busqueda: <%= search %></h4>
+            </div>
+            <% if(resultsSearch.length > 0) {%>
+                <% for(let i=0; i < resultsSearch.length; i++){ %>%>
+                        <article class="article">
+                            <a href="/products/detailproduct/<%= resultsSearch[i].id %>">
+                                <img src=/img/products/<%= resultsSearch[i].image %> alt=<%= resultsSearch[i].name %> class="product_img">
+                                <p class="price">$<%=resultsSearch[i].price %></p>
+                                <h4 class="description"><%=resultsSearch[i].name%></h4>
+                            </a>
+                        </article>
+                <% } %>
+            <% } else {%>
+                <p>No se encontraron coincidencias con ningún producto</p>
+            <% } %>
+        </section>        
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

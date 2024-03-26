@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <%- include('../partials/head') %>
+    <title>Editar producto</title>
+ </head>
+<body>
+    <%- include('../partials/header') %>
+    <main class="mainForm">
+        <form action="/products/addProduct/" method="POST" class="forms" id="formGetProduct" enctype="multipart/form-data">
+            <h1 class="titulares">Ingrese el producto</h1>
+            <div class="container">
+                <div class="group">
+                    <input type="text" id="name" name="name" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.name %>"
+                    <%}%>>
+                    <label for="nameProd" class="label">Nombre del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.name){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.name.msg %>
+                    </p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="file" id="productImage" name="productImage" class="input" placeholder="">
+                    <label for="productImage" class="label">Imagen del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.productImage){ %>
+                    <p class="fbFormsProd"> 
+                        <%= errors.productImage.msg %>
+                    </p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="price" name="price" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.price %>"
+                    <%}%>>
+                    <label for="price" class="label">Precio del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.price){ %>
+                    <p class="fbFormsProd"> <%= errors.price.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="text" id="description" name="description" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.description %>"
+                    <%}%>>
+                    <label for="description" class="label">Descripción del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.description){ %>
+                    <p class="fbFormsProd"> <%= errors.description.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <h3 class="input">Colores</h3> 
+                    <select id="color" name="color" class="input" placeholder="" size="5">
+                        <% for(let i = 0; i < colors?.length; i++) {%>    
+                            <option value="<%= colors[i].dataValues.id %>"><%= colors[i].dataValues.name %></option>
+                        <%}%>
+                    </select>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.color){ %>
+                    <p class="fbFormsProd"> <%= errors.color.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <h3 class="input">Talles</h3>  
+                    <h2 class="input">Actualice los talles en stock</h2>
+                    <select id="size" name="size" class="input" placeholder="" size="6" multiple>
+                        <% for(let i = 0; i < sizes?.length; i++) {%>    
+                            <option value="<%= sizes[i].dataValues.id %>"><%= sizes[i].dataValues.name %></option>
+                        <%}%>
+                    </select>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.size){ %>
+                    <p class="fbFormsProd"> <%= errors.size.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <select id="category" name="category" class="input" placeholder="" 
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.category %>"
+                    <%}%>>
+                            <option value="">Seleccione el genero del producto</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Unisex">Unisex</option>
+                    </select>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.category){ %>
+                    <p class="fbFormsProd"> <%= errors.category.msg %></p>    
+                <% } %>
+                
+                <div class="group">
+                    <input type="number" id="quantity" name="quantity" class="input" placeholder=""
+                    <%if (locals && locals.old) {%>
+                        value="<%= locals.old.quantity %>"
+                    <%}%>>
+                    <label for="quantity" class="label">Stock del producto</label>
+                    <span class="line"></span>
+                    <span class="error"></span>
+                </div>
+                <% if(locals.errors && errors.quantity){ %>
+                    <p class="fbFormsProd"> <%= errors.quantity.msg %></p>    
+                <% } %>
+                
+                
+                
+                <button type="submit" class="submit">Agregar Producto</button>
+
+                <div id="container-a">
+                    <a href="/users/adminPanel">Volver</a>
+                </div>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/js/validationGetProduct.js"></script> 
+</body>
+</html>
