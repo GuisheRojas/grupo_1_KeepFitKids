@@ -26,8 +26,9 @@ class ContentRowTop extends Component {
         fetch(data.products[lastProductIndex].detail)
           .then(response => response.json())
           .then(data => {
+            console.log(data);
             this.setState({
-              lastProduct: data
+              lastProduct: data.product
             })
           })
       })

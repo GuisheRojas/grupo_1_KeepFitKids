@@ -25,18 +25,18 @@ function ProductDetail() {
                 <div className="col-md-8">
                     <div className="card-body">
                         <h2 className="card-title">{product?.product.name}</h2>
-                        <h4>${product?.product.price}</h4>
+                        <h4 className="card-text">${product?.product.price}</h4>
                         <h5 className="card-text">{product?.product.description}</h5>
 
-                        <h6 className="card-text">Stock: </h6>
+                        {/* <h6 className="card-text">Stock: </h6> */}
                         {product?.Stock.map((stock) =>{
                             return(
                                 <ul>
-                                    <li><h6 className="card-text">Color {stock.color} talle {stock.size} = {stock.quantity}</h6></li>
+                                    <li><h6 className="card-text">{stock.quantity} productos en color {stock.color} talle {stock.size}</h6></li>
                                 </ul>
                             )
                         })}
-                        <p className="card-text"><small class="text-body">Producto {product?.product.category}</small></p>
+                        <p className="card-text"><small className="text-body">Producto {product?.product.category}</small></p>
 
                     </div>
                 </div>

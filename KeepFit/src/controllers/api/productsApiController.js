@@ -52,7 +52,7 @@ const productsApiController = {
         
         const http = 'http://';
         const https = 'https://';
-        if(!product.dataValues.image.includes(http) && !product.dataValues.image.includes(https)) {
+        if(!product.image.includes(http) && !product.image.includes(https)) {
             product.dataValues.image = `http://localhost:8000/img/products/${product.dataValues.image}`;
         }
         let Pstock = [...stock]

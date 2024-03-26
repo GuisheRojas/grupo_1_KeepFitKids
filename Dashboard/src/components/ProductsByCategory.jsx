@@ -32,8 +32,9 @@ class ProductsByCategory extends Component{
                 // Esperamos a que todas las promesas se resuelvan
                 Promise.all(productPromises)
                     .then((productData) => {
-                        const prod = productData.filter((product) => product.category === category)
+                        const prod = productData.filter((product) => product.product.category === category)
                         // Actualizamos el estado con los datos completos
+                        console.log(prod);
                         this.setState({
                             products: prod
                         });
@@ -49,14 +50,14 @@ class ProductsByCategory extends Component{
             <div>
                 {products.map((product, index) => (
                     <Article
-                        key={index}
-                        id={product.id}
-                        name={product.name}
-                        description={product.description}
-                        price={product.price}
-                        category={product.category}
-                        is_new={product.is_new}
-                        image={product.image}
+                        key={product.product.id}
+                        id={product.product.id}
+                        name={product.product.name}
+                        description={product.product.description}
+                        price={product.product.price}
+                        category={product.product.category}
+                        is_new={product.product.is_new}
+                        image={product.product.image}
                     />
                 ))}
             </div>

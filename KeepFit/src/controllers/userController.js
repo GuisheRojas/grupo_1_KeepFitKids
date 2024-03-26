@@ -128,6 +128,9 @@ const controller = {
                 });
             } else {
                 if(req.file){
+                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.session.user.avatar}`);
+                    fs.unlinkSync(avatarPath);
+
                     let userToUpdate = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 6),
@@ -135,9 +138,6 @@ const controller = {
                     }
                     await User.update(userToUpdate, { where:{ id: idUser } } )
                 } else {
-                    let avatarPath = path.join(__dirname, `../../public/img/users/${req.session.user.avatar}`);
-                    fs.unlinkSync(avatarPath);
-                    
                     let userToUpdate = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 6),
