@@ -10,7 +10,7 @@ module.exports = {
      const Products = await db.Products.findAll()
      const stock = [];
      let j = 0;
-    Array(150)
+    Array(200)
     .fill(0)
     .forEach((_, i)=>{
         const randomColors = Colors[Math.floor(Math.random() * Colors.length)];
