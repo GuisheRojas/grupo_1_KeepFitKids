@@ -106,7 +106,7 @@ const validations = [
 ]
 
 window.addEventListener('load', function(){
-    let form = document.querySelector('#register-form');
+    let form = document.querySelector('#editProfileForm');
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();

@@ -1,5 +1,20 @@
-const isEmpty = (input) => input.value && input.value.trim() != "";
-//const existe = (input) => 
+const isEmpty = (input) => input.value && input.value.trim() !== "";
+const isLengthName = (input) => input.value.length >= 5;
+const isLengthDescription = (input) => input.value.length >= 20;
+const isValidFormat = (input) => {
+    let allowedFormats = ['jpeg', 'jpg', 'png'];
+    let filePath = input.value;
+    // Seperar nombre de archivo por . y obtener último elemento (extensión)
+    let extension = filePath.split('.').pop().toLowerCase();
+    // Verificar que la extensión es permitida
+    if(filePath == '' || allowedFormats.includes(extension)) {
+        return true;
+    } else if(!allowedFormats.includes(extension)) {
+        console.log('Suba archivos con una extensión válida: ' + allowedFormats.join(', '));
+        // No puedes manipular el valor del input, solo devolver falso
+        return false;
+    }
+}
 
 const validations = [
     {
@@ -10,7 +25,7 @@ const validations = [
                 errorMsg: "El nombre no puede estar vacio"
             },
             {
-                validator: (input) => input.value.length >= 5,
+                validator: isLengthName,
                 errorMsg: "El nombre debe contener al menos 5 caracteres"
             }
         ]
@@ -22,17 +37,11 @@ const validations = [
                 validator: isEmpty,
                 errorMsg: "La imagen del producto no puede estar vacia"
             },
-
-        ]
-    },
-    {
-        inputName: "productImageUrl",
-        inputValidations: [
             {
-                validator: isEmpty,
-                errorMsg: "La Url no puede estar vacia"
-            },
-            
+                validator: isValidFormat,
+                errorMsg: "Debe subir un archivo con una extensión válida (.png, .jpg, .jpeg)"
+            }
+
         ]
     },
     {
@@ -53,7 +62,7 @@ const validations = [
                 errorMsg: "La descripcion no puede estar vacia"
             },
             {
-                validator: (input) => input.value.length >= 20,
+                validator: isLengthDescription,
                 errorMsg: "La descripcion debe contener al menos 20 caracteres"
             }
         ]
@@ -102,11 +111,11 @@ const validations = [
 
 window.addEventListener('load', function(){
     let form = document.querySelector('#formGetProduct');
-
+    
     form.addEventListener("submit", function(e) {
         e.preventDefault();
         console.log('Entré')
-
+        
         let errores = [];
         validations.forEach((inputToValidate) => {
             let input = form[inputToValidate.inputName];
@@ -116,8 +125,7 @@ window.addEventListener('load', function(){
                     errores.push(validation.errorMsg);
                     input.parentElement.classList.add("fbFormsProd");
                     input.parentElement.classList.remove("is-valid");
-                    input.parentElement.querySelector(".error").innerHTML =
-                        validation.errorMsg;
+                    input.parentElement.querySelector(".error").innerHTML = validation.errorMsg;
                     return
                 }
             }
@@ -125,11 +133,25 @@ window.addEventListener('load', function(){
             input.parentElement.classList.remove("fbFormsProd");
             input.parentElement.querySelector(".error").innerHTML = "";
         })
-
+        
         if(errores.length == 0) {
             form.submit()
         } else {
             console.log(errores)
         }
-    })
-})
+    });
+});
+
+
+
+// ?????????
+// {
+//     inputName: "productImageUrl",
+//     inputValidations: [
+//         {
+//             validator: isEmpty,
+//             errorMsg: "La Url no puede estar vacia"
+//         },
+        
+//     ]
+// },

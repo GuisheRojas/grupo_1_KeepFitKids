@@ -11,7 +11,6 @@
 .banner{
     display: flex;
     width: 100%;
-    margin-top: 5px;
 }
 
 img{
@@ -62,8 +61,8 @@ img{
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 15px;
-    border-radius: 5px;
-    background-color: var(--blanco);
+    border-radius: 15px;
+    background-color: var(--verde-claro);
     margin: 10px;
 }
 
@@ -73,12 +72,12 @@ img{
 }
 
 .article:hover{
-    box-shadow: 0px 0px 20px var(--sombra);
+    box-shadow: 0px 0px 20px var(--verde-keep);
     transition: .3s all;
 }
 
 .article:not(:hover) {
-    box-shadow: 0px 0px 0px var(--sombra);
+    box-shadow: 0px 0px 0px var(--verde-keep);
     transition: .3s all;
 }
 

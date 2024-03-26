@@ -19,9 +19,10 @@ const registerValidation=[
         .notEmpty().withMessage("Debe completar el campo contraseña").bail()
         .isLength({min: 8}).withMessage("La contraseña debe tener un mínimo de 8 caracteres.").bail()
         .custom((value) => {
-            const passwordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])[A-Za-z\d$@$.-_!%?&]{8,}$/;
-            if (passwordRegex.test(value)) {
-              throw new Error('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial');
+            // expresion anterior /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])[A-Za-z\d$@$.-_!%?&]{8,}$/
+            const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value);
+            if (!passwordRegex) {
+              throw new Error('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un caracter especial');
             }
             return true;
           }),

@@ -3,7 +3,8 @@ const { body } = require('express-validator')
 
 let productsValidation = [
     body('name')
-        .notEmpty().withMessage("Debe completar el campo nombre del producto"),
+        .notEmpty().withMessage("Debe completar el campo nombre del producto").bail()
+        .isLength(5).withMessage("El nombre del producto debe contener al menos 5 caractéres"),
     body('price')
         .notEmpty().withMessage("Debe completar el campo precio").bail()
         .trim(),
