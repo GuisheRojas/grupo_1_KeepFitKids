@@ -42,21 +42,30 @@ const productsApiController = {
     },
 
     detail: async (req, res) => {
-        const product = await db.Products.findByPk(req.params.id, {
-            include: [{model: db.Stock, as: 'products_stock', attributes: ['quantity'],
-                include: [
-                    {model: db.Colors,as: 'colors_stock', attributes: ['name']}, 
-                    {model: db.Sizes, as: 'sizes_stock', attributes: ['name']}
-                ]
-            }]
-        })
+        const product = await db.Products.findByPk(req.params.id)
+        const stock = await db.Stock.findAll({
+            where:{ id_product: req.params.id },
+            include: [
+                {model: db.Colors,as: 'colors_stock', attributes: ['name']}, 
+                {model: db.Sizes, as: 'sizes_stock', attributes: ['name']}
+            ]})
+        
         const http = 'http://';
         const https = 'https://';
         if(!product.dataValues.image.includes(http) && !product.dataValues.image.includes(https)) {
             product.dataValues.image = `http://localhost:8000/img/products/${product.dataValues.image}`;
         }
-        res.json(product)
-    },
+        let Pstock = [...stock]
+        let Stock = []
+         Pstock.map(stock =>{  Stock.push({quantity: stock.dataValues.quantity, color:stock.dataValues.colors_stock.dataValues.name, size:stock.dataValues.sizes_stock.dataValues.name })})
+        
+        const respuesta = {
+            product,
+            Stock
+        }
+        
+        res.json(respuesta)
+    }
 
 }
 
