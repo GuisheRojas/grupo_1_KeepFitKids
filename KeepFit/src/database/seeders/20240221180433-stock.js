@@ -1,4 +1,3 @@
-"use strict";
 const { faker } = require("@faker-js/faker");
 const db = require('../models');
 // const { sizes, colors } = require("../../colorsAndSizesProducts");
@@ -10,30 +9,28 @@ module.exports = {
      const Sizes = await db.Sizes.findAll()
      const Products = await db.Products.findAll()
      const stock = [];
-    Array(50)
+     let j = 0;
+    Array(150)
     .fill(0)
     .forEach((_, i)=>{
-      const randomColors = Colors[Math.floor(Math.random() * Colors.length)];
-        //console.log(`Product ${i + 1} created at ${new Date().toISOString()}`);
+        const randomColors = Colors[Math.floor(Math.random() * Colors.length)];
+        console.log(`Product ${i + 1} created at ${new Date().toISOString()}`);
         const randomSizes = Sizes[Math.floor(Math.random() * Sizes.length)];
         const randomProducts = Products[Math.floor(Math.random() * Products.length)];
         const randomQuantity = faker.number.int({ min: 1, max: 100 });
-      const productData = {
-        id: i + 1,
-        quantity: randomQuantity,
-        id_color: randomColors.id,
-        id_size: randomSizes.id,
-        id_product: randomProducts.id,
-        
-      };
-
-      stock.push(productData)
-
-    });
+        const productData = {
+          id: i + 1,
+          quantity: randomQuantity,
+          id_color: randomColors.id,
+          id_size: randomSizes.id,
+          id_product: randomProducts.id,
+        }
+        stock.push(productData)
+      }
+    );
    await queryInterface.bulkInsert("stock", stock
    );
-   
-   
+      
   },
 
   async down (queryInterface, Sequelize) {
