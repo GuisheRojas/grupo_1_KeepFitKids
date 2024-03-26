@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <>
         <ul className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
-        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:8000/">
             <div className="sidebar-brand-icon">
                 <img className="w-100" src={logoKF} alt="Digital House"/>
             </div>
