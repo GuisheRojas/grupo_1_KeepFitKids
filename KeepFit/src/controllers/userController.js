@@ -145,9 +145,11 @@ const controller = {
                     }
                     await User.update(userToUpdate, { where:{ id: idUser } } )
                 }
-                const newUserInDB = await User.findByPk(idUser)
-                req.session.user = newUserInDB;
-                return res.redirect('./profile');
+                let newUserInDB = await User.findByPk(idUser)
+                rol = await db.User_roles.findOne({where:{ id_user: newUserInDB.dataValues.id }});
+                newUserInDB.dataValues.role = rol.dataValues.id_role;
+                req.session.user = newUserInDB.dataValues;
+                return res.redirect('/users/profile');
             }
         }
         else {
